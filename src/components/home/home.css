@@ -1,0 +1,19 @@
+.icon-next, .icon-minus, .icon-plus {
+    transition: 250ms;
+}
+
+.icon-next:hover, .icon-next:active {
+    cursor: pointer;
+    color: var(--yellow);
+}
+
+.icon-minus:hover, .icon-minus:active {
+    cursor: pointer;
+    color: var(--blue);
+}
+
+.icon-plus:hover, .icon-plus:active {
+    cursor: pointer;
+    color: var(--red);
+}
+

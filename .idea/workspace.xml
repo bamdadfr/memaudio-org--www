@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93d21bf7-59c3-4127-a0f9-8ba7dfc5df19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,11 +69,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="332" y="127" key="#Deployment" timestamp="1584324343932">
+    <state x="332" y="127" key="#Deployment" timestamp="1584324950139">
       <screen x="25" y="23" width="1415" height="877" />
     </state>
-    <state x="332" y="127" key="#Deployment/25.23.1415.877@25.23.1415.877" timestamp="1584324343932" />
+    <state x="332" y="127" key="#Deployment/25.23.1415.877@25.23.1415.877" timestamp="1584324950139" />
     <state x="197" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584323821942">
       <screen x="25" y="23" width="1415" height="877" />
     </state>
@@ -91,10 +103,10 @@
       <screen x="25" y="23" width="1415" height="877" />
     </state>
     <state x="495" y="313" key="cloudConfig.SelfSettingsDialog/25.23.1415.877@25.23.1415.877" timestamp="1584324362189" />
-    <state x="389" y="296" key="com.intellij.ide.util.TipDialog" timestamp="1584324532946">
+    <state x="389" y="296" key="com.intellij.ide.util.TipDialog" timestamp="1584324901452">
       <screen x="25" y="23" width="1415" height="877" />
     </state>
-    <state x="389" y="296" key="com.intellij.ide.util.TipDialog/25.23.1415.877@25.23.1415.877" timestamp="1584324532946" />
+    <state x="389" y="296" key="com.intellij.ide.util.TipDialog/25.23.1415.877@25.23.1415.877" timestamp="1584324901452" />
     <state x="638" y="119" width="501" height="525" key="ftp.server.browser" timestamp="1584324198247">
       <screen x="25" y="23" width="1415" height="877" />
     </state>

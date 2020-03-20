@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93d21bf7-59c3-4127-a0f9-8ba7dfc5df19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +39,15 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -96,6 +98,22 @@
       <screen x="25" y="23" width="1415" height="877" />
     </state>
     <state x="308" y="146" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/25.23.1415.877@25.23.1415.877" timestamp="1584323949545" />
+    <state width="1373" height="230" key="GridCell.Tab.0.bottom" timestamp="1584671349574">
+      <screen x="25" y="23" width="1415" height="877" />
+    </state>
+    <state width="1373" height="230" key="GridCell.Tab.0.bottom/25.23.1415.877@25.23.1415.877" timestamp="1584671349574" />
+    <state width="1373" height="230" key="GridCell.Tab.0.center" timestamp="1584671349573">
+      <screen x="25" y="23" width="1415" height="877" />
+    </state>
+    <state width="1373" height="230" key="GridCell.Tab.0.center/25.23.1415.877@25.23.1415.877" timestamp="1584671349573" />
+    <state width="1373" height="230" key="GridCell.Tab.0.left" timestamp="1584671349572">
+      <screen x="25" y="23" width="1415" height="877" />
+    </state>
+    <state width="1373" height="230" key="GridCell.Tab.0.left/25.23.1415.877@25.23.1415.877" timestamp="1584671349572" />
+    <state width="1373" height="230" key="GridCell.Tab.0.right" timestamp="1584671349574">
+      <screen x="25" y="23" width="1415" height="877" />
+    </state>
+    <state width="1373" height="230" key="GridCell.Tab.0.right/25.23.1415.877@25.23.1415.877" timestamp="1584671349574" />
     <state x="241" y="63" key="SettingsEditor" timestamp="1584323972522">
       <screen x="25" y="23" width="1415" height="877" />
     </state>

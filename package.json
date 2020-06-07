@@ -6,7 +6,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-icons": "^3.7.0",
+    "react-icons": "^3.10.0",
     "react-player": "^2.1.1",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.2.0",
@@ -41,12 +41,8 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "10.1.0",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^18.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.20.0"
+    "@bamdadsabbagh/eslint-config": "^1.1.7",
+    "@bamdadsabbagh/stylelint-config": "^1.0.7"
   },
   "snyk": true
 }

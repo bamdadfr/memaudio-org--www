@@ -1,24 +1,22 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
 import { actions as appActions } from '../../reducers/appReducer'
-
 import Component from './Audio'
 
 const mapStateToProps = (state) => ({
-  ...state,
+    ...state,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  ...bindActionCreators(
-    {
-      ...appActions,
-    },
-    dispatch,
-  ),
+    ...bindActionCreators (
+        {
+            ...appActions,
+        },
+        dispatch
+    ),
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Component)
+export default connect (
+    mapStateToProps,
+    mapDispatchToProps
+) (Component)

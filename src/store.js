@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware } from 'redux'
 import { createLogger } from 'redux-logger'
-
 import reducers from './reducers/index'
 
 // Useless in production
@@ -9,6 +8,6 @@ import reducers from './reducers/index'
 // })
 // const store = createStore(reducers, applyMiddleware(logger))
 //
-const store = createStore(reducers)
+const store = createStore (reducers)
 
 export default store

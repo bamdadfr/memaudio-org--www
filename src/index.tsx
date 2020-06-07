@@ -7,7 +7,7 @@ import 'normalize.css'
 import store from './store'
 import App from './components/app/_App'
 
-const Root = () => (
+const Root = (): React.ReactElement => (
     <>
         <LayerBackground />
         <Provider store={store}>

@@ -13,11 +13,11 @@ import GameContainer from '../game/_GameContainer'
 // For future usage
 import musicFiles from '../../assets/audio/albums/music'
 
-export default (props) => {
+export default (props: any): any => {
 
     const { app, setPageRedirect, setAlbums } = props
 
-    const renderRedirect = () => {
+    const renderRedirect = (): any => {
 
         if (app.page.redirect !== null) {
 

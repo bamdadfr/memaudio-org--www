@@ -4,6 +4,11 @@ export interface AudioState {
     background: boolean
 }
 
+export type AudioActionTypes =
+SetAudioSrc
+| SetAudioPlaylist
+| SetAudioBackground
+
 export const SET_AUDIO_SRC = 'SET_AUDIO_SRC'
 
 interface SetAudioSrc {
@@ -25,7 +30,3 @@ interface SetAudioBackground {
     payload: AudioState['background']
 }
 
-export type AudioActionTypes =
-SetAudioSrc
-| SetAudioPlaylist
-| SetAudioBackground

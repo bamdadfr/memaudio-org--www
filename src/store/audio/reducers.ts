@@ -12,7 +12,10 @@ const initState: AudioState = {
     'background': false,
 }
 
-export default (state = initState, action: AudioActionTypes): AudioState => {
+export default (
+    state = initState,
+    action: AudioActionTypes,
+): AudioState => {
 
     switch (action.type) {
 

@@ -12,11 +12,11 @@ const mapDispatchToProps = (dispatch) => ({
         {
             ...appActions,
         },
-        dispatch
+        dispatch,
     ),
 })
 
 export default connect (
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
 ) (Component)

@@ -1,5 +1,5 @@
 export interface AlbumsState {
-    albums: [string]
+    albums: []
 }
 
 export const SET_ALBUMS = 'SET_ALBUMS'

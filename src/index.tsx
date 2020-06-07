@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import * as serviceWorker from './serviceWorker'
+// import * as serviceWorker from './serviceWorker'
 import LayerBackground from './components/app/LayerBackground'
 import 'normalize.css'
 import store from './store'

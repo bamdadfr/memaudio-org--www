@@ -10,16 +10,16 @@ import I from './Violon_Cs4.mp3'
 import J from './Violoncelle_G2.mp3'
 
 const files = [
-  A,
-  B,
-  C,
-  D,
-  E,
-  F,
-  G,
-  H,
-  I,
-  J,
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
 ]
 
 export default files

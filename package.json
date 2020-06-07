@@ -10,23 +10,21 @@
     "react-player": "^2.1.1",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1",
     "react-spring": "^8.0.27",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "snyk": "^1.319.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src --ext .js --fix",
+    "lint": "yarn lint:es && yarn lint:style",
+    "lint:es": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:style": "stylelint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "snyk-protect": "snyk protect",
     "prepare": "yarn run snyk-protect"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -42,7 +40,11 @@
   },
   "devDependencies": {
     "@bamdadsabbagh/eslint-config": "^1.1.7",
-    "@bamdadsabbagh/stylelint-config": "^1.0.7"
+    "@bamdadsabbagh/stylelint-config": "^1.0.7",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "react-scripts": "^3.4.1",
+    "typescript": "^3.9.5"
   },
   "snyk": true
 }

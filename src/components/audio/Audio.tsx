@@ -11,8 +11,6 @@ const Audio = (props: any): any => {
     const generalRef = React.useRef<any> (null)
     const [generalPlaying, setGeneralPlaying] = React.useState (true)
 
-    console.log ('AAA', generalRef)
-
     const unloadPlayer = (): any => {
 
         if (audio.playlist.length > 0) {

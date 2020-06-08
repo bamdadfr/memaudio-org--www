@@ -10,7 +10,7 @@ const initState: AlbumsState = {
 
 export default (
     state = initState,
-    action: AlbumsActionTypes
+    action: AlbumsActionTypes,
 ): AlbumsState => {
 
     switch (action.type) {

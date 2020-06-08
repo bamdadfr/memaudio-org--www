@@ -1,11 +1,12 @@
 import React from 'react'
+import reduxMap from '../../config/reduxMap'
 import musicFiles from '../../assets/audio/albums/music'
 
-export default (props) => {
+const Level = (props: any): any => {
 
     const { app, size, setGameDeck } = props
 
-    const shuffleArray = (array) => {
+    const shuffleArray = (array: any): any => {
 
         for (let i = array.length - 1; i > 0; i--) {
 
@@ -35,9 +36,9 @@ export default (props) => {
             ...miniDeck,
         ])
 
-        const obj = {}
+        const obj: any = {}
 
-        deck.map ((e, i) => {
+        deck.map ((e: any, i: any): any => {
 
             obj[i] = {
                 'key': i,
@@ -47,14 +48,18 @@ export default (props) => {
                 'locked': false,
                 'flipMe': false,
             }
+
+            return null
         
         })
 
-        const newArray = []
+        const newArray: any = []
 
-        Object.keys (obj).map ((e) => {
+        Object.keys (obj).map ((e: any): any => {
 
             newArray.push (obj[e])
+
+            return null
         
         })
 
@@ -65,3 +70,5 @@ export default (props) => {
     return null
 
 }
+
+export default reduxMap (Level)

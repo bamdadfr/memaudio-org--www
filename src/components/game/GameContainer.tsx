@@ -1,8 +1,9 @@
 import React from 'react'
-import Level from '../level/_Level'
-import Game from './_Game'
+import reduxMap from '../../config/reduxMap'
+import Level from '../level/Level'
+import Game from './Game'
 
-export default (props) => {
+const GameContainer = (props: any): any => {
 
     const { app } = props
     const [loaded, setLoaded] = React.useState (false)
@@ -26,3 +27,5 @@ export default (props) => {
     return <Game />
 
 }
+
+export default reduxMap (GameContainer)

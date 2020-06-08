@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSpring, animated } from 'react-spring'
+import reduxMap from '../../config/reduxMap'
 
 // 
 // 
@@ -14,14 +15,14 @@ import { useSpring, animated } from 'react-spring'
 // 
 // 
 
-export default (props) => {
+const Click = (props: any): any => {
 
     const { Payload } = props
     const [state, toggle] = useState (true)
     const { x } = useSpring ({ 'from': { 'x': 0 }, 'x': state ? 1 : 0, 'config': { 'duration': 1000 }})
 
     return (
-        <div onClick={() => toggle (!state)}>
+        <div onClick={(): any => toggle (!state)}>
             <animated.div
                 style={{
                     'transform': x
@@ -38,3 +39,5 @@ export default (props) => {
     )
 
 }
+
+export default reduxMap (Click)

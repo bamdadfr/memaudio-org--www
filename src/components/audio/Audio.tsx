@@ -1,16 +1,17 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import reduxMap from '../../config/reduxMap'
 
-export default (props) => {
+const Audio = (props: any): any => {
 
     const {
         app, setAudioPlaylist, setAudioSrc,
     } = props
 
-    const generalRef = React.useRef (null)
+    const generalRef = React.useRef<any> (null)
     const [generalPlaying, setGeneralPlaying] = React.useState (true)
 
-    const unloadPlayer = () => {
+    const unloadPlayer = (): any => {
 
         if (app.audio.playlist.length > 0) {
 
@@ -72,10 +73,12 @@ export default (props) => {
                 id="player-general"
                 ref={generalRef}
                 url={app.audio.src}
-                onEnded={() => unloadPlayer ()}
+                onEnded={(): any => unloadPlayer ()}
                 playing={generalPlaying}
             />
         </>
     )
 
 }
+
+export default reduxMap (Audio)

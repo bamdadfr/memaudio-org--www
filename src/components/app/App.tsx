@@ -4,16 +4,17 @@ import {
 } from 'react-router-dom'
 import './app.css'
 import './app_responsive.css'
-import Audio from '../audio/_Audio'
-import Home from '../home/_Home'
-import Menu from '../menu/_Menu'
-import End from '../end/_End'
+import reduxMap from '../../config/reduxMap'
+import Audio from '../audio/Audio'
+import Home from '../home/Home'
+import Menu from '../menu/Menu'
+import End from '../end/End'
 import Git from '../git/Git'
-import GameContainer from '../game/_GameContainer'
+import GameContainer from '../game/GameContainer'
 // For future usage
 import musicFiles from '../../assets/audio/albums/music'
 
-export default (props: any): any => {
+const App = (props: any): any => {
 
     const { app, setPageRedirect, setAlbums } = props
 
@@ -71,3 +72,5 @@ export default (props: any): any => {
     )
 
 }
+
+export default reduxMap (App)

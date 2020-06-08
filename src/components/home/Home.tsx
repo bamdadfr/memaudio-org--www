@@ -1,15 +1,16 @@
 import React from 'react'
 import { FiPlay } from 'react-icons/fi'
-import Flip from '../anim/_Flip'
+import reduxMap from '../../config/reduxMap'
+import Flip from '../anim/Flip'
 import './home.css'
 
-export default (props) => {
+const Home = (props: any): any => {
 
     const {
         setPageRedirect, setPageTransition,
     } = props
 
-    const trigger = () => {
+    const trigger = (): any => {
 
         setPageTransition (true)
 
@@ -21,7 +22,7 @@ export default (props) => {
     
     }
 
-    const Front = () => (
+    const Front = (): any => (
         <div className="card-content">
             <div className="card-content-main color-white icon" onClick={() => trigger ()}>
                 <FiPlay />
@@ -39,3 +40,5 @@ export default (props) => {
     )
 
 }
+
+export default reduxMap (Home)

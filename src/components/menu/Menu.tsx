@@ -1,11 +1,14 @@
 import React from 'react'
 import { FaHeadphones, FaQuestion } from 'react-icons/fa'
 import { FiUser, FiPlay } from 'react-icons/fi'
-import Flip from '../anim/_Flip'
+import reduxMap from '../../config/reduxMap'
+import Flip from '../anim/Flip'
 import soundFiles from '../../assets/audio/general'
-import posterPDF from '../../assets/doc/poster.pdf'
 
-export default (props) => {
+// import posterPDF from '../../assets/doc/poster.pdf'
+const posterPDF = require ('../../assets/doc/poster.pdf')
+
+const Menu = (props: any): any => {
 
     const {
         setAudioPlaylist, setAudioBackground, setPageRedirect, setPageTransition,
@@ -23,7 +26,7 @@ export default (props) => {
     
     }, [])
 
-    const ATrig = () => {
+    const ATrig = (): any => {
 
         setPageTransition (true)
 
@@ -35,7 +38,7 @@ export default (props) => {
     
     }
 
-    const CTrig = () => {
+    const CTrig = (): any => {
 
         setPageTransition (true)
 
@@ -49,7 +52,7 @@ export default (props) => {
     
     }
 
-    const DTrig = () => {
+    const DTrig = (): any => {
 
         setPageTransition (true)
 
@@ -61,7 +64,7 @@ export default (props) => {
     
     }
 
-    const AFront = () => (
+    const AFront = (): any => (
         <div className="card-content color-white" onClick={() => ATrig ()}>
             <div className="card-content-main icon">
                 <FaHeadphones />
@@ -69,7 +72,7 @@ export default (props) => {
         </div>
     )
 
-    const BFront = () => (
+    const BFront = (): any => (
         <div className="card-content color-red">
             <div className="card-content-main icon">
                 <FiUser />
@@ -77,7 +80,7 @@ export default (props) => {
         </div>
     )
 
-    const BBack = () => (
+    const BBack = (): any => (
         <div className="card-content color-red">
             <div className="card-content-main text">
                 le mode multijoueurs n'est pas encore disponible
@@ -85,7 +88,7 @@ export default (props) => {
         </div>
     )
 
-    const CFront = () => (
+    const CFront = (): any => (
         <div className="card-content color-blue" onClick={() => CTrig ()}>
             <div className="card-content-main icon">
                 <FaQuestion />
@@ -93,7 +96,7 @@ export default (props) => {
         </div>
     )
 
-    const DFront = () => (
+    const DFront = (): any => (
         <div className="card-content color-yellow" onClick={() => DTrig ()}>
             <div className="card-content-main icon">
                 <FiPlay />
@@ -125,3 +128,5 @@ export default (props) => {
     )
 
 }
+
+export default reduxMap (Menu)

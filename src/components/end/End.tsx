@@ -1,9 +1,10 @@
 import React from 'react'
 import { FaThumbsUp } from 'react-icons/fa'
-import Flip from '../anim/_Flip'
+import reduxMap from '../../config/reduxMap'
+import Flip from '../anim/Flip'
 import soundFiles from '../../assets/audio/general'
 
-export default (props) => {
+const End = (props: any): any => {
 
     const {
         setPageRedirect, setPageTransition, setAudioPlaylist, setAudioBackground, setGameDifficulty,
@@ -23,7 +24,7 @@ export default (props) => {
     
     }, [])
 
-    const trigger = () => {
+    const trigger = (): any => {
 
         setPageTransition (true)
 
@@ -37,7 +38,7 @@ export default (props) => {
     
     }
 
-    const Front = () => (
+    const Front = (): any => (
         <div className="card-content">
             <div className="card-content-main color-yellow icon" onClick={() => trigger ()}>
                 <FaThumbsUp />
@@ -45,7 +46,7 @@ export default (props) => {
         </div>
     )
 
-    const Back = () => (
+    const Back = (): any => (
         <div className="card-content color-blue">
             <div className="card-content-main text">
                 pas encore disponible
@@ -64,3 +65,5 @@ export default (props) => {
     )
 
 }
+
+export default reduxMap (End)

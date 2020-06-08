@@ -2,7 +2,7 @@ import React from 'react'
 import { animated, useSpring } from 'react-spring'
 import myColors from './myColors'
 
-export default () => {
+export default (): any => {
 
     const props = useSpring ({
         'from': {
@@ -10,7 +10,7 @@ export default () => {
         },
         'to': async (next) => {
 
-            while (1) {
+            for (;;) {
 
                 await next ({
                     'left': '0%', 'top': '0%', 'width': '100%', 'height': '100%', 'background': myColors.soap,

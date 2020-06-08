@@ -1,7 +1,8 @@
 import React from 'react'
 import { animated, useSpring } from 'react-spring'
+import reduxMap from '../../config/reduxMap'
 
-export default (props) => {
+const FadeIn = (props: any): any => {
 
     const { payload } = props
     const p = useSpring ({ 'opacity': 1, 'from': { 'opacity': 0 }})
@@ -9,3 +10,5 @@ export default (props) => {
     return <animated.span style={p}>{payload}</animated.span>
 
 }
+
+export default reduxMap (FadeIn)

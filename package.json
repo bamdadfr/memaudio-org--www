@@ -7,10 +7,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "react-player": "^2.1.1",
+    "react-player": "^2.2.0",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.2.0",
-    "react-spring": "^8.0.27",
+    "react-spring": "^9.0.0-rc.3",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "snyk": "^1.319.0"

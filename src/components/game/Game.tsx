@@ -1,8 +1,9 @@
 import React from 'react'
-import Flip from '../anim/_Flip'
+import reduxMap from '../../config/reduxMap'
+import Flip from '../anim/Flip'
 import soundFiles from '../../assets/audio/general'
 
-export default (props) => {
+const Game = (props: any): any => {
 
     const {
         app, setPageRedirect, setPageTransition, setAudioPlaylist, setAudioBackground,
@@ -23,7 +24,7 @@ export default (props) => {
     
     }, [])
 
-    const Front = () => (
+    const Front = (): any => (
         <>
             <div className="card-content color-white">
                 <div className="card-content-main icon" />
@@ -31,13 +32,13 @@ export default (props) => {
         </>
     )
 
-    const Back = () => (
+    const Back = (): any => (
         <div className="card-content">
             <div className="card-content-main" />
         </div>
     )
 
-    const matchCards = () => {
+    const matchCards = (): any => {
 
         setGameCardsMatched ({
             ...app.game.matched,
@@ -50,7 +51,7 @@ export default (props) => {
     
     }
 
-    const unmatchCards = () => {
+    const unmatchCards = (): any => {
 
         app.game.deck[app.game.opened[0].key].opened = true
 
@@ -64,7 +65,7 @@ export default (props) => {
     
     }
 
-    const testCardsOpened = () => {
+    const testCardsOpened = (): any => {
 
         if (app.game.opened[0].src === app.game.opened[1].src) {
 
@@ -94,7 +95,7 @@ export default (props) => {
     
     }
 
-    React.useEffect (() => {
+    React.useEffect ((): any => {
 
         if (Object.keys (app.game.opened).length === 2) {
 
@@ -106,7 +107,7 @@ export default (props) => {
     
     }, [Object.keys (app.game.opened).length])
 
-    React.useEffect (() => {
+    React.useEffect ((): any => {
 
         if (app.game.deck.length / 2 === app.game.card) {
 
@@ -128,7 +129,7 @@ export default (props) => {
     
     }, [app.game.ended, app.audio.src])
 
-    const printDeck = app.game.deck.map ((e) => (
+    const printDeck = app.game.deck.map ((e: any): any => (
         <Flip
             Key={e.key}
             size={app.game.difficulty}
@@ -147,3 +148,5 @@ export default (props) => {
     )
 
 }
+
+export default reduxMap (Game)

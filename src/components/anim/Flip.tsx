@@ -1,18 +1,29 @@
 import React from 'react'
 import { useSpring, animated as a } from 'react-spring'
+import reduxMap from '../../config/reduxMap'
 import FadeIn from './FadeIn'
 import './flip.css'
 
-export default (props) => {
+const Flip = (props: any): any => {
 
     const {
         app, Key, Front, Back, isGame, noClickFront, noClickBack,
         size, audioFile, setAudioPlaylist, setGameCardsOpened,
     } = props
 
-    let isBack
+    let isBack: any = null
 
-    typeof Back === 'undefined' ? isBack = false : isBack = true
+    // typeof Back === 'undefined' ? isBack = false : isBack = true
+
+    if (typeof Back === 'undefined') {
+
+        isBack = false
+    
+    } else {
+
+        isBack = true
+    
+    }
 
     if (app.page.transition) {
 
@@ -20,9 +31,9 @@ export default (props) => {
     
     }
 
-    const [flipped, set] = React.useState (false)
+    const [flipped, set] = React.useState<boolean> (false)
     // const [frontColor, setFrontColor] = React.useState('color-white')
-    let backColor
+    let backColor = ''
 
     if (isGame) {
 
@@ -44,7 +55,7 @@ export default (props) => {
     
     }
 
-    const openCard = (e, fromFront) => {
+    const openCard = (e: any, fromFront?: any): any => {
 
         if (isGame) {
 
@@ -85,11 +96,11 @@ export default (props) => {
 
             if (app.page.transition === true) {
 
-                set (1)
+                set (true)
             
             } else {
 
-                set (0)
+                set (false)
             
             }
         
@@ -97,9 +108,9 @@ export default (props) => {
     
     }, [app.page.transition])
 
-    if (isGame) {
+    React.useEffect (() => {
 
-        React.useEffect (() => {
+        if (isGame && typeof Key !== 'undefined' && typeof isGame !== 'undefined') {
 
             setTimeout (() => {
 
@@ -115,35 +126,37 @@ export default (props) => {
             
             }, 500)
         
-        }, [app.game.deck[Key].flipMe])
+        }
+            
+        // }, [app.game.deck[Key].flipMe])
     
-    }
+    }, [isGame])
 
-    const output = () => {
+    const output = (): any => {
 
         const cellSize = `cell-x${size.toString ()}`
-        let frontClickable
+        let frontClickable = null
 
         if (isGame) {
 
-            frontClickable = () => (noClickFront || app.game.locked || app.game.deck[Key].locked ? '' : ' clickable')
+            frontClickable = (): any => (noClickFront || app.game.locked || app.game.deck[Key].locked ? '' : ' clickable')
         
         } else {
 
-            frontClickable = () => (noClickFront ? '' : ' clickable')
+            frontClickable = (): any => (noClickFront ? '' : ' clickable')
         
         }
 
         const frontClasses = `flipper${frontClickable ()}`
-        let backClickable
+        let backClickable = null
 
         if (isGame) {
 
-            backClickable = () => (noClickBack || app.game.locked || app.game.deck[Key].locked ? '' : ' clickable')
+            backClickable = (): any => (noClickBack || app.game.locked || app.game.deck[Key].locked ? '' : ' clickable')
         
         } else {
 
-            backClickable = () => (noClickBack ? '' : ' clickable')
+            backClickable = (): any => (noClickBack ? '' : ' clickable')
         
         }
 
@@ -156,8 +169,8 @@ export default (props) => {
                     <div className={cellSize}>
                         <a.div
                             className={frontClasses}
-                            style={{ 'opacity': opacity.interpolate ((o) => 1 - o), transform }}
-                            onClick={(e) => (
+                            style={{ 'opacity': opacity.interpolate ((o: any): any => (1 - o)), transform }}
+                            onClick={(e: any): any => (
                                 noClickFront || app.game.locked || app.game.deck[Key].locked
                                     ? null : openCard (e, true)
                             )}
@@ -168,8 +181,8 @@ export default (props) => {
                             ? (
                                 <a.div
                                     className={backClasses}
-                                    style={{ opacity, 'transform': transform.interpolate ((t) => `${t} rotateY(180deg)`) }}
-                                    onClick={(e) => (
+                                    style={{ opacity, 'transform': transform.interpolate ((t: any) => `${t} rotateY(180deg)`) }}
+                                    onClick={(e: any): any => (
                                         noClickBack || app.game.locked || app.game.deck[Key].locked
                                             ? null : openCard (e)
                                     )}
@@ -190,7 +203,7 @@ export default (props) => {
                     <a.div
                         className={frontClasses}
                         style={{ 'opacity': opacity.interpolate ((o) => 1 - o), transform }}
-                        onClick={(e) => (
+                        onClick={(e: any): any => (
                             noClickFront
                                 ? null : openCard (e, true)
                         )}
@@ -202,7 +215,7 @@ export default (props) => {
                             <a.div
                                 className={backClasses}
                                 style={{ opacity, 'transform': transform.interpolate ((t) => `${t} rotateY(180deg)`) }}
-                                onClick={(e) => (
+                                onClick={(e: any): any => (
                                     noClickBack
                                         ? null : openCard (e)
                                 )}
@@ -220,3 +233,5 @@ export default (props) => {
     return <FadeIn payload={output ()} />
 
 }
+
+export default reduxMap (Flip)

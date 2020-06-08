@@ -4,8 +4,7 @@ import { Provider } from 'react-redux'
 // import * as serviceWorker from './serviceWorker'
 import LayerBackground from './components/app/LayerBackground'
 import 'normalize.css'
-// import store from './store'
-import { store } from './store/'
+import { store } from './store'
 import App from './components/app/App'
 
 const Root = (): React.ReactElement => (

@@ -6,7 +6,7 @@ import {
 } from './types'
 
 const initState: PageState = {
-    'redirect': false,
+    'redirect': null,
     'transition': false,
 }
 

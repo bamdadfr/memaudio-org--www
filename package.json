@@ -1,7 +1,7 @@
 {
-  "name": "audio_memory",
-  "version": "0.1.0",
-  "private": true,
+  "name": "memaudio.org",
+  "version": "1.0.0",
+  "license": "MIT",
   "dependencies": {
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",

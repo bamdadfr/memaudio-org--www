@@ -5,17 +5,19 @@ import reduxMap from '../../store/map'
 const Audio = (props: any): any => {
 
     const {
-        app, setAudioPlaylist, setAudioSrc,
+        audio, page, setAudioPlaylist, setAudioSrc,
     } = props
 
     const generalRef = React.useRef<any> (null)
     const [generalPlaying, setGeneralPlaying] = React.useState (true)
 
+    console.log ('AAA', generalRef)
+
     const unloadPlayer = (): any => {
 
-        if (app.audio.playlist.length > 0) {
+        if (audio.playlist.length > 0) {
 
-            setAudioPlaylist (app.audio.playlist.splice (1, app.audio.playlist.length))
+            setAudioPlaylist (audio.playlist.splice (1, audio.playlist.length))
         
         }
     
@@ -23,7 +25,7 @@ const Audio = (props: any): any => {
 
     React.useEffect (() => {
 
-        if (app.page.transition === true) {
+        if (page.transition === true) {
 
             setGeneralPlaying (false)
 
@@ -33,19 +35,19 @@ const Audio = (props: any): any => {
         
         }
     
-    }, [app.page.transition])
+    }, [page.transition, setAudioSrc, setAudioPlaylist])
 
     React.useEffect (() => {
 
-        if (app.audio.playlist.length > 0) {
+        if (audio.playlist.length > 0) {
 
-            if (app.audio.src === app.audio.playlist[0]) {
+            if (audio.src === audio.playlist[0]) {
 
                 generalRef.current.seekTo (0)
             
             } else {
 
-                setAudioSrc (app.audio.playlist[0])
+                setAudioSrc (audio.playlist[0])
 
                 setGeneralPlaying (true)
             
@@ -57,7 +59,7 @@ const Audio = (props: any): any => {
         
         }
     
-    }, [app.audio.playlist])
+    }, [audio.playlist])
 
     return (
         <>
@@ -65,14 +67,14 @@ const Audio = (props: any): any => {
                 id="player-ambience"
                 url="https://soundcloud.com/abarrejadis/le-poinconneur-des-lilas"
                 volume={0.5}
-                playing={app.audio.background}
+                playing={audio.background}
                 loop
             />
 
             <ReactPlayer
                 id="player-general"
                 ref={generalRef}
-                url={app.audio.src}
+                url={audio.src}
                 onEnded={(): any => unloadPlayer ()}
                 playing={generalPlaying}
             />

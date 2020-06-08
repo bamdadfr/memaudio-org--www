@@ -40,7 +40,7 @@ const End = (props: any): any => {
 
     const Front = (): any => (
         <div className="card-content">
-            <div className="card-content-main color-yellow icon" onClick={() => trigger ()}>
+            <div className="card-content-main color-yellow icon" onClick={(): any => trigger ()}>
                 <FaThumbsUp />
             </div>
         </div>

@@ -5,7 +5,6 @@ import reduxMap from '../../store/map'
 import Flip from '../anim/Flip'
 import soundFiles from '../../assets/audio/general'
 
-// import posterPDF from '../../assets/doc/poster.pdf'
 const posterPDF = require ('../../assets/doc/poster.pdf')
 
 const Menu = (props: any): any => {
@@ -24,7 +23,7 @@ const Menu = (props: any): any => {
             soundFiles.menu02,
         ])
     
-    }, [])
+    }, [setAudioBackground, setAudioPlaylist])
 
     const ATrig = (): any => {
 

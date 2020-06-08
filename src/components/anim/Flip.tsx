@@ -7,7 +7,7 @@ import './flip.css'
 const Flip = (props: any): any => {
 
     const {
-        app, Key, Front, Back, isGame, noClickFront, noClickBack,
+        page, game, Key, flipMe, Front, Back, isGame, noClickFront, noClickBack,
         size, audioFile, setAudioPlaylist, setGameCardsOpened,
     } = props
 
@@ -25,7 +25,7 @@ const Flip = (props: any): any => {
     
     }
 
-    if (app.page.transition) {
+    if (page.transition) {
 
         isBack = false
     
@@ -37,13 +37,13 @@ const Flip = (props: any): any => {
 
     if (isGame) {
 
-        if (app.game.deck[Key].opened) {
+        if (game.deck[Key].opened) {
 
             backColor = 'color-blue'
         
         }
 
-        if (app.game.deck[Key].matched) {
+        if (game.deck[Key].matched) {
 
             backColor = 'color-yellow'
         
@@ -59,14 +59,14 @@ const Flip = (props: any): any => {
 
         if (isGame) {
 
-            const array = app.game.opened
+            const array = game.cardsOpened
 
             array.push ({
                 'key': Key,
-                'src': app.game.deck[Key].src,
+                'src': game.deck[Key].src,
             })
 
-            app.game.deck[Key].opened = true
+            game.deck[Key].opened = true
 
             setGameCardsOpened (array)
         
@@ -94,7 +94,7 @@ const Flip = (props: any): any => {
 
         setTimeout (() => {
 
-            if (app.page.transition === true) {
+            if (page.transition === true) {
 
                 set (true)
             
@@ -106,21 +106,21 @@ const Flip = (props: any): any => {
         
         }, 350)
     
-    }, [app.page.transition])
+    }, [page.transition])
 
     React.useEffect (() => {
 
-        if (isGame && typeof Key !== 'undefined' && typeof isGame !== 'undefined') {
+        if (isGame) {
 
             setTimeout (() => {
 
-                if (app.game.deck[Key].flipMe) {
+                if (game.deck[Key].flipMe) {
 
                     set ((s) => !s)
 
-                    app.game.deck[Key].flipMe = false
+                    game.deck[Key].flipMe = false
 
-                    app.game.deck[Key].opened = false
+                    game.deck[Key].opened = false
                 
                 }
             
@@ -128,9 +128,9 @@ const Flip = (props: any): any => {
         
         }
             
-        // }, [app.game.deck[Key].flipMe])
-    
-    }, [isGame])
+    }, [flipMe])
+
+    // }, [game.deck[Key].flipMe])
 
     const output = (): any => {
 
@@ -139,7 +139,7 @@ const Flip = (props: any): any => {
 
         if (isGame) {
 
-            frontClickable = (): any => (noClickFront || app.game.locked || app.game.deck[Key].locked ? '' : ' clickable')
+            frontClickable = (): any => (noClickFront || game.locked || game.deck[Key].locked ? '' : ' clickable')
         
         } else {
 
@@ -152,7 +152,7 @@ const Flip = (props: any): any => {
 
         if (isGame) {
 
-            backClickable = (): any => (noClickBack || app.game.locked || app.game.deck[Key].locked ? '' : ' clickable')
+            backClickable = (): any => (noClickBack || game.locked || game.deck[Key].locked ? '' : ' clickable')
         
         } else {
 
@@ -171,7 +171,7 @@ const Flip = (props: any): any => {
                             className={frontClasses}
                             style={{ 'opacity': opacity.interpolate ((o: any): any => (1 - o)), transform }}
                             onClick={(e: any): any => (
-                                noClickFront || app.game.locked || app.game.deck[Key].locked
+                                noClickFront || game.locked || game.deck[Key].locked
                                     ? null : openCard (e, true)
                             )}
                         >
@@ -183,7 +183,7 @@ const Flip = (props: any): any => {
                                     className={backClasses}
                                     style={{ opacity, 'transform': transform.interpolate ((t: any) => `${t} rotateY(180deg)`) }}
                                     onClick={(e: any): any => (
-                                        noClickBack || app.game.locked || app.game.deck[Key].locked
+                                        noClickBack || game.locked || game.deck[Key].locked
                                             ? null : openCard (e)
                                     )}
                                 >

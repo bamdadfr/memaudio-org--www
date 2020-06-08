@@ -6,7 +6,7 @@ import soundFiles from '../../assets/audio/general'
 const Game = (props: any): any => {
 
     const {
-        app, setPageRedirect, setPageTransition, setAudioPlaylist, setAudioBackground,
+        audio, game, setPageRedirect, setPageTransition, setAudioPlaylist, setAudioBackground,
         setGameLocked, setGameCardsOpened, setGameCardsMatched, setGameCard, setGameEnded,
     } = props
 
@@ -14,7 +14,7 @@ const Game = (props: any): any => {
 
         setAudioBackground (false)
 
-        if (app.game.difficulty === 2) {
+        if (game.difficulty === 2) {
 
             setAudioPlaylist ([
                 soundFiles.game01,
@@ -41,11 +41,11 @@ const Game = (props: any): any => {
     const matchCards = (): any => {
 
         setGameCardsMatched ({
-            ...app.game.matched,
-            ...app.game.opened,
+            ...game.cardsMatched,
+            ...game.cardsOpened,
         })
 
-        setGameCard (app.game.card + 1)
+        setGameCard (game.card + 1)
 
         setGameCardsOpened ([])
     
@@ -53,13 +53,13 @@ const Game = (props: any): any => {
 
     const unmatchCards = (): any => {
 
-        app.game.deck[app.game.opened[0].key].opened = true
+        game.deck[game.cardsOpened[0].key].opened = true
 
-        app.game.deck[app.game.opened[0].key].flipMe = true
+        game.deck[game.cardsOpened[0].key].flipMe = true
 
-        app.game.deck[app.game.opened[1].key].opened = true
+        game.deck[game.cardsOpened[1].key].opened = true
 
-        app.game.deck[app.game.opened[1].key].flipMe = true
+        game.deck[game.cardsOpened[1].key].flipMe = true
 
         setGameCardsOpened ([])
     
@@ -67,19 +67,19 @@ const Game = (props: any): any => {
 
     const testCardsOpened = (): any => {
 
-        if (app.game.opened[0].src === app.game.opened[1].src) {
+        if (game.cardsOpened[0].src === game.cardsOpened[1].src) {
 
-            app.game.deck[app.game.opened[0].key].opened = true
+            game.deck[game.cardsOpened[0].key].opened = true
 
-            app.game.deck[app.game.opened[0].key].matched = true
+            game.deck[game.cardsOpened[0].key].matched = true
 
-            app.game.deck[app.game.opened[1].key].opened = true
+            game.deck[game.cardsOpened[1].key].opened = true
 
-            app.game.deck[app.game.opened[1].key].matched = true
+            game.deck[game.cardsOpened[1].key].matched = true
 
-            app.game.deck[app.game.opened[0].key].locked = true
+            game.deck[game.cardsOpened[0].key].locked = true
 
-            app.game.deck[app.game.opened[1].key].locked = true
+            game.deck[game.cardsOpened[1].key].locked = true
 
             matchCards ()
 
@@ -97,7 +97,7 @@ const Game = (props: any): any => {
 
     React.useEffect ((): any => {
 
-        if (Object.keys (app.game.opened).length === 2) {
+        if (Object.keys (game.cardsOpened).length === 2) {
 
             setGameLocked (true)
 
@@ -105,21 +105,21 @@ const Game = (props: any): any => {
         
         }
     
-    }, [Object.keys (app.game.opened).length])
+    }, [Object.keys (game.cardsOpened).length])
 
     React.useEffect ((): any => {
 
-        if (app.game.deck.length / 2 === app.game.card) {
+        if (game.deck.length / 2 === game.card) {
 
             setGameEnded (true)
         
         }
     
-    }, [app.game.card])
+    }, [game.card])
 
     React.useEffect (() => {
 
-        if (app.game.ended === true && app.audio.src === null) {
+        if (game.ended === true && audio.src === null) {
 
             setPageTransition (true)
 
@@ -127,16 +127,17 @@ const Game = (props: any): any => {
         
         }
     
-    }, [app.game.ended, app.audio.src])
+    }, [game.ended, audio.src])
 
-    const printDeck = app.game.deck.map ((e: any): any => (
+    const printDeck = game.deck.map ((card: any): any => (
         <Flip
-            Key={e.key}
-            size={app.game.difficulty}
+            Key={card.key}
+            size={game.difficulty}
             noClickBack
-            audioFile={e.src}
+            audioFile={card.src}
             Front={Front}
             Back={Back}
+            flipMe={card.flipMe}
             isGame
         />
     ))

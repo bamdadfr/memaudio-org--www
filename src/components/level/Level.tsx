@@ -4,7 +4,7 @@ import musicFiles from '../../assets/audio/albums/music'
 
 const Level = (props: any): any => {
 
-    const { app, size, setGameDeck } = props
+    const { size, setGameDeck } = props
 
     const shuffleArray = (array: any): any => {
 

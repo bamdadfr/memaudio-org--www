@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'
 import './app.css'
 import './app_responsive.css'
-import reduxMap from '../../store/map'
+import storeMap from '../../store/map'
 import Audio from '../audio/Audio'
 import Home from '../home/Home'
 import Menu from '../menu/Menu'
@@ -16,15 +16,13 @@ import musicFiles from '../../assets/audio/albums/music'
 
 const App = (props: any): any => {
 
-    console.log (props)
-
-    const { app, setPageRedirect, setAlbums } = props
+    const { page, setPageRedirect, setAlbums } = props
 
     const renderRedirect = (): any => {
 
-        if (app.page.redirect !== null) {
+        if (page.redirect !== null) {
 
-            return <Redirect to={app.page.redirect} />
+            return <Redirect to={page.redirect} />
         
         }
 
@@ -34,13 +32,13 @@ const App = (props: any): any => {
 
     React.useEffect (() => {
 
-        if (app.page.redirect !== null) {
+        if (page.redirect !== null) {
 
             setPageRedirect (null)
         
         }
     
-    }, [app.page.redirect])
+    }, [page.redirect, setPageRedirect])
 
     // For future usage
     React.useEffect (() => {
@@ -75,4 +73,4 @@ const App = (props: any): any => {
 
 }
 
-export default reduxMap (App)
+export default storeMap (App)

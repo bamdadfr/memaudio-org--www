@@ -3,6 +3,7 @@ import {
     GameActionTypes,
     SET_GAME_DIFFICULTY,
     SET_GAME_LOCKED,
+    SET_GAME_ENDED,
     SET_GAME_CARD,
     SET_GAME_CARDS,
     SET_GAME_DECK,
@@ -17,6 +18,11 @@ export const setGameDifficulty = (status: GameState['difficulty']): GameActionTy
 
 export const setGameLocked = (status: GameState['locked']): GameActionTypes => ({
     'type': SET_GAME_LOCKED,
+    'payload': status,
+})
+
+export const setGameEnded = (status: GameState['ended']): GameActionTypes => ({
+    'type': SET_GAME_ENDED,
     'payload': status,
 })
 

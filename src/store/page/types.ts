@@ -1,5 +1,5 @@
 export interface PageState {
-    redirect: boolean
+    redirect: string | null
     transition: boolean
 }
 

@@ -4,6 +4,7 @@ import {
     SET_GAME_DIFFICULTY,
     SET_GAME_LOCKED,
     SET_GAME_DECK,
+    SET_GAME_ENDED,
     SET_GAME_CARD,
     SET_GAME_CARDS,
     SET_GAME_CARDS_OPENED,
@@ -40,6 +41,12 @@ export default (
                 'locked': action.payload,
             }
     
+        case SET_GAME_ENDED:
+            return {
+                ...state,
+                'ended': action.payload,
+            }
+
         case SET_GAME_DECK:
             return {
                 ...state,

@@ -1,5 +1,5 @@
 import React from 'react'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 import musicFiles from '../../assets/audio/albums/music'
 
 const Level = (props: any): any => {

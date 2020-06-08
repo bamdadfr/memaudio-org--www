@@ -1,6 +1,9 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { actions as appActions } from '../reducers/appReducer'
+import * as pageActions from './page/actions'
+import * as audioActions from './audio/actions'
+import * as albumsActions from './albums/actions'
+import * as gameActions from './game/actions'
 
 const mapStateToProps = (state: any): any => ({
     ...state,
@@ -9,7 +12,10 @@ const mapStateToProps = (state: any): any => ({
 const mapDispatchToProps = (dispatch: any): any => ({
     ...bindActionCreators (
         {
-            ...appActions,
+            ...pageActions,
+            ...audioActions,
+            ...albumsActions,
+            ...gameActions,
         },
         dispatch,
     ),

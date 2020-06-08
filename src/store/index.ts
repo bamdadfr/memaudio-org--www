@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import { combineReducers, createStore } from 'redux'
 import pageReducer from './page/reducers'
 import audioReducer from './audio/reducers'
 import albumsReducer from './albums/reducers'
@@ -12,3 +12,7 @@ const rootReducer = combineReducers ({
 })
 
 export type RootState = ReturnType<typeof rootReducer>
+
+export default rootReducer
+
+export const store = createStore (rootReducer)

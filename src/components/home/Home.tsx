@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiPlay } from 'react-icons/fi'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 import Flip from '../anim/Flip'
 import './home.css'
 

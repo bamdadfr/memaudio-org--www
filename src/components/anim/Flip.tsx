@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSpring, animated as a } from 'react-spring'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 import FadeIn from './FadeIn'
 import './flip.css'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 
 const Audio = (props: any): any => {
 

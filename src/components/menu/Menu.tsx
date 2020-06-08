@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaHeadphones, FaQuestion } from 'react-icons/fa'
 import { FiUser, FiPlay } from 'react-icons/fi'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 import Flip from '../anim/Flip'
 import soundFiles from '../../assets/audio/general'
 

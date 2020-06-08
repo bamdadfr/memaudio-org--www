@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'
 import './app.css'
 import './app_responsive.css'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 import Audio from '../audio/Audio'
 import Home from '../home/Home'
 import Menu from '../menu/Menu'
@@ -15,6 +15,8 @@ import GameContainer from '../game/GameContainer'
 import musicFiles from '../../assets/audio/albums/music'
 
 const App = (props: any): any => {
+
+    console.log (props)
 
     const { app, setPageRedirect, setAlbums } = props
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSpring, animated } from 'react-spring'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 
 // 
 // 

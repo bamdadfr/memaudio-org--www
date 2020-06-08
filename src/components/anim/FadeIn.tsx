@@ -1,6 +1,6 @@
 import React from 'react'
 import { animated, useSpring } from 'react-spring'
-import reduxMap from '../../config/reduxMap'
+import reduxMap from '../../store/map'
 
 const FadeIn = (props: any): any => {
 

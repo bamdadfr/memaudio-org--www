@@ -8,14 +8,14 @@ import end02 from './end02.mp3'
 import notAvailable from './not_available.mp3'
 
 const files = {
-  home01,
-  home02,
-  menu01,
-  menu02,
-  game01,
-  end01,
-  end02,
-  notAvailable,
+    home01,
+    home02,
+    menu01,
+    menu02,
+    game01,
+    end01,
+    end02,
+    notAvailable,
 }
 
 export default files

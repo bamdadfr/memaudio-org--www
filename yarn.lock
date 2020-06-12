@@ -10269,10 +10269,10 @@ react-layout-effect@^1.0.1:
   resolved "https://registry.yarnpkg.com/react-layout-effect/-/react-layout-effect-1.0.5.tgz#0dc4e24452aee5de66c93c166f0ec512dfb1be80"
   integrity sha512-zdRXHuch+OBHU6bvjTelOGUCM+UDr/iCY+c0wXLEAc+G4/FlcJruD/hUOzlKH5XgO90Y/BUJPNhI/g9kl+VAsA==
 
-react-player@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.2.0.tgz#dfda060ce0fe87d6d41b168fc53eede449f3ffd4"
-  integrity sha512-TsUn7NL3IWmVwoeU+Jbbbrq6+2HQYsiAyC75deWI0dCkJA3InbR194VBJJiYIZvFL+tUZAcbBDHt+tYyPA0Wjg==
+react-player@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.3.0.tgz#89242d406623559b65025df2d537da6cd7bade21"
+  integrity sha512-pz2IUOOcAFoVK+qOXHU0oFd3lBdhmJlUjTqUZdZQwJfVbcN2cIvhZ0cCkBR0GgWAE68uLLndK388eE3J9l6oqg==
   dependencies:
     deepmerge "^4.0.0"
     load-script "^1.0.0"

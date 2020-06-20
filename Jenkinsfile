@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        mail(subject: 'subject', body: 'body')
+        mail(subject: 'subject', body: 'body', to: 'report@bamdadsabbagh.com')
       }
     }
 

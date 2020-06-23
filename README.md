@@ -10,7 +10,7 @@ Web based audio memory (POC)
 ## local dev
 
 ```bash
-git clone https://github.com/memaudio/memaudio-www.git
+git clone https://github.com/bamdadsabbagh/memaudio-www.git
 cd memaudio-www
 yarn install
 
@@ -35,5 +35,5 @@ docker build -t memaudio-www-dev .
 docker run -d --name memaudio-www --restart=always -p 8080:80 memaudio-www-dev
 
 # production image
-docker run -d --name memaudio-www --restart=always -p 8080:80 memaudio/memaudio-www:latest
+docker run -d --name memaudio-www --restart=always -p 8080:80 bamdadsabbagh/memaudio-www:latest
 ```

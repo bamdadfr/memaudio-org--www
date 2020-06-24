@@ -48,5 +48,5 @@
 		"prepare": "yarn run snyk-protect"
 	},
 	"snyk": true,
-	"version": "1.0.0"
+	"version": "1.0.4"
 }

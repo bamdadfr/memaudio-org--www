@@ -25,6 +25,8 @@ jobs:
         
       - name: build
         run: yarn build
+        env:
+          CI: false        
 
       - name: install semantic-release
         run: npm install -g semantic-release @semantic-release/github

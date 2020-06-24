@@ -20,10 +20,13 @@ jobs:
         with:
           node-version: '12'
 
-      - name: installing packages
-        run: yarn install --pure-lockfile --no-progress      
+      - name: install packages
+        run: yarn install --pure-lockfile --no-progress    
+        
+      - name: build
+        run: yarn build
 
-      - name: installing semantic-release
+      - name: install semantic-release
         run: npm install -g semantic-release @semantic-release/github
 
       - name: running semantic-release

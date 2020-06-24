@@ -30,6 +30,7 @@ jobs:
   
   semantic-release:
     name: semantic-release
+    needs: build
     runs-on: ubuntu-latest
     steps:
 

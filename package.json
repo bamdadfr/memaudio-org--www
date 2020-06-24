@@ -35,7 +35,7 @@
 		"typescript": "^3.9.5"
 	},
 	"license": "MIT",
-	"name": "memaudio.org",
+	"name": "memaudio-www",
 	"scripts": {
 		"start": "BROWSER=none react-scripts start",
 		"build": "GENERATE_SOURCEMAP=false react-scripts build",

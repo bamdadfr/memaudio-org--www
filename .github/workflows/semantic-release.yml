@@ -20,11 +20,11 @@ jobs:
         with:
           node-version: '12'
 
-      - name: installing snyk
-        run: npm install -g snyk
+      - name: installing packages
+        run: yarn install --pure-lockfile --no-progress      
 
       - name: installing semantic-release
-        run: npm install -g semantic-release @semantic-release/github
+        run: yarn global add semantic-release @semantic-release/github
 
       - name: running semantic-release
         run: semantic-release

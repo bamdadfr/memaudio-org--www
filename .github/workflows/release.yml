@@ -23,11 +23,6 @@ jobs:
       - name: install packages
         run: yarn install --pure-lockfile --no-progress    
         
-      - name: build
-        run: yarn build
-        env:
-          CI: false        
-
       - name: install semantic-release
         run: npm install -g semantic-release @semantic-release/github
 

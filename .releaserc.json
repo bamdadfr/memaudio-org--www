@@ -7,10 +7,6 @@
         "npmPublish": false
       }
     ],
-    [
-      "@semantic-release/github", {
-        "assets": "build/*.tgz"
-      }
-    ]
+    "@semantic-release/github"
   ]
 }

@@ -21,6 +21,8 @@ jobs:
 
       - name: Build app
         run: yarn build
+        env:
+          CI: false
         
       - name: Upload build
         uses: actions/upload-artifact@v1

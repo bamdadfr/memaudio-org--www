@@ -52,7 +52,6 @@ jobs:
   
   docker-build:
     name: docker-build
-    needs: build
     runs-on: ubuntu-latest
     steps:
 

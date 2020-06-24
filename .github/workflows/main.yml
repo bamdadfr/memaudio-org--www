@@ -62,4 +62,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: memaudio/memaudio-www
           tags: latest
+          tag_with_ref: true
+          tag_with_sha: true
         

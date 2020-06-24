@@ -12,12 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: cd root
-        run: cd ../../
-
-      - name: build
-        run: docker build -t test .
-
+      - name: dummy echo
+        run: echo "lol"
 
       # - name: Build and push Docker images
       #   uses: docker/build-push-action@v1.1.0

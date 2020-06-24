@@ -12,42 +12,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout
+      - name: git checkout
         uses: actions/checkout@v2
 
-      - name: Set up Node 12
+      - name: set up node 12
         uses: actions/setup-node@v1
         with:
           node-version: '12'
 
-      - name: Install packages
+      - name: install packages
         run: yarn install --pure-lockfile --no-progress
 
-      - name: Build app
+      - name: build app
         run: yarn build
         env:
           CI: false
         
-      - name: Upload build
+      - name: upload build
         uses: actions/upload-artifact@v1
         with:
           name: build
           path: build
-  
+
   semantic-release:
     name: semantic-release
-    needs: build
     runs-on: ubuntu-latest
     steps:
 
-      - name: Download build
+      - name: set up node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - name: download build
         uses: actions/download-artifact@v1
         with:
           name: build
 
-      - shell: bash
-        run: ls -l
-        
-      - shell: bash
-        run: ls -l build
+      - name: install semantic-release
+        run: npm install -g semantic-release @semantic-release/github
+
+      - name: run semantic-release
+        run: semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   

@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: cd root
+        run: cd ../../
+
       - name: build
         run: docker build -t test .
 

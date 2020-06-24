@@ -9,7 +9,7 @@
     ],
     [
       "@semantic-release/github", {
-        "assets": "build/*"
+        "assets": "build/*.tgz"
       }
     ]
   ]

@@ -31,7 +31,7 @@ docker build -t memaudio-www-dev .
 # http://localhost:8080/
 
 # local dev image
-docker run -d --name memaudio-www --restart=always -p 8080:80 memaudio-www-dev
+docker run -d --name memaudio-www --restart=always -p 5007:80 memaudio-www-dev
 
 # production image
 docker run -d --name memaudio-www --restart=always -p 8080:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:latest

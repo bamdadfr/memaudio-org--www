@@ -1,8 +1,8 @@
-name: 0400-semantic-release
+name: 0430-semantic-release
 
 on:
   schedule:
-    - cron: '0 4 * * *' # UTC 04:00 each day
+    - cron: '30 4 * * *' # UTC
 
 jobs:
   # semantic-release

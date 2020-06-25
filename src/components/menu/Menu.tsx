@@ -82,7 +82,7 @@ const Menu = (props: any): any => {
     const BBack = (): any => (
         <div className="card-content color-red">
             <div className="card-content-main text">
-                le mode multijoueurs n'est pas encore disponible
+                le mode multijoueurs n&lsquo;est pas encore disponible
             </div>
         </div>
     )

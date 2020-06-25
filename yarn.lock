@@ -1114,13 +1114,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.1.13":
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.1.13.tgz#4bbf10cc16ade73b792dbf85406a609d7d162c35"
-  integrity sha512-1ehcKItxNuC1OpyK1wKIchiup9Gk+1OjO7ftd1enbWAzIMV1owZ8CW+088dE5WHqxRxg5Zkgit43nXeuZ6Adeg==
+"@bamdadsabbagh/eslint-config@^1.1.14":
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.1.14.tgz#d70371401c4da1a190e0fd8e2ff1dd2e7a8d3004"
+  integrity sha512-+M+afg28cr+rmGjqFqK9xi2OvGe80a0SutfF7e6CVp9r9U2YzAGZiniOW7Ds6hKDIxrgU4BiT2nG6s8hVmSSHw==
   dependencies:
-    "@types/node" "^14.0.5"
-    "@types/react" "^16.9.35"
+    "@types/node" "^14.0.14"
+    "@types/react" "^16.9.41"
     "@types/react-dom" "^16.9.8"
     "@typescript-eslint/eslint-plugin" "^3.4.0"
     "@typescript-eslint/parser" "^3.4.0"
@@ -1135,10 +1135,10 @@
     prettier "^2.0.5"
     typescript "^3.9.3"
 
-"@bamdadsabbagh/stylelint-config@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.1.1.tgz#d0aaa25b48802fd7ad4ed8aefac110c96a90dbc4"
-  integrity sha512-D/uI9KUMwq+E5Xg4HZEZuN1kwgMq1+3OCJzD685E/7OLjVisuCgPaCxm9tChCOuaY138byFoKs/i2AiQkWpo4w==
+"@bamdadsabbagh/stylelint-config@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.1.2.tgz#1e0626a308ba4cf0b49a53ad337438686bf50e4a"
+  integrity sha512-OGznXQ67ZNK4VZQgNyceyNdeWamW+K8sVEc3E+L99RMYZU7y3HNdNg6L2Twg6TKCKix1Jk+8t+kdfF2TKe2u/A==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
@@ -1913,7 +1913,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
-"@types/node@*", "@types/node@^14.0.5":
+"@types/node@*", "@types/node@^14.0.14":
   version "14.0.14"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.14.tgz#24a0b5959f16ac141aeb0c5b3cd7a15b7c64cbce"
   integrity sha512-syUgf67ZQpaJj01/tRTknkMNoBBLWJOBODF0Zm4NrXmiSuxjymFrxnTu1QVYRubhVkRcZLYZG8STTwJRdVm/WQ==
@@ -1977,7 +1977,7 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.35", "@types/react@^16.9.41":
+"@types/react@*", "@types/react@^16.9.41":
   version "16.9.41"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.41.tgz#925137ee4d2ff406a0ecf29e8e9237390844002e"
   integrity sha512-6cFei7F7L4wwuM+IND/Q2cV1koQUvJ8iSV+Gwn0c3kvABZ691g7sp3hfEQHOUBJtccl1gPi+EyNjMIl9nGA0ug==

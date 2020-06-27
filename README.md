@@ -32,5 +32,5 @@ docker build -t memaudio-www-dev .
 docker run -d --name memaudio-www --restart=always -p 5007:80 memaudio-www-dev
 
 # production image
-docker run -d --name memaudio-www --restart=always -p 5OO7:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:latest
+docker run -d --name memaudio-www --restart=always -p 5007:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:latest
 ```

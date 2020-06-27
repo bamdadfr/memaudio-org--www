@@ -1,6 +1,9 @@
 name: push-yarn-lint
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   # yarn lint

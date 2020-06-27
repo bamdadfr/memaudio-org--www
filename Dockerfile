@@ -17,4 +17,6 @@ COPY --from=build /app/build /app
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
+
+USER node
 CMD ["nginx", "-g", "daemon off;"]

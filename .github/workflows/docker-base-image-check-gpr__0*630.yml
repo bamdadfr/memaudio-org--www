@@ -1,8 +1,8 @@
-name: docker-base-image-check (hourly)
+name: docker-base-image-check-gpr__0*630
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '30 */6 * * *'
 
 jobs:
   check:
@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.email "asfalte@bamdadsabbagh.com"
           git config --global user.name "asfalte"
-          git commit --allow-empty -m "fix: asfalte: auto docker-base-image-check"
+          git commit --allow-empty -m "🐳 fix: asfalte: docker-base-image-check-gpr__0*630"
           git push
 
       - if: env.IS_UP_TO_DATE != 'true'

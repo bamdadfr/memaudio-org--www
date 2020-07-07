@@ -1,4 +1,4 @@
-name: docker-build-push-gpr (published)
+name: docker-build-push-gpr__published
 
 on:
   release:

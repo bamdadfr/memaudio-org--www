@@ -32,7 +32,7 @@
 		"@types/react-router-dom": "^5.1.5",
 		"eslint-plugin-prettier": "^3.1.4",
 		"react-scripts": "^3.4.1",
-		"typescript": "^3.9.6"
+		"typescript": "^3.9.7"
 	},
 	"license": "MIT",
 	"name": "memaudio-www",

@@ -1,3 +1,13 @@
+## [1.0.41](https://github.com/memaudio/memaudio-www/compare/v1.0.40...v1.0.41) (2020-07-26)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0*630 ([7a507fc](https://github.com/memaudio/memaudio-www/commit/7a507fc9e660725c9c6d4374cc2420ce43e53ba3))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([948fee3](https://github.com/memaudio/memaudio-www/commit/948fee381e10725a620e1ae911bace4e807fc050))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([745924b](https://github.com/memaudio/memaudio-www/commit/745924bc0e89d16606f3b0edb0b6c990d152d465))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([60bdc96](https://github.com/memaudio/memaudio-www/commit/60bdc96ac34238823da3bf9330d89fc3c8a67c39))
+
 ## [1.0.40](https://github.com/memaudio/memaudio-www/compare/v1.0.39...v1.0.40) (2020-07-25)
 
 

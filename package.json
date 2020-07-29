@@ -46,5 +46,5 @@
 		"lint:style": "stylelint 'src/**/*.{js,jsx,ts,tsx}' --fix",
 		"sort:package": "npx sort-package-json"
 	},
-	"version": "1.0.43"
+	"version": "1.0.44"
 }

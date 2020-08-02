@@ -5,7 +5,7 @@ import reduxMap from '../../store/map'
 const FadeIn = (props: any): any => {
 
     const { payload } = props
-    const p = useSpring ({ 'opacity': 1, 'from': { 'opacity': 0 }})
+    const p: any = useSpring ({ 'opacity': 1, 'from': { 'opacity': 0 }})
 
     return <animated.span style={p}>{payload}</animated.span>
 

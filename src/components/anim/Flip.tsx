@@ -84,7 +84,7 @@ const Flip = (props: any): any => {
     
     }
 
-    const { transform, opacity } = useSpring ({
+    const { transform, opacity }: any = useSpring ({
         'opacity': flipped ? 1 : 0,
         'transform': `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
         'config': { 'mass': 10, 'tension': 500, 'friction': 80 },
@@ -202,7 +202,7 @@ const Flip = (props: any): any => {
                 <div className={cellSize}>
                     <a.div
                         className={frontClasses}
-                        style={{ 'opacity': opacity.interpolate ((o) => 1 - o), transform }}
+                        style={{ 'opacity': opacity.interpolate ((o: any) => 1 - o), transform }}
                         onClick={(e: any): any => (
                             noClickFront
                                 ? null : openCard (e, true)
@@ -214,7 +214,7 @@ const Flip = (props: any): any => {
                         ? (
                             <a.div
                                 className={backClasses}
-                                style={{ opacity, 'transform': transform.interpolate ((t) => `${t} rotateY(180deg)`) }}
+                                style={{ opacity, 'transform': transform.interpolate ((t: any) => `${t} rotateY(180deg)`) }}
                                 onClick={(e: any): any => (
                                     noClickBack
                                         ? null : openCard (e)

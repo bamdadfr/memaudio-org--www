@@ -4,7 +4,7 @@ import myColors from './myColors'
 
 export default (): any => {
 
-    const props = useSpring ({
+    const props: any = useSpring ({
         'from': {
             'left': '0%', 'top': '0%', 'width': '0%', 'height': '0%', 'opacity': '0.05', 'background': myColors.emerald,
         },

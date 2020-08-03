@@ -1,3 +1,12 @@
+## [1.0.49](https://github.com/memaudio/memaudio-www/compare/v1.0.48...v1.0.49) (2020-08-03)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0*630 ([705e6ca](https://github.com/memaudio/memaudio-www/commit/705e6ca68f811bde1213d972f36980c59753d0b7))
+* asfalte: ⚙️ yarn-upgrade__0*630 ([b2b6dd5](https://github.com/memaudio/memaudio-www/commit/b2b6dd55e8b1899c9e696b0c00367c30739adb27))
+* types for react-spring but this would need a real refactoring ([1e02f15](https://github.com/memaudio/memaudio-www/commit/1e02f15d706bc4d883eb16f998e326e976064638))
+
 ## [1.0.48](https://github.com/memaudio/memaudio-www/compare/v1.0.47...v1.0.48) (2020-08-02)
 
 

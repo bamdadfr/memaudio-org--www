@@ -1177,10 +1177,10 @@
     prettier "^2.0.5"
     typescript "^3.9.7"
 
-"@bamdadsabbagh/stylelint-config@^1.2.40":
-  version "1.2.40"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.40.tgz#be4e09b581ec28f70b1730366a5755619d4e1ddb"
-  integrity sha512-4XIrri+VAVisRmrhpE1EVTFRbOzrQtR3voJn9eQYnv67S1IpzfY6oH0A1ypSyN2LCUC7opuTc6XgPTLVUW/GIQ==
+"@bamdadsabbagh/stylelint-config@^1.2.41":
+  version "1.2.41"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.41.tgz#0dcd39c4aab49a9719514ad732b4a3d4531c0ac7"
+  integrity sha512-Wxzlk16PnoVIAhJi0moNY05Q5Z3Z0y+2z3jghrimWCoCCZLywtEOGieEd3MVaYQCxFVeb0qtCLuWpAXdjBzgOw==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"
@@ -4201,9 +4201,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.378, electron-to-chromium@^1.3.523:
-  version "1.3.529"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.529.tgz#a7eed559bc848a7c8d95026be7d8929e3f9af169"
-  integrity sha512-n3sriLldqNyjBlosbnPftjCY+m1dVOY307I1Y0HaHAqDGe3hRvK7ksJwWd+qs599ybR4jobCo1+7zXM9GyNMSA==
+  version "1.3.530"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.530.tgz#9b1033f5221cece94eeb3ec98db27227177fd196"
+  integrity sha512-jnKBqvkXyxo6Tr245YyghzSMjmrA+uzQn+rwLjd3n+Y3sad0eWPzAXfa2lDwSikQu0I5reYacZjmQjCRH9VQdg==
 
 elliptic@^6.5.3:
   version "6.5.3"

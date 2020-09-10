@@ -1,3 +1,11 @@
+## [1.0.86](https://github.com/memaudio/memaudio-www/compare/v1.0.85...v1.0.86) (2020-09-10)
+
+
+### Bug Fixes
+
+* asfalte: 🔨 git-commit-force-release__push ([260078f](https://github.com/memaudio/memaudio-www/commit/260078ff1a46af89a8f420562fa15fb5e46c434b))
+* updated workflows [force-release] ([4f2da51](https://github.com/memaudio/memaudio-www/commit/4f2da51f6c3fcb2de521e2f2a0e2d8b52c5986e5))
+
 ## [1.0.85](https://github.com/memaudio/memaudio-www/compare/v1.0.84...v1.0.85) (2020-09-10)
 
 

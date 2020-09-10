@@ -1,8 +1,8 @@
-name: yarn-upgrade__0x100
+name: yarn-upgrade__0x130
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '30 * * * *'
 
 jobs:
   yarn-upgrade:

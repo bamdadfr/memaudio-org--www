@@ -1,3 +1,10 @@
+## [1.0.116](https://github.com/memaudio/memaudio-www/compare/v1.0.115...v1.0.116) (2020-10-22)
+
+
+### Bug Fixes
+
+* asfalte: 🐳 docker-base-image-check-gpr__0x630 ([8395be8](https://github.com/memaudio/memaudio-www/commit/8395be84cb55991ee30c9ccff8e1a69999c57103))
+
 ## [1.0.115](https://github.com/memaudio/memaudio-www/compare/v1.0.114...v1.0.115) (2020-10-22)
 
 

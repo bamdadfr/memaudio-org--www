@@ -1,20 +1,20 @@
 export interface PageState {
-    redirect: string | null
-    transition: boolean
+    redirect: string | null;
+    transition: boolean;
 }
 
 export const SET_PAGE_REDIRECT = 'SET_PAGE_REDIRECT'
 
 interface SetPageRedirect {
-    type: typeof SET_PAGE_REDIRECT
-    payload: PageState['redirect']
+    type: typeof SET_PAGE_REDIRECT;
+    payload: PageState['redirect'];
 }
 
 export const SET_PAGE_TRANSITION = 'SET_PAGE_TRANSITION'
 
 interface SetPageTransition {
-    type: typeof SET_PAGE_TRANSITION
-    payload: PageState['transition']
+    type: typeof SET_PAGE_TRANSITION;
+    payload: PageState['transition'];
 }
 
 export type PageActionTypes = SetPageRedirect | SetPageTransition

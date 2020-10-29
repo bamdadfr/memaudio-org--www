@@ -1,11 +1,12 @@
 import {
-    AlbumsState,
+    // AlbumsState,
     AlbumsActionTypes,
     SET_ALBUMS,
 } from './types'
 
-// eslint-disable-next-line import/prefer-default-export
-export const setAlbums = (status: AlbumsState['albums']): AlbumsActionTypes => ({
+// TODO: adapt to TS4
+// export const setAlbums = (status: AlbumsState['albums']): AlbumsActionTypes => ({
+export const setAlbums = (status: any): AlbumsActionTypes => ({
     'type': SET_ALBUMS,
     'payload': status,
 })

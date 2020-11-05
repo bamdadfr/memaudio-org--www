@@ -1,8 +1,10 @@
 # memaudio
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/06410ab9e15045bd9327eb71e4d8ddf2)](https://app.codacy.com/manual/bamdadsabbagh/memaudio-www?utm_source=github.com&utm_medium=referral&utm_content=bamdadsabbagh/memaudio-www&utm_campaign=Badge_Grade_Dashboard)
-![David](https://img.shields.io/david/memaudio/memaudio-www)
-![David](https://img.shields.io/david/dev/memaudio/memaudio-www)
+[![version](https://img.shields.io/github/v/release/memaudio/memaudio-www)](#-memaudio)
+
+[![codacy](https://api.codacy.com/project/badge/Grade/06410ab9e15045bd9327eb71e4d8ddf2)](#-memaudio)
+
+[![dependencies](https://img.shields.io/david/memaudio/memaudio-www)](#-memaudio) [![snyk](https://img.shields.io/snyk/vulnerabilities/github/memaudio/memaudio-www)](#-memaudio)
 
 Web based audio memory (POC)
 

@@ -1,3 +1,17 @@
+## [1.1.9](https://github.com/memaudio/memaudio-www/compare/v1.1.8...v1.1.9) (2020-11-06)
+
+
+### Bug Fixes
+
+* asfalte: ⚙️ yarn-upgrade__0x100 ([bcea403](https://github.com/memaudio/memaudio-www/commit/bcea4039d1252cef7d9d69e95ded2d212b452d27))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([5042f84](https://github.com/memaudio/memaudio-www/commit/5042f844050d259ac38437e053a59e5672b251c7))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([b9e1366](https://github.com/memaudio/memaudio-www/commit/b9e13665406979dd694a5139d46dcba47977563c))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([9046dd2](https://github.com/memaudio/memaudio-www/commit/9046dd23be0842e1af3bf43627a3a003bb6b75c8))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([fc36616](https://github.com/memaudio/memaudio-www/commit/fc366160efc59f8e7460f550f4f01ffcb0534292))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([39e595e](https://github.com/memaudio/memaudio-www/commit/39e595e0cf245c7a18975164c2eeabb0e83fb052))
+* asfalte: 🐳 docker-base-image-check-gpr__0x630 ([1138740](https://github.com/memaudio/memaudio-www/commit/1138740b80b47626bd9d219bdfc09632d80e4508))
+* better package.json ([eb2deaa](https://github.com/memaudio/memaudio-www/commit/eb2deaaef798cfbcff15ae0d2ccac10f0d596666))
+
 ## [1.1.8](https://github.com/memaudio/memaudio-www/compare/v1.1.7...v1.1.8) (2020-11-05)
 
 

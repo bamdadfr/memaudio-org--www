@@ -24,7 +24,12 @@ const Home = (props: any): any => {
 
     const Front = (): any => (
         <div className="card-content">
-            <div className="card-content-main color-white icon" onClick={() => trigger ()}>
+            <div
+                className="card-content-main color-white icon"
+                onClick={(): any => trigger ()}
+                onKeyDown={(): void => undefined}
+                role="presentation"
+            >
                 <FiPlay />
             </div>
         </div>

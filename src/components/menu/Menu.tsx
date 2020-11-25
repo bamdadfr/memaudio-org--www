@@ -64,7 +64,12 @@ const Menu = (props: any): any => {
     }
 
     const AFront = (): any => (
-        <div className="card-content color-white" onClick={() => ATrig ()}>
+        <div
+            className="card-content color-white"
+            onClick={(): any => ATrig ()}
+            onKeyDown={(): void => undefined}
+            role="presentation"
+        >
             <div className="card-content-main icon">
                 <FaHeadphones />
             </div>
@@ -88,7 +93,12 @@ const Menu = (props: any): any => {
     )
 
     const CFront = (): any => (
-        <div className="card-content color-blue" onClick={() => CTrig ()}>
+        <div
+            className="card-content color-blue"
+            onClick={(): any => CTrig ()}
+            onKeyDown={(): void => undefined}
+            role="presentation"
+        >
             <div className="card-content-main icon">
                 <FaQuestion />
             </div>
@@ -96,7 +106,12 @@ const Menu = (props: any): any => {
     )
 
     const DFront = (): any => (
-        <div className="card-content color-yellow" onClick={() => DTrig ()}>
+        <div
+            className="card-content color-yellow"
+            onClick={(): any => DTrig ()}
+            onKeyDown={(): void => undefined}
+            role="presentation"
+        >
             <div className="card-content-main icon">
                 <FiPlay />
             </div>

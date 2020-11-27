@@ -1,14 +1,31 @@
-# memaudio
+#
 
-[![version](https://img.shields.io/github/v/release/memaudio/memaudio-www)](#-memaudio)
+<p align=center>
+    <font size=10>
+        <a href="https://memaudio.org/">
+            Memaudio
+        </a>
+    </font>
+</p>
 
-[![codacy](https://api.codacy.com/project/badge/Grade/06410ab9e15045bd9327eb71e4d8ddf2)](#-memaudio)
+<p align=center>
+    Web based audio memory (proof of concept)
+</p>
 
-[![dependencies](https://img.shields.io/david/memaudio/memaudio-www)](#-memaudio) [![snyk](https://img.shields.io/snyk/vulnerabilities/github/memaudio/memaudio-www)](#-memaudio)
+<p align=center>
+    <font size=4>
+        <b>
+            ⚠️
+            <u>
+                unmaintained
+            </u>
+        </b>
+    </font>
+</p>
 
-Web based audio memory (POC)
+## state
 
-<https://memaudio.org/>
+latest working version is `v1.0.121`
 
 ## local dev
 
@@ -36,5 +53,5 @@ docker build -t memaudio-www-dev .
 docker run -d --name memaudio-www --restart=always -p 5007:80 memaudio-www-dev
 
 # production image
-docker run -d --name memaudio-www --restart=always -p 5007:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:latest
+docker run -d --name memaudio-www --restart=always -p 5007:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:v1.0.121
 ```

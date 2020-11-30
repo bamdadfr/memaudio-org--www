@@ -1,26 +1,36 @@
 #
 
 <p align=center>
-    <font size=10>
-        <a href="https://memaudio.org/">
-            Memaudio
-        </a>
-    </font>
+  <a href="https://memaudio.org/"><img width=150 src="https://raw.githubusercontent.com/memaudio/memaudio-www/master/public/android-chrome-512x512.png"></a>
 </p>
 
 <p align=center>
-    Web based audio memory (proof of concept)
+  web based audio memory (proof of concept)
+  <br>
+  <b>
+    ⚠️ unmaintained
+  </b>
 </p>
 
 <p align=center>
-    <font size=4>
-        <b>
-            ⚠️
-            <u>
-                unmaintained
-            </u>
-        </b>
-    </font>
+  <a href="https://github.com/memaudio/memaudio-www"><img src="https://img.shields.io/github/stars/memaudio/memaudio-www?label=git"></a>
+  <img src="https://img.shields.io/github/license/memaudio/memaudio-www">
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/github/languages/count/memaudio/memaudio-www">
+  <img  src="https://img.shields.io/github/languages/top/memaudio/memaudio-www">
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/github/v/release/memaudio/memaudio-www">
+  <img src="https://api.codeclimate.com/v1/badges/d03ca633f0cac75c7520/maintainability">
+</p>
+
+<p align=center>
+  <img src="https://img.shields.io/david/memaudio/memaudio-www">
+  <img src="https://img.shields.io/david/dev/memaudio/memaudio-www">
+  <img src="https://img.shields.io/snyk/vulnerabilities/github/memaudio/memaudio-www">
 </p>
 
 ## state

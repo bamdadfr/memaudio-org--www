@@ -1152,10 +1152,10 @@
     prettier "^2.0.5"
     typescript "^4.0.5"
 
-"@bamdadsabbagh/stylelint-config@^1.2.43":
-  version "1.2.124"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.124.tgz#a887ccc7640b30eb14c551142caab2895fa78c44"
-  integrity sha512-cDLyZCXcUgDOph+yWrtRLw6P0Z62ecIV4XFaW4oKHxiJc5Lxx96I0euhrWPxdtiowF9lPxh7OZNVe/kDINjMKg==
+"@bamdadsabbagh/stylelint-config@^1.2.150":
+  version "1.2.150"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/stylelint-config/-/stylelint-config-1.2.150.tgz#7752fa05ec9406f3d9fcdb0037bd884b20640d7a"
+  integrity sha512-G1+T6RqQG7mFkxQhOKbEYlsm2fA8NRJMOxX9UmjmfBWC6yVOZrTt5JUtpF8cwQ/3AwwpfeCe5woUIgDZJpgQ3g==
   dependencies:
     stylelint "^13.5.0"
     stylelint-config-prettier "^8.0.1"

@@ -13,10 +13,6 @@
 </p>
 
 <p align=center>
-  <img src="https://img.shields.io/badge/role-lead-blueviolet">
-</p>
-
-<p align=center>
   <a href="https://github.com/memaudio/memaudio-www"><img src="https://img.shields.io/github/stars/memaudio/memaudio-www?label=git"></a>
   <img src="https://img.shields.io/github/license/memaudio/memaudio-www">
 </p>
@@ -73,8 +69,8 @@ docker build -t memaudio-www-dev .
 
 ```bash
 # local dev image
-docker run -d --name memaudio-www --restart=always -p 5007:80 memaudio-www-dev
+docker run -d --name memaudio-www --restart=always -p 8080:80 memaudio-www-dev
 
 # production image
-docker run -d --name memaudio-www --restart=always -p 5007:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:v1.0.121
+docker run -d --name memaudio-www --restart=always -p 8080:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:v1.0.121
 ```

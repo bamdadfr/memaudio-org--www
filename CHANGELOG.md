@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/memaudio/memaudio-www/compare/v1.2.0...v1.2.1) (2021-04-02)
+
+
+### Bug Fixes
+
+* **docker:** removed docker deployment ([9a55f8d](https://github.com/memaudio/memaudio-www/commit/9a55f8d4e74bd49733d7ded9a8c7cf438c4ccf7c))
+
 # [1.2.0](https://github.com/memaudio/memaudio-www/compare/v1.1.33...v1.2.0) (2021-04-02)
 
 

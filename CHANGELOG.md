@@ -1,3 +1,20 @@
+# [1.2.0](https://github.com/memaudio/memaudio-www/compare/v1.1.33...v1.2.0) (2021-04-02)
+
+
+### Bug Fixes
+
+* **app:** rendering pdf and file structure ([ce3e27a](https://github.com/memaudio/memaudio-www/commit/ce3e27a8036995b9b64e29cb97232461da8bc8cb))
+* **ci:** added workflows ([6473907](https://github.com/memaudio/memaudio-www/commit/6473907315c445a27ca2e6360db3e6fd77c450de))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([7fc82f4](https://github.com/memaudio/memaudio-www/commit/7fc82f497a5b039acdc92b2d830171d839e0dc04))
+* asfalte: ⚙️ yarn-upgrade__0x100 ([3ccb1bb](https://github.com/memaudio/memaudio-www/commit/3ccb1bba808f9e4b18b235565071edb347f54f50))
+* upgrade react-player from 2.7.0 to 2.7.2 ([0e199de](https://github.com/memaudio/memaudio-www/commit/0e199de25e6a45bff0a7c499af4dc45bc2811b4b))
+
+
+### Features
+
+* **app:** refactor WIP ([f529760](https://github.com/memaudio/memaudio-www/commit/f5297608f30b6bbd86416ee9ef5163f983bf6028))
+* **app:** refactor WIP ([8a3b698](https://github.com/memaudio/memaudio-www/commit/8a3b69820d4a30c145fb2ca61f4e3d0b1bcc9711))
+
 ## [1.1.33](https://github.com/memaudio/memaudio-www/compare/v1.1.32...v1.1.33) (2020-11-29)
 
 

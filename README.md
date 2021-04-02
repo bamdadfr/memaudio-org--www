@@ -35,7 +35,6 @@
 
 <p align=center>
   <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
-  <img src="https://img.shields.io/badge/cd-docker-yellowgreen">
 </p>
 
 <p align=center>

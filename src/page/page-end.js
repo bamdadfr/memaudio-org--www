@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaThumbsUp } from 'react-icons/fa'
 import { StoreMap } from '../store/store-map'
-import { AnimationFlip } from './animation-flip'
+import { AnimationFlip } from '../components/animation-flip'
 import soundFiles from '../assets/audio/general'
 
 export const PageEnd = StoreMap (({

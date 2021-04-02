@@ -2,10 +2,9 @@ import React from 'react'
 import { FaHeadphones, FaQuestion } from 'react-icons/fa'
 import { FiUser, FiPlay } from 'react-icons/fi'
 import { StoreMap } from '../store/store-map'
-import { AnimationFlip } from './animation-flip'
+import { AnimationFlip } from '../components/animation-flip'
 import soundFiles from '../assets/audio/general'
-
-const posterPDF = require ('../assets/doc/poster.pdf')
+import pdfFile from '../assets/doc/poster.pdf'
 
 export const PageMenu = StoreMap (({
     setAudioPlaylist, setAudioBackground, setPageRedirect, setPageTransition,
@@ -41,7 +40,7 @@ export const PageMenu = StoreMap (({
 
         setTimeout (() => {
 
-            window.open (posterPDF, '_blank')
+            window.open (pdfFile, '_blank')
 
             setPageRedirect ('/menu')
 

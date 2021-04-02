@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiPlay } from 'react-icons/fi'
 import { StoreMap } from '../store/store-map'
-import { AnimationFlip } from './animation-flip'
+import { AnimationFlip } from '../components/animation-flip'
 import './page-home.css'
 
 export const PageHome = StoreMap (({

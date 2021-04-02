@@ -1,17 +1,15 @@
 import {
-    AlbumsState,
-    AlbumsActionTypes,
     SET_ALBUMS,
 } from './types'
 
-const initState: AlbumsState = {
+const initState = {
     'albums': [],
 }
 
 export default (
     state = initState,
-    action: AlbumsActionTypes,
-): AlbumsState => {
+    action,
+) => {
 
     switch (action.type) {
 
@@ -23,7 +21,7 @@ export default (
 
         default:
             return state
-    
+
     }
 
 }

@@ -1,12 +1,10 @@
 import React from 'react'
-import reduxMap from '../../store/map'
-import musicFiles from '../../assets/audio/albums/music'
+import { StoreMap } from '../store/store-map'
+import musicFiles from '../assets/audio/albums/music'
 
-const Level = (props: any): any => {
+export const Level = StoreMap (({ size, setGameDeck }) => {
 
-    const { size, setGameDeck } = props
-
-    const shuffleArray = (array: any): any => {
+    const shuffleArray = (array) => {
 
         for (let i = array.length - 1; i > 0; i--) {
 
@@ -17,11 +15,11 @@ const Level = (props: any): any => {
             array[i] = array[j]
 
             array[j] = temp
-        
+
         }
 
         return array
-    
+
     }
 
     React.useEffect (() => {
@@ -36,9 +34,9 @@ const Level = (props: any): any => {
             ...miniDeck,
         ])
 
-        const obj: any = {}
+        const obj = {}
 
-        deck.map ((e: any, i: any): any => {
+        deck.map ((e, i) => {
 
             obj[i] = {
                 'key': i,
@@ -50,25 +48,23 @@ const Level = (props: any): any => {
             }
 
             return null
-        
+
         })
 
-        const newArray: any = []
+        const newArray = []
 
-        Object.keys (obj).map ((e: any): any => {
+        Object.keys (obj).map ((e) => {
 
             newArray.push (obj[e])
 
             return null
-        
+
         })
 
         setGameDeck (newArray)
-    
+
     }, [])
 
     return null
 
-}
-
-export default reduxMap (Level)
+})

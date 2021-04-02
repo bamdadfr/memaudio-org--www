@@ -1,37 +1,27 @@
 import React from 'react'
 import { useSpring, animated as a } from 'react-spring'
-import reduxMap from '../../store/map'
-import FadeIn from './FadeIn'
-import './flip.css'
+import { StoreMap } from '../store/store-map'
+import { AnimationFadeIn } from './animation-fade-in'
+import './animation-flip.css'
 
-const Flip = (props: any): any => {
+export const AnimationFlip = StoreMap (({
+    page, game, Key, flipMe, Front, Back, isGame, noClickFront, noClickBack,
+    size, audioFile, setAudioPlaylist, setGameCardsOpened,
+}) => {
 
-    const {
-        page, game, Key, flipMe, Front, Back, isGame, noClickFront, noClickBack,
-        size, audioFile, setAudioPlaylist, setGameCardsOpened,
-    } = props
-
-    let isBack: any = null
+    let isBack = null
 
     // typeof Back === 'undefined' ? isBack = false : isBack = true
 
-    if (typeof Back === 'undefined') {
-
-        isBack = false
-    
-    } else {
-
-        isBack = true
-    
-    }
+    isBack = typeof Back !== 'undefined'
 
     if (page.transition) {
 
         isBack = false
-    
+
     }
 
-    const [flipped, set] = React.useState<boolean> (false)
+    const [flipped, set] = React.useState (false)
     // const [frontColor, setFrontColor] = React.useState('color-white')
     let backColor = ''
 
@@ -40,22 +30,22 @@ const Flip = (props: any): any => {
         if (game.deck[Key].opened) {
 
             backColor = 'color-blue'
-        
+
         }
 
         if (game.deck[Key].matched) {
 
             backColor = 'color-yellow'
-        
+
         }
-    
+
     } else {
 
         backColor = 'color-white'
-    
+
     }
 
-    const openCard = (e: any, fromFront?: any): any => {
+    const openCard = (e, fromFront) => {
 
         if (isGame) {
 
@@ -69,7 +59,7 @@ const Flip = (props: any): any => {
             game.deck[Key].opened = true
 
             setGameCardsOpened (array)
-        
+
         }
 
         if (typeof audioFile !== 'undefined' && fromFront === true) {
@@ -77,14 +67,14 @@ const Flip = (props: any): any => {
             setAudioPlaylist ([
                 audioFile,
             ])
-        
+
         }
 
         set ((s) => !s)
-    
+
     }
 
-    const { transform, opacity }: any = useSpring ({
+    const { transform, opacity } = useSpring ({
         'opacity': flipped ? 1 : 0,
         'transform': `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
         'config': { 'mass': 10, 'tension': 500, 'friction': 80 },
@@ -97,15 +87,15 @@ const Flip = (props: any): any => {
             if (page.transition === true) {
 
                 set (true)
-            
+
             } else {
 
                 set (false)
-            
+
             }
-        
+
         }, 350)
-    
+
     }, [page.transition])
 
     React.useEffect (() => {
@@ -121,43 +111,35 @@ const Flip = (props: any): any => {
                     game.deck[Key].flipMe = false
 
                     game.deck[Key].opened = false
-                
+
                 }
-            
+
             }, 500)
-        
+
         }
-            
+
     }, [flipMe])
 
     // }, [game.deck[Key].flipMe])
 
-    const output = (): any => {
+    const output = () => {
 
         const cellSize = `cell-x${size.toString ()}`
-        let frontClickable = null
+        let frontClickable = () => (noClickFront ? '' : ' clickable')
 
         if (isGame) {
 
-            frontClickable = (): any => (noClickFront || game.locked || game.deck[Key].locked ? '' : ' clickable')
-        
-        } else {
+            frontClickable = () => (noClickFront || game.locked || game.deck[Key].locked ? '' : ' clickable')
 
-            frontClickable = (): any => (noClickFront ? '' : ' clickable')
-        
         }
 
         const frontClasses = `flipper${frontClickable ()}`
-        let backClickable = null
+        let backClickable = () => (noClickBack ? '' : ' clickable')
 
         if (isGame) {
 
-            backClickable = (): any => (noClickBack || game.locked || game.deck[Key].locked ? '' : ' clickable')
-        
-        } else {
+            backClickable = () => (noClickBack || game.locked || game.deck[Key].locked ? '' : ' clickable')
 
-            backClickable = (): any => (noClickBack ? '' : ' clickable')
-        
         }
 
         const backClasses = `flipper-back x${size.toString ()}${backClickable ()} ${backColor}`
@@ -169,32 +151,32 @@ const Flip = (props: any): any => {
                     <div className={cellSize}>
                         <a.div
                             className={frontClasses}
-                            style={{ 'opacity': opacity.interpolate ((o: any): any => (1 - o)), transform }}
-                            onClick={(e: any): any => (
+                            style={{ 'opacity': opacity.interpolate ((o) => (1 - o)), transform }}
+                            onClick={(e) => (
                                 noClickFront || game.locked || game.deck[Key].locked
                                     ? null : openCard (e, true)
                             )}
                         >
-                            <Front />
+                            <Front/>
                         </a.div>
                         {isBack
                             ? (
                                 <a.div
                                     className={backClasses}
-                                    style={{ opacity, 'transform': transform.interpolate ((t: any) => `${t} rotateY(180deg)`) }}
-                                    onClick={(e: any): any => (
+                                    style={{ opacity, 'transform': transform.interpolate ((t) => `${t} rotateY(180deg)`) }}
+                                    onClick={(e) => (
                                         noClickBack || game.locked || game.deck[Key].locked
                                             ? null : openCard (e)
                                     )}
                                 >
-                                    <Back />
+                                    <Back/>
                                 </a.div>
                             )
                             : null}
                     </div>
                 </>
             )
-        
+
         }
 
         return (
@@ -202,36 +184,34 @@ const Flip = (props: any): any => {
                 <div className={cellSize}>
                     <a.div
                         className={frontClasses}
-                        style={{ 'opacity': opacity.interpolate ((o: any) => 1 - o), transform }}
-                        onClick={(e: any): any => (
+                        style={{ 'opacity': opacity.interpolate ((o) => 1 - o), transform }}
+                        onClick={(e) => (
                             noClickFront
                                 ? null : openCard (e, true)
                         )}
                     >
-                        <Front />
+                        <Front/>
                     </a.div>
                     {isBack
                         ? (
                             <a.div
                                 className={backClasses}
-                                style={{ opacity, 'transform': transform.interpolate ((t: any) => `${t} rotateY(180deg)`) }}
-                                onClick={(e: any): any => (
+                                style={{ opacity, 'transform': transform.interpolate ((t) => `${t} rotateY(180deg)`) }}
+                                onClick={(e) => (
                                     noClickBack
                                         ? null : openCard (e)
                                 )}
                             >
-                                <Back />
+                                <Back/>
                             </a.div>
                         )
                         : null}
                 </div>
             </>
         )
-    
+
     }
 
-    return <FadeIn payload={output ()} />
+    return <AnimationFadeIn payload={output ()}/>
 
-}
-
-export default reduxMap (Flip)
+})

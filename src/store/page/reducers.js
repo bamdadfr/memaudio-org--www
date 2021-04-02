@@ -1,16 +1,14 @@
 import {
-    PageState,
-    PageActionTypes,
     SET_PAGE_REDIRECT,
     SET_PAGE_TRANSITION,
 } from './types'
 
-const initState: PageState = {
+const initState = {
     'redirect': null,
     'transition': false,
 }
 
-export default (state = initState, action: PageActionTypes): PageState => {
+export default (state = initState, action) => {
 
     switch (action.type) {
 
@@ -29,7 +27,7 @@ export default (state = initState, action: PageActionTypes): PageState => {
 
         default:
             return state
-    
+
     }
 
 }

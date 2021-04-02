@@ -1,14 +1,21 @@
 import React from 'react'
-import reduxMap from '../../store/map'
-import Flip from '../anim/Flip'
-import soundFiles from '../../assets/audio/general'
+import { StoreMap } from '../store/store-map'
+import { AnimationFlip } from './animation-flip'
+import soundFiles from '../assets/audio/general'
 
-const Game = (props: any): any => {
-
-    const {
-        audio, game, setPageRedirect, setPageTransition, setAudioPlaylist, setAudioBackground,
-        setGameLocked, setGameCardsOpened, setGameCardsMatched, setGameCard, setGameEnded,
-    } = props
+export const GameView = StoreMap (({
+    audio,
+    game,
+    setPageRedirect,
+    setPageTransition,
+    setAudioPlaylist,
+    setAudioBackground,
+    setGameLocked,
+    setGameCardsOpened,
+    setGameCardsMatched,
+    setGameCard,
+    setGameEnded,
+}) => {
 
     React.useEffect (() => {
 
@@ -19,26 +26,26 @@ const Game = (props: any): any => {
             setAudioPlaylist ([
                 soundFiles.game01,
             ])
-        
+
         }
-    
+
     }, [])
 
-    const Front = (): any => (
+    const Front = () => (
         <>
             <div className="card-content color-white">
-                <div className="card-content-main icon" />
+                <div className="card-content-main icon"/>
             </div>
         </>
     )
 
-    const Back = (): any => (
+    const Back = () => (
         <div className="card-content">
-            <div className="card-content-main" />
+            <div className="card-content-main"/>
         </div>
     )
 
-    const matchCards = (): any => {
+    const matchCards = () => {
 
         setGameCardsMatched ({
             ...game.cardsMatched,
@@ -48,10 +55,10 @@ const Game = (props: any): any => {
         setGameCard (game.card + 1)
 
         setGameCardsOpened ([])
-    
+
     }
 
-    const unmatchCards = (): any => {
+    const unmatchCards = () => {
 
         game.deck[game.cardsOpened[0].key].opened = true
 
@@ -62,10 +69,10 @@ const Game = (props: any): any => {
         game.deck[game.cardsOpened[1].key].flipMe = true
 
         setGameCardsOpened ([])
-    
+
     }
 
-    const testCardsOpened = (): any => {
+    const testCardsOpened = () => {
 
         if (game.cardsOpened[0].src === game.cardsOpened[1].src) {
 
@@ -84,37 +91,37 @@ const Game = (props: any): any => {
             matchCards ()
 
             setGameLocked (false)
-        
+
         } else {
 
             unmatchCards ()
 
             setGameLocked (false)
-        
+
         }
-    
+
     }
 
-    React.useEffect ((): any => {
+    React.useEffect (() => {
 
         if (Object.keys (game.cardsOpened).length === 2) {
 
             setGameLocked (true)
 
             testCardsOpened ()
-        
+
         }
-    
+
     }, [Object.keys (game.cardsOpened).length])
 
-    React.useEffect ((): any => {
+    React.useEffect (() => {
 
         if (game.deck.length / 2 === game.card) {
 
             setGameEnded (true)
-        
+
         }
-    
+
     }, [game.card])
 
     React.useEffect (() => {
@@ -124,13 +131,13 @@ const Game = (props: any): any => {
             setPageTransition (true)
 
             setPageRedirect ('/end')
-        
+
         }
-    
+
     }, [game.ended, audio.src])
 
-    const printDeck = game.deck.map ((card: any): any => (
-        <Flip
+    const printDeck = game.deck.map ((card) => (
+        <AnimationFlip
             Key={card.key}
             size={game.difficulty}
             noClickBack
@@ -148,6 +155,4 @@ const Game = (props: any): any => {
         </>
     )
 
-}
-
-export default reduxMap (Game)
+})

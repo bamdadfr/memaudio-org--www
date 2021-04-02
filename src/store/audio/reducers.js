@@ -1,12 +1,10 @@
 import {
-    AudioState,
-    AudioActionTypes,
     SET_AUDIO_SRC,
     SET_AUDIO_PLAYLIST,
     SET_AUDIO_BACKGROUND,
 } from './types'
 
-const initState: AudioState = {
+const initState = {
     'src': null,
     'playlist': [],
     'background': false,
@@ -14,8 +12,8 @@ const initState: AudioState = {
 
 export default (
     state = initState,
-    action: AudioActionTypes,
-): AudioState => {
+    action,
+) => {
 
     switch (action.type) {
 
@@ -39,7 +37,7 @@ export default (
 
         default:
             return state
-    
+
     }
 
 }

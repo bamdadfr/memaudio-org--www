@@ -1,6 +1,4 @@
 import {
-    GameState,
-    GameActionTypes,
     SET_GAME_DIFFICULTY,
     SET_GAME_LOCKED,
     SET_GAME_DECK,
@@ -11,7 +9,7 @@ import {
     SET_GAME_CARDS_MATCHED,
 } from './types'
 
-const initState: GameState = {
+const initState = {
     'difficulty': 2,
     'locked': false,
     'ended': false,
@@ -24,8 +22,8 @@ const initState: GameState = {
 
 export default (
     state = initState,
-    action: GameActionTypes,
-): GameState => {
+    action,
+) => {
 
     switch (action.type) {
 
@@ -40,7 +38,7 @@ export default (
                 ...state,
                 'locked': action.payload,
             }
-    
+
         case SET_GAME_ENDED:
             return {
                 ...state,
@@ -52,34 +50,34 @@ export default (
                 ...state,
                 'deck': action.payload,
             }
-                    
+
         case SET_GAME_CARD:
             return {
                 ...state,
                 'card': action.payload,
             }
-        
+
         case SET_GAME_CARDS:
             return {
                 ...state,
                 'cards': action.payload,
             }
-                
+
         case SET_GAME_CARDS_OPENED:
             return {
                 ...state,
                 'cardsOpened': action.payload,
             }
-                    
+
         case SET_GAME_CARDS_MATCHED:
             return {
                 ...state,
                 'cardsMatched': action.payload,
             }
-                        
+
         default:
             return state
-    
+
     }
 
 }

@@ -5,11 +5,11 @@ import * as audioActions from './audio/actions'
 import * as albumsActions from './albums/actions'
 import * as gameActions from './game/actions'
 
-const mapStateToProps = (state: any): any => ({
+export const mapStateToProps = (state) => ({
     ...state,
 })
 
-const mapDispatchToProps = (dispatch: any): any => ({
+export const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators (
         {
             ...pageActions,
@@ -21,11 +21,7 @@ const mapDispatchToProps = (dispatch: any): any => ({
     ),
 })
 
-export default (component: any): any => {
-
-    return connect (
-        mapStateToProps,
-        mapDispatchToProps,
-    ) (component)
-
-}
+export const StoreMap = (component) => connect (
+    mapStateToProps,
+    mapDispatchToProps,
+) (component)

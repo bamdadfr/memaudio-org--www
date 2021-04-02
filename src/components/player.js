@@ -1,24 +1,22 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
-import reduxMap from '../../store/map'
+import { StoreMap } from '../store/store-map'
 
-const Audio = (props: any): any => {
+export const Player = StoreMap (({
+    audio, page, setAudioPlaylist, setAudioSrc,
+}) => {
 
-    const {
-        audio, page, setAudioPlaylist, setAudioSrc,
-    } = props
-
-    const generalRef = React.useRef<any> (null)
+    const generalRef = React.useRef (null)
     const [generalPlaying, setGeneralPlaying] = React.useState (true)
 
-    const unloadPlayer = (): any => {
+    const unloadPlayer = () => {
 
         if (audio.playlist.length > 0) {
 
             setAudioPlaylist (audio.playlist.splice (1, audio.playlist.length))
-        
+
         }
-    
+
     }
 
     React.useEffect (() => {
@@ -30,9 +28,9 @@ const Audio = (props: any): any => {
             setAudioSrc (null)
 
             setAudioPlaylist ([])
-        
+
         }
-    
+
     }, [page.transition, setAudioSrc, setAudioPlaylist])
 
     React.useEffect (() => {
@@ -42,21 +40,21 @@ const Audio = (props: any): any => {
             if (audio.src === audio.playlist[0]) {
 
                 generalRef.current.seekTo (0)
-            
+
             } else {
 
                 setAudioSrc (audio.playlist[0])
 
                 setGeneralPlaying (true)
-            
+
             }
-        
+
         } else {
 
             setAudioSrc (null)
-        
+
         }
-    
+
     }, [audio.playlist])
 
     return (
@@ -73,12 +71,10 @@ const Audio = (props: any): any => {
                 id="player-general"
                 ref={generalRef}
                 url={audio.src}
-                onEnded={(): any => unloadPlayer ()}
+                onEnded={() => unloadPlayer ()}
                 playing={generalPlaying}
             />
         </>
     )
 
-}
-
-export default reduxMap (Audio)
+})

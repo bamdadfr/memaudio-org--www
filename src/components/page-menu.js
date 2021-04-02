@@ -1,17 +1,15 @@
 import React from 'react'
 import { FaHeadphones, FaQuestion } from 'react-icons/fa'
 import { FiUser, FiPlay } from 'react-icons/fi'
-import reduxMap from '../../store/map'
-import Flip from '../anim/Flip'
-import soundFiles from '../../assets/audio/general'
+import { StoreMap } from '../store/store-map'
+import { AnimationFlip } from './animation-flip'
+import soundFiles from '../assets/audio/general'
 
-const posterPDF = require ('../../assets/doc/poster.pdf')
+const posterPDF = require ('../assets/doc/poster.pdf')
 
-const Menu = (props: any): any => {
-
-    const {
-        setAudioPlaylist, setAudioBackground, setPageRedirect, setPageTransition,
-    } = props
+export const PageMenu = StoreMap (({
+    setAudioPlaylist, setAudioBackground, setPageRedirect, setPageTransition,
+}) => {
 
     React.useEffect (() => {
 
@@ -22,22 +20,22 @@ const Menu = (props: any): any => {
             soundFiles.menu01,
             soundFiles.menu02,
         ])
-    
+
     }, [setAudioBackground, setAudioPlaylist])
 
-    const ATrig = (): any => {
+    const ATrig = () => {
 
         setPageTransition (true)
 
         setTimeout (() => {
 
             setPageRedirect ('/home')
-        
+
         }, 350 * 2.5)
-    
+
     }
 
-    const CTrig = (): any => {
+    const CTrig = () => {
 
         setPageTransition (true)
 
@@ -46,45 +44,46 @@ const Menu = (props: any): any => {
             window.open (posterPDF, '_blank')
 
             setPageRedirect ('/menu')
-        
+
         }, 350 * 2.5)
-    
+
     }
 
-    const DTrig = (): any => {
+    const DTrig = () => {
 
         setPageTransition (true)
 
         setTimeout (() => {
 
             setPageRedirect ('/game')
-        
+
         }, 350 * 2.5)
-    
+
     }
 
-    const AFront = (): any => (
+    const AFront = () => (
         <div
             className="card-content color-white"
-            onClick={(): any => ATrig ()}
-            onKeyDown={(): void => undefined}
-            role="presentation"
+            onClick={() => ATrig ()}
+            onKeyDown={() => undefined}
+            role="button"
+            tabIndex={0}
         >
             <div className="card-content-main icon">
-                <FaHeadphones />
+                <FaHeadphones/>
             </div>
         </div>
     )
 
-    const BFront = (): any => (
+    const BFront = () => (
         <div className="card-content color-red">
             <div className="card-content-main icon">
-                <FiUser />
+                <FiUser/>
             </div>
         </div>
     )
 
-    const BBack = (): any => (
+    const BBack = () => (
         <div className="card-content color-red">
             <div className="card-content-main text">
                 le mode multijoueurs n&lsquo;est pas encore disponible
@@ -92,48 +91,50 @@ const Menu = (props: any): any => {
         </div>
     )
 
-    const CFront = (): any => (
+    const CFront = () => (
         <div
             className="card-content color-blue"
-            onClick={(): any => CTrig ()}
-            onKeyDown={(): void => undefined}
-            role="presentation"
+            onClick={() => CTrig ()}
+            onKeyDown={() => undefined}
+            role="button"
+            tabIndex={0}
         >
             <div className="card-content-main icon">
-                <FaQuestion />
+                <FaQuestion/>
             </div>
         </div>
     )
 
-    const DFront = (): any => (
+    const DFront = () => (
         <div
             className="card-content color-yellow"
-            onClick={(): any => DTrig ()}
-            onKeyDown={(): void => undefined}
-            role="presentation"
+            onClick={() => DTrig ()}
+            onKeyDown={() => undefined}
+            role="button"
+            tabIndex={0}
         >
             <div className="card-content-main icon">
-                <FiPlay />
+                <FiPlay/>
             </div>
         </div>
     )
 
     return (
         <>
-            <Flip
+            <AnimationFlip
                 size={2}
                 Front={AFront}
             />
-            <Flip
+            <AnimationFlip
                 size={2}
                 Front={BFront}
                 Back={BBack}
             />
-            <Flip
+            <AnimationFlip
                 size={2}
                 Front={CFront}
             />
-            <Flip
+            <AnimationFlip
                 size={2}
                 canClose
                 Front={DFront}
@@ -141,6 +142,4 @@ const Menu = (props: any): any => {
         </>
     )
 
-}
-
-export default reduxMap (Menu)
+})

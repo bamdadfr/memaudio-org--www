@@ -42,35 +42,13 @@
   <img src="https://i.imgur.com/uogNBDr.gif">
 </p>
 
-## state
-
-latest working version is `v1.0.121`
-
-## local dev
+## Get started
 
 ```bash
-git clone https://github.com/bamdadsabbagh/memaudio-www.git
+git clone https://github.com/memaudio/memaudio-www.git
 cd memaudio-www
-yarn install
+yarn
 
 # http://localhost:3000/
 yarn start
-```
-
-## docker
-
-### local build
-
-```bash
-docker build -t memaudio-www-dev .
-```
-
-### run
-
-```bash
-# local dev image
-docker run -d --name memaudio-www --restart=always -p 8080:80 memaudio-www-dev
-
-# production image
-docker run -d --name memaudio-www --restart=always -p 8080:80 docker.pkg.github.com/memaudio/memaudio-www/memaudio-www:v1.0.121
 ```

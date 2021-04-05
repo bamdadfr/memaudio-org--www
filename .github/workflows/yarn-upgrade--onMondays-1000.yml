@@ -10,6 +10,8 @@ jobs:
     steps:
 
       - uses: actions/checkout@master
+        with:
+          token: ${{ secrets.PAT }}
 
       - uses: actions/setup-node@master
         with:

@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/memaudio/memaudio-www/compare/v1.2.2...v1.2.3) (2021-04-19)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([7cbdf6a](https://github.com/memaudio/memaudio-www/commit/7cbdf6ab4fb810073a8098c9952167dbc471eb91))
+
 ## [1.2.2](https://github.com/memaudio/memaudio-www/compare/v1.2.1...v1.2.2) (2021-04-12)
 
 

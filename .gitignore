@@ -22,6 +22,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/.idea/webServers.xml
-
 .eslintcache
+
+# nextjs
+.next
+
+# sentry
+sentry.properties
+
+# user dev
+TODO.md
+
+# env
+.env

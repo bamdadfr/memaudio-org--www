@@ -1,6 +1,0 @@
-{
-    "extends": "@bamdadsabbagh/stylelint-config",
-    "rules": {
-        "unit-no-unknown": null
-    }
-}

@@ -7,5 +7,5 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(${(props) => props.columns.toFixed (0)}, 1fr);
     grid-template-rows: repeat(${(props) => props.rows}, 1fr);
-    grid-gap: 0.2em;
+    grid-gap: 0.667rem;
 `

@@ -1,6 +1,7 @@
 import React from 'react'
 import { BackgroundComponent, GridComponent } from '../../components'
 import { Container, Wrapper } from './default.layout.styles'
+import { FadeAnimation } from '../../animations'
 
 /**
  * @description background made with react-spring
@@ -14,11 +15,13 @@ export function DefaultLayout ({ children }) {
         <>
             <BackgroundComponent/>
             <Container>
-                <Wrapper>
-                    <GridComponent cards={children.length}>
-                        {children}
-                    </GridComponent>
-                </Wrapper>
+                <FadeAnimation>
+                    <Wrapper>
+                        <GridComponent cards={children.length}>
+                            {children}
+                        </GridComponent>
+                    </Wrapper>
+                </FadeAnimation>
             </Container>
         </>
     )

@@ -1,0 +1,1 @@
+export { getFacesFromProps } from './get-faces-from-props'

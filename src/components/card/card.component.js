@@ -3,6 +3,7 @@ import { useSpring } from '@react-spring/web'
 import { useMeasure } from 'react-use'
 import { Container, Card } from './card.component.styles'
 import { CardConstants } from './card.constants'
+import { getFacesFromProps } from './utils'
 
 /**
  * @param {object} props react props
@@ -15,8 +16,7 @@ export function CardComponent ({
     color = CardConstants.color,
 }) {
 
-    const front = typeof children === 'object' ? children[0] : children
-    const back = typeof children === 'object' ? children[1] : null
+    const { front, back } = getFacesFromProps (children)
     const [flipped, setFlipped] = useState (false)
     const [ref, { width, height }] = useMeasure ()
 

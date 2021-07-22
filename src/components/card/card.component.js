@@ -15,8 +15,8 @@ export function CardComponent ({
     color = CardConstants.color,
 }) {
 
-    const front = children[0] ? children[0] : children
-    const back = children[1] ? children[1] : null
+    const front = typeof children === 'object' ? children[0] : children
+    const back = typeof children === 'object' ? children[1] : null
     const [flipped, setFlipped] = useState (false)
     const [ref, { width, height }] = useMeasure ()
 

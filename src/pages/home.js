@@ -17,7 +17,12 @@ export default function HomePage () {
                     <FaHeadphones/>
                 </CardComponent>
                 <CardComponent color={Theme.red}>
-                    <FiUser/>
+                    <div>
+                        <FiUser/>
+                    </div>
+                    <div>
+                        le mode multijoueurs n&rsquo;est pas encore disponible
+                    </div>
                 </CardComponent>
                 <CardComponent color={Theme.blue}>
                     <FaQuestion/>

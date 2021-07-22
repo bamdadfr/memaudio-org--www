@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSpring } from '@react-spring/web'
 import { useMeasure } from 'react-use'
 import { Container, Card } from './card.component.styles'
@@ -9,11 +9,13 @@ import { getFacesFromProps } from './utils'
  * @param {object} props react props
  * @param {Array.<React.ReactElement>} props.children content of the card
  * @param {string} props.color color
+ * @param {Function} props.onFlipped callback
  * @returns {React.ReactElement} react component
  */
 export function CardComponent ({
     children,
     color = CardConstants.color,
+    onFlipped = () => undefined,
 }) {
 
     const { front, back } = getFacesFromProps (children)
@@ -25,6 +27,19 @@ export function CardComponent ({
         'transform': `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
         'config': { 'mass': 10, 'tension': 500, 'friction': 80 },
     })
+
+    useEffect (() => {
+
+        if (!flipped) return
+
+        // wait flip animation end
+        setTimeout (() => {
+
+            onFlipped ()
+
+        }, 400)
+
+    }, [flipped])
 
     return (
         <>

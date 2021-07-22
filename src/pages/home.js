@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { FaHeadphones, FaQuestion } from 'react-icons/fa'
 import { FiUser, FiPlay } from 'react-icons/fi'
+import { useRouter } from 'next/router'
 import { CardComponent } from '../components'
 import { DefaultLayout } from '../layouts'
 import { Theme } from '../app/styles'
@@ -10,10 +11,18 @@ import { Theme } from '../app/styles'
  */
 export default function HomePage () {
 
+    const router = useRouter ()
+
+    const handleFlippedHeadphones = useCallback (async () => {
+
+        await router.push ('/')
+
+    }, [])
+
     return (
         <>
             <DefaultLayout>
-                <CardComponent>
+                <CardComponent onFlipped={handleFlippedHeadphones}>
                     <FaHeadphones/>
                 </CardComponent>
                 <CardComponent color={Theme.red}>

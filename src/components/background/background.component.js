@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { animated, useSpring } from 'react-spring'
-import { Colors, Container } from './background.component.styles'
+import { Container } from './background.component.styles'
+import { Theme } from '../../app/styles'
 
 /**
  * @returns {React.ReactElement} react component
@@ -16,7 +17,7 @@ export function BackgroundComponent () {
             'width': '0%',
             'height': '0%',
             'opacity': '0.05',
-            'background': Colors.emerald,
+            'background': Theme.emerald,
         },
         'to': async (next) => {
 
@@ -27,24 +28,24 @@ export function BackgroundComponent () {
                     'top': '0%',
                     'width': '100%',
                     'height': '100%',
-                    'background': Colors.soap,
+                    'background': Theme.soap,
                 })
 
-                await next ({ 'height': '50%', 'background': Colors.emerald })
+                await next ({ 'height': '50%', 'background': Theme.emerald })
 
-                await next ({ 'width': '50%', 'left': '50%', 'background': Colors.pink })
+                await next ({ 'width': '50%', 'left': '50%', 'background': Theme.pink })
 
-                await next ({ 'top': '0%', 'height': '100%', 'background': Colors.nickel })
+                await next ({ 'top': '0%', 'height': '100%', 'background': Theme.nickel })
 
-                await next ({ 'top': '50%', 'height': '50%', 'background': Colors.darkGreen })
+                await next ({ 'top': '50%', 'height': '50%', 'background': Theme.darkGreen })
 
-                await next ({ 'width': '100%', 'left': '0%', 'background': Colors.saffron })
+                await next ({ 'width': '100%', 'left': '0%', 'background': Theme.saffron })
 
-                await next ({ 'width': '50%', 'background': Colors.kombuGreen })
+                await next ({ 'width': '50%', 'background': Theme.kombuGreen })
 
-                await next ({ 'top': '0%', 'height': '100%', 'background': Colors.keppel })
+                await next ({ 'top': '0%', 'height': '100%', 'background': Theme.keppel })
 
-                await next ({ 'width': '100%', 'background': Colors.grey })
+                await next ({ 'width': '100%', 'background': Theme.grey })
 
             }
 

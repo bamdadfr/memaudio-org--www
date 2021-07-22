@@ -15,13 +15,24 @@ export const Container = styled.div`
     overflow: hidden;
 `
 
-export const Wrapper = styled.div`
+export const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(${(props) => props.columns.toFixed (0)}, 1fr);
+    grid-template-rows: repeat(${(props) => props.rows}, 1fr);
+    grid-gap: 0.667rem;
+
     * {
         user-select: none;
     }
 
     svg {
         font-size: 5em;
+    }
+
+    @media screen and ${Breakpoints.ultramobile} {
+        width: 16rem;
+        height: 16rem;
+        font-size: 1em;
     }
 
     @media screen and ${Breakpoints.mobile} {

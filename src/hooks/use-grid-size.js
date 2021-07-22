@@ -7,9 +7,18 @@ import { useMemo } from 'react'
  * @typedef {number} Rows
  * @returns {{Columns, Rows}} grid size
  */
-export function useGridComponent (cards) {
+export function useGridSize (cards) {
 
     const { columns, rows } = useMemo (() => {
+
+        if (typeof cards === 'undefined') {
+
+            return {
+                'columns': 1,
+                'rows': 1,
+            }
+
+        }
 
         const columns = Math.round (Math.sqrt (cards))
         const rows = Math.ceil (cards / columns)

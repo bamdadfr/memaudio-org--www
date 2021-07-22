@@ -1,7 +1,7 @@
 import React from 'react'
-import { GridComponent } from '../../components'
-import { Container, Wrapper } from './default.layout.styles'
+import { Container, Grid } from './default.layout.styles'
 import { FadeAnimation } from '../../animations'
+import { useGridSize } from '../../hooks'
 
 /**
  * @description background made with react-spring
@@ -11,17 +11,17 @@ import { FadeAnimation } from '../../animations'
  */
 export function DefaultLayout ({ children }) {
 
+    const { columns, rows } = useGridSize (children.length)
+
     return (
         <>
-            <Container>
-                <FadeAnimation>
-                    <Wrapper>
-                        <GridComponent cards={children.length}>
-                            {children}
-                        </GridComponent>
-                    </Wrapper>
-                </FadeAnimation>
-            </Container>
+            <FadeAnimation>
+                <Container>
+                    <Grid columns={columns} rows={rows}>
+                        {children}
+                    </Grid>
+                </Container>
+            </FadeAnimation>
         </>
     )
 

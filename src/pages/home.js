@@ -13,7 +13,7 @@ export default function HomePage () {
 
     const router = useRouter ()
 
-    const handleFlippedHeadphones = useCallback (async () => {
+    const redirectToHome = useCallback (async () => {
 
         await router.push ('/')
 
@@ -22,7 +22,7 @@ export default function HomePage () {
     return (
         <>
             <DefaultLayout>
-                <CardComponent onFlipped={handleFlippedHeadphones}>
+                <CardComponent onFlipped={redirectToHome}>
                     <FaHeadphones/>
                 </CardComponent>
                 <CardComponent color={Theme.red}>

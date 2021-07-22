@@ -1,6 +1,6 @@
 import React from 'react'
-import { BackgroundComponent } from '../../components'
-import { Container } from './default.layout.styles'
+import { BackgroundComponent, GridComponent } from '../../components'
+import { Container, Wrapper } from './default.layout.styles'
 
 /**
  * @description background made with react-spring
@@ -14,7 +14,11 @@ export function DefaultLayout ({ children }) {
         <>
             <BackgroundComponent/>
             <Container>
-                {children}
+                <Wrapper>
+                    <GridComponent cards={children.length}>
+                        {children}
+                    </GridComponent>
+                </Wrapper>
             </Container>
         </>
     )

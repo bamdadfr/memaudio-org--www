@@ -1,0 +1,1 @@
+export { useGridComponent } from './use-grid-component'

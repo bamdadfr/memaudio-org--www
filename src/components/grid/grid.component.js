@@ -1,5 +1,6 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { Container } from './grid.component.styles'
+import { useGridComponent } from './hooks'
 
 /**
  * @param {object} props react props
@@ -12,21 +13,11 @@ export function GridComponent ({
     cards = 1,
 }) {
 
-    const size = useMemo (() => {
-
-        const columns = Math.round (Math.sqrt (cards))
-        const rows = Math.ceil (cards / columns)
-
-        return {
-            columns,
-            rows,
-        }
-
-    }, [cards])
+    const { columns, rows } = useGridComponent (cards)
 
     return (
         <>
-            <Container columns={size.columns} rows={size.rows}>
+            <Container columns={columns} rows={rows}>
                 {children}
             </Container>
         </>

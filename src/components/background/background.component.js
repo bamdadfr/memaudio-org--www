@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { animated, useSpring } from 'react-spring'
+import { a, useSpring } from '@react-spring/web'
 import { Container } from './background.component.styles'
 import { Theme } from '../../app/styles'
 
@@ -55,7 +55,7 @@ export function BackgroundComponent () {
     return (
         <>
             <Container>
-                <animated.div style={props}/>
+                <a.div style={props}/>
             </Container>
         </>
     )

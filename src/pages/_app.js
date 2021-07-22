@@ -4,6 +4,7 @@ import 'sass-reset'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { Theme } from '../app/styles'
+import { AppLayout } from '../layouts'
 
 const propTypes = {
     'Component': PropTypes.func.isRequired,
@@ -27,8 +28,10 @@ export default function MyApp ({ Component, pageProps, err }) {
     return (
         <>
             <ThemeProvider theme={Theme}>
-                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                <Component {...pageProps} err={err}/>
+                <AppLayout>
+                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                    <Component {...pageProps} err={err}/>
+                </AppLayout>
             </ThemeProvider>
         </>
     )

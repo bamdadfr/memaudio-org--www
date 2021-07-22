@@ -1,5 +1,5 @@
 import React from 'react'
-import { BackgroundComponent, GridComponent } from '../../components'
+import { GridComponent } from '../../components'
 import { Container, Wrapper } from './default.layout.styles'
 import { FadeAnimation } from '../../animations'
 
@@ -13,7 +13,6 @@ export function DefaultLayout ({ children }) {
 
     return (
         <>
-            <BackgroundComponent/>
             <Container>
                 <FadeAnimation>
                     <Wrapper>

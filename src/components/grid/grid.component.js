@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { animated } from '@react-spring/web'
 import { Container, Grid } from './grid.component.styles'
 import { useGridComponent } from './hooks'
 import { CardComponent } from './components'
-import { Theme } from '../../app/styles'
+import { useStore } from '../../hooks'
 
 /**
  * @param {object} props react props
@@ -21,63 +21,28 @@ export function GridComponent ({
         rows,
         ref,
         transitions,
-        waitFor,
-        triggerLeave,
     } = useGridComponent (cards)
 
-    const [opened, setOpened] = useState ([])
-    const [locked, setLocked] = useState (false)
+    /**
+     *
+     * isGame
+     *
+     */
 
-    const handleFlipped = useCallback ((card) => {
+    const setDeck = useStore ((state) => state.setDeck)
 
-        if (isGame) setOpened ((o) => [...o, card])
-
-        if (typeof card.callback !== 'function') return
-
-        setTimeout (() => {
-
-            if (card.leaveOnCallback) triggerLeave ()
-
-            setTimeout (() => {
-
-                card.callback ()
-
-            }, waitFor.leave)
-
-        }, waitFor.flip)
-
-    }, [cards])
-
+    // load deck
     useEffect (() => {
 
-        if (!isGame) return
+        if (isGame) setDeck (cards)
 
-        if (opened.length < 2) return
+        return () => {
 
-        setLocked (true)
-
-        // opened cards do match
-        if (opened[0].src === opened[1].src) {
-
-            setTimeout (() => {
-
-                opened[0].color = Theme.yellow
-
-                opened[1].color = Theme.yellow
-
-                setOpened ([])
-
-                setLocked (false)
-
-            }, waitFor.flip * 0.5)
-
-        } else {
-
-            // flip back opened cards
+            setDeck ([])
 
         }
 
-    }, [opened])
+    }, [])
 
     return (
         <>
@@ -86,10 +51,9 @@ export function GridComponent ({
                     {transitions ((style, card) => (
                         <animated.div style={style}>
                             <CardComponent
-                                onFlipped={() => handleFlipped (card)}
                                 color={card.color}
-                                isGame={isGame}
-                                isLocked={locked}
+                                callback={card.callback}
+                                leaveOnCallback={card.leaveOnCallback}
                             >
                                 <span>{card.front}</span>
                                 <span>{card.back}</span>

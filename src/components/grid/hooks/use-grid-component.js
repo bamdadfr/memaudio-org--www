@@ -1,6 +1,6 @@
 import { useMeasure } from 'react-use'
-import { useSize } from './use-size'
-import { useTransitions } from './use-transitions'
+import { useGridSize } from './use-grid-size'
+import { useGridTransitions } from './use-grid-transitions'
 
 /**
  * @description get number of columns and rows
@@ -11,22 +11,15 @@ import { useTransitions } from './use-transitions'
  */
 export function useGridComponent (cards) {
 
-    const { columns, rows } = useSize (cards.length)
+    const { columns, rows } = useGridSize (cards.length)
     const [ref, { width }] = useMeasure ()
-
-    const {
-        transitions,
-        waitFor,
-        triggerLeave,
-    } = useTransitions (cards, { width })
+    const { transitions } = useGridTransitions (cards, { width })
 
     return {
         columns,
         rows,
         ref,
         transitions,
-        waitFor,
-        triggerLeave,
     }
 
 }

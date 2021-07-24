@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTransition } from '@react-spring/web'
+import { useStore } from '../../../hooks'
 
 /**
  * @param {Array} array containing items
@@ -7,16 +8,12 @@ import { useTransition } from '@react-spring/web'
  * @param {number} options.width grid width
  * @returns {{Function,Object,Function}} transitions, waitFor, triggerLeave
  */
-export function useTransitions (array, { width }) {
+export function useGridTransitions (array, { width }) {
 
     const [items, setItems] = useState ([])
-    const [leave, setLeave] = useState (false)
-
-    const [waitFor] = useState ({
-        'enter': 5,
-        'flip': 500,
-        'leave': 400,
-    })
+    const leave = useStore ((state) => state.leave)
+    const resetLeave = useStore ((state) => state.resetLeave)
+    const waitFor = useStore ((state) => state.waitFor)
 
     const transitions = useTransition (items, {
         'from': { 'opacity': 0, 'x': width * 2 * -1 },
@@ -33,27 +30,31 @@ export function useTransitions (array, { width }) {
 
             setItems (array)
 
-        }, waitFor.enter)
+        }, waitFor.gridEnter)
 
     }, [])
 
     // leave
     useEffect (() => {
 
-        if (leave) setItems ([])
+        if (leave) {
+
+            setItems ([])
+
+            // reset state
+            setTimeout (() => {
+
+                resetLeave ()
+            
+            }, waitFor.cardFlip + waitFor.gridLeave + waitFor.gridEnter)
+        
+        }
 
     }, [leave])
-
-    const triggerLeave = useCallback (() => {
-
-        setLeave (true)
-
-    }, [])
 
     return {
         transitions,
         waitFor,
-        triggerLeave,
     }
 
 }

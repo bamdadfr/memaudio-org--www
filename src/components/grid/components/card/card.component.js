@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useCallback } from 'react'
 import { Container, Card } from './card.component.styles'
-import { useCardComponent } from './hooks'
+import { useCardComponent } from '../../hooks'
+import { useStore } from '../../../../hooks'
 
 /**
  * @param {object} props react props
- * @param {Array.<React.ReactElement>} props.children content of the card
- * @param {string} props.color color
- * @param {Function} props.handleFlipped callback
+ * @param {Array.<React.ReactElement>} props.children card content
+ * @param {string} props.color card color
+ * @param {Function} props.callback card callback
+ * @param {boolean} props.leaveOnCallback grid should leave?
  * @returns {React.ReactElement} react component
  */
 export function CardComponent ({
     children,
     color,
-    handleFlipped = () => undefined,
+    callback,
+    leaveOnCallback,
 }) {
 
     const {
@@ -24,13 +27,17 @@ export function CardComponent ({
         flipped,
         toggleFlipped,
         spring,
-    } = useCardComponent (children)
+    } = useCardComponent ({
+        'content': children,
+        callback,
+        leaveOnCallback,
+    })
 
-    useEffect (() => {
+    const locked = useStore ((state) => state.locked)
 
-        if (!flipped) return
+    const handleClick = useCallback (() => {
 
-        handleFlipped ()
+        toggleFlipped ()
 
     }, [flipped])
 
@@ -46,7 +53,7 @@ export function CardComponent ({
                     $color={color}
                     width={width}
                     height={height}
-                    onClick={() => toggleFlipped ()}
+                    onClick={!locked ? handleClick : undefined}
                     style={{
                         'opacity': spring.opacity.to ((o) => 1 - o),
                         'transform': spring.transform,
@@ -59,7 +66,11 @@ export function CardComponent ({
                     $color={color}
                     width={width}
                     height={height}
-                    onClick={() => toggleFlipped ()}
+                    onClick={
+                        typeof back.props.children === 'undefined'
+                            ? undefined
+                            : handleClick
+                    }
                     style={{
                         'opacity': spring.opacity,
                         'transform': spring.transform,

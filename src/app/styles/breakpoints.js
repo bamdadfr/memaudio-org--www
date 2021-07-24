@@ -1,6 +1,3 @@
-/**
- * @description breakpoints styles as string to use in media queries
- */
 export const Breakpoints = {
     'ultramobile': `(max-width: ${640 - 1}px)`,
     'mobile': `(min-width: ${640}px)`,

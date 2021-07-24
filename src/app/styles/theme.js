@@ -13,4 +13,5 @@ export const Theme = {
     'soap': '#c6caed',
     'pink': '#dd7373',
     'keppel': '#3891a6',
+    'shadow': 'rgba(0, 0, 0, 0.3)',
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiPlay } from 'react-icons/fi'
+import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
 import { GridComponent } from '../components'
@@ -17,7 +17,7 @@ export default function IndexPage () {
                 <GridComponent
                     cards={[
                         {
-                            'front': <FiPlay/>,
+                            'front': <FaPlay/>,
                             'callback': async () => await router.push ('/home'),
                             'leaveOnCallback': true,
                         },

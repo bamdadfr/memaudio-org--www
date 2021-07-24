@@ -1,6 +1,5 @@
 import React from 'react'
-import { FaHeadphones, FaQuestion } from 'react-icons/fa'
-import { FiUser, FiPlay } from 'react-icons/fi'
+import { FaHeadphones, FaQuestion, FaUser, FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { GridComponent } from '../components'
 import { DefaultLayout } from '../layouts'
@@ -24,7 +23,7 @@ export default function HomePage () {
                             'leaveOnCallback': true,
                         },
                         {
-                            'front': <FiUser/>,
+                            'front': <FaUser/>,
                             'back': "le mode multijoueurs n'est pas encore disponible",
                             'color': Theme.red,
                         },
@@ -33,7 +32,7 @@ export default function HomePage () {
                             'color': Theme.blue,
                         },
                         {
-                            'front': <FiPlay/>,
+                            'front': <FaPlay/>,
                             'color': Theme.yellow,
                             'callback': async () => await router.push ('/music/1'),
                             'leaveOnCallback': true,

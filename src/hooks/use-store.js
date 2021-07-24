@@ -21,7 +21,12 @@ export const useStore = create (
             'leave': false,
         })),
         // deck
+        'game': false,
         'deck': [],
-        'setDeck': (newDeck) => set (() => ({ 'deck': newDeck })),
+        'loadDeck': (d) => set (() => ({ 'game': true, 'deck': d })),
+        'unloadDeck': () => set (() => ({ 'game': false, 'deck': [] })),
+        'drawn': [],
+        'drawCard': (c) => set ((s) => ({ 'drawn': [...s.drawn, c] })),
+        'flushDrawn': () => set (() => ({ 'drawn': [] })),
     }),
 )

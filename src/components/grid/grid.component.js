@@ -1,19 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { animated } from '@react-spring/web'
 import { Container, Grid } from './grid.component.styles'
 import { useGridComponent } from './hooks'
 import { CardComponent } from './components'
-import { useStore } from '../../hooks'
 
 /**
  * @param {object} props react props
  * @param {Array} props.cards array of cards
- * @param {boolean} props.isGame enable game rules
  * @returns {React.ReactElement} react component
  */
 export function GridComponent ({
     cards,
-    isGame = false,
 }) {
 
     const {
@@ -22,27 +19,6 @@ export function GridComponent ({
         ref,
         transitions,
     } = useGridComponent (cards)
-
-    /**
-     *
-     * isGame
-     *
-     */
-
-    const setDeck = useStore ((state) => state.setDeck)
-
-    // load deck
-    useEffect (() => {
-
-        if (isGame) setDeck (cards)
-
-        return () => {
-
-            setDeck ([])
-
-        }
-
-    }, [])
 
     return (
         <>

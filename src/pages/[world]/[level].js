@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { DefaultLayout } from '../../layouts'
 import { GridComponent } from '../../components'
 import { shuffleArray } from '../../utils'
 import { Worlds } from '../../app/data'
+import { useStore } from '../../hooks'
 
 /**
  * @param {object} context next.js context
@@ -23,7 +24,11 @@ export function getServerSideProps (context) {
 
     for (let i = 1; i <= Worlds[world][level].length; i++) {
 
-        const card = { 'src': `src ${i}` }
+        const card = {
+            'src': `src ${i}`,
+            'opened': false,
+            'matched': false,
+        }
 
         // pushing a pair of cards
         props.deck.push ({
@@ -50,6 +55,21 @@ export function getServerSideProps (context) {
  * @returns {React.ReactElement} react component
  */
 export default function LevelPage ({ deck }) {
+
+    const loadDeck = useStore ((state) => state.loadDeck)
+    const unloadDeck = useStore ((state) => state.unloadDeck)
+
+    useEffect (() => {
+
+        loadDeck (deck)
+
+        return () => {
+
+            unloadDeck ()
+        
+        }
+    
+    }, [])
 
     return (
         <>

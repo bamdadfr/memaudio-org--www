@@ -2,10 +2,12 @@ import React, { useCallback } from 'react'
 import { Container, Card } from './card.component.styles'
 import { useCardComponent } from '../../hooks'
 import { useStore } from '../../../../hooks'
+import { Theme } from '../../../../app/styles'
 
 /**
  * @param {object} props react props
  * @param {Array.<React.ReactElement>} props.children card content
+ * @param {number} props.id card id (only relative to grid)
  * @param {string} props.color card color
  * @param {Function} props.callback card callback
  * @param {boolean} props.leaveOnCallback grid should leave?
@@ -13,6 +15,7 @@ import { useStore } from '../../../../hooks'
  */
 export function CardComponent ({
     children,
+    id,
     color,
     callback,
     leaveOnCallback,
@@ -29,15 +32,25 @@ export function CardComponent ({
         spring,
     } = useCardComponent ({
         'content': children,
+        id,
         callback,
         leaveOnCallback,
     })
 
     const locked = useStore ((state) => state.locked)
+    const deck = useStore ((state) => state.deck)
+    const drawCard = useStore ((state) => state.drawCard)
 
     const handleClick = useCallback (() => {
 
         toggleFlipped ()
+
+        // is game?
+        if (deck.length !== 0) {
+
+            drawCard (id)
+
+        }
 
     }, [flipped])
 
@@ -63,7 +76,15 @@ export function CardComponent ({
                 </Card>
                 <Card
                     $isBack
-                    $color={color}
+                    $color={() => {
+
+                        if (deck[id].matched) return Theme.yellow
+
+                        if (deck[id].drawn) return Theme.blue
+
+                        return color
+                    
+                    }}
                     width={width}
                     height={height}
                     onClick={

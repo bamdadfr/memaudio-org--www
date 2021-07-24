@@ -26,7 +26,7 @@ export function getServerSideProps (context) {
 
         const card = {
             'src': `src ${i}`,
-            'opened': false,
+            'drawn': false,
             'matched': false,
         }
 

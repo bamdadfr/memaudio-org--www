@@ -24,9 +24,10 @@ export function GridComponent ({
         <>
             <Container ref={ref}>
                 <Grid columns={columns} rows={rows}>
-                    {transitions ((style, card) => (
+                    {transitions ((style, card, _, j) => (
                         <animated.div style={style}>
                             <CardComponent
+                                id={j}
                                 color={card.color}
                                 callback={card.callback}
                                 leaveOnCallback={card.leaveOnCallback}

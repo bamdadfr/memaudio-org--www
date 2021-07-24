@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react'
 import { getCardFaces } from '../utils'
 import { useCardFlip } from './use-card-flip'
 import { useCardCallback } from './use-card-callback'
+import { useStore } from '../../../hooks'
 
 // todo jsdoc
 /**
@@ -14,14 +15,16 @@ import { useCardCallback } from './use-card-callback'
  */
 export function useCardComponent ({
     content,
+    id,
     callback,
     leaveOnCallback,
 }) {
 
+    const deck = useStore ((s) => s.deck)
     const [flipped, setFlipped] = useState (false)
     const { front, back } = getCardFaces (content)
     const [ref, { width, height }] = useMeasure ()
-    const { spring } = useCardFlip (flipped)
+    const { spring } = useCardFlip (deck[id].drawn)
     const toggleFlipped = useCallback (() => setFlipped ((f) => !f), [])
 
     useCardCallback (flipped, callback, leaveOnCallback)

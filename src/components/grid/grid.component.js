@@ -3,20 +3,22 @@ import { animated, useTransition } from '@react-spring/web'
 import { useMeasure } from 'react-use'
 import { Container, Grid } from './grid.component.styles'
 import { useGridComponent } from './hooks'
+import { CardComponent } from './components'
 
 /**
  * @param {object} props react props
- * @param {React.ReactNode} props.children cards
- * @param {boolean} props.leave trigger leave transition
+ * @param {Array} props.cards array of cards
+ * @param {boolean} props.isGame enable game rules
  * @returns {React.ReactElement} react component
  */
 export function GridComponent ({
-    children,
-    leave = false,
+    cards,
+    isGame = false,
 }) {
 
-    const { columns, rows } = useGridComponent (children.length)
+    const { columns, rows } = useGridComponent (cards.length)
     const [items, setItems] = useState ([])
+    const [leaving, setLeaving] = useState (false)
     const [ref, { width }] = useMeasure ()
 
     const transition = useTransition (items, {
@@ -31,35 +33,46 @@ export function GridComponent ({
 
         setTimeout (() => {
 
-            setItems (children)
+            setItems (cards)
 
         }, 5)
-
-        return () => {
-
-            setItems ([])
-        
-        }
 
     }, [])
 
     useEffect (() => {
 
-        if (leave) setItems ([])
+        if (leaving) setItems ([])
 
-    }, [leave])
+    }, [leaving])
+
+    const executeCallback = (callback) => {
+
+        if (typeof callback !== 'function') return
+
+        setLeaving (true)
+
+        setTimeout (callback, 400)
+
+    }
 
     return (
         <>
             <Container ref={ref}>
                 <Grid columns={columns} rows={rows}>
-                    {transition ((style, item) => (
-                        item
+                    {transition ((style, card) => (
+                        card
                             ?
                                 <animated.div style={style}>
-                                    {item}
+                                    <CardComponent
+                                        onFlipped={() => executeCallback (card.callback)}
+                                        color={card.color}
+                                        isGame={isGame}
+                                    >
+                                        <span>{card.front}</span>
+                                        <span>{card.back}</span>
+                                    </CardComponent>
                                 </animated.div>
-                            : ''
+                            : null
                     ))}
                 </Grid>
             </Container>

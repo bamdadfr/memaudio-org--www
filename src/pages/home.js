@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react'
+import React from 'react'
 import { FaHeadphones, FaQuestion } from 'react-icons/fa'
 import { FiUser, FiPlay } from 'react-icons/fi'
 import { useRouter } from 'next/router'
-import { CardComponent, GridComponent } from '../components'
+import { GridComponent } from '../components'
 import { DefaultLayout } from '../layouts'
 import { Theme } from '../app/styles'
 
@@ -12,55 +12,32 @@ import { Theme } from '../app/styles'
 export default function HomePage () {
 
     const router = useRouter ()
-    const [leave, setLeave] = useState (false)
-    const [delay] = useState (400)
-
-    const toHome = useCallback (() => {
-
-        setLeave (true)
-
-        setTimeout (async () => {
-
-            await router.push ('/')
-
-        }, delay)
-
-    }, [])
-
-    const toGame = useCallback (() => {
-
-        setLeave (true)
-
-        setTimeout (async () => {
-
-            await router.push ('/game/1')
-
-        }, delay)
-
-    }, [])
 
     return (
         <>
             <DefaultLayout>
-                <GridComponent leave={leave}>
-                    <CardComponent onFlipped={toHome}>
-                        <FaHeadphones/>
-                    </CardComponent>
-                    <CardComponent color={Theme.red}>
-                        <div>
-                            <FiUser/>
-                        </div>
-                        <div>
-                            le mode multijoueurs n&rsquo;est pas encore disponible
-                        </div>
-                    </CardComponent>
-                    <CardComponent color={Theme.blue}>
-                        <FaQuestion/>
-                    </CardComponent>
-                    <CardComponent color={Theme.yellow} onFlipped={toGame}>
-                        <FiPlay/>
-                    </CardComponent>
-                </GridComponent>
+                <GridComponent
+                    cards={[
+                        {
+                            'front': <FaHeadphones/>,
+                            'callback': async () => await router.push ('/'),
+                        },
+                        {
+                            'front': <FiUser/>,
+                            'back': "le mode multijoueurs n'est pas encore disponible",
+                            'color': Theme.red,
+                        },
+                        {
+                            'front': <FaQuestion/>,
+                            'color': Theme.blue,
+                        },
+                        {
+                            'front': <FiPlay/>,
+                            'color': Theme.yellow,
+                            'callback': async () => await router.push ('/music/1'),
+                        },
+                    ]}
+                />
             </DefaultLayout>
         </>
     )

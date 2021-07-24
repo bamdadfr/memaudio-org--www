@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { FiPlay } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
-import { CardComponent, GridComponent } from '../components'
+import { GridComponent } from '../components'
 
 /**
  * @returns {React.ReactElement} react component
@@ -11,20 +11,17 @@ export default function IndexPage () {
 
     const router = useRouter ()
 
-    const handleFlipped = useCallback (async () => {
-
-        await router.push ('/home')
-
-    }, [])
-
     return (
         <>
             <DefaultLayout>
-                <GridComponent>
-                    <CardComponent onFlipped={handleFlipped}>
-                        <FiPlay/>
-                    </CardComponent>
-                </GridComponent>
+                <GridComponent
+                    cards={[
+                        {
+                            'front': <FiPlay/>,
+                            'callback': async () => await router.push ('/home'),
+                        },
+                    ]}
+                />
             </DefaultLayout>
         </>
     )

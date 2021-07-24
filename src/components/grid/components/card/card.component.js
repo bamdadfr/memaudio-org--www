@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useSpring } from '@react-spring/web'
 import { useMeasure } from 'react-use'
 import { Container, Card } from './card.component.styles'
-import { CardConstants } from './card.constants'
-import { getFacesFromProps } from './utils'
+import { getFacesFromProps } from '../../utils'
 
 /**
  * @param {object} props react props
  * @param {Array.<React.ReactElement>} props.children content of the card
  * @param {string} props.color color
  * @param {Function} props.onFlipped callback
+ * @param {boolean} props.isGame game card?
  * @returns {React.ReactElement} react component
  */
 export function CardComponent ({
     children,
-    color = CardConstants.color,
+    color = 'white',
     onFlipped = () => undefined,
+    isGame,
 }) {
 
     const { front, back } = getFacesFromProps (children)
@@ -42,6 +43,8 @@ export function CardComponent ({
 
     }, [flipped])
 
+    const toggleFlipped = useCallback (() => setFlipped ((f) => !f), [])
+
     return (
         <>
             <Container
@@ -50,10 +53,12 @@ export function CardComponent ({
                 role="button"
             >
                 <Card
-                    onClick={() => setFlipped ((f) => !f)}
+                    $isFront
+                    $isGame={isGame}
                     color={color}
                     width={width}
                     height={height}
+                    onClick={toggleFlipped}
                     style={{
                         'opacity': spring.opacity.to ((o) => 1 - o),
                         'transform': spring.transform,
@@ -61,26 +66,25 @@ export function CardComponent ({
                 >
                     {front}
                 </Card>
-                {back
-                    ?
-                        <Card
-                            onClick={Object.keys (back.props).length
-                                ? () => setFlipped ((f) => !f)
-                                : undefined
-                            }
-                            color={color}
-                            width={width}
-                            height={height}
-                            style={{
-                                'opacity': spring.opacity,
-                                'transform': spring.transform,
-                                'rotateY': '180deg',
-                            }}
-                        >
-                            {back}
-                        </Card>
-                    : null
-                }
+                <Card
+                    $isBack
+                    $isGame={isGame}
+                    color={color}
+                    width={width}
+                    height={height}
+                    onClick={
+                        Object.keys (back.props).length
+                            ? toggleFlipped
+                            : undefined
+                    }
+                    style={{
+                        'opacity': spring.opacity,
+                        'transform': spring.transform,
+                        'rotateY': '180deg',
+                    }}
+                >
+                    {back}
+                </Card>
             </Container>
         </>
     )

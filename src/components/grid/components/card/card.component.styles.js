@@ -21,7 +21,17 @@ export const Card = styled (a.div)`
     text-align: center;
 
     color: ${(props) => props.theme.background};
-    background: ${(props) => props.color};
+
+    background: ${(props) => {
+
+        if (props.$isFront) return props.color
+
+        if (props.$isBack && props.$isGame) return props.theme.blue
+
+        return props.color
+
+    }};
+
     box-shadow: 0 0.05em 0.5em 0.05em ${(props) => props.theme.shadow};
 
     backface-visibility: hidden;

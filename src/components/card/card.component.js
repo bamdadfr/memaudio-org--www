@@ -26,18 +26,19 @@ export function CardComponent ({
         'opacity': flipped ? 1 : 0,
         'transform': `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
         'config': { 'mass': 10, 'tension': 500, 'friction': 80 },
+        // 'config': { 'mass': 5, 'tension': 500, 'friction': 100 },
     })
 
     useEffect (() => {
 
         if (!flipped) return
 
-        // wait flip animation end
+        // wait for the flip animation to end
         setTimeout (() => {
 
             onFlipped ()
 
-        }, 400)
+        }, 500)
 
     }, [flipped])
 

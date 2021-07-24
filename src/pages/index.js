@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { FiPlay } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
-import { CardComponent } from '../components'
+import { CardComponent, GridComponent } from '../components'
 
 /**
  * @returns {React.ReactElement} react component
@@ -20,9 +20,11 @@ export default function IndexPage () {
     return (
         <>
             <DefaultLayout>
-                <CardComponent onFlipped={handleFlipped}>
-                    <FiPlay/>
-                </CardComponent>
+                <GridComponent>
+                    <CardComponent onFlipped={handleFlipped}>
+                        <FiPlay/>
+                    </CardComponent>
+                </GridComponent>
             </DefaultLayout>
         </>
     )

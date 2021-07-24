@@ -7,9 +7,13 @@ import { useGridComponent } from './hooks'
 /**
  * @param {object} props react props
  * @param {React.ReactNode} props.children cards
+ * @param {boolean} props.leave trigger leave transition
  * @returns {React.ReactElement} react component
  */
-export function GridComponent ({ children }) {
+export function GridComponent ({
+    children,
+    leave = false,
+}) {
 
     const { columns, rows } = useGridComponent (children.length)
     const [items, setItems] = useState ([])
@@ -29,9 +33,21 @@ export function GridComponent ({ children }) {
 
             setItems (children)
 
-        }, 0)
+        }, 5)
+
+        return () => {
+
+            setItems ([])
+        
+        }
 
     }, [])
+
+    useEffect (() => {
+
+        if (leave) setItems ([])
+
+    }, [leave])
 
     return (
         <>

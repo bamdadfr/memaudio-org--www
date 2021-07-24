@@ -1,6 +1,6 @@
 import React from 'react'
 import { DefaultLayout } from '../../layouts'
-import { CardComponent } from '../../components'
+import { CardComponent, GridComponent } from '../../components'
 
 /**
  * @param {object} props react props
@@ -15,22 +15,24 @@ export default function LevelPage ({ level }) {
     return (
         <>
             <DefaultLayout>
-                <CardComponent>
-                    <span/>
-                    <span/>
-                </CardComponent>
-                <CardComponent>
-                    <span/>
-                    <span/>
-                </CardComponent>
-                <CardComponent>
-                    <span/>
-                    <span/>
-                </CardComponent>
-                <CardComponent>
-                    <span/>
-                    <span/>
-                </CardComponent>
+                <GridComponent>
+                    <CardComponent>
+                        <span/>
+                        <span/>
+                    </CardComponent>
+                    <CardComponent>
+                        <span/>
+                        <span/>
+                    </CardComponent>
+                    <CardComponent>
+                        <span/>
+                        <span/>
+                    </CardComponent>
+                    <CardComponent>
+                        <span/>
+                        <span/>
+                    </CardComponent>
+                </GridComponent>
             </DefaultLayout>
         </>
     )

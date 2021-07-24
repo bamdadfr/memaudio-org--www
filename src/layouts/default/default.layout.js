@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container } from './default.layout.styles'
 import { FadeAnimation } from '../../animations'
-import { GridComponent } from '../../components'
 
 /**
  * @param {object} props react props
@@ -14,9 +13,7 @@ export function DefaultLayout ({ children }) {
         <>
             <FadeAnimation>
                 <Container>
-                    <GridComponent>
-                        {children}
-                    </GridComponent>
+                    {children}
                 </Container>
             </FadeAnimation>
         </>

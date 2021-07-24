@@ -1,4 +1,6 @@
-import { useMemo } from 'react'
+import { useMeasure } from 'react-use'
+import { useSize } from './use-size'
+import { useTransitions } from './use-transitions'
 
 /**
  * @description get number of columns and rows
@@ -9,30 +11,22 @@ import { useMemo } from 'react'
  */
 export function useGridComponent (cards) {
 
-    const { columns, rows } = useMemo (() => {
+    const { columns, rows } = useSize (cards.length)
+    const [ref, { width }] = useMeasure ()
 
-        if (typeof cards === 'undefined') {
-
-            return {
-                'columns': 1,
-                'rows': 1,
-            }
-
-        }
-
-        const columns = Math.round (Math.sqrt (cards))
-        const rows = Math.ceil (cards / columns)
-
-        return {
-            columns,
-            rows,
-        }
-
-    }, [cards])
+    const {
+        transitions,
+        waitFor,
+        triggerLeave,
+    } = useTransitions (cards, { width })
 
     return {
         columns,
         rows,
+        ref,
+        transitions,
+        waitFor,
+        triggerLeave,
     }
 
 }

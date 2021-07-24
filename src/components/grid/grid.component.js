@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { animated, useTransition } from '@react-spring/web'
-import { useMeasure } from 'react-use'
+import { animated } from '@react-spring/web'
 import { Container, Grid } from './grid.component.styles'
 import { useGridComponent } from './hooks'
 import { CardComponent } from './components'
@@ -17,39 +16,17 @@ export function GridComponent ({
     isGame = false,
 }) {
 
-    const { columns, rows } = useGridComponent (cards.length)
-    const [ref, { width }] = useMeasure ()
-    const [waitForEnter] = useState (5)
-    const [waitForFlip] = useState (500)
-    const [waitForLeave] = useState (400)
-    const [items, setItems] = useState ([])
-    const [leaving, setLeaving] = useState (false)
+    const {
+        columns,
+        rows,
+        ref,
+        transitions,
+        waitFor,
+        triggerLeave,
+    } = useGridComponent (cards)
+
     const [opened, setOpened] = useState ([])
     const [locked, setLocked] = useState (false)
-
-    const transition = useTransition (items, {
-        'from': { 'opacity': 0, 'x': width * 2 * -1 },
-        'enter': { 'opacity': 1, 'x': 0 },
-        'leave': { 'opacity': 0, 'x': width * 2 },
-        'config': { 'mass': 5, 'tension': 500, 'friction': 100 },
-        'trail': 75,
-    })
-
-    useEffect (() => {
-
-        setTimeout (() => {
-
-            setItems (cards)
-
-        }, waitForEnter)
-
-    }, [])
-
-    useEffect (() => {
-
-        if (leaving) setItems ([])
-
-    }, [leaving])
 
     const handleFlipped = useCallback ((card) => {
 
@@ -59,15 +36,15 @@ export function GridComponent ({
 
         setTimeout (() => {
 
-            if (card.leaveOnCallback) setLeaving (true)
+            if (card.leaveOnCallback) triggerLeave ()
 
             setTimeout (() => {
 
                 card.callback ()
 
-            }, waitForLeave)
+            }, waitFor.leave)
 
-        }, waitForFlip)
+        }, waitFor.flip)
 
     }, [cards])
 
@@ -92,7 +69,7 @@ export function GridComponent ({
 
                 setLocked (false)
 
-            }, waitForFlip * 0.5)
+            }, waitFor.flip * 0.5)
 
         } else {
 
@@ -106,7 +83,7 @@ export function GridComponent ({
         <>
             <Container ref={ref}>
                 <Grid columns={columns} rows={rows}>
-                    {transition ((style, card) => (
+                    {transitions ((style, card) => (
                         <animated.div style={style}>
                             <CardComponent
                                 onFlipped={() => handleFlipped (card)}

@@ -5,8 +5,13 @@ export const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(${(props) => props.columns.toFixed (0)}, 1fr);
     grid-template-rows: repeat(${(props) => props.rows}, 1fr);
-    grid-gap: 0.667rem;
+    grid-gap: 0.667em;
 
+    height: 100%;
+    width: 100%;
+`
+
+export const Container = styled.div`
     * {
         user-select: none;
     }

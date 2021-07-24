@@ -1,1 +1,0 @@
-export { useGridSize } from './use-grid-size'

@@ -9,28 +9,27 @@ import { CardComponent } from '../../components'
  */
 export default function LevelPage ({ level }) {
 
+    // eslint-disable-next-line no-console
+    console.log (level)
+
     return (
         <>
             <DefaultLayout>
                 <CardComponent>
-                    <span>
-                        level {level}
-                    </span>
+                    <span/>
+                    <span/>
                 </CardComponent>
                 <CardComponent>
-                    <span>
-                        level {level}
-                    </span>
+                    <span/>
+                    <span/>
                 </CardComponent>
                 <CardComponent>
-                    <span>
-                        level {level}
-                    </span>
+                    <span/>
+                    <span/>
                 </CardComponent>
                 <CardComponent>
-                    <span>
-                        level {level}
-                    </span>
+                    <span/>
+                    <span/>
                 </CardComponent>
             </DefaultLayout>
         </>

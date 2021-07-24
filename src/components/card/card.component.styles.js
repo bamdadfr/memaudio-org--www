@@ -14,7 +14,6 @@ export const Card = styled (a.div)`
     width: ${(props) => props.width}px;
     height: ${(props) => props.height}px;
     will-change: transform, opacity;
-    background: blue;
 
     display: flex;
     justify-content: center;

@@ -80,7 +80,6 @@ export function CardComponent ({
                         </Card>
                     : null
                 }
-
             </Container>
         </>
     )

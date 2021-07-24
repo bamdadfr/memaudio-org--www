@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { a } from '@react-spring/web'
+import { Theme } from '../../../../app/styles'
 
 export const Container = styled.div`
     display: flex;
@@ -24,13 +25,17 @@ export const Card = styled (a.div)`
 
     background: ${(props) => {
 
-        if (props.$isFront) return props.color
+        const defaultColor = 'white'
 
-        if (props.$isBack && props.$isGame) return props.theme.blue
+        if (props.$isGame && props.$isFront) return defaultColor
 
-        return props.color
+        if (props.$isGame && props.$isBack) return props.$color || Theme.blue
+
+        return props.$color || defaultColor
 
     }};
+
+    transition: background 250ms ease-in-out;
 
     box-shadow: 0 0.05em 0.5em 0.05em ${(props) => props.theme.shadow};
 

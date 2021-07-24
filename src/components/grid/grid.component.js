@@ -4,6 +4,7 @@ import { useMeasure } from 'react-use'
 import { Container, Grid } from './grid.component.styles'
 import { useGridComponent } from './hooks'
 import { CardComponent } from './components'
+import { Theme } from '../../app/styles'
 
 /**
  * @param {object} props react props
@@ -17,9 +18,14 @@ export function GridComponent ({
 }) {
 
     const { columns, rows } = useGridComponent (cards.length)
+    const [ref, { width }] = useMeasure ()
+    const [waitForEnter] = useState (5)
+    const [waitForFlip] = useState (500)
+    const [waitForLeave] = useState (400)
     const [items, setItems] = useState ([])
     const [leaving, setLeaving] = useState (false)
-    const [ref, { width }] = useMeasure ()
+    const [opened, setOpened] = useState ([])
+    const [locked, setLocked] = useState (false)
 
     const transition = useTransition (items, {
         'from': { 'opacity': 0, 'x': width * 2 * -1 },
@@ -35,7 +41,7 @@ export function GridComponent ({
 
             setItems (cards)
 
-        }, 5)
+        }, waitForEnter)
 
     }, [])
 
@@ -47,32 +53,71 @@ export function GridComponent ({
 
     const handleFlipped = useCallback ((card) => {
 
+        if (isGame) setOpened ((o) => [...o, card])
+
         if (typeof card.callback !== 'function') return
 
-        if (card.leaveOnCallback) setLeaving (true)
+        setTimeout (() => {
 
-        setTimeout (card.callback, 400)
+            if (card.leaveOnCallback) setLeaving (true)
+
+            setTimeout (() => {
+
+                card.callback ()
+
+            }, waitForLeave)
+
+        }, waitForFlip)
 
     }, [cards])
+
+    useEffect (() => {
+
+        if (!isGame) return
+
+        if (opened.length < 2) return
+
+        setLocked (true)
+
+        // opened cards do match
+        if (opened[0].src === opened[1].src) {
+
+            setTimeout (() => {
+
+                opened[0].color = Theme.yellow
+
+                opened[1].color = Theme.yellow
+
+                setOpened ([])
+
+                setLocked (false)
+
+            }, waitForFlip * 0.5)
+
+        } else {
+
+            // flip back opened cards
+
+        }
+
+    }, [opened])
 
     return (
         <>
             <Container ref={ref}>
                 <Grid columns={columns} rows={rows}>
                     {transition ((style, card) => (
-                        card
-                            ?
-                                <animated.div style={style}>
-                                    <CardComponent
-                                        onFlipped={() => handleFlipped (card)}
-                                        color={card.color}
-                                        isGame={isGame}
-                                    >
-                                        <span>{card.front}</span>
-                                        <span>{card.back}</span>
-                                    </CardComponent>
-                                </animated.div>
-                            : null
+                        <animated.div style={style}>
+                            <CardComponent
+                                onFlipped={() => handleFlipped (card)}
+                                color={card.color}
+                                isGame={isGame}
+                                isLocked={locked}
+                            >
+                                <span>{card.front}</span>
+                                <span>{card.back}</span>
+                            </CardComponent>
+                        </animated.div>
                     ))}
                 </Grid>
             </Container>

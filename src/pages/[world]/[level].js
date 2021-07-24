@@ -23,7 +23,7 @@ export function getServerSideProps (context) {
 
     for (let i = 1; i <= Worlds[world][level].length; i++) {
 
-        const card = { 'audio': `src ${i}` }
+        const card = { 'src': `src ${i}` }
 
         // pushing a pair of cards
         props.deck.push ({

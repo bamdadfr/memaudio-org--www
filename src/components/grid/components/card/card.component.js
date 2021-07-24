@@ -10,13 +10,15 @@ import { getFacesFromProps } from '../../utils'
  * @param {string} props.color color
  * @param {Function} props.onFlipped callback
  * @param {boolean} props.isGame game card?
+ * @param {boolean} props.isLocked lock interactions?
  * @returns {React.ReactElement} react component
  */
 export function CardComponent ({
     children,
-    color = 'white',
+    color,
     onFlipped = () => undefined,
     isGame,
+    isLocked,
 }) {
 
     const { front, back } = getFacesFromProps (children)
@@ -27,19 +29,13 @@ export function CardComponent ({
         'opacity': flipped ? 1 : 0,
         'transform': `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
         'config': { 'mass': 10, 'tension': 500, 'friction': 80 },
-        // 'config': { 'mass': 5, 'tension': 500, 'friction': 100 },
     })
 
     useEffect (() => {
 
         if (!flipped) return
 
-        // wait for the flip animation to end
-        setTimeout (() => {
-
-            onFlipped ()
-
-        }, 500)
+        onFlipped ()
 
     }, [flipped])
 
@@ -55,10 +51,14 @@ export function CardComponent ({
                 <Card
                     $isFront
                     $isGame={isGame}
-                    color={color}
+                    $color={color}
                     width={width}
                     height={height}
-                    onClick={toggleFlipped}
+                    onClick={
+                        isLocked
+                            ? undefined
+                            : toggleFlipped
+                    }
                     style={{
                         'opacity': spring.opacity.to ((o) => 1 - o),
                         'transform': spring.transform,
@@ -69,13 +69,13 @@ export function CardComponent ({
                 <Card
                     $isBack
                     $isGame={isGame}
-                    color={color}
+                    $color={color}
                     width={width}
                     height={height}
                     onClick={
-                        Object.keys (back.props).length
-                            ? toggleFlipped
-                            : undefined
+                        typeof back.props.children === 'undefined'
+                            ? undefined
+                            : toggleFlipped
                     }
                     style={{
                         'opacity': spring.opacity,

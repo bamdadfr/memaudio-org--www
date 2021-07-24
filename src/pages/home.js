@@ -13,16 +13,22 @@ export default function HomePage () {
 
     const router = useRouter ()
 
-    const redirectToHome = useCallback (async () => {
+    const toHome = useCallback (async () => {
 
         await router.push ('/')
 
     }, [])
 
+    const toGame = useCallback (async () => {
+
+        await router.push ('/game/1')
+    
+    }, [])
+
     return (
         <>
             <DefaultLayout>
-                <CardComponent onFlipped={redirectToHome}>
+                <CardComponent onFlipped={toHome}>
                     <FaHeadphones/>
                 </CardComponent>
                 <CardComponent color={Theme.red}>
@@ -36,7 +42,7 @@ export default function HomePage () {
                 <CardComponent color={Theme.blue}>
                     <FaQuestion/>
                 </CardComponent>
-                <CardComponent color={Theme.yellow}>
+                <CardComponent color={Theme.yellow} onFlipped={toGame}>
                     <FiPlay/>
                 </CardComponent>
             </DefaultLayout>

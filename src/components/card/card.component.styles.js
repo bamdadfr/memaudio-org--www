@@ -27,7 +27,7 @@ export const Card = styled (a.div)`
     backface-visibility: hidden;
 
     &:hover {
-        cursor: pointer;
+        cursor: ${(props) => typeof props.onClick === 'function' ? 'pointer' : 'inherit'};
     }
 
     > * {

@@ -1,45 +1,38 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { useSpring } from '@react-spring/web'
-import { useMeasure } from 'react-use'
+import React, { useEffect } from 'react'
 import { Container, Card } from './card.component.styles'
-import { getFacesFromProps } from '../../utils'
+import { useCardComponent } from './hooks'
 
 /**
  * @param {object} props react props
  * @param {Array.<React.ReactElement>} props.children content of the card
  * @param {string} props.color color
- * @param {Function} props.onFlipped callback
- * @param {boolean} props.isGame game card?
- * @param {boolean} props.isLocked lock interactions?
+ * @param {Function} props.handleFlipped callback
  * @returns {React.ReactElement} react component
  */
 export function CardComponent ({
     children,
     color,
-    onFlipped = () => undefined,
-    isGame,
-    isLocked,
+    handleFlipped = () => undefined,
 }) {
 
-    const { front, back } = getFacesFromProps (children)
-    const [flipped, setFlipped] = useState (false)
-    const [ref, { width, height }] = useMeasure ()
-
-    const spring = useSpring ({
-        'opacity': flipped ? 1 : 0,
-        'transform': `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
-        'config': { 'mass': 10, 'tension': 500, 'friction': 80 },
-    })
+    const {
+        ref,
+        width,
+        height,
+        front,
+        back,
+        flipped,
+        toggleFlipped,
+        spring,
+    } = useCardComponent (children)
 
     useEffect (() => {
 
         if (!flipped) return
 
-        onFlipped ()
+        handleFlipped ()
 
     }, [flipped])
-
-    const toggleFlipped = useCallback (() => setFlipped ((f) => !f), [])
 
     return (
         <>
@@ -50,15 +43,10 @@ export function CardComponent ({
             >
                 <Card
                     $isFront
-                    $isGame={isGame}
                     $color={color}
                     width={width}
                     height={height}
-                    onClick={
-                        isLocked
-                            ? undefined
-                            : toggleFlipped
-                    }
+                    onClick={() => toggleFlipped ()}
                     style={{
                         'opacity': spring.opacity.to ((o) => 1 - o),
                         'transform': spring.transform,
@@ -68,15 +56,10 @@ export function CardComponent ({
                 </Card>
                 <Card
                     $isBack
-                    $isGame={isGame}
                     $color={color}
                     width={width}
                     height={height}
-                    onClick={
-                        typeof back.props.children === 'undefined'
-                            ? undefined
-                            : toggleFlipped
-                    }
+                    onClick={() => toggleFlipped ()}
                     style={{
                         'opacity': spring.opacity,
                         'transform': spring.transform,

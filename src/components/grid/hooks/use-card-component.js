@@ -1,6 +1,6 @@
 import { useMeasure } from 'react-use'
 import { useCallback, useState } from 'react'
-import { getFacesFromProps } from '../utils'
+import { getCardFaces } from '../utils'
 import { useCardFlip } from './use-card-flip'
 import { useCardCallback } from './use-card-callback'
 
@@ -19,7 +19,7 @@ export function useCardComponent ({
 }) {
 
     const [flipped, setFlipped] = useState (false)
-    const { front, back } = getFacesFromProps (content)
+    const { front, back } = getCardFaces (content)
     const [ref, { width, height }] = useMeasure ()
     const { spring } = useCardFlip (flipped)
     const toggleFlipped = useCallback (() => setFlipped ((f) => !f), [])

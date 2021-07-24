@@ -6,7 +6,7 @@ import React from 'react'
  * @typedef {null|React.ReactElement} Back
  * @returns {{Front,Back}} faces of the card
  */
-export function getFacesFromProps (props) {
+export function getCardFaces (props) {
 
     if (typeof props === 'string') return { 'front': props, 'back': null }
 

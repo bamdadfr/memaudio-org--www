@@ -1,1 +1,1 @@
-export { getFacesFromProps } from './get-faces-from-props'
+export { getCardFaces } from './get-card-faces'

@@ -21,6 +21,7 @@ export default function HomePage () {
                         {
                             'front': <FaHeadphones/>,
                             'callback': async () => await router.push ('/'),
+                            'leaveOnCallback': true,
                         },
                         {
                             'front': <FiUser/>,
@@ -35,6 +36,7 @@ export default function HomePage () {
                             'front': <FiPlay/>,
                             'color': Theme.yellow,
                             'callback': async () => await router.push ('/music/1'),
+                            'leaveOnCallback': true,
                         },
                     ]}
                 />

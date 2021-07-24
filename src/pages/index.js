@@ -19,6 +19,7 @@ export default function IndexPage () {
                         {
                             'front': <FiPlay/>,
                             'callback': async () => await router.push ('/home'),
+                            'leaveOnCallback': true,
                         },
                     ]}
                 />

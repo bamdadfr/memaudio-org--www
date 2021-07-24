@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { animated, useTransition } from '@react-spring/web'
 import { useMeasure } from 'react-use'
 import { Container, Grid } from './grid.component.styles'
@@ -45,15 +45,15 @@ export function GridComponent ({
 
     }, [leaving])
 
-    const executeCallback = (callback) => {
+    const handleFlipped = useCallback ((card) => {
 
-        if (typeof callback !== 'function') return
+        if (typeof card.callback !== 'function') return
 
-        setLeaving (true)
+        if (card.leaveOnCallback) setLeaving (true)
 
-        setTimeout (callback, 400)
+        setTimeout (card.callback, 400)
 
-    }
+    }, [cards])
 
     return (
         <>
@@ -64,7 +64,7 @@ export function GridComponent ({
                             ?
                                 <animated.div style={style}>
                                     <CardComponent
-                                        onFlipped={() => executeCallback (card.callback)}
+                                        onFlipped={() => handleFlipped (card)}
                                         color={card.color}
                                         isGame={isGame}
                                     >

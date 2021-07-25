@@ -8,6 +8,7 @@ import { shuffleArray } from '../../utils'
 import { Worlds } from '../../app/data'
 import { useStore } from '../../store'
 import { CardType } from '../../types'
+import { Theme } from '../../app/styles'
 
 const propTypes = {
     'deck': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,
@@ -70,6 +71,7 @@ export function getServerSideProps (context) {
 
         const card = {
             'src': `src ${i}`,
+            'color': Theme.white,
             'drawn': false,
             'matched': false,
             'front': i, // todo remove when production

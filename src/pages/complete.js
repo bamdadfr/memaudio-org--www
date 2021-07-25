@@ -35,11 +35,11 @@ export default function CompletePage () {
                     cards={[
                         {
                             'front': `${world}:${level} complete`,
-                            'color': Theme.yellow,
+                            'color': Theme.soap,
                         },
                         {
                             'front': <FaPlay/>,
-                            'color': Theme.red,
+                            'color': Theme.white,
                             'callback': async () => await router.push (`/${world}/${parseInt (level) + 1}`),
                             'leaveOnCallback': true,
                         },

@@ -72,7 +72,7 @@ export function CardComponent ({
             >
                 <Card
                     $isFront
-                    $color={gameIsRunning ? 'white' : color}
+                    $color={color}
                     width={width}
                     height={height}
                     onClick={!boardIsLocked ? handleClick : undefined}

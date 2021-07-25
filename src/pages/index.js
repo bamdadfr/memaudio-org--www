@@ -5,6 +5,7 @@ import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
+import { Theme } from '../app/styles'
 
 /**
  * @returns {React.ReactElement} react component
@@ -20,7 +21,7 @@ export default function IndexPage () {
                     cards={[
                         {
                             'front': <FaPlay/>,
-                            'color': 'white',
+                            'color': Theme.white,
                             'callback': async () => await router.push ('/home'),
                             'leaveOnCallback': true,
                         },

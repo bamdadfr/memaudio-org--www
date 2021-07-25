@@ -19,25 +19,29 @@ export const useStore = create (
             'isLocked': false,
             'isLeaving': false,
             // lock
-            'setLock': () => set (() => ({
+            'setLock': () => set ((state) => ({
                 'board': {
+                    ...state.board,
                     'isLocked': true,
                 },
             })),
-            'setUnlock': () => set (() => ({
+            'setUnlock': () => set ((state) => ({
                 'board': {
+                    ...state.board,
                     'isLocked': false,
                 },
             })),
             // leave
-            'setLeave': () => set (() => ({
+            'setLeave': () => set ((state) => ({
                 'board': {
+                    ...state.board,
                     'isLocked': true,
                     'isLeaving': true,
                 },
             })),
-            'resetLeave': () => set (() => ({
+            'resetLeave': () => set ((state) => ({
                 'board': {
+                    ...state.board,
                     'isLocked': false,
                     'isLeaving': false,
                 },
@@ -49,21 +53,24 @@ export const useStore = create (
             'drawn': [],
             'matched': 0,
             // global
-            'load': (newCards) => set (() => ({
+            'load': (newCards) => set ((state) => ({
                 'deck': {
+                    ...state.deck,
                     'cards': newCards,
                 },
             })),
-            'reset': () => set (() => ({
+            'reset': () => set ((state) => ({
                 'deck': {
+                    ...state.deck,
                     'cards': [],
                     'drawn': [],
                     'matched': 0,
                 },
             })),
             // draw
-            'resetDrawn': () => set (() => ({
+            'resetDrawn': () => set ((state) => ({
                 'deck': {
+                    ...state.deck,
                     'drawn': [],
                 },
             })),
@@ -117,6 +124,7 @@ export const useStore = create (
             // match
             'setMatch': () => set ((state) => ({
                 'deck': {
+                    ...state.deck,
                     'matched': state.matched + 2,
                 },
             })),

@@ -16,43 +16,63 @@ export const Container = styled.div`
         user-select: none;
     }
 
-    svg {
-        font-size: 5em;
-    }
-
     @media screen and ${Breakpoints.ultramobile} {
         width: 16rem;
         height: 16rem;
         font-size: 1em;
+        
+        svg {
+            font-size: 3.6em;
+        }
     }
 
     @media screen and ${Breakpoints.mobile} {
         width: 24rem;
         height: 24rem;
         font-size: 1.2em;
+
+        svg {
+            font-size: 3.8em;
+        }
     }
 
     @media screen and ${Breakpoints.tablet} {
         width: 32rem;
         height: 32rem;
         font-size: 1.4em;
+
+        svg {
+            font-size: 4em;
+        }
     }
 
     @media screen and ${Breakpoints.desktop} {
         width: 36rem;
         height: 36rem;
         font-size: 1.6em;
+
+        svg {
+            font-size: 4.2em;
+        }
     }
 
     @media screen and ${Breakpoints.widescreen} {
         width: 38rem;
         height: 38rem;
         font-size: 1.8em;
+
+        svg {
+            font-size: 4.4em;
+        }
     }
 
     @media screen and ${Breakpoints.fullhd} {
         width: 42rem;
         height: 42rem;
         font-size: 2em;
+
+        svg {
+            font-size: 4.6em;
+        }
     }
 `

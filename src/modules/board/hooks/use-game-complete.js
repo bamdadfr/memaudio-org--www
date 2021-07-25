@@ -29,7 +29,7 @@ export function useGameComplete () {
 
             complete (world, level)
 
-            await router.replace ('/complete')
+            await router.push ('/complete')
 
         }, waitFor.board.leave)
 

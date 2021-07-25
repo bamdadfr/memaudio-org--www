@@ -10,6 +10,7 @@ export default function NotFoundPage () {
 
     const router = useRouter ()
 
+    // todo auto route push
     return (
         <>
             <DefaultLayout>

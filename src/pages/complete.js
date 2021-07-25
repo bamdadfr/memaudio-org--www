@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { FaPlay } from 'react-icons/fa'
-import { useStore } from '../hooks'
+import { useStore } from '../store'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'

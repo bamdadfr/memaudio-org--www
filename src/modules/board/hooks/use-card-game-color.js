@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useStore } from '../../../hooks'
+import { useStore } from '../../../store'
 import { Theme } from '../../../app/styles'
 
 /**

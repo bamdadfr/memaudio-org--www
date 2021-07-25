@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useStore } from '../../../hooks'
+import { useStore } from '../../../store'
 
 /**
  * @param {number} id card id

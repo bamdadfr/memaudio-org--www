@@ -6,7 +6,7 @@ import { useCardSpring } from './use-card-spring'
 import { useCardCallback } from './use-card-callback'
 import { useCardFlip } from './use-card-flip'
 import { useCardGameColor } from './use-card-game-color'
-import { useStore } from '../../../hooks'
+import { useStore } from '../../../store'
 
 // todo jsdoc
 /**

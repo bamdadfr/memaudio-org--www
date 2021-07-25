@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react'
-import { useStore } from '../../../hooks'
+import { useStore } from '../../../store'
 
 /**
  * @description when 2 cards are drawn

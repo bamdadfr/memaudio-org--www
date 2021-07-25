@@ -1,0 +1,1 @@
+export { deckStore } from './deck.store'

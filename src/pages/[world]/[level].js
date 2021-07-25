@@ -3,7 +3,7 @@ import { DefaultLayout } from '../../layouts'
 import { BoardModule } from '../../modules'
 import { shuffleArray } from '../../utils'
 import { Worlds } from '../../app/data'
-import { useStore } from '../../hooks'
+import { useStore } from '../../store'
 
 /**
  * @param {object} context next.js context

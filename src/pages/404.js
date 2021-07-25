@@ -1,9 +1,11 @@
 // noinspection JSUnusedGlobalSymbols
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
+import { useStore } from '../store'
+import { Theme } from '../app/styles'
 
 /**
  * @returns {React.ReactElement} react component
@@ -11,18 +13,37 @@ import { BoardModule } from '../modules'
 export default function NotFoundPage () {
 
     const router = useRouter ()
+    const setLeave = useStore ((state) => state.board.setLeave)
+    const waitFor = useStore ((state) => state.animations.waitFor)
 
-    // todo auto route push
+    useEffect (() => {
+
+        setTimeout (() => {
+
+            setLeave ()
+
+            setTimeout (async () => {
+
+                await router.push ('/')
+            
+            }, waitFor.board.leave)
+            
+        }, 2000)
+
+    }, [])
+
     return (
         <>
             <DefaultLayout>
                 <BoardModule
                     cards={[
                         {
-                            'front': 'not found, redirecting...',
-                            'color': 'white',
-                            'callback': async () => await router.push ('/'),
-                            'leaveOnCallback': true,
+                            'front': 'not found',
+                            'color': Theme.soap,
+                        },
+                        {
+                            'front': 'redirecting...',
+                            'color': Theme.white,
                         },
                     ]}
                 />

@@ -9,7 +9,7 @@ import { Theme } from '../app/styles'
 /**
  * @returns {React.ReactElement} react component
  */
-export default function WorldLevelEndPage () {
+export default function CompletePage () {
 
     const router = useRouter ()
     const isComplete = useStore ((state) => state.game.isComplete)
@@ -23,6 +23,8 @@ export default function WorldLevelEndPage () {
         await router.replace ('/')
     
     }, [])
+
+    if (!isComplete) return <></>
 
     return (
         <>

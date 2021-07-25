@@ -1,7 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Container, Card } from './card.component.styles'
 import { useCardComponent } from '../../hooks'
 import { GameComponent } from '../game'
+
+const propTypes = {
+    'children': PropTypes.node.isRequired,
+    'id': PropTypes.number.isRequired,
+    'color': PropTypes.string,
+    'callback': PropTypes.func,
+    'leaveOnCallback': PropTypes.bool,
+}
+
+const defaultProps = {
+    'color': undefined,
+    'callback': undefined,
+    'leaveOnCallback': undefined,
+}
 
 /**
  * @param {object} props react props
@@ -15,9 +30,9 @@ import { GameComponent } from '../game'
 export function CardComponent ({
     children,
     id,
-    color,
-    callback,
-    leaveOnCallback,
+    color = defaultProps.color,
+    callback = defaultProps.callback,
+    leaveOnCallback = defaultProps.leaveOnCallback,
 }) {
 
     const {
@@ -91,3 +106,7 @@ export function CardComponent ({
     )
 
 }
+
+CardComponent.propTypes = propTypes
+
+CardComponent.defaultProps = defaultProps

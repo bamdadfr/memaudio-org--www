@@ -1,6 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Container } from './default.layout.styles'
 import { FadeAnimation } from '../../animations'
+
+const propTypes = {
+    'children': PropTypes.node.isRequired,
+}
 
 /**
  * @param {object} props react props
@@ -20,3 +25,5 @@ export function DefaultLayout ({ children }) {
     )
 
 }
+
+DefaultLayout.propTypes = propTypes

@@ -8,7 +8,6 @@ import { useCardFlip } from './use-card-flip'
 import { useCardGameColor } from './use-card-game-color'
 import { useStore } from '../../../store'
 
-// todo jsdoc
 /**
  * @param {object} params hook parameters
  * @param {number} params.children react component children with faces to parse

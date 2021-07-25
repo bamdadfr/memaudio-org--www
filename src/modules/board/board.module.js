@@ -1,8 +1,14 @@
 import React from 'react'
 import { animated } from '@react-spring/web'
+import PropTypes from 'prop-types'
 import { Container, Grid } from './board.module.styles'
 import { useBoardComponent } from './hooks'
 import { CardComponent } from './components'
+import { CardType } from '../../types'
+
+const propTypes = {
+    'cards': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,
+}
 
 /**
  * @param {object} props react props
@@ -41,3 +47,5 @@ export function BoardModule ({ cards }) {
     )
 
 }
+
+BoardModule.propTypes = propTypes

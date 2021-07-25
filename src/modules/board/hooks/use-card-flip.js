@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useStore } from '../../../../../hooks'
+import { useStore } from '../../../hooks'
 
 /**
  * @param {*} id todo
@@ -11,17 +11,26 @@ export function useCardFlip (id) {
     const [flipped, setFlipped] = useState (false)
     const toggleFlipped = useCallback (() => setFlipped ((f) => !f), [])
     // global
-    const isGame = useStore ((state) => state.level.isGame)
+    const gameIsRunning = useStore ((state) => state.game.isRunning)
     const setDraw = useStore ((state) => state.deck.setDraw)
+    const isDrawn = useStore ((state) => state.deck.getCard (id)?.drawn)
 
     // when flipped, draw a card
     useEffect (() => {
 
         if (!flipped) return
 
-        if (isGame) setDraw (id)
+        if (gameIsRunning) setDraw (id)
     
     }, [flipped])
+
+    useEffect (() => {
+
+        if (!gameIsRunning) return
+
+        setFlipped (isDrawn)
+    
+    }, [isDrawn])
 
     return {
         flipped,

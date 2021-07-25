@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { DefaultLayout } from '../../layouts'
-import { BoardComponent } from '../../components'
+import { BoardModule } from '../../modules'
 import { shuffleArray } from '../../utils'
 import { Worlds } from '../../app/data'
 import { useStore } from '../../hooks'
@@ -15,10 +15,10 @@ export function getServerSideProps (context) {
     const props = {}
 
     // world exists?
-    if (typeof Worlds[world] === 'undefined') return { 'redirect': { 'destination': '/', 'permanent': false }}
+    if (typeof Worlds[world] === 'undefined') return { 'redirect': { 'destination': '/404', 'permanent': false }}
 
     // world.level exists?
-    if (typeof Worlds[world][level] === 'undefined') return { 'redirect': { 'destination': '/', 'permanent': false }}
+    if (typeof Worlds[world][level] === 'undefined') return { 'redirect': { 'destination': '/404', 'permanent': false }}
 
     props.deck = []
 
@@ -26,7 +26,6 @@ export function getServerSideProps (context) {
 
         const card = {
             'src': `src ${i}`,
-            'color': 'white',
             'drawn': false,
             'matched': false,
             'front': i, // todo remove
@@ -54,7 +53,7 @@ export function getServerSideProps (context) {
  * @param {Array} props.deck containing cards
  * @returns {React.ReactElement} react component
  */
-export default function LevelPage ({ deck }) {
+export default function WorldLevelPage ({ deck }) {
 
     const load = useStore ((state) => state.deck.load)
     const reset = useStore ((state) => state.deck.reset)
@@ -74,7 +73,7 @@ export default function LevelPage ({ deck }) {
     return (
         <>
             <DefaultLayout>
-                <BoardComponent
+                <BoardModule
                     cards={deck}
                 />
             </DefaultLayout>

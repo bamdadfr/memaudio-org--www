@@ -1,11 +1,21 @@
 import create from 'zustand'
-import { Theme } from '../app/styles'
 
 export const useStore = create (
     (set, get) => ({
         // level
-        'level': {
-            'isGame': false,
+        'game': {
+            'isRunning': false,
+            'isComplete': false,
+            'world': undefined,
+            'level': undefined,
+            'complete': (world, level) => set ((state) => ({
+                'game': {
+                    ...state.game,
+                    'isComplete': true,
+                    'world': world,
+                    'level': level,
+                },
+            })),
         },
         // animations
         'animations': {
@@ -54,30 +64,32 @@ export const useStore = create (
         },
         // deck
         'deck': {
-            'cards': [],
+            'cards': {},
+            'getCard': (id) => get ().deck.cards[id],
             'drawn': [],
-            'matched': 0,
+            'toMatch': -1,
             // global
             'load': (newCards) => set ((state) => ({
-                'level': {
-                    ...state.level,
-                    'isGame': true,
+                'game': {
+                    ...state.game,
+                    'isRunning': true,
                 },
                 'deck': {
                     ...state.deck,
-                    'cards': newCards,
+                    'cards': { ...newCards },
+                    'toMatch': newCards.length,
                 },
             })),
             'reset': () => set ((state) => ({
-                'level': {
-                    ...state.level,
-                    'isGame': false,
+                'game': {
+                    ...state.game,
+                    'isRunning': false,
                 },
                 'deck': {
                     ...state.deck,
-                    'cards': [],
+                    'cards': {},
                     'drawn': [],
-                    'matched': 0,
+                    'toMatch': -1,
                 },
             })),
             // draw
@@ -87,39 +99,78 @@ export const useStore = create (
                     'drawn': [],
                 },
             })),
-            'setDraw': (id) => set (() => {
+            'setDraw': (id) => set ((state) => {
 
-                const cards = get ().deck.cards
-                const drawn = get ().deck.drawn
+                const newCard = state.deck.cards[id]
 
-                cards[id].drawn = true
+                newCard.drawn = true
 
-                cards[id].color = Theme.blue
-
-                drawn.push (id)
+                return {
+                    'deck': {
+                        ...state.deck,
+                        'cards': {
+                            ...state.deck.cards,
+                            newCard,
+                        },
+                        'drawn': [
+                            ...state.deck.drawn,
+                            id,
+                        ],
+                    },
+                }
 
             }),
-            'setUndraw': () => set (() => {
+            'setUndraw': () => set ((state) => {
 
-                const cards = get ().deck.cards
-                const drawn = get ().deck.drawn
+                let newCards = {}
 
-                drawn.forEach ((id) => {
+                state.deck.drawn.forEach ((id) => {
 
-                    cards[id].drawn = false
-                
+                    const newCard = state.deck.cards[id]
+
+                    newCard.drawn = false
+
+                    newCards = {
+                        ...newCards,
+                        newCard,
+                    }
+
                 })
 
-                get ().deck.resetDrawn ()
+                return {
+                    'deck': {
+                        ...state.deck,
+                        'cards': {
+                            ...state.deck.cards,
+                            ...newCards,
+                        },
+                        'drawn': [],
+                    },
+                }
             
             }),
             // match
-            'setMatch': () => set ((state) => ({
-                'deck': {
-                    ...state.deck,
-                    'matched': state.deck.matched + 2,
-                },
-            })),
+            'setMatch': () => set ((state) => {
+
+                const number = state.deck.drawn.length
+
+                state.deck.drawn.forEach ((id) => {
+
+                    const card = state.deck.cards[id]
+
+                    card.matched = true
+
+                })
+
+                return {
+                    'deck': {
+                        ...state.deck,
+                        'toMatch': state.deck.toMatch - number,
+                        'drawn': [],
+                    },
+                }
+            
+            }),
         },
     }),
 )

@@ -2,7 +2,7 @@ import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
-import { BoardComponent } from '../components'
+import { BoardModule } from '../modules'
 
 /**
  * @returns {React.ReactElement} react component
@@ -14,7 +14,7 @@ export default function IndexPage () {
     return (
         <>
             <DefaultLayout>
-                <BoardComponent
+                <BoardModule
                     cards={[
                         {
                             'front': <FaPlay/>,

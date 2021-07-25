@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Card } from './card.component.styles'
-import { useCardComponent } from './hooks'
-import { useStore } from '../../../../hooks'
+import { useCardComponent } from '../../hooks'
+import { GameComponent } from '../game'
 
 /**
  * @param {object} props react props
@@ -30,6 +30,10 @@ export function CardComponent ({
         back,
         // animations
         spring,
+        // ui
+        boardIsLocked,
+        gameIsRunning,
+        gameColor,
         // interactions
         handleClick,
     } = useCardComponent ({
@@ -39,12 +43,13 @@ export function CardComponent ({
         leaveOnCallback,
     })
 
-    const boardIsLocked = useStore ((state) => state.board.isLocked)
-    const cards = useStore ((state) => state.deck.cards)
-    const isGame = useStore ((state) => state.level.isGame)
-
+    // const state = useStore ((state) => state)
+    //
+    // console.log (state)
+    
     return (
         <>
+            <GameComponent/>
             <Container
                 ref={ref}
                 tabIndex={-1}
@@ -52,7 +57,7 @@ export function CardComponent ({
             >
                 <Card
                     $isFront
-                    $color={color}
+                    $color={gameIsRunning ? 'white' : color}
                     width={width}
                     height={height}
                     onClick={!boardIsLocked ? handleClick : undefined}
@@ -65,7 +70,7 @@ export function CardComponent ({
                 </Card>
                 <Card
                     $isBack
-                    $color={isGame ? cards[id].color : color}
+                    $color={gameIsRunning ? gameColor : color}
                     width={width}
                     height={height}
                     onClick={

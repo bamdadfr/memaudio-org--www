@@ -1,6 +1,6 @@
 import React from 'react'
 import { animated } from '@react-spring/web'
-import { Container, Grid } from './board.component.styles'
+import { Container, Grid } from './board.module.styles'
 import { useBoardComponent } from './hooks'
 import { CardComponent } from './components'
 
@@ -9,7 +9,7 @@ import { CardComponent } from './components'
  * @param {Array} props.cards array of cards
  * @returns {React.ReactElement} react component
  */
-export function BoardComponent ({ cards }) {
+export function BoardModule ({ cards }) {
 
     const {
         columns,

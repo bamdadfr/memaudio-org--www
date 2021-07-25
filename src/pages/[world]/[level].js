@@ -48,8 +48,6 @@ export default function WorldLevelPage ({ deck }) {
 
 }
 
-WorldLevelPage.propTypes = propTypes
-
 /**
  * @param {object} context next.js context
  * @returns {object} props
@@ -93,3 +91,5 @@ export function getServerSideProps (context) {
     return { props }
 
 }
+
+WorldLevelPage.propTypes = propTypes

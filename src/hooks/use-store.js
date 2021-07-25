@@ -3,65 +3,123 @@ import create from 'zustand'
 export const useStore = create (
     (set, get) => ({
         // animations
-        'waitFor': {
-            'gridEnter': 5,
-            'gridLeave': 400,
-            'cardFlip': 500,
+        'animations': {
+            'waitFor': {
+                'board': {
+                    'enter': 5,
+                    'leave': 400,
+                },
+                'card': {
+                    'flip': 500,
+                },
+            },
         },
-        // grid,
-        'locked': false,
-        'setLocked': () => set (() => ({ 'locked': true })),
-        'unlock': () => set (() => ({ 'locked': false })),
-        'leave': false,
-        'fireLeave': () => set (() => ({
-            'locked': true,
-            'leave': true,
-        })),
-        'resetLeave': () => set (() => ({
-            'locked': false,
-            'leave': false,
-        })),
+        // board
+        'board': {
+            'isLocked': false,
+            'isLeaving': false,
+            // lock
+            'setLock': () => set (() => ({
+                'board': {
+                    'isLocked': true,
+                },
+            })),
+            'setUnlock': () => set (() => ({
+                'board': {
+                    'isLocked': false,
+                },
+            })),
+            // leave
+            'setLeave': () => set (() => ({
+                'board': {
+                    'isLocked': true,
+                    'isLeaving': true,
+                },
+            })),
+            'resetLeave': () => set (() => ({
+                'board': {
+                    'isLocked': false,
+                    'isLeaving': false,
+                },
+            })),
+        },
         // deck
-        'deck': [],
-        'loadDeck': (d) => set (() => ({ 'deck': d })),
-        'unloadDeck': () => set (() => ({ 'deck': [] })),
-        'drawn': [], // only stores id
-        'flushDrawn': () => set (() => ({ 'drawn': [] })),
-        'drawCard': (id) => set (() => {
+        'deck': {
+            'cards': [],
+            'drawn': [],
+            'matched': 0,
+            // global
+            'load': (newCards) => set (() => ({
+                'deck': {
+                    'cards': newCards,
+                },
+            })),
+            'reset': () => set (() => ({
+                'deck': {
+                    'cards': [],
+                    'drawn': [],
+                    'matched': 0,
+                },
+            })),
+            // draw
+            'resetDrawn': () => set (() => ({
+                'deck': {
+                    'drawn': [],
+                },
+            })),
+            'setDraw': (id) => set (() => {
 
-            const deck = get ().deck
-            const drawn = get ().drawn
+                const cards = get ().deck.cards
+                const drawn = get ().deck.drawn
+                const setMatch = get ().deck.setMatch
 
-            deck[id].drawn = true
+                cards[id].drawn = true
 
-            drawn.push (id)
+                drawn.push (id)
 
-            if (drawn.length === 2) {
+                if (drawn.length === 2) {
 
-                get ().setLocked ()
+                    get ().setLocked ()
 
-                if (deck[drawn[0]].src === deck[drawn[1]].src) {
+                    if (cards[drawn[0]].src === cards[drawn[1]].src) {
 
-                    deck[drawn[0]].matched = true
+                        cards[drawn[0]].matched = true
 
-                    deck[drawn[1]].matched = true
+                        cards[drawn[1]].matched = true
 
-                    get ().flushDrawn ()
+                        setMatch ()
 
-                    get ().unlock ()
+                        if (get ().matched === cards.length) {
 
-                } else {
+                            get ().setLock ()
 
-                    deck[drawn[0]].drawn = false
+                            get ().setLeave ()
 
-                    deck[drawn[1]].drawn = false
+                        }
 
-                    get ().flushDrawn ()
+                        get ().resetDrawn ()
+
+                        get ().setUnlock ()
+
+                    } else {
+
+                        cards[drawn[0]].drawn = false
+
+                        cards[drawn[1]].drawn = false
+
+                        get ().resetDrawn ()
+
+                    }
 
                 }
 
-            }
-
-        }),
+            }),
+            // match
+            'setMatch': () => set ((state) => ({
+                'deck': {
+                    'matched': state.matched + 2,
+                },
+            })),
+        },
     }),
 )

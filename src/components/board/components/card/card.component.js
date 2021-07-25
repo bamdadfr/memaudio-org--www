@@ -40,6 +40,8 @@ export function CardComponent ({
     })
 
     const boardIsLocked = useStore ((state) => state.board.isLocked)
+    const cards = useStore ((state) => state.deck.cards)
+    const isGame = useStore ((state) => state.level.isGame)
 
     return (
         <>
@@ -63,7 +65,7 @@ export function CardComponent ({
                 </Card>
                 <Card
                     $isBack
-                    $color={color}
+                    $color={isGame ? cards[id].color : color}
                     width={width}
                     height={height}
                     onClick={

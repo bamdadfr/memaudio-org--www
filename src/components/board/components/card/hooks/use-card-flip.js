@@ -11,6 +11,7 @@ export function useCardFlip (id) {
     const [flipped, setFlipped] = useState (false)
     const toggleFlipped = useCallback (() => setFlipped ((f) => !f), [])
     // global
+    const isGame = useStore ((state) => state.level.isGame)
     const setDraw = useStore ((state) => state.deck.setDraw)
 
     // when flipped, draw a card
@@ -18,7 +19,7 @@ export function useCardFlip (id) {
 
         if (!flipped) return
 
-        setDraw (id)
+        if (isGame) setDraw (id)
     
     }, [flipped])
 

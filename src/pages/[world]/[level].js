@@ -26,8 +26,10 @@ export function getServerSideProps (context) {
 
         const card = {
             'src': `src ${i}`,
+            'color': 'white',
             'drawn': false,
             'matched': false,
+            'front': i, // todo remove
         }
 
         // pushing a pair of cards
@@ -73,10 +75,7 @@ export default function LevelPage ({ deck }) {
         <>
             <DefaultLayout>
                 <BoardComponent
-                    cards={deck.map ((card) => ({
-                        ...card,
-                        'front': card.src,
-                    }))}
+                    cards={deck}
                 />
             </DefaultLayout>
         </>

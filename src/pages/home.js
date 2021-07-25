@@ -19,6 +19,7 @@ export default function HomePage () {
                     cards={[
                         {
                             'front': <FaHeadphones/>,
+                            'color': 'white',
                             'callback': async () => await router.push ('/'),
                             'leaveOnCallback': true,
                         },

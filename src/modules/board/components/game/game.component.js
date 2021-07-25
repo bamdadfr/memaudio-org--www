@@ -1,14 +1,12 @@
 import React from 'react'
-import { useGameMatch, useGameComplete } from '../../hooks'
+import { useGameComponent } from '../../hooks'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export function GameComponent () {
 
-    useGameMatch ()
-
-    useGameComplete ()
+    useGameComponent ()
 
     return <></>
 

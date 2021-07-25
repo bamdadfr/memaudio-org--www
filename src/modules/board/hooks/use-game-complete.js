@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useStore } from '../../../hooks'
 
 /**
- *
+ * @description when game is completed
  */
 export function useGameComplete () {
 

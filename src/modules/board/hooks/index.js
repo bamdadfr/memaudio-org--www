@@ -16,4 +16,6 @@ export { useCardSpring } from './use-card-spring'
 
 export { useGameComplete } from './use-game-complete'
 
+export { useGameComponent } from './use-game-component'
+
 export { useGameMatch } from './use-game-match'

@@ -2,8 +2,10 @@ import { useCallback, useEffect, useState } from 'react'
 import { useStore } from '../../../hooks'
 
 /**
- * @param {*} id todo
- * @returns {*} todo todo
+ * @param {number} id card id
+ * @typedef {boolean} Flipped
+ * @typedef {Function} ToggleFlipped
+ * @returns {{Flipped, ToggleFlipped}} card flipped state
  */
 export function useCardFlip (id) {
 
@@ -34,7 +36,6 @@ export function useCardFlip (id) {
 
     return {
         flipped,
-        setFlipped,
         toggleFlipped,
     }
 

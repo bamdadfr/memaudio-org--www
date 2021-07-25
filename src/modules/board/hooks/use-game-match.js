@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react'
 import { useStore } from '../../../hooks'
 
 /**
- *
+ * @description when 2 cards are drawn
  */
 export function useGameMatch () {
 

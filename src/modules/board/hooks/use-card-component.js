@@ -1,5 +1,6 @@
+import React, { useCallback } from 'react'
 import { useMeasure } from 'react-use'
-import { useCallback } from 'react'
+import { SpringValues } from '@react-spring/web'
 import { getCardFaces } from '../utils'
 import { useCardSpring } from './use-card-spring'
 import { useCardCallback } from './use-card-callback'
@@ -9,11 +10,23 @@ import { useStore } from '../../../hooks'
 
 // todo jsdoc
 /**
- * @param {*} root0 *
- * @param {*} root0.children *
- * @param {*} root0.callback *
- * @param {*} root0.leaveOnCallback *
- * @returns {*} *
+ * @param {object} params hook parameters
+ * @param {number} params.children react component children with faces to parse
+ * @param {number} params.id card id
+ * @param {Function} params.callback card callback
+ * @param {boolean} params.leaveOnCallback leave board when callback is called?
+ * @typedef {React.Ref} Ref container ref
+ * @typedef {number} Width container width
+ * @typedef {number} Height container height
+ * @typedef {HTMLElement} Front card front face
+ * @typedef {HTMLElement} Back card back face
+ * @typedef {SpringValues} Spring card spring animation (flip)
+ * @typedef {boolean} BoardIsLocked board is locked?
+ * @typedef {boolean} GameIsRunning game is running?
+ * @typedef {string} GameColor color for back face (match status)
+ * @typedef {Function} HandleClick wrapper for toggling flip state
+ * @returns {{Ref, Width, Height, Front, Back, Spring, BoardIsLocked, GameIsRunning, GameColor, HandleClick}}
+ *      custom state for card.component.js
  */
 export function useCardComponent ({
     children,

@@ -2,6 +2,7 @@ import React from 'react'
 import { BackgroundComponent } from '../../components'
 
 /**
+ * @description exclusive use in pages/_app.js
  * @param {object} props react props
  * @param {React.ReactNode} props.children children
  * @returns {React.ReactElement} react component

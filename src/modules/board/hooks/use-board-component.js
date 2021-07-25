@@ -3,7 +3,6 @@ import { useBoardSize } from './use-board-size'
 import { useBoardTransitions } from './use-board-transitions'
 
 /**
- * @description get number of columns and rows
  * @param {number} cards number of cards to display
  * @typedef {number} Columns
  * @typedef {number} Rows

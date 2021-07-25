@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import React from 'react'
 import { FaHeadphones, FaQuestion, FaUser, FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'

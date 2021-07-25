@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'

@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import React, { useEffect } from 'react'
 import { DefaultLayout } from '../../layouts'
 import { BoardModule } from '../../modules'

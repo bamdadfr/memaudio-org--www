@@ -1,8 +1,9 @@
 import { useMeasure } from 'react-use'
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 import { getCardFaces } from '../../../utils'
 import { useCardSpring } from './use-card-spring'
 import { useCardCallback } from './use-card-callback'
+import { useCardFlip } from './use-card-flip'
 
 // todo jsdoc
 /**
@@ -23,12 +24,12 @@ export function useCardComponent ({
     const [ref, { width, height }] = useMeasure ()
     // faces
     const { front, back } = getCardFaces (children)
-    //
-    const [flipped, setFlipped] = useState (false)
+    // state
+    const { flipped, toggleFlipped } = useCardFlip (id)
     // animations
     const { spring } = useCardSpring (flipped)
     // interactions
-    const handleClick = useCallback (() => setFlipped ((f) => !f), [])
+    const handleClick = useCallback (() => toggleFlipped (), [])
 
     useCardCallback (flipped, callback, leaveOnCallback)
 

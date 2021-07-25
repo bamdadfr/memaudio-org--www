@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Card } from './card.component.styles'
 import { useCardComponent } from './hooks'
 import { useStore } from '../../../../hooks'
-import { Theme } from '../../../../app/styles'
 
 /**
  * @param {object} props react props
@@ -41,7 +40,6 @@ export function CardComponent ({
     })
 
     const boardIsLocked = useStore ((state) => state.board.isLocked)
-    const cards = useStore ((state) => state.deck.cards)
 
     return (
         <>
@@ -65,15 +63,7 @@ export function CardComponent ({
                 </Card>
                 <Card
                     $isBack
-                    $color={() => {
-
-                        if (cards[id]?.matched) return Theme.yellow
-
-                        if (cards[id]?.drawn) return Theme.blue
-
-                        return color
-
-                    }}
+                    $color={color}
                     width={width}
                     height={height}
                     onClick={

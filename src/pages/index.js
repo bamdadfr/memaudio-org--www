@@ -18,6 +18,7 @@ export default function IndexPage () {
                     cards={[
                         {
                             'front': <FaPlay/>,
+                            'color': 'white',
                             'callback': async () => await router.push ('/home'),
                             'leaveOnCallback': true,
                         },

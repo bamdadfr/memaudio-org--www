@@ -1,7 +1,12 @@
 import create from 'zustand'
+import { Theme } from '../app/styles'
 
 export const useStore = create (
     (set, get) => ({
+        // level
+        'level': {
+            'isGame': false,
+        },
         // animations
         'animations': {
             'waitFor': {
@@ -54,12 +59,20 @@ export const useStore = create (
             'matched': 0,
             // global
             'load': (newCards) => set ((state) => ({
+                'level': {
+                    ...state.level,
+                    'isGame': true,
+                },
                 'deck': {
                     ...state.deck,
                     'cards': newCards,
                 },
             })),
             'reset': () => set ((state) => ({
+                'level': {
+                    ...state.level,
+                    'isGame': false,
+                },
                 'deck': {
                     ...state.deck,
                     'cards': [],
@@ -74,6 +87,18 @@ export const useStore = create (
                     'drawn': [],
                 },
             })),
+            'setDraw': (id) => set (() => {
+
+                const cards = get ().deck.cards
+                const drawn = get ().deck.drawn
+
+                cards[id].drawn = true
+
+                cards[id].color = Theme.blue
+
+                drawn.push (id)
+
+            }),
             'setUndraw': () => set (() => {
 
                 const cards = get ().deck.cards
@@ -87,18 +112,6 @@ export const useStore = create (
 
                 get ().deck.resetDrawn ()
             
-            }),
-            'setDraw': (id) => set (() => {
-
-                const cards = get ().deck.cards
-                const drawn = get ().deck.drawn
-
-                if (drawn.length === 2) return
-
-                cards[id].drawn = true
-
-                drawn.push (id)
-
             }),
             // match
             'setMatch': () => set ((state) => ({

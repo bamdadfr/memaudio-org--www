@@ -26,7 +26,7 @@ export function BoardComponent ({ cards }) {
                         <animated.div style={style}>
                             <CardComponent
                                 id={j}
-                                color={card.color || 'white'}
+                                color={card.color}
                                 callback={card.callback}
                                 leaveOnCallback={card.leaveOnCallback}
                             >

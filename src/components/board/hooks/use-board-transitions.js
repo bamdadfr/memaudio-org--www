@@ -8,14 +8,14 @@ import { useStore } from '../../../hooks'
  * @param {number} options.width grid width
  * @returns {{Function,Object,Function}} transitions, waitFor, triggerLeave
  */
-export function useGridTransitions (array, { width }) {
+export function useBoardTransitions (array, { width }) {
 
-    const [items, setItems] = useState ([])
-    const leave = useStore ((state) => state.leave)
-    const resetLeave = useStore ((state) => state.resetLeave)
-    const waitFor = useStore ((state) => state.waitFor)
+    const [state, setState] = useState ([])
+    const isLeaving = useStore ((state) => state.board.isLeaving)
+    const resetLeave = useStore ((state) => state.board.resetLeave)
+    const waitFor = useStore ((state) => state.animations.waitFor)
 
-    const transitions = useTransition (items, {
+    const transitions = useTransition (state, {
         'from': { 'opacity': 0, 'x': width * 2 * -1 },
         'enter': { 'opacity': 1, 'x': 0 },
         'leave': { 'opacity': 0, 'x': width * 2 },
@@ -28,33 +28,30 @@ export function useGridTransitions (array, { width }) {
 
         setTimeout (() => {
 
-            setItems (array)
+            setState (array)
 
-        }, waitFor.gridEnter)
+        }, waitFor.board.enter)
 
     }, [])
 
     // leave
     useEffect (() => {
 
-        if (leave) {
+        if (isLeaving) {
 
-            setItems ([])
+            setState ([])
 
             // reset state
             setTimeout (() => {
 
                 resetLeave ()
             
-            }, waitFor.cardFlip + waitFor.gridLeave + waitFor.gridEnter)
+            }, waitFor.card.flip + waitFor.board.leave + waitFor.board.enter)
         
         }
 
-    }, [leave])
+    }, [isLeaving])
 
-    return {
-        transitions,
-        waitFor,
-    }
+    return { transitions }
 
 }

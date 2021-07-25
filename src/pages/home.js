@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaHeadphones, FaQuestion, FaUser, FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
-import { GridComponent } from '../components'
+import { BoardComponent } from '../components'
 import { DefaultLayout } from '../layouts'
 import { Theme } from '../app/styles'
 
@@ -15,7 +15,7 @@ export default function HomePage () {
     return (
         <>
             <DefaultLayout>
-                <GridComponent
+                <BoardComponent
                     cards={[
                         {
                             'front': <FaHeadphones/>,

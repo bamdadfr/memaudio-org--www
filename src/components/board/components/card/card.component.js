@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Container, Card } from './card.component.styles'
-import { useCardComponent } from '../../hooks'
+import { useCardComponent } from './hooks'
 import { useStore } from '../../../../hooks'
 import { Theme } from '../../../../app/styles'
 
@@ -22,37 +22,26 @@ export function CardComponent ({
 }) {
 
     const {
+        // container
         ref,
         width,
         height,
+        // faces
         front,
         back,
-        flipped,
-        toggleFlipped,
+        // animations
         spring,
+        // interactions
+        handleClick,
     } = useCardComponent ({
-        'content': children,
+        children,
         id,
         callback,
         leaveOnCallback,
     })
 
-    const locked = useStore ((state) => state.locked)
-    const deck = useStore ((state) => state.deck)
-    const drawCard = useStore ((state) => state.drawCard)
-
-    const handleClick = useCallback (() => {
-
-        toggleFlipped ()
-
-        // is game?
-        if (deck.length !== 0) {
-
-            drawCard (id)
-
-        }
-
-    }, [flipped])
+    const boardIsLocked = useStore ((state) => state.board.isLocked)
+    const cards = useStore ((state) => state.deck.cards)
 
     return (
         <>
@@ -66,7 +55,7 @@ export function CardComponent ({
                     $color={color}
                     width={width}
                     height={height}
-                    onClick={!locked ? handleClick : undefined}
+                    onClick={!boardIsLocked ? handleClick : undefined}
                     style={{
                         'opacity': spring.opacity.to ((o) => 1 - o),
                         'transform': spring.transform,
@@ -78,12 +67,12 @@ export function CardComponent ({
                     $isBack
                     $color={() => {
 
-                        if (deck[id].matched) return Theme.yellow
+                        if (cards[id]?.matched) return Theme.yellow
 
-                        if (deck[id].drawn) return Theme.blue
+                        if (cards[id]?.drawn) return Theme.blue
 
                         return color
-                    
+
                     }}
                     width={width}
                     height={height}

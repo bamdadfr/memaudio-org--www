@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../hooks'
+import { useStore } from '../../../../../hooks'
 
 /**
  * @param {boolean} flipped card state
@@ -8,9 +8,9 @@ import { useStore } from '../../../hooks'
  */
 export function useCardCallback (flipped, callback, leaveOnCallback) {
 
-    const waitFor = useStore ((state) => state.waitFor)
-    const fireLeave = useStore ((state) => state.fireLeave)
-    const setLocked = useStore ((state) => state.setLocked)
+    const waitFor = useStore ((state) => state.animations.waitFor)
+    const setLeave = useStore ((state) => state.board.setLeave)
+    const setLock = useStore ((state) => state.board.setLock)
 
     useEffect (() => {
 
@@ -18,19 +18,19 @@ export function useCardCallback (flipped, callback, leaveOnCallback) {
 
         if (typeof callback !== 'function') return
 
-        setLocked ()
+        setLock ()
 
         setTimeout (() => {
 
-            if (leaveOnCallback) fireLeave ()
+            if (leaveOnCallback) setLeave ()
 
             setTimeout (() => {
 
                 callback ()
 
-            }, waitFor.gridLeave)
+            }, waitFor.board.leave)
 
-        }, waitFor.cardFlip)
+        }, waitFor.card.flip)
 
     }, [flipped])
 

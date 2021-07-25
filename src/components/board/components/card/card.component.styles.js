@@ -26,7 +26,7 @@ export const Card = styled (a.div)`
     background: ${(props) => {
 
         const defaultColor = 'white'
-
+        
         if (props.$isGame && props.$isFront) return defaultColor
 
         if (props.$isGame && props.$isBack) return props.$color || Theme.blue

@@ -74,58 +74,37 @@ export const useStore = create (
                     'drawn': [],
                 },
             })),
+            'setUndraw': () => set (() => {
+
+                const cards = get ().deck.cards
+                const drawn = get ().deck.drawn
+
+                drawn.forEach ((id) => {
+
+                    cards[id].drawn = false
+                
+                })
+
+                get ().deck.resetDrawn ()
+            
+            }),
             'setDraw': (id) => set (() => {
 
                 const cards = get ().deck.cards
                 const drawn = get ().deck.drawn
-                const setMatch = get ().deck.setMatch
+
+                if (drawn.length === 2) return
 
                 cards[id].drawn = true
 
                 drawn.push (id)
-
-                if (drawn.length === 2) {
-
-                    get ().setLocked ()
-
-                    if (cards[drawn[0]].src === cards[drawn[1]].src) {
-
-                        cards[drawn[0]].matched = true
-
-                        cards[drawn[1]].matched = true
-
-                        setMatch ()
-
-                        if (get ().matched === cards.length) {
-
-                            get ().setLock ()
-
-                            get ().setLeave ()
-
-                        }
-
-                        get ().resetDrawn ()
-
-                        get ().setUnlock ()
-
-                    } else {
-
-                        cards[drawn[0]].drawn = false
-
-                        cards[drawn[1]].drawn = false
-
-                        get ().resetDrawn ()
-
-                    }
-
-                }
 
             }),
             // match
             'setMatch': () => set ((state) => ({
                 'deck': {
                     ...state.deck,
-                    'matched': state.matched + 2,
+                    'matched': state.deck.matched + 2,
                 },
             })),
         },

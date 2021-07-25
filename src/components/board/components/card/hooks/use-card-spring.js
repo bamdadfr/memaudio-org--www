@@ -4,7 +4,7 @@ import { useSpring } from '@react-spring/web'
  * @param {boolean} flipped card state
  * @returns {{Boolean,Function,Function}} state + toggle + animation function
  */
-export function useCardFlip (flipped) {
+export function useCardSpring (flipped) {
 
     const spring = useSpring ({
         'opacity': flipped ? 1 : 0,

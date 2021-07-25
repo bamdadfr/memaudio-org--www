@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
-import { GridComponent } from '../components'
+import { BoardComponent } from '../components'
 
 /**
  * @returns {React.ReactElement} react component
@@ -23,7 +23,7 @@ export default function NotFoundPage () {
     return (
         <>
             <DefaultLayout>
-                <GridComponent
+                <BoardComponent
                     cards={[
                         {
                             'front': 'not found, redirecting...',

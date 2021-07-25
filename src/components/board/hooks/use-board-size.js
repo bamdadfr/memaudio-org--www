@@ -6,7 +6,7 @@ import { useMemo } from 'react'
  * @typedef {number} Rows
  * @returns {{Columns,Rows}} grid size
  */
-export function useGridSize (length) {
+export function useBoardSize (length) {
 
     const { columns, rows } = useMemo (() => {
 

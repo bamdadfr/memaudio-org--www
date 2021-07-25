@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { DefaultLayout } from '../../layouts'
-import { GridComponent } from '../../components'
+import { BoardComponent } from '../../components'
 import { shuffleArray } from '../../utils'
 import { Worlds } from '../../app/data'
 import { useStore } from '../../hooks'
@@ -33,12 +33,10 @@ export function getServerSideProps (context) {
         // pushing a pair of cards
         props.deck.push ({
             ...card,
-            'id': `${i}a`,
         })
 
         props.deck.push ({
             ...card,
-            'id': `${i}b`,
         })
 
     }
@@ -56,16 +54,16 @@ export function getServerSideProps (context) {
  */
 export default function LevelPage ({ deck }) {
 
-    const loadDeck = useStore ((state) => state.loadDeck)
-    const unloadDeck = useStore ((state) => state.unloadDeck)
+    const load = useStore ((state) => state.deck.load)
+    const reset = useStore ((state) => state.deck.reset)
 
     useEffect (() => {
 
-        loadDeck (deck)
+        load (deck)
 
         return () => {
 
-            unloadDeck ()
+            reset ()
         
         }
     
@@ -74,11 +72,10 @@ export default function LevelPage ({ deck }) {
     return (
         <>
             <DefaultLayout>
-                <GridComponent
-                    isGame
+                <BoardComponent
                     cards={deck.map ((card) => ({
                         ...card,
-                        'front': card.id,
+                        'front': card.src,
                     }))}
                 />
             </DefaultLayout>

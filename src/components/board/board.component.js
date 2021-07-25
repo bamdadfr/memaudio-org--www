@@ -1,7 +1,7 @@
 import React from 'react'
 import { animated } from '@react-spring/web'
-import { Container, Grid } from './grid.component.styles'
-import { useGridComponent } from './hooks'
+import { Container, Grid } from './board.component.styles'
+import { useBoardComponent } from './hooks'
 import { CardComponent } from './components'
 
 /**
@@ -9,16 +9,14 @@ import { CardComponent } from './components'
  * @param {Array} props.cards array of cards
  * @returns {React.ReactElement} react component
  */
-export function GridComponent ({
-    cards,
-}) {
+export function BoardComponent ({ cards }) {
 
     const {
         columns,
         rows,
         ref,
         transitions,
-    } = useGridComponent (cards)
+    } = useBoardComponent (cards)
 
     return (
         <>
@@ -28,7 +26,7 @@ export function GridComponent ({
                         <animated.div style={style}>
                             <CardComponent
                                 id={j}
-                                color={card.color}
+                                color={card.color || 'white'}
                                 callback={card.callback}
                                 leaveOnCallback={card.leaveOnCallback}
                             >

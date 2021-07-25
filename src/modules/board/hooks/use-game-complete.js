@@ -31,7 +31,7 @@ export function useGameComplete () {
 
             await router.push ('/complete')
 
-        }, waitFor.board.leave)
+        }, waitFor.board.leave * 2)
 
     }, [toMatch])
 

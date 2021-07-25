@@ -1,4 +1,4 @@
-export const levelStore = (set) => ({
+export const gameStore = (set) => ({
     'game': {
         'isRunning': false,
         'isComplete': false,

@@ -7,6 +7,7 @@ import 'sass-reset'
 import { ThemeProvider } from 'styled-components'
 import { Theme } from '../app/styles'
 import { AppLayout } from '../app/layouts'
+import { useApp } from '../app/hooks'
 
 const propTypes = {
     'Component': PropTypes.func.isRequired,
@@ -26,6 +27,8 @@ const defaultProps = {
  * @returns {React.ReactElement} react component
  */
 export default function MyApp ({ Component, pageProps, err }) {
+
+    useApp ()
 
     return (
         <>

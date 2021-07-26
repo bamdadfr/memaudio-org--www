@@ -1,3 +1,11 @@
+## [1.3.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.3.1...v1.3.2) (2021-07-26)
+
+
+### Performance Improvements
+
+* add google analytics via `useApp` + add styled components ssr ([c2c98f1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c2c98f1471008a9c405e0dab30b0c9203162c11f))
+* **styles:** breakpoints.js are now pure numbers (custom media queries) ([9e3f06c](https://github.com/bamdadsabbagh/memaudio-org--www/commit/9e3f06ca77662b2961607f5a7735dfd554954011))
+
 ## [1.3.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.3.0...v1.3.1) (2021-07-26)
 
 

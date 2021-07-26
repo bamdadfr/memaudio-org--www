@@ -1,7 +1,7 @@
 /**
- * @description declare world then level
+ * @description world: music
  */
-export const Worlds = {
+export const Music = {
     'music': {
         '1': [
             {},

@@ -1,20 +1,32 @@
-import { Files } from './files'
-import { pickKeys } from '../../../../utils'
+import { Files } from '../../files'
 
-export const Instruments = {
-    // [world]
-    'instruments': {
-        // [level]
-        '1': [
-            // level 1 (2 files)
-            Files.DoubleBass_E1, // entering files manually can be used
-            Files.frenchHorn_E2, // to build static levels
-        ],
-        '2': [
-            // level 2 (4 files)
-            ...pickKeys (Files, 4), // using pickKeys() to add files automatically
-        ],
-        '3': pickKeys (Files, 6), // even shorter
-        '4': pickKeys (Files, 8),
-    },
+/**
+ * @description declare levels into your world
+ *      - object name MUST be lowercase
+ *      - level value MUST be an array of
+ *          - string (file imports)
+ *          - number (automatic imports)
+ */
+export const instruments = {
+    '1': [
+        Files.instruments.DoubleBass_E1,
+        Files.instruments.frenchHorn_E2,
+    ],
+    '2': [
+        4,
+    ],
+    '3': [6],
+    '4': [
+        4,
+        4,
+    ],
+    /**
+     * you can mix the values
+     * caution, it will loop over the same sounds
+     */
+    '5': [
+        Files.instruments.DoubleBass_E1,
+        Files.instruments.frenchHorn_E2,
+        8,
+    ],
 }

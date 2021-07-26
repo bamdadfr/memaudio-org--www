@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../../layouts'
 import { BoardModule } from '../../modules'
-import { shuffleArray } from '../../utils'
-import { Announcer, Worlds } from '../../app/data'
+import { pickKeys, shuffleArray } from '../../utils'
+import { Announcer, Worlds, Files } from '../../app/data'
 import { useStore } from '../../store'
 import { CardType } from '../../types'
 import { Theme } from '../../app/styles'
@@ -77,28 +77,50 @@ export function getServerSideProps (context) {
     // world exists?
     if (typeof Worlds[world] === 'undefined') return { 'redirect': { 'destination': '/404', 'permanent': false }}
 
+    // world files exist?
+    if (typeof Files[world] === 'undefined') return { 'redirect': { 'destination': '/404', 'permanent': false }}
+
     // world.level exists?
     if (typeof Worlds[world][level] === 'undefined') return { 'redirect': { 'destination': '/404', 'permanent': false }}
 
+    const sources = Worlds[world][level]
+
     props.deck = []
 
-    for (let i = 0; i < Worlds[world][level].length; i++) {
+    const addPair = (card) => [1, 2].forEach (() => props.deck.push ({ ...card }))
 
-        const card = {
-            'src': `${Worlds[world][level][i]}`,
-            'color': Theme.white,
-            'drawn': false,
-            'matched': false,
+    const getCard = (src) => ({
+        'src': src,
+        'color': Theme.white,
+        'drawn': false,
+        'matched': false,
+    })
+
+    for (let i = 0; i < sources.length; i++) {
+
+        // manual data entry
+        if (typeof sources[i] === 'string') {
+
+            const card = getCard (Worlds[world][level][i])
+
+            addPair (card)
+
         }
 
-        // pushing a pair of cards
-        props.deck.push ({
-            ...card,
-        })
+        // automatic data entry
+        if (typeof sources[i] === 'number') {
 
-        props.deck.push ({
-            ...card,
-        })
+            const pool = pickKeys (Files[world], sources[i])
+
+            for (let j = 0; j < sources[i]; j++) {
+
+                const card = getCard (pool[j])
+
+                addPair (card)
+
+            }
+        
+        }
 
     }
 

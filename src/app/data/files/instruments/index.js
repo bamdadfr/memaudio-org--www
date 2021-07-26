@@ -9,7 +9,7 @@ import Trumpet_C4 from './Trumpet_C4.mp3'
 import Violon_Cs4 from './Violon_Cs4.mp3'
 import Violoncelle_G2 from './Violoncelle_G2.mp3'
 
-export const Files = {
+export default {
     Clarinet_F4,
     DoubleBass_E1,
     Flute_G5,

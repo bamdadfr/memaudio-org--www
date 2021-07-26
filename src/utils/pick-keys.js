@@ -3,7 +3,7 @@ import { shuffleArray } from './shuffle-array'
 /**
  * @param {object} object to pick keys from
  * @param {number} [number=1] how many keys returned
- * @returns {Array.<number>} picked keys
+ * @returns {Array.<*>} picked keys
  */
 export function pickKeys (object, number = 1) {
 

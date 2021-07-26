@@ -1,40 +1,41 @@
+<!--suppress HtmlDeprecatedAttribute, HtmlRequiredAltAttribute -->
+
 # <img width=25 src="https://i.imgur.com/FpnyKo3.png"> Memaudio
 
 <p align=center>
-  <a href="https://memaudio.org"><img width=150 src="https://i.imgur.com/FpnyKo3.png"></a>
+    <a href="https://memaudio.org">
+        <img width=150 src="https://i.imgur.com/FpnyKo3.png">
+    </a>
 </p>
 
 <p align=center>
-  web based audio memory (proof of concept)
-  <br>
-  <b>
-    ⚠️ unmaintained
-  </b>
+    web based audio memory (proof of concept)
 </p>
 
 <p align=center>
-  <a href="https://github.com/memaudio/memaudio-www"><img src="https://img.shields.io/github/stars/memaudio/memaudio-www?label=git"></a>
-  <img src="https://img.shields.io/github/license/memaudio/memaudio-www">
+    <a href="https://github.com/bamdadsabbagh/memaudio-org--www">
+        <img src="https://img.shields.io/github/stars/bamdadsabbagh/memaudio-org--www?label=git">
+    </a>
+    <img src="https://img.shields.io/github/license/bamdadsabbagh/memaudio-org--www">
 </p>
 
 <p align=center>
-  <img src="https://img.shields.io/github/languages/count/memaudio/memaudio-www">
-  <img src="https://img.shields.io/github/languages/top/memaudio/memaudio-www">
+    <img src="https://img.shields.io/github/languages/count/bamdadsabbagh/memaudio-org--www">
+    <img src="https://img.shields.io/github/languages/top/bamdadsabbagh/memaudio-org--www">
 </p>
 
 <p align=center>
-  <img src="https://img.shields.io/github/v/release/memaudio/memaudio-www">
-  <img src="https://api.codeclimate.com/v1/badges/d03ca633f0cac75c7520/maintainability">
+    <img src="https://img.shields.io/github/v/release/bamdadsabbagh/memaudio-org--www">
 </p>
 
 <p align=center>
-  <img src="https://img.shields.io/david/memaudio/memaudio-www">
-  <img src="https://img.shields.io/david/dev/memaudio/memaudio-www">
-  <img src="https://img.shields.io/snyk/vulnerabilities/github/memaudio/memaudio-www">
+    <img src="https://img.shields.io/david/bamdadsabbagh/memaudio-org--www">
+    <img src="https://img.shields.io/david/dev/bamdadsabbagh/memaudio-org--www">
+    <img src="https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/memaudio-org--www">
 </p>
 
 <p align=center>
-  <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
+    <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
 </p>
 
 <p align=center>
@@ -44,10 +45,7 @@
 ## Get started
 
 ```bash
-git clone https://github.com/memaudio/memaudio-www.git
-cd memaudio-www
-yarn
-
-# http://localhost:3000/
-yarn start
+git clone https://github.com/bamdadsabbagh/memaudio-org--www.git
+cd memaudio-org--www
+yarn && yarn dev
 ```

@@ -1,0 +1,1 @@
+export { AudioAnnouncerComponent } from './audio-announcer.component'

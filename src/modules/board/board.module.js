@@ -32,6 +32,7 @@ export function BoardModule ({ cards }) {
                         <animated.div style={style}>
                             <CardComponent
                                 id={j}
+                                src={card.src}
                                 color={card.color}
                                 callback={card.callback}
                                 leaveOnCallback={card.leaveOnCallback}

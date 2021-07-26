@@ -7,12 +7,14 @@ import { GameComponent } from '../game'
 const propTypes = {
     'children': PropTypes.node.isRequired,
     'id': PropTypes.number.isRequired,
+    'src': PropTypes.string,
     'color': PropTypes.string,
     'callback': PropTypes.func,
     'leaveOnCallback': PropTypes.bool,
 }
 
 const defaultProps = {
+    'src': undefined,
     'color': undefined,
     'callback': undefined,
     'leaveOnCallback': undefined,
@@ -22,6 +24,7 @@ const defaultProps = {
  * @param {object} props react props
  * @param {Array.<React.ReactElement>} props.children card content
  * @param {number} props.id card id (only relative to grid)
+ * @param {string} props.src card audio source (as blob)
  * @param {string} props.color card color
  * @param {Function} props.callback card callback
  * @param {boolean} props.leaveOnCallback grid should leave?
@@ -30,6 +33,7 @@ const defaultProps = {
 export function CardComponent ({
     children,
     id,
+    src = defaultProps.src,
     color = defaultProps.color,
     callback = defaultProps.callback,
     leaveOnCallback = defaultProps.leaveOnCallback,
@@ -54,14 +58,11 @@ export function CardComponent ({
     } = useCardComponent ({
         children,
         id,
+        src,
         callback,
         leaveOnCallback,
     })
 
-    // const state = useStore ((state) => state)
-    //
-    // console.log (state)
-    
     return (
         <>
             <GameComponent/>

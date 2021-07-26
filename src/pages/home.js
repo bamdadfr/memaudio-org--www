@@ -43,7 +43,7 @@ export default function HomePage () {
                         {
                             'front': <FaPlay/>,
                             'color': Theme.yellow,
-                            'callback': async () => await router.push ('/music/1'),
+                            'callback': async () => await router.push ('/instruments/1'),
                             'leaveOnCallback': true,
                         },
                     ]}

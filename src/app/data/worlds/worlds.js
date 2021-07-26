@@ -1,8 +1,8 @@
-import { Music } from './music'
+import { Instruments } from './instruments'
 
 /**
  * @description all worlds
  */
 export const Worlds = {
-    ...Music,
+    ...Instruments,
 }

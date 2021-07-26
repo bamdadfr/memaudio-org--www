@@ -82,14 +82,13 @@ export function getServerSideProps (context) {
 
     props.deck = []
 
-    for (let i = 1; i <= Worlds[world][level].length; i++) {
+    for (let i = 0; i < Worlds[world][level].length; i++) {
 
         const card = {
-            'src': `src ${i}`,
+            'src': `${Worlds[world][level][i]}`,
             'color': Theme.white,
             'drawn': false,
             'matched': false,
-            'front': i, // todo remove when production
         }
 
         // pushing a pair of cards

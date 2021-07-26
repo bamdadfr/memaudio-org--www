@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useMeasure } from 'react-use'
 import { SpringValues } from '@react-spring/web'
 import { getCardFaces } from '../utils'
@@ -7,11 +7,13 @@ import { useCardCallback } from './use-card-callback'
 import { useCardFlip } from './use-card-flip'
 import { useCardGameColor } from './use-card-game-color'
 import { useStore } from '../../../store'
+import { useCardClick } from './use-card-click'
 
 /**
  * @param {object} params hook parameters
  * @param {number} params.children react component children with faces to parse
  * @param {number} params.id card id
+ * @param {string} params.src card audio source
  * @param {Function} params.callback card callback
  * @param {boolean} params.leaveOnCallback leave board when callback is called?
  * @typedef {React.Ref} Ref container ref
@@ -30,6 +32,7 @@ import { useStore } from '../../../store'
 export function useCardComponent ({
     children,
     id,
+    src,
     callback,
     leaveOnCallback,
 }) {
@@ -47,7 +50,7 @@ export function useCardComponent ({
     const gameIsRunning = useStore ((state) => state.game.isRunning)
     const gameColor = useCardGameColor (id)
     // interactions
-    const handleClick = useCallback (() => toggleFlipped (), [])
+    const { handleClick } = useCardClick (toggleFlipped, src)
 
     useCardCallback (flipped, callback, leaveOnCallback)
 

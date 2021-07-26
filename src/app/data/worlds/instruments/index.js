@@ -1,1 +1,1 @@
-export { Instruments } from './instruments'
+export { instruments } from './instruments'

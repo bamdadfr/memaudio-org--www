@@ -38,11 +38,7 @@
     <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
 </p>
 
-<p align=center>
-  <img src="https://i.imgur.com/uogNBDr.gif">
-</p>
-
-## Get started
+## run locally with node
 
 ```bash
 git clone https://github.com/bamdadsabbagh/memaudio-org--www.git

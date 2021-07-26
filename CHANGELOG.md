@@ -1,3 +1,81 @@
+# [1.3.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.2.17...v1.3.0) (2021-07-26)
+
+
+### Bug Fixes
+
+* **card:** improve back clickability + styles ([3c5bf74](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3c5bf7487aa9b8f266e31f0e55b77874cffa1cd6))
+* **card.component:** add better faces detection ([f40b3d0](https://github.com/bamdadsabbagh/memaudio-org--www/commit/f40b3d08267cd9d5b8f5ff22072422df9f60b016))
+* **card.component:** fix string|object detection ([c1e5a7b](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c1e5a7b7ee380b287b5a5473aa81b3fd3b4f9287))
+* **CardType:** make `color` required + add the hex value to theme.js ([9dd606c](https://github.com/bamdadsabbagh/memaudio-org--www/commit/9dd606c4bbfaa1a7232a5e1e09caeb4d3331a857))
+* **CompletePage:** do not show card if game is not completed ([bbd94ae](https://github.com/bamdadsabbagh/memaudio-org--www/commit/bbd94aec73588ac802784107b8cfbe32ad024bc0))
+* **grid.component.styles:** add responsive svg sizes ([49289df](https://github.com/bamdadsabbagh/memaudio-org--www/commit/49289df5a8443e972a979a7288eb89fd91a195db))
+* **grid.component.styles:** relative `grid-gap` + split container and grid ([3b98e31](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3b98e31fa7bfc8273dd569f831aa8832c8573145))
+* **store:** spread the old state in mutators ([3d7144f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3d7144f66c6729eb321db97d2945f04491e906fa))
+* **store:** typo, replace `level` with `game` ([a510ea1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a510ea1180e81879151611e64aef5eb79c1c0a45))
+* **use-game-complete:** push route when game is completed instead of replace ([23f51e4](https://github.com/bamdadsabbagh/memaudio-org--www/commit/23f51e4b93ad0dc3a1e055117b5f70251a282fee))
+* **use-game-complete:** wait a bit more before changing route ([2e72c3a](https://github.com/bamdadsabbagh/memaudio-org--www/commit/2e72c3a4566412e1fca80768587cbf863ab98adf))
+* **utils:** fix return type in jsdoc for pick-keys.js ([009b241](https://github.com/bamdadsabbagh/memaudio-org--www/commit/009b241da3089a429ccafc81bc0e0b22ab82a8df))
+* set correct font size and derive svg size from it ([104ca33](https://github.com/bamdadsabbagh/memaudio-org--www/commit/104ca334776a3237a4c568a57b05428815332277))
+
+
+### Features
+
+* add automatic imports feature to populate "worlds" via pick-keys.js ([b606e94](https://github.com/bamdadsabbagh/memaudio-org--www/commit/b606e9435ee5ce6efba6b479534c27f79031711a))
+* **world:** add first world `instruments` level 1-3 (static files, always same levels) ([5e842fc](https://github.com/bamdadsabbagh/memaudio-org--www/commit/5e842fc5497ab2bed530db955b1d6dbf907f23da))
+* add `audio-ambience` and `audio-announcer` components + add webpack config for audio file imports ([537dce5](https://github.com/bamdadsabbagh/memaudio-org--www/commit/537dce5e77866b7f5fc680149261f2b0d1865179))
+* add `react-use` + replace `react-spring` with `@react-spring/web` ([9c5f680](https://github.com/bamdadsabbagh/memaudio-org--www/commit/9c5f680d7ce2fd23b3fc10ae33692e18634faf3e))
+* add 2nd and 3rd level (world `music`) ([4650b6b](https://github.com/bamdadsabbagh/memaudio-org--www/commit/4650b6bed70b2eb001b0fc8da22be9a657649170))
+* add background ([90016b6](https://github.com/bamdadsabbagh/memaudio-org--www/commit/90016b6fcd8ce80e1af3de67e638d13e97febca9))
+* add fade animation for grid/cards ([ca2de1e](https://github.com/bamdadsabbagh/memaudio-org--www/commit/ca2de1e1b6c0bce7d3327a5061b27724497d419a))
+* add flippable card ([cabc8db](https://github.com/bamdadsabbagh/memaudio-org--www/commit/cabc8dba705d1a864e695999146cbcb76dfa736c))
+* add grid component + compute grid size based on cards length + basic card component ([d1bcdea](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d1bcdea8a141256677f2415f740fb06abfd0d2d8))
+* add leave transition for grids ([653e461](https://github.com/bamdadsabbagh/memaudio-org--www/commit/653e461d6f0a5ad236e90a4ef7c2107dceec3aa7))
+* add multiple children to card component ([1ff9749](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1ff9749a5307c56244268e3c6adcb027593ffae9))
+* add not found page ([c14b49f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c14b49fb4537daee8009280e74df8c3462f94285))
+* add pages Index and Home ([7ad2642](https://github.com/bamdadsabbagh/memaudio-org--www/commit/7ad2642a8388cb4cf851e0acdc0112c9763ce6ea))
+* add store for shared state + move logic out of components (wip) ([8080692](https://github.com/bamdadsabbagh/memaudio-org--www/commit/808069248ce0f2f0b52a3cb3a1cc59cdb8b8e9b2))
+* move board from components to modules + add board complete scenario + next game ([ddd4b4c](https://github.com/bamdadsabbagh/memaudio-org--www/commit/ddd4b4c58645869cc2260923052336082e8d848a))
+* **cards:** add basic flipped callback function to invoke from page ([df44ead](https://github.com/bamdadsabbagh/memaudio-org--www/commit/df44eadcb71c1b55ebf25e421ae0c367d4bf5028))
+* **cards:** add box shadow ([6465f92](https://github.com/bamdadsabbagh/memaudio-org--www/commit/6465f92810d68057ebee635814eed8e70c66f8dd))
+* **game:** add dummy first level ([c22d802](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c22d8029eea8b6b83f421f33aa5c0a837bcbb820))
+* **grid.component:** add transition animation ([41371be](https://github.com/bamdadsabbagh/memaudio-org--www/commit/41371be22d06098480d1ae620754d467b3fe6366))
+* **home:** redirect to game ([1dbf9c5](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1dbf9c5af4b7cff506fb8699fef89fe2a2c858a6))
+* add responsive font-size + width, height and gaps based on root em ([d88cec5](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d88cec5516f627bb2aabb3f9faf643fd2ab28237))
+* memoize background.component.js by extracting spring config + add app.layout.js ([d2d85f2](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d2d85f2b7c9988bb2247cf674c3e22b5fdca6a9b))
+* pass color props to card.component.js ([d75eafe](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d75eafe611cfb99994244db15410edd99c8d7e79))
+
+
+### Performance Improvements
+
+* **404 NotFoundPage:** set auto route push ([0874f10](https://github.com/bamdadsabbagh/memaudio-org--www/commit/0874f109f9c3749a51d93e50d498130fa68032f0))
+* **announcer:** keep index files as barrel exports, use proper file names instead ([f2effd5](https://github.com/bamdadsabbagh/memaudio-org--www/commit/f2effd5cdc47b621768cc252340480981f87c401))
+* **background component styles:** add `will-change` property + clean unused properties ([b6a1f68](https://github.com/bamdadsabbagh/memaudio-org--www/commit/b6a1f6854acba06d2f04872aeff30fcb1956e536))
+* **board.module.styles:** better responsive dimensions ([47ba314](https://github.com/bamdadsabbagh/memaudio-org--www/commit/47ba3143940fc6497bb9a6d10a523a84963242bf))
+* **breakpoints:** clean jsdoc ([e732ddc](https://github.com/bamdadsabbagh/memaudio-org--www/commit/e732ddc0504f4ed7b059ee471924a4ddffc1c61f))
+* **card:** move logic to custom hooks (wip) ([99e6221](https://github.com/bamdadsabbagh/memaudio-org--www/commit/99e6221e3fafccc5b4cd515327f82cdcc1c7c29d))
+* **card.component:** cleaning ([369610f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/369610fb3668d253e68b02bee003467d4b8ce34c))
+* **card.component.styles:** add `outline: none` to prevent blue outline on WebKit ([06f79dc](https://github.com/bamdadsabbagh/memaudio-org--www/commit/06f79dc32a9aca7d1a709a052cf60826ca7a6f7a))
+* **cards:** various improvements ([c81f9b0](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c81f9b0976c04f21c38e4068ff2bcb2d9d138269))
+* **fade-animation:** clean unused default props ([0d304cd](https://github.com/bamdadsabbagh/memaudio-org--www/commit/0d304cd2c554b603a64a43ef0de8b1ab4347a222))
+* **grid:** cards are now pure, all data passing by grid.component.js ([9d25f4f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/9d25f4fe7c5dc8e8a783b97bd4242d16c80c6555))
+* **grid:** move grid logic from default.layout.js to its own component ([6cce7b3](https://github.com/bamdadsabbagh/memaudio-org--www/commit/6cce7b3d384091280537ba18bce884fc8c647341))
+* **grid:** move logic to custom hooks (wip) ([2540d56](https://github.com/bamdadsabbagh/memaudio-org--www/commit/2540d56b8e41e9fe820fad764b7887fdd1035d14))
+* **grid.component:** move logic to custom hook ([1821a62](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1821a62feffa730124da9cf66d457e14e6c74895))
+* **HomePage:** add more explicit callback function ([aa843f3](https://github.com/bamdadsabbagh/memaudio-org--www/commit/aa843f3f91fac1e7b2af1db47436fc0d225590b8))
+* **pages:** replace Fi icons with Fa for consistency ([01c0297](https://github.com/bamdadsabbagh/memaudio-org--www/commit/01c0297e7da56cff884102f3569675c500413bd8))
+* **store:** add nesting to store to improve readability ([09cc1cc](https://github.com/bamdadsabbagh/memaudio-org--www/commit/09cc1cca63d2fecdb371648599102dcb54a64159))
+* **store:** rename folder `hooks` to `store` + split `use-store` content into multiple objects ([69aec45](https://github.com/bamdadsabbagh/memaudio-org--www/commit/69aec45eca2e41f0686180d7ec32754090084e1b))
+* **use-game-complete:** wrap board leaving to wait card flips ([f305277](https://github.com/bamdadsabbagh/memaudio-org--www/commit/f305277184b49edea18609f2a9b7b7d8ada325a9))
+* **worlds:** add barrel file structure (prepare to implement audio files for first world and levels) ([99301dc](https://github.com/bamdadsabbagh/memaudio-org--www/commit/99301dca7afde204e2b052072c1130f5715db8e9))
+* add `leaveOnCallback` abstraction ([aed9445](https://github.com/bamdadsabbagh/memaudio-org--www/commit/aed9445d03e49df5bb949351140ba3428eabb3e9))
+* add jsdoc + merge custom hooks for game.component.js ([11015fd](https://github.com/bamdadsabbagh/memaudio-org--www/commit/11015fddb03a62f298950c7d4b5de7795ae11c85))
+* add proptypes + complete jsdoc + jest config + basic tests ([f4a8f95](https://github.com/bamdadsabbagh/memaudio-org--www/commit/f4a8f95d36ea27d6c87dfacf979610db165d52c4))
+* move app.layout.js to `app/` + ignore default export from `pages/*` + various jsdoc and type fix ([c90621c](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c90621c7a56bf79e9974f22c4b7466d46eb938b3))
+* move custom colors to styled theme ([a477e08](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a477e0802c08bad2e918122c01062c3e6d2863c3))
+* move deck loading to page + add store future states ([d9e7a12](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d9e7a129a959a98ed5e17eebea29084888ec1708))
+* move logic from grid.component.js to app.layout.js + add `ultramobile` breakpoints.js ([6098bc3](https://github.com/bamdadsabbagh/memaudio-org--www/commit/6098bc3267c44051e754d39ed885edf13b61fdbb))
+* rename get-faces-from-props.js to get-card-faces.js ([1dbb2d4](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1dbb2d479e46790ae75ac595b48f7369124054bf))
+
 ## [1.2.17](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.2.16...v1.2.17) (2021-07-26)
 
 

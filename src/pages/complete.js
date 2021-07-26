@@ -7,6 +7,8 @@ import { useStore } from '../store'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'
+import { AudioAmbienceComponent, AudioAnnouncerComponent } from '../components'
+import { Announcer } from '../app/data'
 
 /**
  * @returns {React.ReactElement} react component
@@ -31,6 +33,10 @@ export default function CompletePage () {
     return (
         <>
             <DefaultLayout>
+                <AudioAmbienceComponent/>
+                <AudioAnnouncerComponent
+                    files={[Announcer.Game.CompleteSuccess]}
+                />
                 <BoardModule
                     cards={[
                         {

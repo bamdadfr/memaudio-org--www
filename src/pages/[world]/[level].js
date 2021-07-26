@@ -1,14 +1,16 @@
 // noinspection JSUnusedGlobalSymbols
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
 import { DefaultLayout } from '../../layouts'
 import { BoardModule } from '../../modules'
 import { shuffleArray } from '../../utils'
-import { Worlds } from '../../app/data'
+import { Announcer, Worlds } from '../../app/data'
 import { useStore } from '../../store'
 import { CardType } from '../../types'
 import { Theme } from '../../app/styles'
+import { AudioAnnouncerComponent } from '../../components'
 
 const propTypes = {
     'deck': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,
@@ -24,6 +26,8 @@ export default function WorldLevelPage ({ deck }) {
     const load = useStore ((state) => state.deck.load)
     const reset = useStore ((state) => state.deck.reset)
 
+    // load deck when mount
+    // reset deck when unmount
     useEffect (() => {
 
         load (deck)
@@ -36,9 +40,22 @@ export default function WorldLevelPage ({ deck }) {
 
     }, [])
 
+    const router = useRouter ()
+    const [playAnnouncer, setPlayAnnouncer] = useState (false)
+
+    // load Announcer.Game.Start when level is 1
+    useEffect (() => {
+
+        const { level } = router.query
+
+        setPlayAnnouncer (parseInt (level) === 1)
+    
+    }, [])
+
     return (
         <>
             <DefaultLayout>
+                {playAnnouncer && <AudioAnnouncerComponent files={[Announcer.Game.Start]}/>}
                 <BoardModule
                     cards={deck}
                 />

@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 import { BoardModule } from '../modules'
 import { DefaultLayout } from '../layouts'
 import { Theme } from '../app/styles'
+import { AudioAmbienceComponent, AudioAnnouncerComponent } from '../components'
+import { Announcer } from '../app/data'
 
 /**
  * @returns {React.ReactElement} react component
@@ -17,6 +19,10 @@ export default function HomePage () {
     return (
         <>
             <DefaultLayout>
+                <AudioAmbienceComponent/>
+                <AudioAnnouncerComponent
+                    files={[Announcer.Home.Welcome]}
+                />
                 <BoardModule
                     cards={[
                         {

@@ -17,8 +17,8 @@ export const Container = styled.div`
     }
 
     @media screen and ${Breakpoints.ultramobile} {
-        width: 16rem;
-        height: 16rem;
+        width: 18rem;
+        height: 18rem;
         font-size: 1em;
         
         svg {
@@ -27,8 +27,8 @@ export const Container = styled.div`
     }
 
     @media screen and ${Breakpoints.mobile} {
-        width: 24rem;
-        height: 24rem;
+        width: 26rem;
+        height: 26rem;
         font-size: 1.2em;
 
         svg {
@@ -67,8 +67,8 @@ export const Container = styled.div`
     }
 
     @media screen and ${Breakpoints.fullhd} {
-        width: 42rem;
-        height: 42rem;
+        width: 40rem;
+        height: 40rem;
         font-size: 2em;
 
         svg {

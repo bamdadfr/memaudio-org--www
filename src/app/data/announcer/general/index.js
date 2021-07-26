@@ -1,1 +1,1 @@
-export { default as FeatureNotAvailable } from './feature-not-available.mp3'
+export { General } from './general'

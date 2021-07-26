@@ -1,28 +1,20 @@
 import { Files } from './files'
+import { pickKeys } from '../../../../utils'
 
 export const Instruments = {
     // [world]
     'instruments': {
         // [level]
         '1': [
-            Files.DoubleBass_E1,
-            Files.frenchHorn_E2,
+            // level 1 (2 files)
+            Files.DoubleBass_E1, // entering files manually can be used
+            Files.frenchHorn_E2, // to build static levels
         ],
         '2': [
-            Files.DoubleBass_E1,
-            Files.Clarinet_F4,
-            Files.Flute_G5,
-            Files.Trumpet_C4,
+            // level 2 (4 files)
+            ...pickKeys (Files, 4), // using pickKeys() to add files automatically
         ],
-        '3': [
-            Files.DoubleBass_E1,
-            Files.frenchHorn_E2,
-            Files.Violoncelle_G2,
-            Files.Violon_Cs4,
-            Files.Trombone_A4,
-            Files.Trumpet_C4,
-            Files.Clarinet_F4,
-            Files.Flute_G5,
-        ],
+        '3': pickKeys (Files, 6), // even shorter
+        '4': pickKeys (Files, 8),
     },
 }

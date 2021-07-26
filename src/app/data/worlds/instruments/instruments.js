@@ -1,10 +1,9 @@
 import { Files } from './files'
 
-/**
- * @description world: instruments
- */
 export const Instruments = {
+    // [world]
     'instruments': {
+        // [level]
         '1': [
             Files.DoubleBass_E1,
             Files.frenchHorn_E2,

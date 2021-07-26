@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.3.0...v1.3.1) (2021-07-26)
+
+
+### Performance Improvements
+
+* **data:** split files from levels + move auto pick from build time to execution time ([8ef7d0a](https://github.com/bamdadsabbagh/memaudio-org--www/commit/8ef7d0a4dba075748e7d1bc9f4cd7a2a8e12ff75))
+
 # [1.3.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.2.17...v1.3.0) (2021-07-26)
 
 

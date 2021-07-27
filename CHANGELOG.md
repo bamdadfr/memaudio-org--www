@@ -1,3 +1,16 @@
+## [1.4.4](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.3...v1.4.4) (2021-07-27)
+
+
+### Bug Fixes
+
+* **card hooks:** remove logic repetition ([18722f2](https://github.com/bamdadsabbagh/memaudio-org--www/commit/18722f231a88117c608f8d87035004cd683ad8ba))
+
+
+### Performance Improvements
+
+* **meta:** add favicons ([c354be2](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c354be21429e89df919a253819a927e5ade3106c))
+* **utils:** reduce build-deck.js complexity ([14e0df7](https://github.com/bamdadsabbagh/memaudio-org--www/commit/14e0df7e6d84d8ed22d02e8a9a4fec53d10b0257))
+
 ## [1.4.3](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.2...v1.4.3) (2021-07-27)
 
 

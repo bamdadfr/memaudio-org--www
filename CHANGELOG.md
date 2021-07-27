@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.3.2...v1.4.0) (2021-07-27)
+
+
+### Features
+
+* add custom meta titles to pages ([cf294d4](https://github.com/bamdadsabbagh/memaudio-org--www/commit/cf294d46c396159f0aae2ad86b2c1968f813dca7))
+* add meta component + extract logic from pages to custom hooks ([d45d1e6](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d45d1e624072cd7ee4848d7f8d8a90a6bf30c243))
+
+
+### Performance Improvements
+
+* extract `WorldLevelPage` server props and state ([3bab1e1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3bab1e143fcfebe942ddc909611332421679bf38))
+
 ## [1.3.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.3.1...v1.3.2) (2021-07-26)
 
 

@@ -1,36 +1,17 @@
 // noinspection JSUnusedGlobalSymbols
 
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
-import { useStore } from '../store'
 import { Theme } from '../app/styles'
+import { use404Page } from '../hooks'
 
 /**
  * @returns {React.ReactElement} react component
  */
 export default function NotFoundPage () {
 
-    const router = useRouter ()
-    const setLeave = useStore ((state) => state.board.setLeave)
-    const waitFor = useStore ((state) => state.animations.waitFor)
-
-    useEffect (() => {
-
-        setTimeout (() => {
-
-            setLeave ()
-
-            setTimeout (async () => {
-
-                await router.push ('/')
-            
-            }, waitFor.board.leave)
-            
-        }, 2000)
-
-    }, [])
+    use404Page ()
 
     return (
         <>

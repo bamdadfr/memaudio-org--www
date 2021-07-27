@@ -8,7 +8,7 @@ import { Announcer } from '../../app/data'
 import { CardType } from '../../types'
 import { AudioAnnouncerComponent } from '../../components'
 import { buildDeck, validateWorlds } from '../../utils'
-import { useWorldLevelPage } from '../../hooks/use-world-level-page'
+import { useWorldLevelPage } from '../../hooks'
 
 const propTypes = {
     'deck': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,

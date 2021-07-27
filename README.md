@@ -9,7 +9,7 @@
 </p>
 
 <p align=center>
-    web based audio memory (proof of concept)
+    audio Memory game
 </p>
 
 <p align=center>

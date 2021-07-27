@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.0...v1.4.1) (2021-07-27)
+
+
+### Performance Improvements
+
+* capitalize world in `CompletePage` ([40e1c35](https://github.com/bamdadsabbagh/memaudio-org--www/commit/40e1c3544089e68b659b0a32b2ad3b72f7093280))
+
 # [1.4.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.3.2...v1.4.0) (2021-07-27)
 
 

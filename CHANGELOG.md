@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.1...v1.4.2) (2021-07-27)
+
+
+### Bug Fixes
+
+* **utils:** add `undefined` case in capitalize-first-letter.js ([d784d95](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d784d95b8d1c30a5c997609527f6d1c38f4ca115))
+
 ## [1.4.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.0...v1.4.1) (2021-07-27)
 
 

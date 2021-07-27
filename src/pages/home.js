@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { BoardModule } from '../modules'
 import { DefaultLayout } from '../layouts'
 import { Theme } from '../app/styles'
-import { AudioAmbienceComponent, AudioAnnouncerComponent } from '../components'
+import { AudioAmbienceComponent, AudioAnnouncerComponent, MetaComponent } from '../components'
 import { Announcer } from '../app/data'
 
 /**
@@ -18,7 +18,10 @@ export default function HomePage () {
 
     return (
         <>
-            <DefaultLayout>
+            <MetaComponent
+                title="Home | Memaudio"
+            />
+            <DefaultLayout customMeta>
                 <AudioAmbienceComponent/>
                 <AudioAnnouncerComponent
                     files={[Announcer.Home.Welcome]}

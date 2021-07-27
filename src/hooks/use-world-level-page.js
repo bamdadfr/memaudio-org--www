@@ -29,6 +29,10 @@ export function useWorldLevelPage (deck) {
 
     }, [])
 
-    return { playAnnouncer }
+    return {
+        playAnnouncer,
+        'world': router.query?.world,
+        'level': router.query?.level,
+    }
 
 }

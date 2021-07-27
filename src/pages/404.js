@@ -5,6 +5,7 @@ import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'
 import { use404Page } from '../hooks'
+import { MetaComponent } from '../components'
 
 /**
  * @returns {React.ReactElement} react component
@@ -15,7 +16,10 @@ export default function NotFoundPage () {
 
     return (
         <>
-            <DefaultLayout>
+            <MetaComponent
+                title="Not Found | Memaudio"
+            />
+            <DefaultLayout customMeta>
                 <BoardModule
                     cards={[
                         {

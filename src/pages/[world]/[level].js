@@ -6,8 +6,8 @@ import { DefaultLayout } from '../../layouts'
 import { BoardModule } from '../../modules'
 import { Announcer } from '../../app/data'
 import { CardType } from '../../types'
-import { AudioAnnouncerComponent } from '../../components'
-import { buildDeck, validateWorlds } from '../../utils'
+import { AudioAnnouncerComponent, MetaComponent } from '../../components'
+import { buildDeck, validateWorlds, capitalizeFirstLetter } from '../../utils'
 import { useWorldLevelPage } from '../../hooks'
 
 const propTypes = {
@@ -21,11 +21,14 @@ const propTypes = {
  */
 export default function WorldLevelPage ({ deck }) {
 
-    const { playAnnouncer } = useWorldLevelPage (deck)
+    const { playAnnouncer, world, level } = useWorldLevelPage (deck)
 
     return (
         <>
-            <DefaultLayout>
+            <MetaComponent
+                title={`${capitalizeFirstLetter (world)} ${level} | Memaudio`}
+            />
+            <DefaultLayout customMeta>
                 {playAnnouncer && <AudioAnnouncerComponent files={[Announcer.Game.Start]}/>}
                 <BoardModule
                     cards={deck}

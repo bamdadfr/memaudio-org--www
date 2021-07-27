@@ -4,29 +4,21 @@ import { pickRandomKeys } from './pick-random-keys'
 import { shuffleArray } from './shuffle-array'
 
 /**
- * @param {object} card object
  * @param {Array} deck array
- * @returns {void} add the same card twice to the deck
+ * @param {string} cardSource audio blob
+ * @param {string} cardColor hex
+ * @returns {void} add card x2 to the deck
  */
-function addPair (card, deck) {
+function addPair (deck, cardSource, cardColor = Theme.white) {
 
-    return [1, 2].forEach (() => deck.push ({ ...card }))
-
-}
-
-/**
- * @param {string} src audio blob
- * @param {string} color hex
- * @returns {object} card object
- */
-function getCard (src, color = Theme.white) {
-
-    return {
-        'src': src,
-        'color': color,
+    const card = {
+        'src': cardSource,
+        'color': cardColor,
         'drawn': false,
         'matched': false,
     }
+
+    return [1, 2].forEach (() => deck.push ({ ...card }))
 
 }
 
@@ -39,34 +31,35 @@ export function buildDeck (world, level) {
 
     const sources = Worlds[world][level]
     let deck = []
+    let pool = undefined
 
-    for (let i = 0; i < sources.length; i++) {
+    sources.forEach ((source) => {
 
-        // manual data entry
-        if (typeof sources[i] === 'string') {
+        switch (typeof source) {
 
-            const card = getCard (sources[i])
+            case 'string':
 
-            addPair (card, deck)
+                addPair (deck, source)
+
+                break
+
+            case 'number':
+                pool = pickRandomKeys (Files[world], source)
+
+                pool.forEach ((randomSource) => {
+
+                    addPair (deck, randomSource)
+
+                })
+
+                break
+
+            default:
+                throw new Error ('invalid source type')
 
         }
-
-        // automatic data entry
-        if (typeof sources[i] === 'number') {
-
-            const pool = pickRandomKeys (Files[world], sources[i])
-
-            for (let j = 0; j < sources[i]; j++) {
-
-                const card = getCard (pool[j])
-
-                addPair (card, deck)
-
-            }
-
-        }
-
-    }
+    
+    })
 
     deck = shuffleArray (deck)
 

@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.4...v1.5.0) (2021-07-27)
+
+
+### Features
+
+* **pages:** add /git page ([22adcca](https://github.com/bamdadsabbagh/memaudio-org--www/commit/22adcca9528d7f047cf6a1368be1b960d913b5c6))
+
 ## [1.4.4](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.3...v1.4.4) (2021-07-27)
 
 

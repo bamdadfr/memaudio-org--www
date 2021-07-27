@@ -9,6 +9,7 @@ import { Theme } from '../app/styles'
 import { AudioAmbienceComponent, AudioAnnouncerComponent } from '../components'
 import { Announcer } from '../app/data'
 import { useCompletePage } from '../hooks'
+import { capitalizeFirstLetter } from '../utils'
 
 /**
  * @returns {React.ReactElement} react component
@@ -28,7 +29,7 @@ export default function CompletePage () {
                 <BoardModule
                     cards={[
                         {
-                            'front': `${world}:${level} complete`,
+                            'front': `${capitalizeFirstLetter (world)} ${level} complete`,
                             'color': Theme.soap,
                         },
                         {

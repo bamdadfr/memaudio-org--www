@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.5.0...v1.6.0) (2021-07-27)
+
+
+### Features
+
+* add `instruments_kick` level + remove barrel exports from `src/app/data` for simplicity ([71d19c9](https://github.com/bamdadsabbagh/memaudio-org--www/commit/71d19c9320ee629b98991bdd769e04777f2d92db))
+
 # [1.5.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.4...v1.5.0) (2021-07-27)
 
 

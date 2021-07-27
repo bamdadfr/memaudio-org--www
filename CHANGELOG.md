@@ -1,3 +1,15 @@
+## [1.4.3](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.2...v1.4.3) (2021-07-27)
+
+
+### Bug Fixes
+
+* revert last commit (card animation experiments) ([c597926](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c597926a0fb4461911c6b5ffa4160e8156f87aa4))
+
+
+### Performance Improvements
+
+* **utils:** rename `pickKeys` to `pickRandomKeys` ([c9fe10c](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c9fe10c8747745ecbed3598622ea04bb2e965017))
+
 ## [1.4.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.4.1...v1.4.2) (2021-07-27)
 
 

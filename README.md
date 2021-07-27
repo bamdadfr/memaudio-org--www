@@ -26,6 +26,7 @@
 
 <p align=center>
     <img src="https://img.shields.io/github/v/release/bamdadsabbagh/memaudio-org--www">
+    <img src="https://api.codeclimate.com/v1/badges/78d1a314056a36cc6440/maintainability">
 </p>
 
 <p align=center>

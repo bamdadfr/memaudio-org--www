@@ -33,7 +33,7 @@ export const Card = styled (animated.div)`
          box-shadow: 0 0.05em 0.5em 0.05em ${(props) => props.theme.shadow};
     }
     
-    backface-visibility: hidden;
+    //backface-visibility: hidden;
 
     &:hover {
         cursor: ${(props) => typeof props.onClick === 'function' ? 'pointer' : 'inherit'};

@@ -5,7 +5,7 @@ import { shuffleArray } from './shuffle-array'
  * @param {number} [number=1] how many keys returned
  * @returns {Array.<*>} picked keys
  */
-export function pickKeys (object, number = 1) {
+export function pickRandomKeys (object, number = 1) {
 
     if (typeof object !== 'object') throw new Error ('object is not an object')
 

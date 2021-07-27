@@ -1,6 +1,6 @@
 import { Theme } from '../app/styles'
 import { Files, Worlds } from '../app/data'
-import { pickKeys } from './pick-keys'
+import { pickRandomKeys } from './pick-random-keys'
 import { shuffleArray } from './shuffle-array'
 
 /**
@@ -54,7 +54,7 @@ export function buildDeck (world, level) {
         // automatic data entry
         if (typeof sources[i] === 'number') {
 
-            const pool = pickKeys (Files[world], sources[i])
+            const pool = pickRandomKeys (Files[world], sources[i])
 
             for (let j = 0; j < sources[i]; j++) {
 

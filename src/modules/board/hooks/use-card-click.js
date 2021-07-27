@@ -16,13 +16,11 @@ export function useCardClick (toggleFlipped, src) {
 
         toggleFlipped ()
 
-        if (gameIsRunning && src) {
+        if (!gameIsRunning) return
 
-            play ()
+        if (!src) return
 
-            if (gameIsRunning && src) play ()
-
-        }
+        play ()
 
     }, [gameIsRunning, toggleFlipped, play])
 

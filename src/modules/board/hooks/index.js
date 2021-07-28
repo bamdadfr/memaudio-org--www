@@ -1,4 +1,4 @@
-export { useBoardComponent } from './use-board-component'
+export { useBoardModule } from './use-board-module'
 
 export { useBoardSize } from './use-board-size'
 

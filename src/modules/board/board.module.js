@@ -2,7 +2,7 @@ import React from 'react'
 import { animated } from '@react-spring/web'
 import PropTypes from 'prop-types'
 import { Container, Grid } from './board.module.styles'
-import { useBoardComponent } from './hooks'
+import { useBoardModule } from './hooks'
 import { CardComponent } from './components'
 import { CardType } from '../../types'
 
@@ -22,7 +22,7 @@ export function BoardModule ({ cards }) {
         rows,
         ref,
         transitions,
-    } = useBoardComponent (cards)
+    } = useBoardModule (cards)
 
     return (
         <>

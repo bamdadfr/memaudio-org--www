@@ -8,7 +8,7 @@ import { useBoardTransitions } from './use-board-transitions'
  * @typedef {number} Rows
  * @returns {{Columns, Rows}} grid size
  */
-export function useBoardComponent (cards) {
+export function useBoardModule (cards) {
 
     const { columns, rows } = useBoardSize (cards.length)
     const [ref, { width }] = useMeasure ()

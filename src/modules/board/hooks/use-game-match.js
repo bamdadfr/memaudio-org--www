@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useStore } from '../../../store'
 
 /**
@@ -17,37 +17,52 @@ export function useGameMatch () {
     const setUnlock = useStore ((state) => state.board.setUnlock)
     const setUndraw = useStore ((state) => state.deck.setUndraw)
     const setMatch = useStore ((state) => state.deck.setMatch)
+    const [shouldUnlock, setShouldUnlock] = useState (false)
 
-    const unlock = useCallback (() => {
-
-        setTimeout (() => setUnlock (), waitFor.card.flip)
-    
-    }, [])
-
+    // watch drawn cards count => match/undraw => ask for unlock
     useEffect (() => {
 
         if (drawn.length !== 2) return
 
         setLock ()
 
-        setTimeout (() => {
+        const t1 = setTimeout (() => {
 
             if (getCard (drawn[0]).src === getCard (drawn[1]).src) {
 
                 setMatch ()
 
-                unlock ()
+                setShouldUnlock (true)
 
             } else {
 
                 setUndraw ()
 
-                unlock ()
+                setShouldUnlock (true)
 
             }
         
         }, waitFor.card.flip)
 
+        return () => clearTimeout (t1)
+
     }, [drawn])
-    
+
+    // unlock effect
+    useEffect (() => {
+
+        if (!shouldUnlock) return
+
+        const t1 = setTimeout (() => {
+
+            setUnlock ()
+
+            setShouldUnlock (false)
+
+        }, waitFor.card.flip)
+
+        return () => clearTimeout (t1)
+
+    }, [shouldUnlock])
+
 }

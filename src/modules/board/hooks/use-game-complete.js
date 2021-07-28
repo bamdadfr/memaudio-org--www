@@ -21,22 +21,34 @@ export function useGameComplete () {
 
         if (toMatch !== 0) return
 
-        setTimeout (() => {
+        const d1 = waitFor.card.flip * 2
+
+        const t1 = setTimeout (() => {
 
             setLeave ()
 
-            setTimeout (async () => {
+        }, d1)
 
-                const { world, level } = router.query
+        const d2 = d1 + waitFor.board.leave * 2
 
-                complete (world, level)
+        const t2 = setTimeout (async () => {
 
-                await router.push ('/complete')
+            const { world, level } = router.query
 
-            }, waitFor.board.leave * 2)
+            complete (world, level)
+
+            await router.push ('/complete')
+
+        }, d2)
+
+        return () => {
+
+            clearTimeout (t1)
+
+            clearTimeout (t2)
         
-        }, waitFor.card.flip * 2)
-
+        }
+    
     }, [toMatch])
 
 }

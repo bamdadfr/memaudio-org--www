@@ -26,29 +26,30 @@ export function useBoardTransitions (array, { width }) {
     // enter
     useEffect (() => {
 
-        setTimeout (() => {
+        const t1 = setTimeout (() => {
 
             setState (array)
 
         }, waitFor.board.enter)
+
+        return () => clearTimeout (t1)
 
     }, [])
 
     // leave
     useEffect (() => {
 
-        if (isLeaving) {
+        if (!isLeaving) return
 
-            setState ([])
+        setState ([])
 
-            // reset state
-            setTimeout (() => {
+        const t1 = setTimeout (() => {
 
-                resetLeave ()
+            resetLeave ()
             
-            }, waitFor.card.flip + waitFor.board.leave + waitFor.board.enter)
-        
-        }
+        }, waitFor.card.flip + waitFor.board.leave + waitFor.board.enter)
+
+        return () => clearTimeout (t1)
 
     }, [isLeaving])
 

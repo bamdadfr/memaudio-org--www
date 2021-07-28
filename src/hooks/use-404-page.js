@@ -13,17 +13,25 @@ export function use404Page () {
 
     useEffect (() => {
 
-        setTimeout (() => {
+        const t1 = setTimeout (() => {
 
             setLeave ()
 
-            setTimeout (async () => {
-
-                await router.push ('/')
-
-            }, waitFor.board.leave)
-
         }, 2000)
+
+        const t2 = setTimeout (async () => {
+
+            await router.push ('/')
+
+        }, 2000 + waitFor.board.leave)
+
+        return () => {
+
+            clearTimeout (t1)
+
+            clearTimeout (t2)
+
+        }
 
     }, [])
 

@@ -1,3 +1,24 @@
+## [1.6.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.6.0...v1.6.1) (2021-07-28)
+
+
+### Bug Fixes
+
+* **hooks:** clear correctly all `setTimeout` ([dca2d61](https://github.com/bamdadsabbagh/memaudio-org--www/commit/dca2d610b6ada76b22a04c24571aecb48ffb16d9))
+* **hooks:** enforce rules of hooks ([265451e](https://github.com/bamdadsabbagh/memaudio-org--www/commit/265451edcf4f744b5aa87144226d1eddd488506c))
+* **hooks:** enforce rules of hooks + set world and level to global state at deck load ([8f77d62](https://github.com/bamdadsabbagh/memaudio-org--www/commit/8f77d629d6083d25dc71b5b4af26f14ec2ca2a7a))
+
+
+### Performance Improvements
+
+* **background.component:** do not use `a` but `animated` ([ae9d4be](https://github.com/bamdadsabbagh/memaudio-org--www/commit/ae9d4be9f85a8c031388833a844df22160a9833b))
+* **board.module:** call `GameComponent` in board.module.js instead of card.component.js ([ca879af](https://github.com/bamdadsabbagh/memaudio-org--www/commit/ca879aff74b91170a5c64c3b8caf316e29c3235c))
+* **board.module:** rename module custom hook properly ([3afcdf7](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3afcdf7f91f37cb619f49f53f7fd317e4ec75987))
+* **deps:** update to latest eslint config ([dc0462f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/dc0462f8fe8566ec903099bf6226a45c278ffa6a))
+* **meta.component:** clean ([3f26d08](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3f26d086e7a7ddea2e0241ca22ab234ad3962c39))
+* **use-404-page:** put delays into their own variables ([06cbc4d](https://github.com/bamdadsabbagh/memaudio-org--www/commit/06cbc4d3b7ddfb5e9d1f85b8eb7bbc68d9500d14))
+* **utils:** using spreads instead of pushes (better performance) ([836fb73](https://github.com/bamdadsabbagh/memaudio-org--www/commit/836fb73c25832d101eeda4855a518d8277d9461f))
+* **utils/validate-worlds.js:** add check to deny levels asking for too many files ([ce79734](https://github.com/bamdadsabbagh/memaudio-org--www/commit/ce7973474a9c7139af1dcdfe6df70e0b0c1c6936))
+
 # [1.6.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.5.0...v1.6.0) (2021-07-27)
 
 

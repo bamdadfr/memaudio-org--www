@@ -9,7 +9,7 @@ import { Theme } from '../app/styles'
 import { AudioAmbienceComponent, AudioAnnouncerComponent } from '../components'
 import { Announcer } from '../app/data'
 import { useCompletePage } from '../hooks'
-import { capitalizeFirstLetter } from '../utils'
+import { capitalizeFirstLetter, getNextLevelPath } from '../utils'
 
 /**
  * @returns {React.ReactElement} react component
@@ -35,7 +35,7 @@ export default function CompletePage () {
                         {
                             'front': <FaPlay/>,
                             'color': Theme.white,
-                            'callback': async () => await router.push (`/${world}/${parseInt (level) + 1}`),
+                            'callback': async () => await router.push (getNextLevelPath (world, level)),
                             'leaveOnCallback': true,
                         },
                     ]}

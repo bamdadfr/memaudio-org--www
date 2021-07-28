@@ -24,7 +24,7 @@ export function useCardFlip (id) {
 
         if (gameIsRunning) setDraw (id)
     
-    }, [flipped])
+    }, [flipped, gameIsRunning, id, setDraw])
 
     useEffect (() => {
 
@@ -32,7 +32,7 @@ export function useCardFlip (id) {
 
         setFlipped (isDrawn)
     
-    }, [isDrawn])
+    }, [gameIsRunning, isDrawn])
 
     return {
         flipped,

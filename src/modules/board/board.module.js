@@ -2,8 +2,8 @@ import React from 'react'
 import { animated } from '@react-spring/web'
 import PropTypes from 'prop-types'
 import { Container, Grid } from './board.module.styles'
-import { useBoardComponent } from './hooks'
-import { CardComponent } from './components'
+import { useBoardModule } from './hooks'
+import { CardComponent, GameComponent } from './components'
 import { CardType } from '../../types'
 
 const propTypes = {
@@ -22,10 +22,12 @@ export function BoardModule ({ cards }) {
         rows,
         ref,
         transitions,
-    } = useBoardComponent (cards)
+        gameIsRunning,
+    } = useBoardModule (cards)
 
     return (
         <>
+            {gameIsRunning && <GameComponent/>}
             <Container ref={ref}>
                 <Grid columns={columns} rows={rows}>
                     {transitions ((style, card, _, j) => (

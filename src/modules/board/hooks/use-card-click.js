@@ -22,7 +22,7 @@ export function useCardClick (toggleFlipped, src) {
 
         play ()
 
-    }, [gameIsRunning, toggleFlipped, play])
+    }, [toggleFlipped, gameIsRunning, src, play])
 
     return { handleClick }
 

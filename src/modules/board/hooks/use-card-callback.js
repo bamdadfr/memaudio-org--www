@@ -20,18 +20,30 @@ export function useCardCallback (flipped, callback, leaveOnCallback) {
 
         setLock ()
 
-        setTimeout (() => {
+        const d1 = waitFor.card.flip
+
+        const t1 = setTimeout (() => {
 
             if (leaveOnCallback) setLeave ()
 
-            setTimeout (() => {
+        }, d1)
 
-                callback ()
+        const d2 = d1 + waitFor.board.leave
 
-            }, waitFor.board.leave)
+        const t2 = setTimeout (() => {
 
-        }, waitFor.card.flip)
+            callback ()
 
-    }, [flipped])
+        }, d2)
+
+        return () => {
+
+            clearTimeout (t1)
+
+            clearTimeout (t2)
+        
+        }
+
+    }, [callback, flipped, leaveOnCallback, setLeave, setLock, waitFor.board.leave, waitFor.card.flip])
 
 }

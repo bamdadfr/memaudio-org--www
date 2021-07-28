@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Card } from './card.component.styles'
 import { useCardComponent } from '../../hooks'
-import { GameComponent } from '../game'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,
@@ -65,7 +64,6 @@ export function CardComponent ({
 
     return (
         <>
-            <GameComponent/>
             <Container
                 ref={ref}
                 tabIndex={-1}

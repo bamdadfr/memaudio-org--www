@@ -9,14 +9,17 @@ import { Theme } from '../../../app/styles'
 export function useCardGameColor (id) {
 
     const gameIsRunning = useStore ((state) => state.game.isRunning)
-
-    if (!gameIsRunning) return
-
     const [color, setColor] = useState (Theme.white)
-    const isDrawn = useStore ((state) => state.deck.getCard (id).drawn)
-    const isMatched = useStore ((state) => state.deck.getCard (id).matched)
+    const isDrawn = useStore ((state) => state.deck.getCard (id)?.drawn)
+    const isMatched = useStore ((state) => state.deck.getCard (id)?.matched)
 
     useEffect (() => {
+
+        if (!gameIsRunning) return
+
+        if (typeof isDrawn === 'undefined') return
+
+        if (typeof isMatched === 'undefined') return
 
         if (!isMatched && !isDrawn) return setColor (Theme.white)
 
@@ -24,7 +27,7 @@ export function useCardGameColor (id) {
 
         if (isDrawn) return setColor (Theme.blue)
     
-    }, [isDrawn, isMatched])
+    }, [gameIsRunning, isDrawn, isMatched])
 
     return color
 

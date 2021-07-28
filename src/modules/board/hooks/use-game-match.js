@@ -7,9 +7,6 @@ import { useStore } from '../../../store'
 export function useGameMatch () {
 
     const gameIsRunning = useStore ((state) => state.game.isRunning)
-
-    if (!gameIsRunning) return
-
     const waitFor = useStore ((state) => state.animations.waitFor)
     const getCard = useStore ((state) => state.deck.getCard)
     const drawn = useStore ((state) => state.deck.drawn)
@@ -21,6 +18,8 @@ export function useGameMatch () {
 
     // watch drawn cards count => match/undraw => ask for unlock
     useEffect (() => {
+
+        if (!gameIsRunning) return
 
         if (drawn.length !== 2) return
 
@@ -46,10 +45,12 @@ export function useGameMatch () {
 
         return () => clearTimeout (t1)
 
-    }, [drawn])
+    }, [drawn, gameIsRunning, getCard, setLock, setMatch, setUndraw, waitFor.card.flip])
 
     // unlock effect
     useEffect (() => {
+
+        if (!gameIsRunning) return
 
         if (!shouldUnlock) return
 
@@ -63,6 +64,6 @@ export function useGameMatch () {
 
         return () => clearTimeout (t1)
 
-    }, [shouldUnlock])
+    }, [gameIsRunning, setUnlock, shouldUnlock, waitFor.card.flip])
 
 }

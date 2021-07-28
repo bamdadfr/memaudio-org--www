@@ -15,11 +15,11 @@ export function useWorldLevelPage (deck) {
 
     useEffect (() => {
 
-        load (deck)
+        load (deck, router.query.world, router.query.level)
 
         return () => reset ()
 
-    }, [])
+    }, [deck, load, reset, router.query.level, router.query.world])
 
     useEffect (() => {
 
@@ -27,12 +27,12 @@ export function useWorldLevelPage (deck) {
 
         setPlayAnnouncer (parseInt (level) === 1)
 
-    }, [])
+    }, [router.query])
 
     return {
         playAnnouncer,
-        'world': router.query?.world,
-        'level': router.query?.level,
+        'world': router.query.world,
+        'level': router.query.level,
     }
 
 }

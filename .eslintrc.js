@@ -5,4 +5,8 @@ module.exports = {
         'testing-library',
         'jest-dom',
     ],
+    'rules': {
+        'react-hooks/rules-of-hooks': ['error'],
+        'react-hooks/exhaustive-deps': ['warn'],
+    },
 }

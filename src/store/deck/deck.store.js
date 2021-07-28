@@ -5,10 +5,13 @@ export const deckStore = (set, get) => ({
         'drawn': [],
         'toMatch': -1,
         // global
-        'load': (newCards) => set ((state) => ({
+        'load': (newCards, world, level) => set ((state) => ({
             'game': {
                 ...state.game,
                 'isRunning': true,
+                'isComplete': false,
+                'world': world,
+                'level': level,
             },
             'deck': {
                 ...state.deck,
@@ -20,6 +23,7 @@ export const deckStore = (set, get) => ({
             'game': {
                 ...state.game,
                 'isRunning': false,
+                'isComplete': false,
             },
             'deck': {
                 ...state.deck,

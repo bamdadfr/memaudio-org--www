@@ -8,9 +8,6 @@ import { useStore } from '../../../store'
 export function useGameComplete () {
 
     const gameIsRunning = useStore ((state) => state.game.isRunning)
-
-    if (!gameIsRunning) return
-
     const toMatch = useStore ((state) => state.deck.toMatch)
     const waitFor = useStore ((state) => state.animations.waitFor)
     const setLeave = useStore ((state) => state.board.setLeave)
@@ -18,6 +15,8 @@ export function useGameComplete () {
     const router = useRouter ()
 
     useEffect (() => {
+
+        if (!gameIsRunning) return
 
         if (toMatch !== 0) return
 
@@ -49,6 +48,6 @@ export function useGameComplete () {
         
         }
     
-    }, [toMatch])
+    }, [complete, gameIsRunning, router, setLeave, toMatch, waitFor.board.leave, waitFor.card.flip])
 
 }

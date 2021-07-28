@@ -33,6 +33,6 @@ export function use404Page () {
 
         }
 
-    }, [])
+    }, [router, setLeave, waitFor.board.leave])
 
 }

@@ -44,6 +44,6 @@ export function useCardCallback (flipped, callback, leaveOnCallback) {
         
         }
 
-    }, [flipped])
+    }, [callback, flipped, leaveOnCallback, setLeave, setLock, waitFor.board.leave, waitFor.card.flip])
 
 }

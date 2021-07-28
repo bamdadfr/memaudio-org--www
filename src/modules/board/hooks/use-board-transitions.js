@@ -34,7 +34,7 @@ export function useBoardTransitions (array, { width }) {
 
         return () => clearTimeout (t1)
 
-    }, [])
+    }, [array, waitFor.board.enter])
 
     // leave
     useEffect (() => {
@@ -51,7 +51,7 @@ export function useBoardTransitions (array, { width }) {
 
         return () => clearTimeout (t1)
 
-    }, [isLeaving])
+    }, [isLeaving, resetLeave, waitFor.board.enter, waitFor.board.leave, waitFor.card.flip])
 
     return { transitions }
 

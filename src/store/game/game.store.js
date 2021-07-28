@@ -3,13 +3,12 @@ export const gameStore = (set) => ({
         'isRunning': false,
         'isComplete': false,
         'world': undefined,
-        'level': 0,
-        'complete': (world, level) => set ((state) => ({
+        'level': undefined,
+        'complete': () => set ((state) => ({
             'game': {
                 ...state.game,
+                'isRunning': false,
                 'isComplete': true,
-                'world': world,
-                'level': level,
             },
         })),
     },

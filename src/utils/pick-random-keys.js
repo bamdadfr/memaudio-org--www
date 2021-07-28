@@ -15,11 +15,14 @@ export function pickRandomKeys (object, number = 1) {
 
     keys = shuffleArray (keys)
 
-    const response = []
+    let response = []
 
     for (let i = 0; i < number; i++) {
 
-        response.push (object[keys[i]])
+        response = [
+            ...response,
+            object[keys[i]],
+        ]
     
     }
 

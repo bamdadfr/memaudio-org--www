@@ -4,21 +4,18 @@ import { pickRandomKeys } from './pick-random-keys'
 import { shuffleArray } from './shuffle-array'
 
 /**
- * @param {Array} deck array
- * @param {string} cardSource audio blob
- * @param {string} cardColor hex
- * @returns {void} add card x2 to the deck
+ * @param {string} source audio blob
+ * @param {string} color hex
+ * @returns {object} card object
  */
-function addPair (deck, cardSource, cardColor = Theme.white) {
+function getCard (source, color = Theme.white) {
 
-    const card = {
-        'src': cardSource,
-        'color': cardColor,
+    return {
+        'src': source,
+        'color': color,
         'drawn': false,
         'matched': false,
     }
-
-    return [1, 2].forEach (() => deck.push ({ ...card }))
 
 }
 
@@ -39,7 +36,11 @@ export function buildDeck (world, level) {
 
             case 'string':
 
-                addPair (deck, source)
+                deck = [
+                    ...deck,
+                    getCard (source),
+                    getCard (source),
+                ]
 
                 break
 
@@ -48,7 +49,11 @@ export function buildDeck (world, level) {
 
                 pool.forEach ((randomSource) => {
 
-                    addPair (deck, randomSource)
+                    deck = [
+                        ...deck,
+                        getCard (randomSource),
+                        getCard (randomSource),
+                    ]
 
                 })
 

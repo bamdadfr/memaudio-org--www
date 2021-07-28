@@ -1,5 +1,5 @@
 import React from 'react'
-import { a, useSpring } from '@react-spring/web'
+import { animated, useSpring } from '@react-spring/web'
 import { Container } from './background.component.styles'
 import { BackgroundConstants } from './background.constants'
 
@@ -13,7 +13,7 @@ function NonMemoBackgroundComponent () {
     return (
         <>
             <Container>
-                <a.div style={props}/>
+                <animated.div style={props}/>
             </Container>
         </>
     )

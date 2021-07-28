@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.6.1...v1.6.2) (2021-07-28)
+
+
+### Performance Improvements
+
+* **utils:** add `getNextLevelPath` ([249cbba](https://github.com/bamdadsabbagh/memaudio-org--www/commit/249cbba8d07b471214f1bb7f7328e771481c887a))
+
 ## [1.6.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.6.0...v1.6.1) (2021-07-28)
 
 

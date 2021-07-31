@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.6.2...v1.7.0) (2021-07-31)
+
+
+### Features
+
+* **header:** header draft proposal ([54cb1ba](https://github.com/bamdadsabbagh/memaudio-org--www/commit/54cb1babdd46f60bb50f5a055b8cafe4467b9afe))
+
 ## [1.6.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.6.1...v1.6.2) (2021-07-28)
 
 

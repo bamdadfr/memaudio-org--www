@@ -15,13 +15,14 @@ import { useStore } from '../../store'
 export function HeaderComponent () {
 
     const router = useRouter ()
-    const waitFor = useStore ((state) => state.animations.waitFor)
+    const isLeaving = useStore ((state) => state.board.isLeaving)
     const setLeave = useStore ((state) => state.board.setLeave)
     const [world, setWorld] = useState ()
     const [worldKeys, setWorldKeys] = useState ()
     const [level, setLevel] = useState ()
     const [levelKeys, setLevelKeys] = useState ()
-    const [canSubmit, setCanSubmit] = useState (false)
+    const [submitVisible, setSubmitVisible] = useState (false)
+    const [submitFired, setSubmitFired] = useState (false)
 
     useEffect (() => {
 
@@ -51,41 +52,37 @@ export function HeaderComponent () {
 
         if (type === 'level') setLevel (e.target.value)
 
-        setCanSubmit (true)
+        setSubmitVisible (true)
 
     }, [])
 
     const handleSubmit = useCallback (() => {
 
-        if (!canSubmit) return
+        if (!submitVisible) return
 
-        setCanSubmit (false)
+        setSubmitVisible (false)
 
-        const d1 = waitFor.board.leave
+        setLeave ()
 
-        const t1 = setTimeout (() => {
+        setSubmitFired (true)
 
-            setLeave ()
+    }, [setLeave, submitVisible])
 
-        }, d1)
+    useEffect (() => {
 
-        const d2 = d1 * 8
+        if (submitFired && !isLeaving) {
 
-        const t2 = setTimeout (async () => {
+            (async () => {
 
-            await router.push (`/${world}/${level}`)
+                setSubmitFired (false)
 
-        }, d2)
-
-        return () => {
-
-            clearTimeout (t1)
-
-            clearTimeout (t2)
+                await router.push (`/${world}/${level}`)
+            
+            }) ()
         
         }
     
-    }, [canSubmit, level, router, setLeave, waitFor.board.leave, world])
+    }, [isLeaving, level, router, submitFired, world])
 
     if (typeof worldKeys === 'undefined') return <></>
 
@@ -110,7 +107,7 @@ export function HeaderComponent () {
                     >
                         {levelKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
                     </Select>
-                    {canSubmit
+                    {submitVisible
                         &&
                             <FadeAnimation>
                                 <Submit

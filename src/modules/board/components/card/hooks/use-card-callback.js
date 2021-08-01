@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../store'
+import { useStore } from '../../../../../store'
 
 /**
  * @param {boolean} flipped card state

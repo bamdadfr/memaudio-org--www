@@ -1,3 +1,15 @@
+## [1.8.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.8.0...v1.8.1) (2021-08-04)
+
+
+### Performance Improvements
+
+* **deps:** remove unused `jest-transform-stub` ([761cdc4](https://github.com/bamdadsabbagh/memaudio-org--www/commit/761cdc47f804252fc1f9c246ff6a00240951772a))
+* **tests:** add unit tests (wip) ([d601f93](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d601f935df9542f7ff1504f2c8cc0f2b804b9e5c))
+* add styled components wrapper ([d1d7105](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d1d7105df77d430b2cf3f1ac11a54eb808c08989))
+* better `jsdoc` and `prop-types` ([1e3914a](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1e3914ae759fa8fecfb94853a4192390299b5d1a))
+* **deps:** update to latest ([8a94f6f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/8a94f6ffdea91771fcf19613e171b557cec80d54))
+* **tests:** update jest.config.js + add global mock for `next/head` ([6eaa2d0](https://github.com/bamdadsabbagh/memaudio-org--www/commit/6eaa2d03c23c3c225696000a76dff5ffcfe2ffae))
+
 # [1.8.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.7.1...v1.8.0) (2021-08-04)
 
 

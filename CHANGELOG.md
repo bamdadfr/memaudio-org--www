@@ -1,3 +1,23 @@
+# [1.8.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.7.1...v1.8.0) (2021-08-04)
+
+
+### Bug Fixes
+
+* **header.component:** route push is now watching for board leaving state instead of static waiting ([c43b38d](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c43b38d3b0868419ace9c55c229542646624a8ec))
+* **use-board-transitions:** make trail shorter for high items count ([701a2eb](https://github.com/bamdadsabbagh/memaudio-org--www/commit/701a2ebd90e7932835e78187c292ad33d9618573))
+
+
+### Features
+
+* **AudioAnnouncerComponent:** add ability to play multiple audio files from array prop ([1f12644](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1f12644f38e991b38f989b10e8c7b10a6624a746))
+* **HeaderComponent:** add response `font-size` ([d639e8f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d639e8f5d1901ce4b5186436296b7b0c6c944dec))
+* **HomePage:** add `ClickYellowForPlaying` sound cue ([a6d9da1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a6d9da1f42be3c43d261021ac5e24bc9500def2c))
+
+
+### Performance Improvements
+
+* **board.module:** move custom hooks around ([36220ba](https://github.com/bamdadsabbagh/memaudio-org--www/commit/36220ba6603c55bf9f569fa799feb6ed211737db))
+
 ## [1.7.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.7.0...v1.7.1) (2021-08-02)
 
 

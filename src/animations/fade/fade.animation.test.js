@@ -1,11 +1,13 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import { BackgroundComponent } from './background.component'
+import { FadeAnimation } from './fade.animation'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <BackgroundComponent/>,
+        <FadeAnimation>
+            <span>children</span>
+        </FadeAnimation>,
     )
 
     return {
@@ -14,7 +16,7 @@ const render = () => {
 
 }
 
-describe ('BackgroundComponent', () => {
+describe ('FadeAnimation', () => {
 
     describe ('container', () => {
 

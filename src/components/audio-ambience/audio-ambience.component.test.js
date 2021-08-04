@@ -1,11 +1,11 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import { BackgroundComponent } from './background.component'
+import { AudioAmbienceComponent } from './audio-ambience.component'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <BackgroundComponent/>,
+        <AudioAmbienceComponent/>,
     )
 
     return {
@@ -14,7 +14,7 @@ const render = () => {
 
 }
 
-describe ('BackgroundComponent', () => {
+describe ('AudioAmbienceComponent', () => {
 
     describe ('container', () => {
 

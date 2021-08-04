@@ -1,11 +1,13 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import { BackgroundComponent } from './background.component'
+import { AppLayout } from './app.layout'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <BackgroundComponent/>,
+        <AppLayout>
+            <span>children</span>
+        </AppLayout>,
     )
 
     return {
@@ -14,7 +16,7 @@ const render = () => {
 
 }
 
-describe ('BackgroundComponent', () => {
+describe ('AppLayout', () => {
 
     describe ('container', () => {
 

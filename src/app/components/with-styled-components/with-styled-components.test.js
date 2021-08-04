@@ -1,11 +1,13 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import { BackgroundComponent } from './background.component'
+import { WithStyledComponents } from './with-styled-components'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <BackgroundComponent/>,
+        <WithStyledComponents>
+            <span>children</span>
+        </WithStyledComponents>,
     )
 
     return {
@@ -14,7 +16,7 @@ const render = () => {
 
 }
 
-describe ('BackgroundComponent', () => {
+describe ('WithStyledComponents', () => {
 
     describe ('container', () => {
 

@@ -10,17 +10,17 @@ import { useStore } from '../../../store'
  */
 export function useBoardTransitions (array, { width }) {
 
-    const [state, setState] = useState ([])
+    const [items, setItems] = useState ([])
     const isLeaving = useStore ((state) => state.board.isLeaving)
     const resetLeave = useStore ((state) => state.board.resetLeave)
     const waitFor = useStore ((state) => state.animations.waitFor)
 
-    const transitions = useTransition (state, {
+    const transitions = useTransition (items, {
         'from': { 'opacity': 0, 'x': width * 2 * -1 },
         'enter': { 'opacity': 1, 'x': 0 },
         'leave': { 'opacity': 0, 'x': width * 2 },
         'config': { 'mass': 5, 'tension': 500, 'friction': 100 },
-        'trail': 75,
+        'trail': 300 / items.length,
     })
 
     // enter
@@ -28,7 +28,7 @@ export function useBoardTransitions (array, { width }) {
 
         const t1 = setTimeout (() => {
 
-            setState (array)
+            setItems (array)
 
         }, waitFor.board.enter)
 
@@ -41,7 +41,7 @@ export function useBoardTransitions (array, { width }) {
 
         if (!isLeaving) return
 
-        setState ([])
+        setItems ([])
 
         const t1 = setTimeout (() => {
 

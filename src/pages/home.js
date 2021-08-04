@@ -24,7 +24,10 @@ export default function HomePage () {
             <DefaultLayout customMeta>
                 <AudioAmbienceComponent/>
                 <AudioAnnouncerComponent
-                    files={[Announcer.Home.Welcome]}
+                    files={[
+                        Announcer.Home.Welcome,
+                        Announcer.Home.ClickYellowForPlaying,
+                    ]}
                 />
                 <BoardModule
                     cards={[

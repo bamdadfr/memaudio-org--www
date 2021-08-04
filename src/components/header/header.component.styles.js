@@ -16,10 +16,12 @@ export const Container = styled.div`
     z-index: 1;
     
     user-select: none;
+    
+    font-size: 1.1em;
 `
 
 export const Spacer = styled.div`
-    width: 0.5em;
+    width: 1em;
 `
 
 export const Select = styled.select`

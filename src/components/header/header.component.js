@@ -7,8 +7,6 @@ import { FadeAnimation } from '../../animations'
 import { useStore } from '../../store'
 
 // todo: put logic into custom hooks
-// todo: write a board leave watcher to sync transitions
-// todo: add responsive font size
 /**
  * @returns {React.ReactElement} react component
  */

@@ -25,17 +25,17 @@ const defaultProps = {
  * @param {number} props.id card id (only relative to grid)
  * @param {string} props.src card audio source (as blob)
  * @param {string} props.color card color
- * @param {Function} props.callback card callback
+ * @param {Function<undefined>} props.callback card callback
  * @param {boolean} props.leaveOnCallback grid should leave?
  * @returns {React.ReactElement} react component
  */
 export function CardComponent ({
     children,
     id,
-    src = defaultProps.src,
-    color = defaultProps.color,
-    callback = defaultProps.callback,
-    leaveOnCallback = defaultProps.leaveOnCallback,
+    src,
+    color,
+    callback,
+    leaveOnCallback,
 }) {
 
     const {

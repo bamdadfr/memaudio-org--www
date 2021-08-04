@@ -21,7 +21,7 @@ const defaultProps = {
 
 /**
  * @param {object} props component props
- * @param {Function} props.Component next.js component
+ * @param {Function<*>} props.Component next.js component
  * @param {object} props.pageProps next.js props
  * @param {*} props.err next.js errors
  * @returns {React.ReactElement} react component

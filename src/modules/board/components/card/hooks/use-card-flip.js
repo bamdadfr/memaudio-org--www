@@ -4,7 +4,7 @@ import { useStore } from '../../../../../store'
 /**
  * @param {number} id card id
  * @typedef {boolean} Flipped
- * @typedef {Function} ToggleFlipped
+ * @typedef {Function<undefined>} ToggleFlipped
  * @returns {{Flipped, ToggleFlipped}} card flipped state
  */
 export function useCardFlip (id) {

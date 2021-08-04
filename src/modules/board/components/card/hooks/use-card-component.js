@@ -14,7 +14,7 @@ import { useCardClick } from './use-card-click'
  * @param {number} params.children react component children with faces to parse
  * @param {number} params.id card id
  * @param {string} params.src card audio source
- * @param {Function} params.callback card callback
+ * @param {Function<undefined>} params.callback card callback
  * @param {boolean} params.leaveOnCallback leave board when callback is called?
  * @typedef {React.Ref} Ref container ref
  * @typedef {number} Width container width
@@ -25,7 +25,7 @@ import { useCardClick } from './use-card-click'
  * @typedef {boolean} BoardIsLocked board is locked?
  * @typedef {boolean} GameIsRunning game is running?
  * @typedef {string} GameColor color for back face (match status)
- * @typedef {Function} HandleClick wrapper for toggling flip state
+ * @typedef {Function<undefined>} HandleClick wrapper for toggling flip state
  * @returns {{Ref, Width, Height, Front, Back, Spring, BoardIsLocked, GameIsRunning, GameColor, HandleClick}}
  *      custom state for card.component.js
  */

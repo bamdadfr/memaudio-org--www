@@ -3,9 +3,10 @@ import useSound from 'use-sound'
 import { useStore } from '../../../../../store'
 
 /**
- * @param {Function} toggleFlipped flip card
+ * @param {Function<undefined>} toggleFlipped flip card
  * @param {string} src source as audio blob
- * @returns {{Function}} pass this to JSX
+ * @typedef {Function<undefined>} HandleClick
+ * @returns {{HandleClick}} pass this to JSX
  */
 export function useCardClick (toggleFlipped, src) {
 

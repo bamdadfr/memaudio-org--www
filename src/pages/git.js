@@ -1,6 +1,15 @@
 import React from 'react'
 
 /**
+ * @returns {React.ReactElement} react component
+ */
+export default function GitPage () {
+
+    return <></>
+
+}
+
+/**
  * @description redirect at server level
  * @returns {object} next.js redirection object
  */
@@ -12,14 +21,5 @@ export async function getServerSideProps () {
             'permanent': false,
         },
     }
-
-}
-
-/**
- * @returns {React.ReactElement} react component
- */
-export default function GitPage () {
-
-    return <></>
 
 }

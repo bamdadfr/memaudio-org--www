@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { useStore } from '../store'
+import { useStore } from '../../store'
 
 /**
  * @description next.js 404

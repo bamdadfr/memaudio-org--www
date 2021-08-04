@@ -1,0 +1,1 @@
+export { useCompletePage } from './use-complete-page'

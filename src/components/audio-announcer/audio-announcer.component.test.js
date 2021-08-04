@@ -1,11 +1,14 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import { BackgroundComponent } from './background.component'
+import { AudioAnnouncerComponent } from './audio-announcer.component'
+import { Announcer } from '../../app/data'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <BackgroundComponent/>,
+        <AudioAnnouncerComponent
+            files={[Announcer.Game.Start]}
+        />,
     )
 
     return {
@@ -14,7 +17,7 @@ const render = () => {
 
 }
 
-describe ('BackgroundComponent', () => {
+describe ('AudioAnnouncerComponent', () => {
 
     describe ('container', () => {
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import { BackgroundComponent } from './background.component'
+import NotFoundPage from '../pages/404'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <BackgroundComponent/>,
+        <NotFoundPage/>,
     )
 
     return {
@@ -14,7 +14,7 @@ const render = () => {
 
 }
 
-describe ('BackgroundComponent', () => {
+describe ('NotFoundPage', () => {
 
     describe ('container', () => {
 

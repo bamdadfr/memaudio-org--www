@@ -3,17 +3,24 @@ import { useRouter } from 'next/router'
 import { useStore } from '../../../store'
 
 /**
+ * @typedef {object} UseHeaderSelect
+ * @property {HandleSubmit} handleSubmit submit handler
+ * @property {SubmitVisible} submitVisible submit isVisible?
+ */
+
+/**
  * @param {string} world selected world
  * @param {string} level selected level
- * @typedef {Function<undefined>} HandleSubmit
- * @typedef {boolean} SubmitVisible
- * @returns {{HandleSubmit, SubmitVisible}} HTML select state
+ * @returns {UseHeaderSelect} UseHeaderSelect
  */
 export function useHeaderSelect (world, level) {
 
     const router = useRouter ()
     const isLeaving = useStore ((state) => state.board.isLeaving)
     const setLeave = useStore ((state) => state.board.setLeave)
+    /**
+     * @typedef {boolean} SubmitVisible
+     */
     const [submitVisible, setSubmitVisible] = useState (false)
     const [submitFired, setSubmitFired] = useState (false)
 
@@ -49,6 +56,9 @@ export function useHeaderSelect (world, level) {
 
     }, [world, level, router.query])
 
+    /**
+     * @typedef {function(): undefined} HandleSubmit
+     */
     const handleSubmit = useCallback (() => {
 
         if (!submitVisible) return

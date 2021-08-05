@@ -1,21 +1,37 @@
-import { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Worlds } from '../../../app/data'
 
 /**
- * @typedef {string} World
- * @typedef {string[]} WorldKeys
- * @typedef {string} Level
- * @typedef {string[]} LevelKeys
- * @typedef {Function<undefined>} HandleChange
- * @returns {{World,WorldKeys,Level,LevelKeys,HandleChange}} world and level state
+ * @typedef {object} UseHeaderWorldManager
+ * @property {World} world current world (from router)
+ * @property {WorldKeys} worldKeys all world keys
+ * @property {Level} level current level (from router)
+ * @property {LevelKeys} levelKeys all level keys
+ * @property {HandleChange} handleChange world and level change handler
+ */
+
+/**
+ * @returns {UseHeaderWorldManager} UseHeaderWorldManager
  */
 export function useHeaderWorldManager () {
 
     const router = useRouter ()
+    /**
+     * @typedef {string} World
+     */
     const [world, setWorld] = useState ()
+    /**
+     * @typedef {string[]} WorldKeys
+     */
     const [worldKeys, setWorldKeys] = useState ()
+    /**
+     * @typedef {string} Level
+     */
     const [level, setLevel] = useState ()
+    /**
+     * @typedef {string[]} LevelKeys
+     */
     const [levelKeys, setLevelKeys] = useState ()
 
     // get current world and level
@@ -55,6 +71,9 @@ export function useHeaderWorldManager () {
 
     }, [world, level, levelKeys])
 
+    /**
+     * @typedef {function(React.ChangeEvent<HTMLSelectElement>, string): undefined} HandleChange
+     */
     const handleChange = useCallback ((e, type) => {
 
         if (type === 'world') setWorld (e.target.value)

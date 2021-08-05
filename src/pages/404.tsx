@@ -1,16 +1,11 @@
-// noinspection JSUnusedGlobalSymbols
-
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'
 import { use404Page } from '../hooks'
 import { MetaComponent } from '../components'
 
-/**
- * @returns {React.ReactElement} react component
- */
-export default function NotFoundPage () {
+export default function NotFoundPage (): ReactElement {
 
     use404Page ()
 

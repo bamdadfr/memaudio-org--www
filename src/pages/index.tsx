@@ -1,16 +1,11 @@
-// noinspection JSUnusedGlobalSymbols
-
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'
 
-/**
- * @returns {React.ReactElement} react component
- */
-export default function IndexPage () {
+export default function IndexPage (): ReactElement {
 
     const router = useRouter ()
 

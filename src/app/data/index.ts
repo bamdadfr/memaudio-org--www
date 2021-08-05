@@ -1,4 +1,4 @@
-export { Announcer } from './announcer'
+export { announcer } from './announcer'
 
 export { Files } from './files'
 

@@ -1,10 +1,10 @@
-import { Announcer } from './announcer'
+import { announcer } from './announcer'
 
 describe ('Announcer', () => {
 
     it ('should be defined', () => {
 
-        expect (Announcer).toBeDefined ()
+        expect (announcer).toBeDefined ()
     
     })
 

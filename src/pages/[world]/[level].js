@@ -29,7 +29,7 @@ export default function WorldLevelPage ({ deck }) {
                 title={`${capitalizeFirstLetter (world)} ${level} | Memaudio`}
             />
             <DefaultLayout customMeta>
-                {playAnnouncer && <AudioAnnouncerComponent files={[announcer.game.Start]}/>}
+                {playAnnouncer && <AudioAnnouncerComponent files={[announcer.game.start]}/>}
                 <BoardModule
                     cards={deck}
                 />

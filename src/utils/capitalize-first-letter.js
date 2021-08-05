@@ -1,6 +1,6 @@
 /**
  * @param {string|undefined} [string] lowercase
- * @returns {string|void} capitalized
+ * @returns {string|undefined} capitalized
  */
 export function capitalizeFirstLetter (string) {
 

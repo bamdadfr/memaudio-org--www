@@ -1,3 +1,15 @@
+## [1.8.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.8.1...v1.8.2) (2021-08-05)
+
+
+### Bug Fixes
+
+* **CardComponent:** forbid multiple click registration during flip animation ([56e6a48](https://github.com/bamdadsabbagh/memaudio-org--www/commit/56e6a4880b5c88d0a07bd2c51a651b6862dc9b59))
+
+
+### Performance Improvements
+
+* **deps:** update to latest ([2893bbc](https://github.com/bamdadsabbagh/memaudio-org--www/commit/2893bbc3f65903a00d392e3f5f5bd83507fb6aff))
+
 ## [1.8.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.8.0...v1.8.1) (2021-08-04)
 
 

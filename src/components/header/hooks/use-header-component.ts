@@ -1,9 +1,8 @@
-import { useHeaderWorldManager } from './use-header-world-manager'
+import { useHeaderState } from './use-header-state'
 import { useHeaderSelect } from './use-header-select'
-import { UseHeaderComponentDto } from './use-header-component.dto'
+import { HeaderComponentDto } from '../header.component.dto'
 
-// eslint-disable-next-line jsdoc/require-jsdoc
-export function useHeaderComponent (): UseHeaderComponentDto {
+export function useHeaderComponent (): HeaderComponentDto {
 
     const {
         world,
@@ -11,11 +10,13 @@ export function useHeaderComponent (): UseHeaderComponentDto {
         worldKeys,
         levelKeys,
         handleChange,
-    } = useHeaderWorldManager ()
+    } = useHeaderState ()
 
     const { handleSubmit, submitVisible } = useHeaderSelect (world, level)
 
     return {
+        world,
+        level,
         worldKeys,
         levelKeys,
         handleChange,

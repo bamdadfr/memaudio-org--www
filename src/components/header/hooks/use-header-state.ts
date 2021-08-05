@@ -1,20 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Worlds } from '../../../app/data'
-import { UseHeaderWorldManagerDto } from './use-header-world-manager.dto'
+import { World, Level, WorldKeys, LevelKeys, HandleChange } from '../header.component.dto'
 
-export type World = string|void
+type UseHeaderStateDto = {
+    world: World
+    level: Level
+    worldKeys: WorldKeys
+    levelKeys: LevelKeys
+    handleChange: HandleChange
+}
 
-export type Level = string|void
-
-export type WorldKeys = string[]
-
-export type LevelKeys = string[]
-
-export type HandleChange = (event: React.ChangeEvent<HTMLSelectElement>, type: string) => void
-
-// eslint-disable-next-line jsdoc/require-jsdoc
-export function useHeaderWorldManager (): UseHeaderWorldManagerDto {
+export function useHeaderState (): UseHeaderStateDto {
 
     const router = useRouter ()
     const [world, setWorld] = useState<World> ()
@@ -46,7 +43,7 @@ export function useHeaderWorldManager (): UseHeaderWorldManagerDto {
 
         setLevelKeys (Object.keys (Worlds[world]))
 
-    }, [world, level])
+    }, [world])
 
     // if level does not exist, set it to first
     useEffect (() => {

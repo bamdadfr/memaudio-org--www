@@ -1,17 +1,14 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useStore } from '../../../store'
-import { UseHeaderSelectDto } from './use-header-select.dto'
-import { Level, World } from './use-header-world-manager'
+import { Level, World, HandleSubmit, SubmitVisible } from '../header.component.dto'
 
-export type SubmitVisible = boolean
+type UseHeaderSelect = {
+    handleSubmit: HandleSubmit
+    submitVisible: SubmitVisible
+}
 
-export type SubmitFired = boolean
-
-export type HandleSubmit = () => void
-
-// eslint-disable-next-line jsdoc/require-jsdoc
-export function useHeaderSelect (world: World, level: Level): UseHeaderSelectDto {
+export function useHeaderSelect (world: World, level: Level): UseHeaderSelect {
 
     const router = useRouter ()
     const isLeaving = useStore ((state: any) => state.board.isLeaving)
@@ -20,7 +17,7 @@ export function useHeaderSelect (world: World, level: Level): UseHeaderSelectDto
      * @typedef {boolean} SubmitVisible
      */
     const [submitVisible, setSubmitVisible] = useState<SubmitVisible> (false)
-    const [submitFired, setSubmitFired] = useState<SubmitFired> (false)
+    const [submitFired, setSubmitFired] = useState<boolean> (false)
 
     // post submit
     useEffect (() => {

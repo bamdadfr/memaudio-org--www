@@ -7,6 +7,8 @@ import { useHeaderComponent } from './hooks'
 export function HeaderComponent (): React.ReactElement {
 
     const {
+        world,
+        level,
         worldKeys,
         levelKeys,
         handleChange,
@@ -14,37 +16,34 @@ export function HeaderComponent (): React.ReactElement {
         submitVisible,
     } = useHeaderComponent ()
 
-    if (typeof worldKeys === 'undefined') return <></>
-
-    if (typeof levelKeys === 'undefined') return <></>
-
     return (
         <>
             <FadeAnimation>
                 <Container>
                     <Select
                         width={10}
+                        value={world}
                         onChange={(e) => handleChange (e, 'world')}
                     >
-                        {worldKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
+                        {worldKeys
+                            && worldKeys.map ((key) => <option key={key} value={key}>{key}</option>)
+                        }
                     </Select>
                     <Spacer />
                     <Select
                         width={3}
+                        value={level}
                         onChange={(e) => handleChange (e, 'level')}
                     >
-                        {levelKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
+                        {levelKeys
+                            && levelKeys.map ((key) => <option key={key} value={key}>{key}</option>)
+                        }
                     </Select>
-                    {submitVisible
-                        &&
-                            <FadeAnimation>
-                                <Submit
-                                    onClick={handleSubmit}
-                                >
-                                    <FaCheck/>
-                                </Submit>
-                            </FadeAnimation>
-                    }
+                    <FadeAnimation>
+                        {submitVisible
+                            && <Submit onClick={handleSubmit}><FaCheck/></Submit>
+                        }
+                    </FadeAnimation>
                 </Container>
             </FadeAnimation>
         </>

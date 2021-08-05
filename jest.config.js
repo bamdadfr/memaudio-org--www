@@ -13,5 +13,8 @@ module.exports = {
     'coverageDirectory': './coverage/',
     'collectCoverageFrom': [
         '<rootDir>/src/**/*.js',
+        '<rootDir>/src/**/*.jsx',
+        '<rootDir>/src/**/*.ts',
+        '<rootDir>/src/**/*.tsx',
     ],
 }

@@ -12,7 +12,7 @@
         "build:post": "find .next -type f -name \"*.map\" -exec rm {} \\;",
         "dev": "next dev",
         "export": "next export",
-        "lint": "eslint src --ext .js --fix",
+        "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
         "package:clean": "rimraf .next && rimraf node_modules",
         "package:reinstall": "yarn package:clean && yarn",
         "package:sort": "npx sort-package-json",
@@ -40,7 +40,7 @@
         "zustand": "^3.5.7"
     },
     "devDependencies": {
-        "@bamdadsabbagh/eslint-config": "^1.14.0",
+        "@bamdadsabbagh/eslint-config": "^1.15.4",
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^12.0.0",
         "@testing-library/react-hooks": "^7.0.1",
@@ -48,8 +48,6 @@
         "@types/react": "^17.0.14",
         "@types/react-dom": "^17.0.9",
         "@types/styled-components": "^5.1.12",
-        "@typescript-eslint/eslint-plugin": "^4.29.0",
-        "@typescript-eslint/parser": "^4.29.0",
         "babel-jest": "^27.0.6",
         "babel-plugin-styled-components": "^1.13.2",
         "codecov": "^3.8.3",
@@ -62,7 +60,6 @@
         "rimraf": "^3.0.2",
         "sass": "^1.37.5",
         "sass-reset": "^1.0.2",
-        "typescript": "^4.3.5",
         "url-loader": "^4.1.1"
     }
 }

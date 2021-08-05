@@ -24,12 +24,12 @@ export const Spacer = styled.div`
     width: 1em;
 `
 
-export const Select = styled.select`
+export const Select = styled.select<{ width: number }>`
     background-color: transparent;
-    width: ${(props) => props.width}em;
+    width: ${({ width }) => width}em;
 
     > option {
-        color: ${(props) => props.theme.background};
+        color: ${({ theme }) => theme.background};
     }
 `
 
@@ -39,6 +39,6 @@ export const Submit = styled.div`
 
     &:hover {
         cursor: pointer;
-        color: ${(props) => props.theme.yellow};
+        color: ${({ theme }) => theme.yellow};
     }
 `

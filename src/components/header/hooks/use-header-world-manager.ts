@@ -1,45 +1,37 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Worlds } from '../../../app/data'
+import { UseHeaderWorldManagerDto } from './use-header-world-manager.dto'
 
-/**
- * @typedef {object} UseHeaderWorldManager
- * @property {World} world current world (from router)
- * @property {WorldKeys} worldKeys all world keys
- * @property {Level} level current level (from router)
- * @property {LevelKeys} levelKeys all level keys
- * @property {HandleChange} handleChange world and level change handler
- */
+export type World = string|void
 
-/**
- * @returns {UseHeaderWorldManager} UseHeaderWorldManager
- */
-export function useHeaderWorldManager () {
+export type Level = string|void
+
+export type WorldKeys = string[]
+
+export type LevelKeys = string[]
+
+export type HandleChange = (event: React.ChangeEvent<HTMLSelectElement>, type: string) => void
+
+// eslint-disable-next-line jsdoc/require-jsdoc
+export function useHeaderWorldManager (): UseHeaderWorldManagerDto {
 
     const router = useRouter ()
-    /**
-     * @typedef {string} World
-     */
-    const [world, setWorld] = useState ()
-    /**
-     * @typedef {string[]} WorldKeys
-     */
-    const [worldKeys, setWorldKeys] = useState ()
-    /**
-     * @typedef {string} Level
-     */
-    const [level, setLevel] = useState ()
-    /**
-     * @typedef {string[]} LevelKeys
-     */
-    const [levelKeys, setLevelKeys] = useState ()
+    const [world, setWorld] = useState<World> ()
+    const [level, setLevel] = useState<Level> ()
+    const [worldKeys, setWorldKeys] = useState<WorldKeys> ()
+    const [levelKeys, setLevelKeys] = useState<LevelKeys> ()
 
     // get current world and level
     useEffect (() => {
 
         const { world, level } = router.query
 
+        if (Array.isArray (world)) return
+
         setWorld (world)
+
+        if (Array.isArray (level)) return
 
         setLevel (level)
 
@@ -50,8 +42,6 @@ export function useHeaderWorldManager () {
 
         if (typeof world === 'undefined') return
 
-        if (typeof level === 'undefined') return
-
         setWorldKeys (Object.keys (Worlds))
 
         setLevelKeys (Object.keys (Worlds[world]))
@@ -61,20 +51,19 @@ export function useHeaderWorldManager () {
     // if level does not exist, set it to first
     useEffect (() => {
 
+        if (typeof world === 'undefined') return
+
         if (typeof level === 'undefined') return
 
         if (typeof levelKeys === 'undefined') return
 
         if (typeof Worlds[world][level] !== 'undefined') return
 
-        setLevel (1)
+        setLevel ('1')
 
     }, [world, level, levelKeys])
 
-    /**
-     * @typedef {function(React.ChangeEvent<HTMLSelectElement>, string): undefined} HandleChange
-     */
-    const handleChange = useCallback ((e, type) => {
+    const handleChange: HandleChange = useCallback ((e, type) => {
 
         if (type === 'world') setWorld (e.target.value)
 

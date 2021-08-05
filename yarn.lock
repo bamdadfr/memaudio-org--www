@@ -358,26 +358,31 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@bamdadsabbagh/eslint-config@^1.14.0":
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.14.1.tgz#683e94b794345810b9da5083d7103a97a44c5940"
-  integrity sha512-YIfn3jqYgBYonilT6zYwrqbtCQnkkVZ1xLYRClH9jKHyMJS9WSwjwxhOvGx871K/ydg1D1VFtPMXNKtaMVI2hg==
+"@bamdadsabbagh/eslint-config@^1.15.4":
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/@bamdadsabbagh/eslint-config/-/eslint-config-1.15.4.tgz#f5d313fe019320bed78f49140d66cf9f1b3b3779"
+  integrity sha512-Akz8GtweLnLyBK0xuV6UUSsNdDDir7EXPNOmr2SQDIEKDGjVsUe3xDQ6g1yRki9k8PNpkUEZa3YzZMaipRWZJQ==
   dependencies:
     "@babel/core" "^7.14.6"
     "@babel/eslint-parser" "^7.14.7"
     "@babel/eslint-plugin" "^7.14.5"
+    "@typescript-eslint/eslint-plugin" "^4.29.0"
+    "@typescript-eslint/parser" "^4.29.0"
     eslint "^7.28.0"
     eslint-config-airbnb "^18.2.0"
     eslint-config-prettier "^8.3.0"
     eslint-import-resolver-alias "^1.1.2"
     eslint-plugin-import "^2.23.4"
     eslint-plugin-jest "^24.3.6"
+    eslint-plugin-jest-dom "^3.9.0"
     eslint-plugin-jsdoc "^36.0.6"
     eslint-plugin-jsx-a11y "^6.3.1"
     eslint-plugin-prettier "^3.4.0"
     eslint-plugin-react "^7.24.0"
     eslint-plugin-react-hooks "^4.0.8"
+    eslint-plugin-testing-library "^4.10.1"
     prettier "^2.3.1"
+    typescript "^4.3.5"
 
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
@@ -2136,9 +2141,9 @@ doctrine@^3.0.0:
     esutils "^2.0.2"
 
 dom-accessibility-api@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.6.tgz#3f5d43b52c7a3bd68b5fb63fa47b4e4c1fdf65a9"
-  integrity sha512-DplGLZd8L1lN64jlT27N9TVSESFR5STaEJvX+thCby7fuCHonfPpAlodYc3vuUYbDuDec5w8AMP7oCM5TWFsqw==
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.7.tgz#8c2aa6325968f2933160a0b7dbb380893ddf3e7d"
+  integrity sha512-ml3lJIq9YjUfM9TUnEPvEYWFSwivwIGBPKpewX7tii7fwCazA8yCioGdqQcNsItPpfFvSJ3VIdMQPj60LJhcQA==
 
 domain-browser@4.19.0:
   version "4.19.0"
@@ -2889,9 +2894,9 @@ globby@^11.0.3:
     slash "^3.0.0"
 
 graceful-fs@^4.1.2, graceful-fs@^4.2.4:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
-  integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.7.tgz#ed65e76e7c700c3e2c889ca65677ec0d210db1b3"
+  integrity sha512-b1suB8r7mlSJQIBs6typf13fz55WYPeE7/KYlQUvqB7E3hUkXhz4D8FVHkENHTqG8+mD2yyT9HgT5bNkGNiqeQ==
 
 has-bigints@^1.0.1:
   version "1.0.1"

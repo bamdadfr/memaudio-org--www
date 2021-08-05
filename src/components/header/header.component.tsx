@@ -4,15 +4,10 @@ import { Container, Spacer, Select, Submit } from './header.component.styles'
 import { FadeAnimation } from '../../animations'
 import { useHeaderComponent } from './hooks'
 
-/**
- * @returns {React.ReactElement} react component
- */
-export function HeaderComponent () {
+export function HeaderComponent (): React.ReactElement {
 
     const {
-        world,
         worldKeys,
-        level,
         levelKeys,
         handleChange,
         handleSubmit,
@@ -29,7 +24,6 @@ export function HeaderComponent () {
                 <Container>
                     <Select
                         width={10}
-                        value={world}
                         onChange={(e) => handleChange (e, 'world')}
                     >
                         {worldKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
@@ -37,7 +31,6 @@ export function HeaderComponent () {
                     <Spacer />
                     <Select
                         width={3}
-                        value={level}
                         onChange={(e) => handleChange (e, 'level')}
                     >
                         {levelKeys.map ((key) => <option key={key} value={key}>{key}</option>)}

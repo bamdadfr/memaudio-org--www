@@ -1,28 +1,26 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useStore } from '../../../store'
+import { UseHeaderSelectDto } from './use-header-select.dto'
+import { Level, World } from './use-header-world-manager'
 
-/**
- * @typedef {object} UseHeaderSelect
- * @property {HandleSubmit} handleSubmit submit handler
- * @property {SubmitVisible} submitVisible submit isVisible?
- */
+export type SubmitVisible = boolean
 
-/**
- * @param {string} world selected world
- * @param {string} level selected level
- * @returns {UseHeaderSelect} UseHeaderSelect
- */
-export function useHeaderSelect (world, level) {
+export type SubmitFired = boolean
+
+export type HandleSubmit = () => void
+
+// eslint-disable-next-line jsdoc/require-jsdoc
+export function useHeaderSelect (world: World, level: Level): UseHeaderSelectDto {
 
     const router = useRouter ()
-    const isLeaving = useStore ((state) => state.board.isLeaving)
-    const setLeave = useStore ((state) => state.board.setLeave)
+    const isLeaving = useStore ((state: any) => state.board.isLeaving)
+    const setLeave = useStore ((state: any) => state.board.setLeave)
     /**
      * @typedef {boolean} SubmitVisible
      */
-    const [submitVisible, setSubmitVisible] = useState (false)
-    const [submitFired, setSubmitFired] = useState (false)
+    const [submitVisible, setSubmitVisible] = useState<SubmitVisible> (false)
+    const [submitFired, setSubmitFired] = useState<SubmitFired> (false)
 
     // post submit
     useEffect (() => {
@@ -44,10 +42,6 @@ export function useHeaderSelect (world, level) {
     // handle submit visibility
     useEffect (() => {
 
-        if (typeof world === 'undefined') return
-
-        if (typeof level === 'undefined') return
-
         if (world !== router.query.world) return setSubmitVisible (true)
 
         if (level !== router.query.level) return setSubmitVisible (true)
@@ -56,10 +50,7 @@ export function useHeaderSelect (world, level) {
 
     }, [world, level, router.query])
 
-    /**
-     * @typedef {function(): undefined} HandleSubmit
-     */
-    const handleSubmit = useCallback (() => {
+    const handleSubmit: HandleSubmit = useCallback (() => {
 
         if (!submitVisible) return
 

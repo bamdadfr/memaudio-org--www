@@ -1,6 +1,9 @@
 import { HandleSubmit, SubmitVisible } from './use-header-select'
 
-export type UseHeaderSelectDto = {
+export class UseHeaderSelectDto {
+
     handleSubmit: HandleSubmit
+
     submitVisible: SubmitVisible
+
 }

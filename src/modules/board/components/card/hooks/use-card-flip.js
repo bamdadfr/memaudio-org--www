@@ -9,13 +9,13 @@ import { useStore } from '../../../../../store'
  */
 export function useCardFlip (id) {
 
-    // local
-    const [flipped, setFlipped] = useState (false)
-    const toggleFlipped = useCallback (() => setFlipped ((f) => !f), [])
     // global
     const gameIsRunning = useStore ((state) => state.game.isRunning)
     const setDraw = useStore ((state) => state.deck.setDraw)
     const isDrawn = useStore ((state) => state.deck.getCard (id)?.drawn)
+    // local
+    const [flipped, setFlipped] = useState (false)
+    const toggleFlipped = useCallback (() => !flipped && setFlipped ((f) => !f), [flipped])
 
     // when flipped, draw a card
     useEffect (() => {

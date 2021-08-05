@@ -68,6 +68,7 @@ export function CardComponent ({
                 ref={ref}
                 tabIndex={-1}
                 role="button"
+                aria-label="card"
             >
                 <Card
                     $isFront

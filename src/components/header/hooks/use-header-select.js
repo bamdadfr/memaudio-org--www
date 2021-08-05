@@ -37,6 +37,10 @@ export function useHeaderSelect (world, level) {
     // handle submit visibility
     useEffect (() => {
 
+        if (typeof world === 'undefined') return
+
+        if (typeof level === 'undefined') return
+
         if (world !== router.query.world) return setSubmitVisible (true)
 
         if (level !== router.query.level) return setSubmitVisible (true)

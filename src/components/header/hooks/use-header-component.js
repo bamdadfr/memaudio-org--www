@@ -21,7 +21,7 @@ export function useHeaderComponent () {
         handleChange,
     } = useHeaderWorldManager ()
 
-    const { handleSubmit, submitVisible } = useHeaderSelect ()
+    const { handleSubmit, submitVisible } = useHeaderSelect (world, level)
 
     return {
         world,

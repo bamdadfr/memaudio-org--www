@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { worlds } from '../../../app/data'
 import { UseHeaderComponent } from './use-header-component'
+import { fetchWorlds, fetchLevels, fetchFirstLevel } from '../../../utils'
 
 type UseHeaderState = {
     world: UseHeaderComponent['world']
@@ -33,22 +33,42 @@ export function useHeaderState (): UseHeaderState {
     // get all worlds and levels
     useEffect (() => {
 
-        setWorldKeys (Object.keys (worlds))
+        if (!world) return
 
-        if (world) setLevelKeys (Object.keys (worlds[world]))
+        (async () => {
 
-    }, [world, level])
+            const worlds = await fetchWorlds ()
+            const levels = await fetchLevels (world)
+
+            setWorldKeys (worlds)
+
+            setLevelKeys (levels)
+
+        }) ()
+
+    }, [world])
 
     // if level does not exist, set it to first
     useEffect (() => {
 
         if (!world) return
 
-        if (typeof worlds[world][level] !== 'undefined') return
+        if (!level) return
 
-        setLevel (worlds[world][0])
+        if (!levelKeys) return
 
-    }, [world, level])
+        // level exist in levelKeys?
+        if (levelKeys.indexOf (level) >= 0 && levelKeys.indexOf (level) <= levelKeys.length) return
+
+        (async () => {
+
+            const firstLevel = await fetchFirstLevel (world)
+
+            setLevel (firstLevel)
+
+        }) ()
+
+    }, [world, level, levelKeys])
 
     const handleChange: UseHeaderState['handleChange'] = useCallback ((e, type) => {
 

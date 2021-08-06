@@ -1,7 +1,7 @@
 import React from 'react'
 
 /**
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export default function GitPage () {
 

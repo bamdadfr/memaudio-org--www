@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 import { Container } from './audio-ambience.component.styles'
 
 /**
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export function AudioAmbienceComponent () {
 

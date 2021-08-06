@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useStore } from '../../store'
 
 /**
- * @description next.js 404
+ * @description /pages/404
  */
 export function use404Page () {
 

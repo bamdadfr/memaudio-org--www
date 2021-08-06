@@ -4,7 +4,7 @@ import { Theme } from '../../../../../app/styles'
 
 /**
  * @param {number} id card id
- * @returns {string|void} color string if game is running
+ * @returns {string|undefined} color string if game is running
  */
 export function useCardGameColor (id) {
 

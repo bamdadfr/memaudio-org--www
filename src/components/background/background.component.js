@@ -4,7 +4,7 @@ import { Container } from './background.component.styles'
 import { BackgroundConstants } from './background.constants'
 
 /**
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 function NonMemoBackgroundComponent () {
 

@@ -1,9 +1,9 @@
-import { Game } from './game'
-import { General } from './general'
-import { Home } from './home'
+import game from './game'
+import general from './general'
+import home from './home'
 
-export const Announcer = {
-    Game,
-    General,
-    Home,
+export const announcer = {
+    game,
+    general,
+    home,
 }

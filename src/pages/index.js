@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
@@ -8,7 +6,7 @@ import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'
 
 /**
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export default function IndexPage () {
 

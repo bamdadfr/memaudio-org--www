@@ -3,8 +3,14 @@ import { useRouter } from 'next/router'
 import { useStore } from '../../store'
 
 /**
- * @description pages/complete.js
- * @returns {{String, String}} app state
+ * @typedef {object} UseCompletePage
+ * @property {string} World world
+ * @property {string} Level level
+ */
+
+/**
+ * @description /pages/complete
+ * @returns {UseCompletePage} UseCompletePage
  */
 export function useCompletePage () {
 

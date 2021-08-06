@@ -27,7 +27,7 @@ const defaultProps = {
  * @param {string} props.color card color
  * @param {Function<undefined>} props.callback card callback
  * @param {boolean} props.leaveOnCallback grid should leave?
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export function CardComponent ({
     children,
@@ -68,6 +68,7 @@ export function CardComponent ({
                 ref={ref}
                 tabIndex={-1}
                 role="button"
+                aria-label="card"
             >
                 <Card
                     $isFront

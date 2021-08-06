@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import React from 'react'
 import { FaHeadphones, FaQuestion, FaUser, FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
@@ -7,10 +5,10 @@ import { BoardModule } from '../modules'
 import { DefaultLayout } from '../layouts'
 import { Theme } from '../app/styles'
 import { AudioAmbienceComponent, AudioAnnouncerComponent, MetaComponent } from '../components'
-import { Announcer } from '../app/data'
+import { announcer } from '../app/data'
 
 /**
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export default function HomePage () {
 
@@ -25,8 +23,8 @@ export default function HomePage () {
                 <AudioAmbienceComponent/>
                 <AudioAnnouncerComponent
                     files={[
-                        Announcer.Home.Welcome,
-                        Announcer.Home.ClickYellowForPlaying,
+                        announcer.home.welcome,
+                        announcer.home.clickYellowForPlaying,
                     ]}
                 />
                 <BoardModule

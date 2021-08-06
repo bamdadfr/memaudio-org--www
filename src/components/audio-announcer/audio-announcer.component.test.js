@@ -1,13 +1,13 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
 import { AudioAnnouncerComponent } from './audio-announcer.component'
-import { Announcer } from '../../app/data'
+import { announcer } from '../../app/data'
 
 const render = () => {
 
     const { container } = defaultRender (
         <AudioAnnouncerComponent
-            files={[Announcer.Game.Start]}
+            files={[announcer.game.start]}
         />,
     )
 

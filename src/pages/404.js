@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import React from 'react'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
@@ -8,7 +6,7 @@ import { use404Page } from '../hooks'
 import { MetaComponent } from '../components'
 
 /**
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export default function NotFoundPage () {
 

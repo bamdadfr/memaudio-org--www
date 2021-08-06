@@ -10,7 +10,7 @@ const propTypes = {
 /**
  * @description wrapper with styled-components
  * @param {React.ReactNode} children wrapped children
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export function WithStyledComponents ({ children }) {
 

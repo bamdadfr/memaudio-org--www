@@ -4,7 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { DefaultLayout } from '../../layouts'
 import { BoardModule } from '../../modules'
-import { Announcer } from '../../app/data'
+import { announcer } from '../../app/data'
 import { CardType } from '../../types'
 import { AudioAnnouncerComponent, MetaComponent } from '../../components'
 import { buildDeck, validateWorlds, capitalizeFirstLetter } from '../../utils'
@@ -17,7 +17,7 @@ const propTypes = {
 /**
  * @param {object} props react props
  * @param {Array} props.deck containing cards
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export default function WorldLevelPage ({ deck }) {
 
@@ -29,7 +29,7 @@ export default function WorldLevelPage ({ deck }) {
                 title={`${capitalizeFirstLetter (world)} ${level} | Memaudio`}
             />
             <DefaultLayout customMeta>
-                {playAnnouncer && <AudioAnnouncerComponent files={[Announcer.Game.Start]}/>}
+                {playAnnouncer && <AudioAnnouncerComponent files={[announcer.game.start]}/>}
                 <BoardModule
                     cards={deck}
                 />

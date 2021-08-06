@@ -1,3 +1,37 @@
+# [1.9.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.8.2...v1.9.0) (2021-08-06)
+
+
+### Bug Fixes
+
+* **HeaderComponent/hooks:** pass `world` and `level` to select custom hook ([5e928c1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/5e928c1672e0af2ed9434012d36d6e05535d280a))
+
+
+### Features
+
+* **HeaderComponent:** migrate the component to typescript ([51c1a31](https://github.com/bamdadsabbagh/memaudio-org--www/commit/51c1a312ddfbd39ffc12efe20d99e52a84f3c0db))
+
+
+### Performance Improvements
+
+* **CardComponent:** add `aria-label` for individual cards ([4955805](https://github.com/bamdadsabbagh/memaudio-org--www/commit/49558053eea782b0fae507ac100714b0a565e082))
+* **DefaultLayout:** migrate to typescript ([cbeb9ae](https://github.com/bamdadsabbagh/memaudio-org--www/commit/cbeb9ae6353f9f7a0be2bbd00ccae6b4754633c3))
+* **deps:** remove unused `normalize.css` ([1784017](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1784017ec797e83d1f29138d8f2753fbc3549542))
+* **deps:** remove unused `normalize.css` ([c0ca3a4](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c0ca3a492c64de4a1600263973f3c16a20de13aa))
+* **deps:** update to latest `eslint-config` (re-enable no-use-before-define) ([8525f39](https://github.com/bamdadsabbagh/memaudio-org--www/commit/8525f39da3c95152ea92d280db456dc96163707c))
+* **HeaderComponent:** improve rendering + remove artefacts from testing ([fe92aba](https://github.com/bamdadsabbagh/memaudio-org--www/commit/fe92abacfc834741cd15500a45139b5a375c8edd))
+* **HeaderComponent:** move state logic to custom hooks ([e1cfe94](https://github.com/bamdadsabbagh/memaudio-org--www/commit/e1cfe9454b71fe13bda53b6707c46614f02c6a7b))
+* **HeaderComponent:** name Dto as `class` instead of `type` (NestJS convention) ([b3d1ab9](https://github.com/bamdadsabbagh/memaudio-org--www/commit/b3d1ab9cbd8904370713c044316e6d2e1392b9e4))
+* **HeaderComponent:** perfect conditional rendering ([38cb7b0](https://github.com/bamdadsabbagh/memaudio-org--www/commit/38cb7b0c67b65056e59a648b6351cd59d784ecd5))
+* **HeaderComponent:** replace custom hooks `jsdoc` with `typescript` ([a63e09e](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a63e09e3b48082bb24afa2ae049226c74001fc3f))
+* **HeaderComponent:** the view should set the dto ([9b133a3](https://github.com/bamdadsabbagh/memaudio-org--www/commit/9b133a3f321f6d13de7ace232dd676e1a40e27ce))
+* **HeaderComponents:** improve jsdoc but support is clunky across intellij and vscode ([8657961](https://github.com/bamdadsabbagh/memaudio-org--www/commit/86579612aa06ece61ac294f3f04e39fd96435003))
+* **jsdoc:** replace `ReactElement` with `ReactNode` ([fd7fbaa](https://github.com/bamdadsabbagh/memaudio-org--www/commit/fd7fbaad59102710fe5d8335e4ea3e5dbde5eeac))
+* **pages:** migrate to typescript + switch `announcer.data` to camelCase and typescript ([3668352](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3668352c29220366a77da182b5ddba643cd19b67))
+* **tests:** add jsx, ts and tsx files to jest.config.js ([9d1564e](https://github.com/bamdadsabbagh/memaudio-org--www/commit/9d1564ecbc6086c39fcf4001ab09c79814e89d7d))
+* **types:** replace `void` with `undefined` ([6782611](https://github.com/bamdadsabbagh/memaudio-org--www/commit/6782611d35821c10e2204e876f664ea578da24ae))
+* **typescript:** use typescript only where needed ([b120b30](https://github.com/bamdadsabbagh/memaudio-org--www/commit/b120b30226f8e72ed8dcffc4078ad7ccf6cb8bb5))
+* **WorldLevelPage:** typo after renaming `Announcer` to `announcer` ([520a9ac](https://github.com/bamdadsabbagh/memaudio-org--www/commit/520a9ac28ecc0679201521b2eda297c5c9c336f3))
+
 ## [1.8.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.8.1...v1.8.2) (2021-08-05)
 
 

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { FaHeadphones, FaQuestion, FaUser, FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { BoardModule } from '../modules'
@@ -7,7 +7,10 @@ import { Theme } from '../app/styles'
 import { AudioAmbienceComponent, AudioAnnouncerComponent, MetaComponent } from '../components'
 import { announcer } from '../app/data'
 
-export default function HomePage (): ReactElement {
+/**
+ * @returns {React.ReactNode} react component
+ */
+export default function HomePage () {
 
     const router = useRouter ()
 

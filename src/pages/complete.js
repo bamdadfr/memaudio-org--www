@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
@@ -9,7 +9,10 @@ import { announcer } from '../app/data'
 import { useCompletePage } from '../hooks'
 import { capitalizeFirstLetter, getNextLevelPath } from '../utils'
 
-export default function CompletePage (): ReactElement {
+/**
+ * @returns {React.ReactNode} react component
+ */
+export default function CompletePage () {
 
     const router = useRouter ()
     const { world, level } = useCompletePage ()

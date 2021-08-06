@@ -2,11 +2,14 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useStore } from '../../store'
 
-export function use404Page (): void {
+/**
+ * @description /pages/404
+ */
+export function use404Page () {
 
     const router = useRouter ()
-    const setLeave = useStore ((state: any) => state.board.setLeave)
-    const waitFor = useStore ((state: any) => state.animations.waitFor)
+    const setLeave = useStore ((state) => state.board.setLeave)
+    const waitFor = useStore ((state) => state.animations.waitFor)
 
     useEffect (() => {
 

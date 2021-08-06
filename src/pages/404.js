@@ -1,11 +1,14 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'
 import { use404Page } from '../hooks'
 import { MetaComponent } from '../components'
 
-export default function NotFoundPage (): ReactElement {
+/**
+ * @returns {React.ReactNode} react component
+ */
+export default function NotFoundPage () {
 
     use404Page ()
 

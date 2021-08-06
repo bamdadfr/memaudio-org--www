@@ -1,8 +1,18 @@
+import * as React from 'react'
 import { useHeaderState } from './use-header-state'
 import { useHeaderSelect } from './use-header-select'
-import { HeaderComponentDto } from '../header.component.dto'
 
-export function useHeaderComponent (): HeaderComponentDto {
+type UseHeaderComponent = {
+    world: string
+    level: string
+    worldKeys: string[]
+    levelKeys: string[]
+    handleChange: (event: React.ChangeEvent<HTMLSelectElement>, type: string) => void
+    handleSubmit: () => void
+    submitVisible: boolean
+}
+
+export function useHeaderComponent (): UseHeaderComponent {
 
     const {
         world,

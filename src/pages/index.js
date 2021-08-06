@@ -1,11 +1,14 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { DefaultLayout } from '../layouts'
 import { BoardModule } from '../modules'
 import { Theme } from '../app/styles'
 
-export default function IndexPage (): ReactElement {
+/**
+ * @returns {React.ReactNode} react component
+ */
+export default function IndexPage () {
 
     const router = useRouter ()
 

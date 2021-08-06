@@ -1,23 +1,19 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 
-export default function GitPage (): ReactElement {
+/**
+ * @returns {React.ReactNode} react component
+ */
+export default function GitPage () {
 
     return <></>
 
-}
-
-type GetServerSideProps = {
-    redirect: {
-        destination: string
-        permanent: boolean
-    }
 }
 
 /**
  * @description redirect at server level
  * @returns {object} next.js redirection object
  */
-export async function getServerSideProps (): Promise<GetServerSideProps> {
+export async function getServerSideProps () {
 
     return {
         'redirect': {

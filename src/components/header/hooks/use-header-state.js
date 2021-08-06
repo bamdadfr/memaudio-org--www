@@ -1,34 +1,33 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Worlds } from '../../../app/data'
-import { World, Level, WorldKeys, LevelKeys, HandleChange } from '../header.component.dto'
 
-type UseHeaderStateDto = {
-    world: World
-    level: Level
-    worldKeys: WorldKeys
-    levelKeys: LevelKeys
-    handleChange: HandleChange
-}
+/**
+ * @typedef {object} UseHeaderState
+ * @property {string} world current world (from router)
+ * @property {string[]} worldKeys all world keys
+ * @property {string} level current level (from router)
+ * @property {string[]} levelKeys all level keys
+ * @property {function(): undefined} handleChange world and level change handler
+ */
 
-export function useHeaderState (): UseHeaderStateDto {
+/**
+ * @returns {UseHeaderState} UseHeaderState
+ */
+export function useHeaderState () {
 
     const router = useRouter ()
-    const [world, setWorld] = useState<World> ()
-    const [level, setLevel] = useState<Level> ()
-    const [worldKeys, setWorldKeys] = useState<WorldKeys> ()
-    const [levelKeys, setLevelKeys] = useState<LevelKeys> ()
+    const [world, setWorld] = useState ()
+    const [worldKeys, setWorldKeys] = useState ()
+    const [level, setLevel] = useState ()
+    const [levelKeys, setLevelKeys] = useState ()
 
     // get current world and level
     useEffect (() => {
 
         const { world, level } = router.query
 
-        if (Array.isArray (world)) return
-
         setWorld (world)
-
-        if (Array.isArray (level)) return
 
         setLevel (level)
 
@@ -39,16 +38,16 @@ export function useHeaderState (): UseHeaderStateDto {
 
         if (typeof world === 'undefined') return
 
+        if (typeof level === 'undefined') return
+
         setWorldKeys (Object.keys (Worlds))
 
         setLevelKeys (Object.keys (Worlds[world]))
 
-    }, [world])
+    }, [world, level])
 
     // if level does not exist, set it to first
     useEffect (() => {
-
-        if (typeof world === 'undefined') return
 
         if (typeof level === 'undefined') return
 
@@ -56,11 +55,11 @@ export function useHeaderState (): UseHeaderStateDto {
 
         if (typeof Worlds[world][level] !== 'undefined') return
 
-        setLevel ('1')
+        setLevel (Worlds[world][0])
 
     }, [world, level, levelKeys])
 
-    const handleChange: HandleChange = useCallback ((e, type) => {
+    const handleChange = useCallback ((e, type) => {
 
         if (type === 'world') setWorld (e.target.value)
 

@@ -24,7 +24,7 @@ export const Spacer = styled.div`
     width: 1em;
 `
 
-export const Select = styled.select<{ width: number }>`
+export const Select = styled.select`
     background-color: transparent;
     width: ${({ width }) => width}em;
 

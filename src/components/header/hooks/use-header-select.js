@@ -1,23 +1,22 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useStore } from '../../../store'
-import { Level, World, HandleSubmit, SubmitVisible } from '../header.component.dto'
 
-type UseHeaderSelect = {
-    handleSubmit: HandleSubmit
-    submitVisible: SubmitVisible
-}
-
-export function useHeaderSelect (world: World, level: Level): UseHeaderSelect {
+/**
+ * @param {string} world world
+ * @param {string} level level
+ * @returns {*} state
+ */
+export function useHeaderSelect (world, level) {
 
     const router = useRouter ()
-    const isLeaving = useStore ((state: any) => state.board.isLeaving)
-    const setLeave = useStore ((state: any) => state.board.setLeave)
+    const isLeaving = useStore ((state) => state.board.isLeaving)
+    const setLeave = useStore ((state) => state.board.setLeave)
     /**
      * @typedef {boolean} SubmitVisible
      */
-    const [submitVisible, setSubmitVisible] = useState<SubmitVisible> (false)
-    const [submitFired, setSubmitFired] = useState<boolean> (false)
+    const [submitVisible, setSubmitVisible] = useState (false)
+    const [submitFired, setSubmitFired] = useState (false)
 
     // post submit
     useEffect (() => {
@@ -47,7 +46,7 @@ export function useHeaderSelect (world: World, level: Level): UseHeaderSelect {
 
     }, [world, level, router.query])
 
-    const handleSubmit: HandleSubmit = useCallback (() => {
+    const handleSubmit = useCallback (() => {
 
         if (!submitVisible) return
 

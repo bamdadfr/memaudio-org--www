@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { ChangeEvent } from 'react'
 import { useHeaderState } from './use-header-state'
 import { useHeaderSelect } from './use-header-select'
 
@@ -7,7 +7,7 @@ export type UseHeaderComponent = {
     level: string
     worldKeys: string[]
     levelKeys: string[]
-    handleChange: (event: React.ChangeEvent<HTMLSelectElement>, type: string) => void
+    handleChange: (event: ChangeEvent<HTMLSelectElement>, type: string) => void
     handleSubmit: () => void
     submitVisible: boolean
 }

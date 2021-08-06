@@ -1,5 +1,5 @@
 import React from 'react'
-import { BackgroundComponent } from '../../../components'
+import { BackgroundComponent } from '../../components/background/background.component'
 
 /**
  * @description exclusive use in pages/_app.js

@@ -1,8 +1,8 @@
 import React from 'react'
 import { FaCheck } from 'react-icons/fa'
 import { Container, Spacer, Select, Submit } from './header.component.styles'
-import { FadeAnimation } from '../../animations'
-import { useHeaderComponent } from './hooks'
+import { FadeAnimation } from '../../animations/fade/fade.animation'
+import { useHeaderComponent } from './hooks/use-header-component'
 
 /**
  * @returns {React.ReactNode} react component

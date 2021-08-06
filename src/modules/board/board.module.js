@@ -2,9 +2,10 @@ import React from 'react'
 import { animated } from '@react-spring/web'
 import PropTypes from 'prop-types'
 import { Container, Grid } from './board.module.styles'
-import { useBoardModule } from './hooks'
-import { CardComponent, GameComponent } from './components'
-import { CardType } from '../../types'
+import { useBoardModule } from './hooks/use-board-module'
+import { CardComponent } from './components/card/card.component'
+import { GameComponent } from './components/game/game.component'
+import { CardType } from '../../types/card.type'
 
 const propTypes = {
     'cards': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,

@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import useSound from 'use-sound'
-import { useStore } from '../../../../../store'
+import { useStore } from '../../../../../store/use-store'
 
 /**
  * @param {Function<undefined>} toggleFlipped flip card

@@ -1,4 +1,4 @@
-import { files } from '../../files'
+import { files } from '../../files/files'
 
 /**
  * @description declare levels into your world

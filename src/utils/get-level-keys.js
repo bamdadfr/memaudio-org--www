@@ -1,4 +1,4 @@
-import { worlds } from '../app/data'
+import { worlds } from '../app/data/worlds/worlds'
 
 /**
  * @param {string} world world

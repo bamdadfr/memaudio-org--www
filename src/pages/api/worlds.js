@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { getWorldKeys } from '../../utils'
+import { getWorldKeys } from '../../utils/get-world-keys'
 
 /**
  * @description /api/worlds

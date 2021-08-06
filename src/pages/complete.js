@@ -1,13 +1,15 @@
 import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { useRouter } from 'next/router'
-import { DefaultLayout } from '../layouts'
-import { BoardModule } from '../modules'
-import { Theme } from '../app/styles'
-import { AudioAmbienceComponent, AudioAnnouncerComponent } from '../components'
-import { announcer } from '../app/data'
-import { useCompletePage } from '../hooks'
-import { capitalizeFirstLetter, getNextLevelPath } from '../utils'
+import { DefaultLayout } from '../layouts/default/default.layout'
+import { BoardModule } from '../modules/board/board.module'
+import { Theme } from '../app/styles/theme'
+import { AudioAmbienceComponent } from '../components/audio-ambience/audio-ambience.component'
+import { AudioAnnouncerComponent } from '../components/audio-announcer/audio-announcer.component'
+import { announcer } from '../app/data/announcer/announcer'
+import { useCompletePage } from '../hooks/use-complete-page/use-complete-page'
+import { capitalizeFirstLetter } from '../utils/capitalize-first-letter'
+import { getNextLevelPath } from '../utils/get-next-level-path'
 
 /**
  * @returns {React.ReactNode} react component

@@ -1,6 +1,7 @@
 // noinspection RedundantIfStatementJS
 
-import { files, worlds } from '../app/data'
+import { worlds } from '../app/data/worlds/worlds'
+import { files } from '../app/data/files/files'
 
 /**
  * @description checks for existence of worlds and files

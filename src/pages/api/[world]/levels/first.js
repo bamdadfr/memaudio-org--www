@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { getLevelKeys, isWorld } from '../../../../utils'
+import { getLevelKeys } from '../../../../utils/get-level-keys'
+import { isWorld } from '../../../../utils/is-world'
 
 /**
  * @description /api/[world]/levels/first

@@ -1,5 +1,6 @@
-import { Theme } from '../app/styles'
-import { files, worlds } from '../app/data'
+import { Theme } from '../app/styles/theme'
+import { worlds } from '../app/data/worlds/worlds'
+import { files } from '../app/data/files/files'
 import { pickRandomKeys } from './pick-random-keys'
 import { shuffleArray } from './shuffle-array'
 

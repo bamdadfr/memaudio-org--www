@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useStore } from '../../../../../store'
+import { useStore } from '../../../../../store/use-store'
 
 /**
  * @description when 2 cards are drawn

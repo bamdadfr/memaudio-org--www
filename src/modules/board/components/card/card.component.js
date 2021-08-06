@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Card } from './card.component.styles'
-import { useCardComponent } from './hooks'
+import { useCardComponent } from './hooks/use-card-component'
 
 const propTypes = {
     'children': PropTypes.node.isRequired,

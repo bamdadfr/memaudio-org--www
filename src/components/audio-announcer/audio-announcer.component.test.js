@@ -1,7 +1,7 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
 import { AudioAnnouncerComponent } from './audio-announcer.component'
-import { announcer } from '../../app/data'
+import { announcer } from '../../app/data/announcer/announcer'
 
 const render = () => {
 

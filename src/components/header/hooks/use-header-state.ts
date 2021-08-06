@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { UseHeaderComponent } from './use-header-component'
-import { fetchWorlds, fetchLevels, fetchFirstLevel } from '../../../utils'
+import { fetchWorlds } from '../../../utils/fetch-worlds'
+import { fetchLevels } from '../../../utils/fetch-levels'
+import { fetchFirstLevel } from '../../../utils/fetch-first-level'
 
 type UseHeaderState = {
     world: UseHeaderComponent['world']

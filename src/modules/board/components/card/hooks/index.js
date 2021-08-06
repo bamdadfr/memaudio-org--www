@@ -1,1 +1,0 @@
-export { useCardComponent } from './use-card-component'

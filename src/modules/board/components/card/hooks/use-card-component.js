@@ -1,12 +1,12 @@
 import React from 'react'
 import { useMeasure } from 'react-use'
 import { SpringValues } from '@react-spring/web'
-import { getCardFaces } from '../../../utils'
+import { getCardFaces } from '../../../utils/get-card-faces'
 import { useCardSpring } from './use-card-spring'
 import { useCardCallback } from './use-card-callback'
 import { useCardFlip } from './use-card-flip'
 import { useCardGameColor } from './use-card-game-color'
-import { useStore } from '../../../../../store'
+import { useStore } from '../../../../../store/use-store'
 import { useCardClick } from './use-card-click'
 
 /**

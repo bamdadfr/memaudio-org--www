@@ -1,4 +1,4 @@
-import { Files } from '../../files'
+import { files } from '../../files/files'
 
 /**
  * @description declare levels into your world
@@ -9,8 +9,8 @@ import { Files } from '../../files'
  */
 export const instruments = {
     '1': [
-        Files.instruments.DoubleBass_E1,
-        Files.instruments.frenchHorn_E2,
+        files.instruments.DoubleBass_E1,
+        files.instruments.frenchHorn_E2,
     ],
     '2': [
         4,
@@ -25,8 +25,8 @@ export const instruments = {
      * caution, it will loop over the same sounds
      */
     '5': [
-        Files.instruments.DoubleBass_E1,
-        Files.instruments.frenchHorn_E2,
+        files.instruments.DoubleBass_E1,
+        files.instruments.frenchHorn_E2,
         8,
     ],
 }

@@ -1,14 +1,15 @@
-// noinspection JSUnusedGlobalSymbols
-
 import React from 'react'
 import PropTypes from 'prop-types'
-import { DefaultLayout } from '../../layouts'
-import { BoardModule } from '../../modules'
-import { announcer } from '../../app/data'
-import { CardType } from '../../types'
-import { AudioAnnouncerComponent, MetaComponent } from '../../components'
-import { buildDeck, validateWorlds, capitalizeFirstLetter } from '../../utils'
-import { useWorldLevelPage } from '../../hooks'
+import { DefaultLayout } from '../../layouts/default/default.layout'
+import { BoardModule } from '../../modules/board/board.module'
+import { announcer } from '../../app/data/announcer/announcer'
+import { CardType } from '../../types/card.type'
+import { AudioAnnouncerComponent } from '../../components/audio-announcer/audio-announcer.component'
+import { MetaComponent } from '../../components/meta/meta.component'
+import { buildDeck } from '../../utils/build-deck'
+import { validateWorlds } from '../../utils/validate-worlds'
+import { capitalizeFirstLetter } from '../../utils/capitalize-first-letter'
+import { useWorldLevelPage } from '../../hooks/use-world-level-page/use-world-level-page'
 
 const propTypes = {
     'deck': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,

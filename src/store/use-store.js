@@ -1,8 +1,8 @@
 import create from 'zustand'
-import { gameStore } from './game'
-import { animationsStore } from './animations'
-import { boardStore } from './board'
-import { deckStore } from './deck'
+import { gameStore } from './game/game.store'
+import { animationsStore } from './animations/animations.store'
+import { boardStore } from './board/board.store'
+import { deckStore } from './deck/deck.store'
 
 export const useStore = create (
     (set, get) => ({

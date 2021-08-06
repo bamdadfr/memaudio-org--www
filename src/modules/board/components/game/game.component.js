@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGameComponent } from './hooks'
+import { useGameComponent } from './hooks/use-game-component'
 
 /**
  * @description dummy component to manage state and avoid DOM renders

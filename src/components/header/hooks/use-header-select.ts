@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { useStore } from '../../../store'
+import { useStore } from '../../../store/use-store'
 import { UseHeaderComponent } from './use-header-component'
 
 type UseHeaderSelect = {

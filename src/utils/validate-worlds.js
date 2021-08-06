@@ -1,6 +1,7 @@
 // noinspection RedundantIfStatementJS
 
-import { Files, Worlds } from '../app/data'
+import { worlds } from '../app/data/worlds/worlds'
+import { files } from '../app/data/files/files'
 
 /**
  * @description checks for existence of worlds and files
@@ -11,15 +12,15 @@ import { Files, Worlds } from '../app/data'
  */
 export function validateWorlds (world, level) {
 
-    if (typeof Worlds[world] === 'undefined') return false
+    if (typeof worlds[world] === 'undefined') return false
 
-    if (typeof Files[world] === 'undefined') return false
+    if (typeof files[world] === 'undefined') return false
 
-    if (typeof Worlds[world][level] === 'undefined') return false
+    if (typeof worlds[world][level] === 'undefined') return false
 
-    const availableFiles = Object.keys (Files[world]).length
+    const availableFiles = Object.keys (files[world]).length
 
-    const requestedFiles = Worlds[world][level].reduce ((previous, current) => {
+    const requestedFiles = worlds[world][level].reduce ((previous, current) => {
 
         const newPrevious = typeof previous === 'number' ? previous : 1
         const newCurrent = typeof current === 'number' ? current : 1

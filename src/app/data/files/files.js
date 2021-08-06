@@ -1,7 +1,7 @@
-import instruments from './instruments/_files'
-import instruments_kick from './instruments_kick/_files'
+import instruments from './instruments'
+import instruments_kick from './instruments_kick'
 
-export const Files = {
+export const files = {
     instruments,
     instruments_kick,
 }

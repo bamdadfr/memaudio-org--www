@@ -1,1 +1,0 @@
-export { useGameComponent } from './use-game-component'

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { useStore } from '../../store'
+import { useStore } from '../../store/use-store'
 
 type UseWorldLevelPage = {
     playAnnouncer: boolean

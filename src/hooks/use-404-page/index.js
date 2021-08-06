@@ -1,1 +1,0 @@
-export { use404Page } from './use-404-page'

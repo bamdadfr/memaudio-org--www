@@ -1,6 +1,6 @@
 import { announcer } from './announcer'
 
-describe ('Announcer', () => {
+describe ('announcer', () => {
 
     it ('should be defined', () => {
 

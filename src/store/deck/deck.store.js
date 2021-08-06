@@ -6,6 +6,10 @@ export const deckStore = (set, get) => ({
         'toMatch': -1,
         // global
         'load': (newCards, world, level) => set ((state) => ({
+            'board': {
+                ...state.board,
+                'isLocked': false,
+            },
             'game': {
                 ...state.game,
                 'isRunning': true,

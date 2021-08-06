@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useStore } from '../../../../../store'
-import { Theme } from '../../../../../app/styles'
+import { useStore } from '../../../../../store/use-store'
+import { Theme } from '../../../../../app/styles/theme'
 
 /**
  * @param {number} id card id

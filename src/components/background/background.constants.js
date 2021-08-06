@@ -1,6 +1,6 @@
 // noinspection InfiniteLoopJS
 
-import { Theme } from '../../app/styles'
+import { Theme } from '../../app/styles/theme'
 
 export const BackgroundConstants = {
     'config': {

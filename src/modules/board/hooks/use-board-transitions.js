@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTransition } from '@react-spring/web'
-import { useStore } from '../../../store'
+import { useStore } from '../../../store/use-store'
 
 /**
  * @param {Array} array containing items

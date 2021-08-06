@@ -1,3 +1,22 @@
+# [1.10.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.9.1...v1.10.0) (2021-08-06)
+
+
+### Bug Fixes
+
+* **state:** unlock board on deck load ([d5dd124](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d5dd1244c1a8f8413462094cdceae8747c661374))
+
+
+### Features
+
+* remove barrel exports (it disables tree shaking) ([cb2cc58](https://github.com/bamdadsabbagh/memaudio-org--www/commit/cb2cc58c6c193296b906752e887f42a4302a194e))
+* **api:** use next.js API routes to get data ([ecc37b7](https://github.com/bamdadsabbagh/memaudio-org--www/commit/ecc37b7a693b4a20f671c499d084abb61a258141))
+
+
+### Performance Improvements
+
+* **data:** lowercase to all data objects ([5d5200c](https://github.com/bamdadsabbagh/memaudio-org--www/commit/5d5200cbb262b874100ef480ae60d079e810acbb))
+* **HeaderComponent/hooks:** using named import for `ChangeEvent` ([bab9a60](https://github.com/bamdadsabbagh/memaudio-org--www/commit/bab9a60ad28b4846273031a1457ffc4c215c3a6a))
+
 ## [1.9.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.9.0...v1.9.1) (2021-08-06)
 
 

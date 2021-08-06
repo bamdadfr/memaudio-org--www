@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useHeaderState } from './use-header-state'
 import { useHeaderSelect } from './use-header-select'
 
-type UseHeaderComponent = {
+export type UseHeaderComponent = {
     world: string
     level: string
     worldKeys: string[]

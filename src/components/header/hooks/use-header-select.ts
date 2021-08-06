@@ -1,17 +1,18 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useStore } from '../../../store'
+import { UseHeaderComponent } from './use-header-component'
 
-/**
- * @param {string} world world
- * @param {string} level level
- * @returns {*} state
- */
-export function useHeaderSelect (world, level) {
+type UseHeaderSelect = {
+    handleSubmit: UseHeaderComponent['handleSubmit']
+    submitVisible: UseHeaderComponent['submitVisible']
+}
+
+export function useHeaderSelect (world: string, level: string): UseHeaderSelect {
 
     const router = useRouter ()
-    const isLeaving = useStore ((state) => state.board.isLeaving)
-    const setLeave = useStore ((state) => state.board.setLeave)
+    const isLeaving = useStore ((state: any) => state.board.isLeaving)
+    const setLeave = useStore ((state: any) => state.board.setLeave)
     /**
      * @typedef {boolean} SubmitVisible
      */

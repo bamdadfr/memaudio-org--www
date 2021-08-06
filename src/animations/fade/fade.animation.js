@@ -8,8 +8,8 @@ const propTypes = {
 
 /**
  * @param {object} props react props
- * @param {React.ReactElement} props.children children
- * @returns {React.ReactElement} react component
+ * @param {React.ReactNode} props.children children
+ * @returns {React.ReactNode} react component
  */
 export function FadeAnimation ({ children }) {
 

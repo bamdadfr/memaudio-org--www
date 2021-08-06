@@ -10,7 +10,7 @@ const propTypes = {
 /**
  * @param {object} props react props
  * @param {Array.<string>} props.files file paths to play
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export function AudioAnnouncerComponent ({ files }) {
 

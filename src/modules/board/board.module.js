@@ -13,7 +13,7 @@ const propTypes = {
 /**
  * @param {object} props react props
  * @param {Array} props.cards array of cards
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export function BoardModule ({ cards }) {
 

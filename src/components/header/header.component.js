@@ -5,7 +5,7 @@ import { FadeAnimation } from '../../animations'
 import { useHeaderComponent } from './hooks'
 
 /**
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export function HeaderComponent () {
 

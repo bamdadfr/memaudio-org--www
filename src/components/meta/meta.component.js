@@ -27,7 +27,7 @@ const defaultProps = {
  * @param {string} [props.description] meta description
  * @param {string} [props.image] meta image
  * @param {boolean} [props.customTitle] have your own title?
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export function MetaComponent ({
     title,

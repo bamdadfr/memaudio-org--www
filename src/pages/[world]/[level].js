@@ -17,7 +17,7 @@ const propTypes = {
 /**
  * @param {object} props react props
  * @param {Array} props.deck containing cards
- * @returns {React.ReactElement} react component
+ * @returns {React.ReactNode} react component
  */
 export default function WorldLevelPage ({ deck }) {
 

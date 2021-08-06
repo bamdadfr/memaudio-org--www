@@ -1,4 +1,4 @@
-import { Worlds } from '../app/data'
+import { worlds } from '../app/data'
 
 /**
  * @param {string} world slug
@@ -11,7 +11,7 @@ export function getNextLevelPath (world, level) {
 
     if (typeof level !== 'string') return '/'
 
-    const levels = Object.keys (Worlds[world])
+    const levels = Object.keys (worlds[world])
     const currentLevelIndex = levels.indexOf (level)
     const nextLevelKey = levels[currentLevelIndex + 1]
 

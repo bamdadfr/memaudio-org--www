@@ -1,5 +1,5 @@
 import { Theme } from '../app/styles'
-import { Files, Worlds } from '../app/data'
+import { files, worlds } from '../app/data'
 import { pickRandomKeys } from './pick-random-keys'
 import { shuffleArray } from './shuffle-array'
 
@@ -26,7 +26,7 @@ function getCard (source, color = Theme.white) {
  */
 export function buildDeck (world, level) {
 
-    const sources = Worlds[world][level]
+    const sources = worlds[world][level]
     let deck = []
     let pool = undefined
 
@@ -45,7 +45,7 @@ export function buildDeck (world, level) {
                 break
 
             case 'number':
-                pool = pickRandomKeys (Files[world], source)
+                pool = pickRandomKeys (files[world], source)
 
                 pool.forEach ((randomSource) => {
 

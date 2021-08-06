@@ -1,10 +1,10 @@
-import { Worlds } from './worlds'
+import { worlds } from './worlds'
 
-describe ('Worlds', () => {
+describe ('worlds', () => {
 
     it ('should be defined', () => {
 
-        expect (Worlds).toBeDefined ()
+        expect (worlds).toBeDefined ()
     
     })
 

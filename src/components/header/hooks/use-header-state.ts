@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { Worlds } from '../../../app/data'
+import { worlds } from '../../../app/data'
 import { UseHeaderComponent } from './use-header-component'
 
 type UseHeaderState = {
@@ -33,9 +33,9 @@ export function useHeaderState (): UseHeaderState {
     // get all worlds and levels
     useEffect (() => {
 
-        setWorldKeys (Object.keys (Worlds))
+        setWorldKeys (Object.keys (worlds))
 
-        if (world) setLevelKeys (Object.keys (Worlds[world]))
+        if (world) setLevelKeys (Object.keys (worlds[world]))
 
     }, [world, level])
 
@@ -44,9 +44,9 @@ export function useHeaderState (): UseHeaderState {
 
         if (!world) return
 
-        if (typeof Worlds[world][level] !== 'undefined') return
+        if (typeof worlds[world][level] !== 'undefined') return
 
-        setLevel (Worlds[world][0])
+        setLevel (worlds[world][0])
 
     }, [world, level])
 

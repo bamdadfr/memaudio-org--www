@@ -1,1 +1,1 @@
-export { Worlds } from './worlds'
+export { worlds } from './worlds'

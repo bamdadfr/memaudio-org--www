@@ -1,10 +1,10 @@
-import { Files } from './files'
+import { files } from './files'
 
-describe ('Files', () => {
+describe ('files', () => {
 
     it ('should be defined', () => {
 
-        expect (Files).toBeDefined ()
+        expect (files).toBeDefined ()
     
     })
 

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { FaCheck } from 'react-icons/fa'
 import { Container, Spacer, Select, Submit } from './header.component.styles'
 import { FadeAnimation } from '../../animations'
@@ -21,9 +21,8 @@ export function HeaderComponent () {
 
     return (
         <>
-            <FadeAnimation>
-                <div>test</div>
-                {worldKeys && levelKeys &&
+            {worldKeys && levelKeys &&
+                <FadeAnimation>
                     <Container>
                         <Select
                             width={10}
@@ -44,8 +43,8 @@ export function HeaderComponent () {
                             {submitVisible && <Submit onClick={handleSubmit}><FaCheck/></Submit>}
                         </FadeAnimation>
                     </Container>
-                }
-            </FadeAnimation>
+                </FadeAnimation>
+            }
         </>
     )
 

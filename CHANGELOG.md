@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.9.0...v1.9.1) (2021-08-06)
+
+
+### Performance Improvements
+
+* **deps:** remove `remove` package -__- ([9481569](https://github.com/bamdadsabbagh/memaudio-org--www/commit/9481569fb19f7b7a69c58fa62f26a25e96e955a7))
+
 # [1.9.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.8.2...v1.9.0) (2021-08-06)
 
 

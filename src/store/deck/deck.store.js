@@ -45,16 +45,13 @@ export const deckStore = (set, get) => ({
         })),
         'setDraw': (id) => set ((state) => {
 
-            const newCard = state.deck.cards[id]
-
-            newCard.drawn = true
+            state.deck.cards[id].drawn = true
 
             return {
                 'deck': {
                     ...state.deck,
                     'cards': {
                         ...state.deck.cards,
-                        newCard,
                     },
                     'drawn': [
                         ...state.deck.drawn,

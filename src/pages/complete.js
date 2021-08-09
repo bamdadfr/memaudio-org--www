@@ -7,7 +7,7 @@ import { Theme } from '../app/styles/theme'
 import { AudioAmbienceComponent } from '../components/audio-ambience/audio-ambience.component'
 import { AudioAnnouncerComponent } from '../components/audio-announcer/audio-announcer.component'
 import { announcer } from '../app/data/announcer/announcer'
-import { useCompletePage } from '../hooks/use-complete-page/use-complete-page'
+import { useCompletePage } from '../pages-lib/complete/hooks/use-complete-page'
 import { capitalizeFirstLetter } from '../utils/capitalize-first-letter'
 import { getNextLevelPath } from '../utils/get-next-level-path'
 

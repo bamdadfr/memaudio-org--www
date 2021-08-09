@@ -51,6 +51,10 @@ export default function LevelsNextApi (req, res) {
     // return next level key
     res.json ({
         'success': true,
+        'meta': {
+            world,
+            level,
+        },
         'data': [
             getNextLevelKey (world, level),
         ],

@@ -1,14 +1,13 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import WorldLevelPage from '../../pages/[world]/[level]'
+import WorldLevelPage from '../../../pages/[world]/[level]'
 
 const render = () => {
 
-    const deck = [{}, {}] // todo mock later
-
     const { container } = defaultRender (
         <WorldLevelPage
-            deck={deck}
+            world="instruments"
+            level="1"
         />,
     )
 

@@ -1,16 +1,12 @@
 import { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { useStore } from '../../store/use-store'
-
-/**
- * @typedef {object} UseCompletePage
- * @property {string} World world
- * @property {string} Level level
- */
+import { useStore } from '../../../store/use-store'
 
 /**
  * @description /pages/complete
- * @returns {UseCompletePage} UseCompletePage
+ * @typedef {string} World world
+ * @typedef {string} Level level
+ * @returns {{World, Level}} UseCompletePage
  */
 export function useCompletePage () {
 

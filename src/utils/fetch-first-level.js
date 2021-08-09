@@ -6,6 +6,6 @@ import { fetchApi } from './fetch-api'
  */
 export async function fetchFirstLevel (world) {
 
-    return await fetchApi (`/api/${world}/levels/first`)
+    return await fetchApi (`/api/world/${world}/levels/first`)
 
 }

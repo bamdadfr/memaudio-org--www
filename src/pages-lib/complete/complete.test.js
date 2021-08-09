@@ -1,11 +1,11 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import GitPage from '../pages/git'
+import CompletePage from '../../pages/complete'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <GitPage/>,
+        <CompletePage/>,
     )
 
     return {
@@ -14,7 +14,7 @@ const render = () => {
 
 }
 
-describe ('GitPage', () => {
+describe ('CompletePage', () => {
 
     describe ('container', () => {
 
@@ -28,11 +28,11 @@ describe ('GitPage', () => {
 
         })
 
-        it ('should be empty', () => {
+        it ('should not be empty', () => {
 
             const { container } = render ()
 
-            expect (container).toBeEmptyDOMElement ()
+            expect (container).not.toBeEmptyDOMElement ()
 
         })
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import HomePage from '../pages/home'
+import IndexPage from '../../pages'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <HomePage/>,
+        <IndexPage/>,
     )
 
     return {
@@ -14,7 +14,7 @@ const render = () => {
 
 }
 
-describe ('HomePage', () => {
+describe ('IndexPage', () => {
 
     describe ('container', () => {
 

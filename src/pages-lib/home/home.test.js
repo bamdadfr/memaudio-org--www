@@ -1,11 +1,11 @@
 import React from 'react'
 import { render as defaultRender } from '@testing-library/react'
-import CompletePage from '../pages/complete'
+import HomePage from '../../pages/home'
 
 const render = () => {
 
     const { container } = defaultRender (
-        <CompletePage/>,
+        <HomePage/>,
     )
 
     return {
@@ -14,7 +14,7 @@ const render = () => {
 
 }
 
-describe ('CompletePage', () => {
+describe ('HomePage', () => {
 
     describe ('container', () => {
 

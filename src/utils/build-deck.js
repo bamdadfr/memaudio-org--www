@@ -1,69 +1,28 @@
-import { Theme } from '../app/styles/theme'
-import { worlds } from '../app/data/worlds/worlds'
-import { files } from '../app/data/files/files'
-import { pickRandomKeys } from './pick-random-keys'
 import { shuffleArray } from './shuffle-array'
+import { Theme } from '../app/styles/theme'
 
 /**
- * @param {string} source audio blob
- * @param {string} color hex
- * @returns {object} card object
- */
-function getCard (source, color = Theme.white) {
-
-    return {
-        'src': source,
-        'color': color,
-        'drawn': false,
-        'matched': false,
-    }
-
-}
-
-/**
- * @param {string} world slug
- * @param {string} level slug
+ * @param {string[]} cards cards
  * @returns {Array} shuffled deck
  */
-export function buildDeck (world, level) {
+export function buildDeck (cards) {
 
-    const sources = worlds[world][level]
     let deck = []
-    let pool = undefined
 
-    sources.forEach ((source) => {
+    const card = (source) => ({
+        'src': source,
+        'color': Theme.white,
+        'drawn': false,
+        'matched': false,
+    })
 
-        switch (typeof source) {
+    cards.forEach ((source) => {
 
-            case 'string':
-
-                deck = [
-                    ...deck,
-                    getCard (source),
-                    getCard (source),
-                ]
-
-                break
-
-            case 'number':
-                pool = pickRandomKeys (files[world], source)
-
-                pool.forEach ((randomSource) => {
-
-                    deck = [
-                        ...deck,
-                        getCard (randomSource),
-                        getCard (randomSource),
-                    ]
-
-                })
-
-                break
-
-            default:
-                throw new Error ('invalid source type')
-
-        }
+        deck = [
+            ...deck,
+            card (source),
+            card (source),
+        ]
     
     })
 

@@ -6,6 +6,6 @@ import { fetchApi } from './fetch-api'
  */
 export async function fetchLevels (world) {
 
-    return await fetchApi (`/api/${world}/levels`)
+    return await fetchApi (`/api/world/${world}/levels`)
 
 }

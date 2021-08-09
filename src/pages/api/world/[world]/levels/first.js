@@ -24,6 +24,9 @@ export default function LevelsFirstApi (req, res) {
 
     res.json ({
         'success': true,
+        'meta': {
+            world,
+        },
         'data': getLevelKeys (world)[0],
     })
 

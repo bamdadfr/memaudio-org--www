@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { getLevelKeys } from '../../../../utils/get-level-keys'
-import { isWorld } from '../../../../utils/is-world'
+import { getLevelKeys } from '../../../../../utils/get-level-keys'
+import { isWorld } from '../../../../../utils/is-world'
 
 /**
- * @description /api/[world]/levels/first
+ * @description /api/[world]/levels
  * @param {NextApiRequest} req request
  * @param {NextApiResponse} res response
  */
-export default function LevelsFirstApi (req, res) {
+export default function LevelsApi (req, res) {
 
     const { world } = req.query
 
@@ -24,7 +24,9 @@ export default function LevelsFirstApi (req, res) {
 
     res.json ({
         'success': true,
-        'data': getLevelKeys (world)[0],
+        'data': [
+            ...getLevelKeys (world),
+        ],
     })
 
 }

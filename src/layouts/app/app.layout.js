@@ -5,7 +5,7 @@ import { BackgroundComponent } from '../../components/background/background.comp
  * @description exclusive use in pages/_app.js
  * @param {object} props react props
  * @param {React.ReactNode} props.children children
- * @returns {React.ReactNode} react component
+ * @returns {React.ReactElement} react component
  */
 export function AppLayout ({ children }) {
 

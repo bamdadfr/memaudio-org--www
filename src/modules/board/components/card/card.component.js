@@ -27,7 +27,7 @@ const defaultProps = {
  * @param {string} props.color card color
  * @param {Function<undefined>} props.callback card callback
  * @param {boolean} props.leaveOnCallback grid should leave?
- * @returns {React.ReactNode} react component
+ * @returns {React.ReactElement} react component
  */
 export function CardComponent ({
     children,

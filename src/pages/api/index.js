@@ -7,6 +7,6 @@ import { NextApiRequest, NextApiResponse } from 'next'
  */
 export default function IndexApi (_req, res) {
 
-    res.status (200).json ({ 'success': true })
+    res.json ({ 'success': true })
 
 }

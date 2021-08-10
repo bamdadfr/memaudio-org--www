@@ -3,26 +3,26 @@ import PropTypes from 'prop-types'
 import { DefaultLayout } from '../../layouts/default/default.layout'
 import { BoardModule } from '../../modules/board/board.module'
 import { announcer } from '../../app/data/announcer/announcer'
-import { CardType } from '../../types/card.type'
 import { AudioAnnouncerComponent } from '../../components/audio-announcer/audio-announcer.component'
 import { MetaComponent } from '../../components/meta/meta.component'
-import { buildDeck } from '../../utils/build-deck'
 import { validateWorlds } from '../../utils/validate-worlds'
 import { capitalizeFirstLetter } from '../../utils/capitalize-first-letter'
-import { useWorldLevelPage } from '../../hooks/use-world-level-page/use-world-level-page'
+import { useWorldLevelPage } from '../../pages-lib/[world]/[level]/hooks/use-world-level-page'
 
 const propTypes = {
-    'deck': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,
+    'world': PropTypes.string.isRequired,
+    'level': PropTypes.string.isRequired,
 }
 
 /**
  * @param {object} props react props
- * @param {Array} props.deck containing cards
+ * @param {string} props.world valid world
+ * @param {string} props.level valid level
  * @returns {React.ReactNode} react component
  */
-export default function WorldLevelPage ({ deck }) {
+export default function WorldLevelPage ({ world, level }) {
 
-    const { playAnnouncer, world, level } = useWorldLevelPage (deck)
+    const { isAnnouncer, deck } = useWorldLevelPage (world, level)
 
     return (
         <>
@@ -30,10 +30,8 @@ export default function WorldLevelPage ({ deck }) {
                 title={`${capitalizeFirstLetter (world)} ${level} | Memaudio`}
             />
             <DefaultLayout customMeta>
-                {playAnnouncer && <AudioAnnouncerComponent files={[announcer.game.start]}/>}
-                <BoardModule
-                    cards={deck}
-                />
+                {isAnnouncer && <AudioAnnouncerComponent files={[announcer.game.start]}/>}
+                {deck && <BoardModule cards={deck}/>}
             </DefaultLayout>
         </>
     )
@@ -44,7 +42,7 @@ export default function WorldLevelPage ({ deck }) {
  * @param {object} context next.js context
  * @returns {object} props
  */
-export function getServerSideProps (context) {
+export async function getServerSideProps (context) {
 
     const { world, level } = context.query
     const props = {}
@@ -52,7 +50,9 @@ export function getServerSideProps (context) {
 
     if (!isValid) return { 'redirect': { 'destination': '/404', 'permanent': false }}
 
-    props.deck = buildDeck (world, level)
+    props.world = world
+
+    props.level = level
 
     return { props }
 

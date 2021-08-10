@@ -1,3 +1,18 @@
+# [1.11.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.10.1...v1.11.0) (2021-08-10)
+
+
+### Features
+
+* serve all audio files statically instead of blob strings, resulting in better performance ([c792bc4](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c792bc492bb2e62fa8fca5339e833c55e426754b))
+
+
+### Performance Improvements
+
+* **api:** prefix world routes with `/world/` ([23066ec](https://github.com/bamdadsabbagh/memaudio-org--www/commit/23066ecd7c3126c3bf1d14f118008edce639e858))
+* **AudioAnnouncerComponent:** extract logic to custom hook ([694c256](https://github.com/bamdadsabbagh/memaudio-org--www/commit/694c256845276d91fe1b68687a73b1ea52b3e370))
+* **BoardModule:** is now in typescript for card type sharing + various ([f69102d](https://github.com/bamdadsabbagh/memaudio-org--www/commit/f69102daa952459f91a4788178e7e2bff76f22fc))
+* **HeaderComponent:** clean ([11c53bb](https://github.com/bamdadsabbagh/memaudio-org--www/commit/11c53bb22df849cafe6b9840b1ba267d44bd74f7))
+
 ## [1.10.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.10.0...v1.10.1) (2021-08-09)
 
 

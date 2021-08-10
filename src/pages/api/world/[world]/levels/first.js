@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { getLevelKeys } from '../../../../../utils/get-level-keys'
 import { isWorld } from '../../../../../utils/is-world'
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * @description /api/[world]/levels/first
  * @param {NextApiRequest} req request

@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownTag
+
 module.exports = {
     'setupFilesAfterEnv': ['./jest.setup.js'],
     'testRegex': '(test|spec)\\.[jt]sx?$',

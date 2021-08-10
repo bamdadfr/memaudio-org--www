@@ -2,15 +2,13 @@ import { useCallback } from 'react'
 import useSound from 'use-sound'
 import { useStore } from '../../../../../store/use-store'
 
-/**
- * @param {Function<undefined>} toggleFlipped flip card
- * @param {string} src source as audio blob
- * @typedef {Function<undefined>} HandleClick
- * @returns {{HandleClick}} pass this to JSX
- */
-export function useCardClick (toggleFlipped, src) {
+type UseCardClick = {
+    handleClick: () => void
+}
 
-    const gameIsRunning = useStore ((state) => state.game.isRunning)
+export function useCardClick (toggleFlipped: () => void, src: string): UseCardClick {
+
+    const gameIsRunning = useStore ((state: any) => state.game.isRunning)
     const [play] = useSound (src)
 
     const handleClick = useCallback (() => {

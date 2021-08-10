@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.1...v1.11.2) (2021-08-10)
+
+
+### Bug Fixes
+
+* **BoardModule/CardComponent:** children prop-types is `ReactNode` ([731258a](https://github.com/bamdadsabbagh/memaudio-org--www/commit/731258a63b4bcb2be3443621a57df2c368ebe5bc))
+
 ## [1.11.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.0...v1.11.1) (2021-08-10)
 
 

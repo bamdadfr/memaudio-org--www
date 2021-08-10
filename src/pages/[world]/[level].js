@@ -38,6 +38,7 @@ export default function WorldLevelPage ({ world, level }) {
 
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * @param {object} context next.js context
  * @returns {object} props

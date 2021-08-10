@@ -1,18 +1,17 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useStore } from '../../../../../store/use-store'
 
-/**
- * @param {number} id card id
- * @typedef {boolean} Flipped
- * @typedef {Function<undefined>} ToggleFlipped
- * @returns {{Flipped, ToggleFlipped}} card flipped state
- */
-export function useCardFlip (id) {
+type UseCardFlip = {
+    flipped: boolean
+    toggleFlipped: () => void
+}
+
+export function useCardFlip (id: number): UseCardFlip {
 
     // global
-    const gameIsRunning = useStore ((state) => state.game.isRunning)
-    const setDraw = useStore ((state) => state.deck.setDraw)
-    const isDrawn = useStore ((state) => state.deck.getCard (id)?.drawn)
+    const gameIsRunning = useStore ((state: any) => state.game.isRunning)
+    const setDraw = useStore ((state: any) => state.deck.setDraw)
+    const isDrawn = useStore ((state: any) => state.deck.getCard (id)?.drawn)
     // local
     const [flipped, setFlipped] = useState (false)
     const toggleFlipped = useCallback (() => !flipped && setFlipped ((f) => !f), [flipped])

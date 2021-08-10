@@ -3,7 +3,7 @@ import { useStore } from '../../../../../store/use-store'
 
 /**
  * @param {boolean} flipped card state
- * @param {Function<undefined>} callback card callback
+ * @param {function(): void} callback card callback
  * @param {boolean} leaveOnCallback grid should leave?
  */
 export function useCardCallback (flipped, callback, leaveOnCallback) {

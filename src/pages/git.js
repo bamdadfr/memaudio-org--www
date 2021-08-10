@@ -9,6 +9,7 @@ export default function GitPage () {
 
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * @description redirect at server level
  * @returns {object} next.js redirection object

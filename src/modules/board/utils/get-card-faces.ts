@@ -1,12 +1,11 @@
-import React from 'react'
+import { ReactNode } from 'react'
 
-/**
- * @param {object|string} props props passed to component
- * @typedef {string|React.ReactElement} Front
- * @typedef {null|React.ReactElement} Back
- * @returns {{Front,Back}} faces of the card
- */
-export function getCardFaces (props) {
+export type GetCardFaces = {
+    front: ReactNode|string|null
+    back: ReactNode|string|null
+}
+
+export function getCardFaces (props: ReactNode): GetCardFaces {
 
     if (typeof props === 'string') return { 'front': props, 'back': null }
 

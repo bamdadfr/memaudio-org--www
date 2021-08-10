@@ -11,10 +11,18 @@ export const Container = styled.div`
     outline: none;
 `
 
-export const Card = styled (animated.div)`
+type CardProps = {
+    $isFront?: boolean
+    $isBack?: boolean
+    $color: string
+    width: number
+    height: number
+}
+
+export const Card = styled (animated.div)<CardProps>`
     position: fixed;
-    width: ${(props) => props.width}px;
-    height: ${(props) => props.height}px;
+    width: ${({ width }) => width}px;
+    height: ${({ height }) => height}px;
     will-change: transform, opacity;
 
     display: flex;
@@ -22,15 +30,15 @@ export const Card = styled (animated.div)`
     align-items: center;
     text-align: center;
 
-    color: ${(props) => props.theme.background};
+    color: ${({ theme }) => theme.background};
 
-    background: ${(props) => props.$color};
+    background: ${({ $color }) => $color};
 
     transition: background 250ms ease-in-out;
 
     // activate shadow from desktop and up
     @media screen and (min-width: ${Breakpoints.desktop}px) {
-         box-shadow: 0 0.05em 0.5em 0.05em ${(props) => props.theme.shadow};
+         box-shadow: 0 0.05em 0.5em 0.05em ${({ theme }) => theme.shadow};
     }
     
     backface-visibility: hidden;

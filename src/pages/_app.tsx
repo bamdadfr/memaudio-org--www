@@ -6,6 +6,7 @@ import { AppLayout } from '../layouts/app/app.layout'
 import { useApp } from '../app/hooks/use-app'
 import { WithStyledComponents } from '../app/components/with-styled-components/with-styled-components'
 
+// noinspection JSUnusedGlobalSymbols
 export default function MyApp ({ Component, pageProps }: AppProps): ReactElement {
 
     useApp ()

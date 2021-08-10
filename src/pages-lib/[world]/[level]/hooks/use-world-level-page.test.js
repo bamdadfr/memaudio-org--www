@@ -5,7 +5,7 @@ describe ('useWorldLevelPage', () => {
 
     it ('should mount correctly', () => {
 
-        const hook = renderHook (() => useWorldLevelPage ())
+        const hook = renderHook (() => useWorldLevelPage ('instruments', '1'))
 
         expect (hook).toBeDefined ()
 

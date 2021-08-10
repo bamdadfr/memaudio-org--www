@@ -1,9 +1,9 @@
-const on = jest.fn ((eventType, listenerFunction) => ({
+const on = jest.fn (({ eventType, listenerFunction }) => ({
     eventType,
     listenerFunction,
 }))
 
-const off = jest.fn ((eventType, listenerFunction) => ({
+const off = jest.fn (({ eventType, listenerFunction }) => ({
     eventType,
     listenerFunction,
 }))

@@ -1,34 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// eslint-disable-next-line no-use-before-define
+import React, { ReactElement } from 'react'
 import { Container, Card } from './card.component.styles'
 import { useCardComponent } from './hooks/use-card-component'
 
-const propTypes = {
-    'children': PropTypes.node.isRequired,
-    'id': PropTypes.number.isRequired,
-    'src': PropTypes.string,
-    'color': PropTypes.string,
-    'callback': PropTypes.func,
-    'leaveOnCallback': PropTypes.bool,
+type CardComponentProps = {
+    children: ReactElement
+    id: number
+    src: string
+    color: string
+    callback: () => void
+    leaveOnCallback: boolean
 }
 
-const defaultProps = {
-    'src': undefined,
-    'color': undefined,
-    'callback': undefined,
-    'leaveOnCallback': undefined,
-}
-
-/**
- * @param {object} props react props
- * @param {Array.<React.ReactElement>} props.children card content
- * @param {number} props.id card id (only relative to grid)
- * @param {string} props.src card audio source (as blob)
- * @param {string} props.color card color
- * @param {Function<undefined>} props.callback card callback
- * @param {boolean} props.leaveOnCallback grid should leave?
- * @returns {React.ReactElement} react component
- */
 export function CardComponent ({
     children,
     id,
@@ -36,23 +19,18 @@ export function CardComponent ({
     color,
     callback,
     leaveOnCallback,
-}) {
+}: CardComponentProps): ReactElement {
 
     const {
-        // container
         ref,
         width,
         height,
-        // faces
         front,
         back,
-        // animations
         spring,
-        // ui
         boardIsLocked,
         gameIsRunning,
         gameColor,
-        // interactions
         handleClick,
     } = useCardComponent ({
         children,
@@ -88,11 +66,6 @@ export function CardComponent ({
                     $color={gameIsRunning ? gameColor : color}
                     width={width}
                     height={height}
-                    onClick={
-                        typeof back.props.children === 'undefined'
-                            ? undefined
-                            : handleClick
-                    }
                     style={{
                         'opacity': spring.opacity,
                         'transform': spring.transform,
@@ -106,7 +79,3 @@ export function CardComponent ({
     )
 
 }
-
-CardComponent.propTypes = propTypes
-
-CardComponent.defaultProps = defaultProps

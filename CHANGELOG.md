@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.2...v1.11.3) (2021-08-10)
+
+
+### Performance Improvements
+
+* **BoardModule/CardComponent:** better types ([a08993b](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a08993bb4951ce686152c452064af7d731ef900c))
+
 ## [1.11.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.1...v1.11.2) (2021-08-10)
 
 

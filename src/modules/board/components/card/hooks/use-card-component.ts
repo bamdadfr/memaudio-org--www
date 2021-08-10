@@ -1,4 +1,4 @@
-import { ReactNode, Ref } from 'react'
+import { Ref } from 'react'
 import { useMeasure } from 'react-use'
 import { GetCardFaces, getCardFaces } from '../../../utils/get-card-faces'
 import { useCardSpring, UseCardSpring } from './use-card-spring'
@@ -7,14 +7,9 @@ import { useCardFlip } from './use-card-flip'
 import { useCardGameColor } from './use-card-game-color'
 import { useStore } from '../../../../../store/use-store'
 import { useCardClick } from './use-card-click'
+import { CardComponentProps } from '../card.component'
 
-type UseCardComponentProps = {
-    children: ReactNode
-    id: number
-    src: string
-    callback: () => void
-    leaveOnCallback: boolean
-}
+type UseCardComponentProps = Omit<CardComponentProps, 'color'>
 
 type UseCardComponent = {
     ref: Ref<HTMLDivElement>

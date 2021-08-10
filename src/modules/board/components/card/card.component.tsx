@@ -3,7 +3,7 @@ import React, { ReactElement, ReactNode } from 'react'
 import { Container, Card } from './card.component.styles'
 import { useCardComponent } from './hooks/use-card-component'
 
-type CardComponentProps = {
+export type CardComponentProps = {
     children: ReactNode
     id: number
     src: string

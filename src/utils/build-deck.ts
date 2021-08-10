@@ -1,11 +1,14 @@
 import { shuffleArray } from './shuffle-array'
 import { Theme } from '../app/styles/theme'
 
-/**
- * @param {string[]} cards cards
- * @returns {Array} shuffled deck
- */
-export function buildDeck (cards) {
+export type Card = {
+    src: string
+    color: string
+    drawn: boolean
+    matched: boolean
+}
+
+export function buildDeck (baseCards: string[]): Card[] {
 
     let deck = []
 
@@ -16,7 +19,7 @@ export function buildDeck (cards) {
         'matched': false,
     })
 
-    cards.forEach ((source) => {
+    baseCards.forEach ((source) => {
 
         deck = [
             ...deck,

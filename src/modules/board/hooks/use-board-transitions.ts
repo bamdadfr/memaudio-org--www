@@ -1,19 +1,21 @@
 import { useEffect, useState } from 'react'
-import { useTransition } from '@react-spring/web'
+import { TransitionFn, useTransition } from '@react-spring/web'
 import { useStore } from '../../../store/use-store'
+import { Card } from '../../../utils/build-deck'
 
-/**
- * @param {Array} array containing items
- * @param {object} options grid options
- * @param {number} options.width grid width
- * @returns {{Function,Object,Function}} transitions, waitFor, triggerLeave
- */
-export function useBoardTransitions (array, { width }) {
+export type UseBoardTransitions = {
+    transitions: TransitionFn<any, { opacity: number, x: number }>
+}
+
+export function useBoardTransitions (
+    array: Card[],
+    { width }: { width: number },
+): UseBoardTransitions {
 
     const [items, setItems] = useState ([])
-    const isLeaving = useStore ((state) => state.board.isLeaving)
-    const resetLeave = useStore ((state) => state.board.resetLeave)
-    const waitFor = useStore ((state) => state.animations.waitFor)
+    const isLeaving = useStore ((state: any) => state.board.isLeaving)
+    const resetLeave = useStore ((state: any) => state.board.resetLeave)
+    const waitFor = useStore ((state: any) => state.animations.waitFor)
 
     const transitions = useTransition (items, {
         'from': { 'opacity': 0, 'x': width * 2 * -1 },

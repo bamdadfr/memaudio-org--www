@@ -1,22 +1,17 @@
-import React from 'react'
+// eslint-disable-next-line no-use-before-define
+import React, { ReactElement } from 'react'
 import { animated } from '@react-spring/web'
-import PropTypes from 'prop-types'
 import { Container, Grid } from './board.module.styles'
 import { useBoardModule } from './hooks/use-board-module'
 import { CardComponent } from './components/card/card.component'
 import { GameComponent } from './components/game/game.component'
-import { CardType } from '../../types/card.type'
+import { Card } from '../../utils/build-deck'
 
-const propTypes = {
-    'cards': PropTypes.arrayOf (PropTypes.shape (CardType)).isRequired,
+type BoardModuleProps = {
+    cards: Card[]
 }
 
-/**
- * @param {object} props react props
- * @param {Array} props.cards array of cards
- * @returns {React.ReactNode} react component
- */
-export function BoardModule ({ cards }) {
+export function BoardModule ({ cards }: BoardModuleProps): ReactElement {
 
     const {
         columns,
@@ -51,5 +46,3 @@ export function BoardModule ({ cards }) {
     )
 
 }
-
-BoardModule.propTypes = propTypes

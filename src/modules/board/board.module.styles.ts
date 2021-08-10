@@ -1,10 +1,11 @@
+import { ReactNode } from 'react'
 import styled from 'styled-components'
 import { Breakpoints } from '../../app/styles/breakpoints'
 
-export const Grid = styled.div`
+export const Grid = styled.div<{ columns: number, rows: number, children: ReactNode }>`
     display: grid;
-    grid-template-columns: repeat(${(props) => props.columns.toFixed (0)}, 1fr);
-    grid-template-rows: repeat(${(props) => props.rows}, 1fr);
+    grid-template-columns: repeat(${({ columns }) => columns.toFixed (0)}, 1fr);
+    grid-template-rows: repeat(${({ rows }) => rows}, 1fr);
     grid-gap: 0.667em;
 
     height: 100%;

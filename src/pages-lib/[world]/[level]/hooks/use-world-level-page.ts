@@ -1,20 +1,18 @@
 import { useEffect, useState } from 'react'
 import { useStore } from '../../../../store/use-store'
-import { buildDeck } from '../../../../utils/build-deck'
+import { buildDeck, Card } from '../../../../utils/build-deck'
 import { fetchApi } from '../../../../utils/fetch-api'
 
-/**
- * @param {string} world valid world
- * @param {string} level valid level
- * @typedef {boolean} IsAnnouncer
- * @typedef {any[]} Deck
- * @returns {{IsAnnouncer, Deck}} UseWorldLevelPage
- */
-export function useWorldLevelPage (world, level) {
+type UseWorldLevelPage = {
+    isAnnouncer: boolean
+    deck: Card[]
+}
 
-    const load = useStore ((state) => state.deck.load)
-    const reset = useStore ((state) => state.deck.reset)
-    const [deck, setDeck] = useState ()
+export function useWorldLevelPage (world: string, level: string): UseWorldLevelPage {
+
+    const load = useStore ((state: any) => state.deck.load)
+    const reset = useStore ((state: any) => state.deck.reset)
+    const [deck, setDeck] = useState (undefined)
     const [isAnnouncer, setIsAnnouncer] = useState (false)
 
     // deck

@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-use-before-define
-import React, { ReactElement } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import { Container, Card } from './card.component.styles'
 import { useCardComponent } from './hooks/use-card-component'
 
 type CardComponentProps = {
-    children: ReactElement
+    children: ReactNode
     id: number
     src: string
     color: string

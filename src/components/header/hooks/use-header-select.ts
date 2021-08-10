@@ -13,9 +13,6 @@ export function useHeaderSelect (world: string, level: string): UseHeaderSelect 
     const router = useRouter ()
     const isLeaving = useStore ((state: any) => state.board.isLeaving)
     const setLeave = useStore ((state: any) => state.board.setLeave)
-    /**
-     * @typedef {boolean} SubmitVisible
-     */
     const [submitVisible, setSubmitVisible] = useState (false)
     const [submitFired, setSubmitFired] = useState (false)
 

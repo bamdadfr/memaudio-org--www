@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.0...v1.11.1) (2021-08-10)
+
+
+### Performance Improvements
+
+* **BoardModule/CardComponent:** migrate to typescript + various ([4177de1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/4177de17e70626768b79d6c7b32d241f4898e2ad))
+
 # [1.11.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.10.1...v1.11.0) (2021-08-10)
 
 

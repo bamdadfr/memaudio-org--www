@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.3...v1.11.4) (2021-08-12)
+
+
+### Performance Improvements
+
+* **deps:** update to latest dependencies ([8b37ef4](https://github.com/bamdadsabbagh/memaudio-org--www/commit/8b37ef4f697a5a4236dd885b208ea0b0b8ea6e0e))
+
 ## [1.11.3](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.2...v1.11.3) (2021-08-10)
 
 

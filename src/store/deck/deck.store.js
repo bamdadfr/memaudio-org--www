@@ -1,3 +1,5 @@
+import produce from 'immer'
+
 export const deckStore = (set, get) => ({
     'deck': {
         'cards': {},
@@ -5,112 +7,74 @@ export const deckStore = (set, get) => ({
         'drawn': [],
         'toMatch': -1,
         // global
-        'load': (newCards, world, level) => set ((state) => ({
-            'board': {
-                ...state.board,
-                'isLocked': false,
-            },
-            'game': {
-                ...state.game,
-                'isRunning': true,
-                'isComplete': false,
-                'world': world,
-                'level': level,
-            },
-            'deck': {
-                ...state.deck,
-                'cards': { ...newCards },
-                'toMatch': newCards.length,
-            },
+        'load': (newCards, world, level) => set (produce ((state) => {
+
+            state.deck.cards = { ...newCards }
+
+            state.deck.toMatch = newCards.length
+
+            state.game.isRunning = true
+
+            state.game.isComplete = false
+
+            state.game.world = world
+
+            state.game.level = level
+
+            state.board.isLocked = false
+
         })),
-        'reset': () => set ((state) => ({
-            'game': {
-                ...state.game,
-                'isRunning': false,
-                'isComplete': false,
-            },
-            'deck': {
-                ...state.deck,
-                'cards': {},
-                'drawn': [],
-                'toMatch': -1,
-            },
+        'reset': () => set (produce ((state) => {
+
+            state.game.isRunning = false
+
+            state.game.isComplete = false
+
+            state.deck.cards = {}
+
+            state.deck.drawn = []
+
+            state.deck.toMatch = -1
+        
         })),
         // draw
-        'resetDrawn': () => set ((state) => ({
-            'deck': {
-                ...state.deck,
-                'drawn': [],
-            },
+        'resetDrawn': () => set (produce ((state) => {
+
+            state.deck.drawn = []
+        
         })),
-        'setDraw': (id) => set ((state) => {
+        'setDraw': (id) => set (produce ((state) => {
 
             state.deck.cards[id].drawn = true
 
-            return {
-                'deck': {
-                    ...state.deck,
-                    'cards': {
-                        ...state.deck.cards,
-                    },
-                    'drawn': [
-                        ...state.deck.drawn,
-                        id,
-                    ],
-                },
-            }
-
-        }),
-        'setUndraw': () => set ((state) => {
-
-            let newCards = {}
+            state.deck.drawn = [...state.deck.drawn, id]
+        
+        })),
+        'setUndraw': () => set (produce ((state) => {
 
             state.deck.drawn.forEach ((id) => {
 
-                const newCard = state.deck.cards[id]
-
-                newCard.drawn = false
-
-                newCards = {
-                    ...newCards,
-                    newCard,
-                }
-
+                state.deck.cards[id].drawn = false
+            
             })
 
-            return {
-                'deck': {
-                    ...state.deck,
-                    'cards': {
-                        ...state.deck.cards,
-                        ...newCards,
-                    },
-                    'drawn': [],
-                },
-            }
-
-        }),
-        // match
-        'setMatch': () => set ((state) => {
+            state.deck.drawn = []
+        
+        })),
+        'setMatch': () => set (produce ((state) => {
 
             const number = state.deck.drawn.length
 
             state.deck.drawn.forEach ((id) => {
 
-                const card = state.deck.cards[id]
-
-                card.matched = true
-
+                state.deck.cards[id].matched = true
+            
             })
 
-            return {
-                'deck': {
-                    ...state.deck,
-                    'toMatch': state.deck.toMatch - number,
-                    'drawn': [],
-                },
-            }
+            state.deck.drawn = []
 
-        }),
+            state.deck.toMatch -= number
+        
+        })),
     },
 })

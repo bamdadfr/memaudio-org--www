@@ -1,3 +1,12 @@
+## [1.11.5](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.4...v1.11.5) (2021-08-14)
+
+
+### Performance Improvements
+
+* **deps:** add `immer` ([d24d98c](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d24d98c5536c1f76decfc8308d953ed74adcdc7c))
+* **deps:** update `zustand` to latest ([d890fe7](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d890fe781cfba134cdb0e2301ea49f5003e02c5c))
+* **store:** use `immer` for nested mutations ([dc6a945](https://github.com/bamdadsabbagh/memaudio-org--www/commit/dc6a9458cafe913edb9c20102e5d39fe96fa9db1))
+
 ## [1.11.4](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.3...v1.11.4) (2021-08-12)
 
 

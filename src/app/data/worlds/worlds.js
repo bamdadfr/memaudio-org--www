@@ -1,5 +1,6 @@
 import { instruments } from './instruments/instruments'
 import { instruments_kick } from './instruments_kick/instruments_kick'
+import { birds } from './birds/birds'
 
 /**
  * @description all worlds
@@ -7,4 +8,5 @@ import { instruments_kick } from './instruments_kick/instruments_kick'
 export const worlds = {
     instruments,
     instruments_kick,
+    birds,
 }

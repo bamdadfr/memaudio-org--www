@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.7...v1.12.0) (2021-08-23)
+
+
+### Features
+
+* add `birds` files and worlds ([1c5f457](https://github.com/bamdadsabbagh/memaudio-org--www/commit/1c5f457a71853bf4d043875beda3674327dccf32))
+
 ## [1.11.7](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.6...v1.11.7) (2021-08-23)
 
 

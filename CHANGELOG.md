@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.12.1...v1.13.0) (2021-08-23)
+
+
+### Features
+
+* **worlds:** add `animals` ([e53c905](https://github.com/bamdadsabbagh/memaudio-org--www/commit/e53c905387f15e169963b54e215785d4bec66091))
+
 ## [1.12.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.12.0...v1.12.1) (2021-08-23)
 
 

@@ -45,5 +45,6 @@
 ```bash
 git clone https://github.com/bamdadsabbagh/memaudio-org--www.git
 cd memaudio-org--www
-yarn && yarn dev
+yarn
+yarn dev
 ```

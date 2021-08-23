@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.12.0...v1.12.1) (2021-08-23)
+
+
+### Bug Fixes
+
+* **validateWorlds:** remove files validation to keep worlds and levels validation only (closes [#164](https://github.com/bamdadsabbagh/memaudio-org--www/issues/164)) ([a15c752](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a15c752b844b8110573b8765c853ca356c7f071c))
+
 # [1.12.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.11.7...v1.12.0) (2021-08-23)
 
 

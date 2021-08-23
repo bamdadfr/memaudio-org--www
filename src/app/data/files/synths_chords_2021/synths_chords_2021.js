@@ -1,4 +1,4 @@
-const basePath = '/files/synths_chords_2021/'
+const basePath = '/files/synths_chords_2021/synths_chords_2021'
 
 export const synths_chords_2021 = {
     '001': `${basePath}-001.mp3`,

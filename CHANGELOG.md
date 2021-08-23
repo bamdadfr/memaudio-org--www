@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.14.0...v1.14.1) (2021-08-23)
+
+
+### Bug Fixes
+
+* **worlds:** fix paths for world `synths_chords_2021` ([fabf165](https://github.com/bamdadsabbagh/memaudio-org--www/commit/fabf1658de73dc3d947d81d45a9e1ec2247e7037))
+
 # [1.14.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.13.0...v1.14.0) (2021-08-23)
 
 

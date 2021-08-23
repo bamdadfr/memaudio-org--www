@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.13.0...v1.14.0) (2021-08-23)
+
+
+### Features
+
+* **world:** adding synths_chords_2021 ([3bd1e6a](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3bd1e6a9a892073e97d33098545599348dfd6fce))
+
 # [1.13.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.12.1...v1.13.0) (2021-08-23)
 
 

@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.14.1...v1.14.2) (2021-08-23)
+
+
+### Bug Fixes
+
+* **worlds/synths_chords_2021:** forgot prefix ([16ab1e6](https://github.com/bamdadsabbagh/memaudio-org--www/commit/16ab1e62a0834b591cc0fc260fda3bd1f0783a35))
+
 ## [1.14.1](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.14.0...v1.14.1) (2021-08-23)
 
 

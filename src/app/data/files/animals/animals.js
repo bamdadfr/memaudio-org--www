@@ -13,7 +13,7 @@ export const animals = {
     'Mouches': `${basePath}Mouches.wav`,
     'Poule': `${basePath}Poule.wav`,
     'Serpent': `${basePath}Serpent.wav`,
-    'sf_chatons': `${basePath}sf_chatons.wav`,
+    'sf_chatons': `${basePath}sf_chatons.mp3`,
     'Tigre': `${basePath}Tigre.wav`,
     'Vache': `${basePath}Vache.wav`,
 }

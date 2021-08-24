@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.14.3...v1.15.0) (2021-08-24)
+
+
+### Features
+
+* add volume slider to header ([3c96d6e](https://github.com/bamdadsabbagh/memaudio-org--www/commit/3c96d6ea14bce7b25ae77f173b1bfd626231906f))
+
 ## [1.14.3](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.14.2...v1.14.3) (2021-08-24)
 
 

@@ -4,20 +4,34 @@ export const Container = styled.div`
     position: absolute;
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 1em;
 
     width: 100vw;
     height: 3em;
-    padding-left: 1em;
+    padding: 1em 1em;
 
     color: ${(props) => props.theme.white};
 
     z-index: 1;
-    
+
     user-select: none;
-    
+
     font-size: 1.1em;
+`
+
+export const Left = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`
+
+export const Right = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 `
 
 export const Spacer = styled.div`

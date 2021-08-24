@@ -9,7 +9,13 @@ type UseCardClick = {
 export function useCardClick (toggleFlipped: () => void, src: string): UseCardClick {
 
     const gameIsRunning = useStore ((state: any) => state.game.isRunning)
-    const [play] = useSound (src)
+    const volume = useStore ((state: any) => state.app.volume)
+
+    const [play] = useSound (
+        src, {
+            volume,
+        },
+    )
 
     const handleClick = useCallback (() => {
 

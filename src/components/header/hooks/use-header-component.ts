@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react'
 import { useHeaderState } from './use-header-state'
 import { useHeaderSelect } from './use-header-select'
+import { useHeaderVolume } from './use-header-volume'
 
 export type UseHeaderComponent = {
     world: string
@@ -10,6 +11,8 @@ export type UseHeaderComponent = {
     handleChange: (event: ChangeEvent<HTMLSelectElement>, type: string) => void
     handleSubmit: () => void
     submitVisible: boolean
+    volume: number
+    handleVolume: (v: number) => void
 }
 
 export function useHeaderComponent (): UseHeaderComponent {
@@ -23,6 +26,7 @@ export function useHeaderComponent (): UseHeaderComponent {
     } = useHeaderState ()
 
     const { handleSubmit, submitVisible } = useHeaderSelect (world, level)
+    const { volume, handleVolume } = useHeaderVolume ()
 
     return {
         world,
@@ -32,6 +36,8 @@ export function useHeaderComponent (): UseHeaderComponent {
         handleChange,
         handleSubmit,
         submitVisible,
+        volume,
+        handleVolume,
     }
 
 }

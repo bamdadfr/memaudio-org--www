@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaCheck } from 'react-icons/fa'
-import { Container, Spacer, Select, Submit } from './header.component.styles'
+import { Container, Left, Right, Spacer, Select, Submit } from './header.component.styles'
 import { FadeAnimation } from '../../animations/fade/fade.animation'
 import { useHeaderComponent } from './hooks/use-header-component'
 
@@ -17,6 +17,8 @@ export function HeaderComponent () {
         handleChange,
         handleSubmit,
         submitVisible,
+        volume,
+        handleVolume,
     } = useHeaderComponent ()
 
     return (
@@ -24,24 +26,39 @@ export function HeaderComponent () {
             {worldKeys && levelKeys &&
                 <FadeAnimation>
                     <Container>
-                        <Select
-                            width={10}
-                            value={world}
-                            onChange={(e) => handleChange (e, 'world')}
-                        >
-                            {worldKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
-                        </Select>
-                        <Spacer />
-                        <Select
-                            width={3}
-                            value={level}
-                            onChange={(e) => handleChange (e, 'level')}
-                        >
-                            {levelKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
-                        </Select>
-                        <FadeAnimation>
-                            {submitVisible && <Submit onClick={handleSubmit}><FaCheck/></Submit>}
-                        </FadeAnimation>
+
+                        <Left>
+                            <Select
+                                width={13}
+                                value={world}
+                                onChange={(e) => handleChange (e, 'world')}
+                            >
+                                {worldKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
+                            </Select>
+                            <Spacer />
+                            <Select
+                                width={3}
+                                value={level}
+                                onChange={(e) => handleChange (e, 'level')}
+                            >
+                                {levelKeys.map ((key) => <option key={key} value={key}>{key}</option>)}
+                            </Select>
+                            <FadeAnimation>
+                                {submitVisible && <Submit onClick={handleSubmit}><FaCheck/></Submit>}
+                            </FadeAnimation>
+                        </Left>
+
+                        <Right>
+                            <input
+                                type="range"
+                                value={volume}
+                                min="0"
+                                max="1"
+                                step="0.01"
+                                onChange={handleVolume}
+                            />
+                        </Right>
+
                     </Container>
                 </FadeAnimation>
             }

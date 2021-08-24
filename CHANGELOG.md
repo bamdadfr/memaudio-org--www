@@ -1,3 +1,15 @@
+## [1.14.3](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.14.2...v1.14.3) (2021-08-24)
+
+
+### Bug Fixes
+
+* **worlds/animals:** fix audio file path ([0702885](https://github.com/bamdadsabbagh/memaudio-org--www/commit/0702885b6393545ac8a98a837fa82669d634d4fc))
+
+
+### Performance Improvements
+
+* **files:** add test to check for each file entry validity ([d7ceba1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d7ceba1923618cb65986dc0fa6df2386525bae1e))
+
 ## [1.14.2](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.14.1...v1.14.2) (2021-08-23)
 
 

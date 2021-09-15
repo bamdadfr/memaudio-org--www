@@ -57,7 +57,7 @@
         "file-loader": "^6.2.0",
         "jest": "^27.0.6",
         "rimraf": "^3.0.2",
-        "sass": "^1.39.0",
+        "sass": "^1.41.0",
         "sass-reset": "^1.0.2",
         "typescript-plugin-styled-components": "^2.0.0",
         "url-loader": "^4.1.1"

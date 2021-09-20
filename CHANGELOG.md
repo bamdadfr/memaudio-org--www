@@ -1,3 +1,11 @@
+## [1.15.5](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.4...v1.15.5) (2021-09-20)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([f7821f9](https://github.com/bamdadsabbagh/memaudio-org--www/commit/f7821f9fd48bd47134428866d390be5352d103a2))
+* **CI:** use node version 14 in pipelines ([e140a27](https://github.com/bamdadsabbagh/memaudio-org--www/commit/e140a2726c2d9b410dfece2ab5ca17fb364f8321))
+
 ## [1.15.4](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.3...v1.15.4) (2021-09-13)
 
 

@@ -1,3 +1,10 @@
+## [1.15.7](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.6...v1.15.7) (2021-10-04)
+
+
+### Bug Fixes
+
+* **asfalte:** ⚙️ yarn-upgrade--onMondays-1000 ([44a4ea1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/44a4ea134b09c5711916c913bc4e0d7a7ea9a1c3))
+
 ## [1.15.6](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.5...v1.15.6) (2021-09-27)
 
 

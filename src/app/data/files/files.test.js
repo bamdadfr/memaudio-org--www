@@ -1,33 +1,29 @@
-import fs from 'fs'
-import { files } from './files'
+import fs from 'fs';
+import { files } from './files';
 
 describe ('files', () => {
+  it ('should contain valid entries', () => {
+    const entries = Object.entries (files);
+    let invalidEntries = [];
 
-    it ('should contain valid entries', () => {
+    entries.forEach ((entry) => {
+      const filesObject = entry[1];
+      const filesEntries = Object.entries (filesObject);
 
-        const entries = Object.entries (files)
-        let invalidEntries = []
+      filesEntries.forEach ((file) => {
+        const path = `./public${file[1]}`;
+        const doesExist = fs.existsSync (path);
 
-        entries.forEach ((entry) => {
+        if (!doesExist) {
+          invalidEntries = [...invalidEntries, path];
+        }
+      });
+    });
 
-            const filesObject = entry[1]
-            const filesEntries = Object.entries (filesObject)
+    if (invalidEntries.length !== 0) {
+      throw new Error (invalidEntries);
+    }
 
-            filesEntries.forEach ((file) => {
-
-                const path = `./public${file[1]}`
-                const doesExist = fs.existsSync (path)
-
-                if (!doesExist) invalidEntries = [...invalidEntries, path]
-
-            })
-
-        })
-
-        if (invalidEntries.length !== 0) throw new Error (invalidEntries)
-
-        expect (invalidEntries.length).toBe (0)
-
-    })
-
-})
+    expect (invalidEntries.length).toBe (0);
+  });
+});

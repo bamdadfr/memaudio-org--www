@@ -1,1 +1,1 @@
-module.exports = 'blob'
+module.exports = 'blob';

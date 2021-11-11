@@ -1,11 +1,11 @@
-import { worlds } from '../app/data/worlds/worlds'
+import { worlds } from '../app/data/worlds/worlds';
 
 /**
- * @param {string} world world key
- * @returns {boolean} world does exist?
+ * Does the given world exist?
+ *
+ * @param {string} world - The world to check
+ * @returns {boolean} - Whether the world exists
  */
 export function isWorld (world) {
-
-    return typeof worlds[world] !== 'undefined'
-
+  return typeof worlds[world] !== 'undefined';
 }

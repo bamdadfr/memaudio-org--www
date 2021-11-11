@@ -1,53 +1,47 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import { useStore } from '../../../../../store/use-store'
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useStore } from '../../../../../store/use-store';
 
 /**
- * @description when game is completed
+ * Hook to handle game completion
  */
 export function useGameComplete () {
+  const gameIsRunning = useStore ((state) => state.game.isRunning);
+  const toMatch = useStore ((state) => state.deck.toMatch);
+  const waitFor = useStore ((state) => state.animations.waitFor);
+  const setLeave = useStore ((state) => state.board.setLeave);
+  const complete = useStore ((state) => state.game.complete);
+  const router = useRouter ();
 
-    const gameIsRunning = useStore ((state) => state.game.isRunning)
-    const toMatch = useStore ((state) => state.deck.toMatch)
-    const waitFor = useStore ((state) => state.animations.waitFor)
-    const setLeave = useStore ((state) => state.board.setLeave)
-    const complete = useStore ((state) => state.game.complete)
-    const router = useRouter ()
+  useEffect (() => {
+    if (!gameIsRunning) {
+      return;
+    }
 
-    useEffect (() => {
+    if (toMatch !== 0) {
+      return;
+    }
 
-        if (!gameIsRunning) return
+    const d1 = waitFor.card.flip * 2;
 
-        if (toMatch !== 0) return
+    const t1 = setTimeout (() => {
+      setLeave ();
+    }, d1);
 
-        const d1 = waitFor.card.flip * 2
+    const d2 = d1 + waitFor.board.leave * 2;
 
-        const t1 = setTimeout (() => {
+    const t2 = setTimeout (async () => {
+      const { world, level } = router.query;
 
-            setLeave ()
+      complete (world, level);
 
-        }, d1)
+      await router.push ('/complete');
+    }, d2);
 
-        const d2 = d1 + waitFor.board.leave * 2
+    return () => {
+      clearTimeout (t1);
 
-        const t2 = setTimeout (async () => {
-
-            const { world, level } = router.query
-
-            complete (world, level)
-
-            await router.push ('/complete')
-
-        }, d2)
-
-        return () => {
-
-            clearTimeout (t1)
-
-            clearTimeout (t2)
-        
-        }
-    
-    }, [complete, gameIsRunning, router, setLeave, toMatch, waitFor.board.leave, waitFor.card.flip])
-
+      clearTimeout (t2);
+    };
+  }, [complete, gameIsRunning, router, setLeave, toMatch, waitFor.board.leave, waitFor.card.flip]);
 }

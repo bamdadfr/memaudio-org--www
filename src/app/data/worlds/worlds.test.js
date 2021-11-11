@@ -1,11 +1,7 @@
-import { worlds } from './worlds'
+import { worlds } from './worlds';
 
 describe ('worlds', () => {
-
-    it ('should be defined', () => {
-
-        expect (worlds).toBeDefined ()
-    
-    })
-
-})
+  it ('should be defined', () => {
+    expect (worlds).toBeDefined ();
+  });
+});

@@ -1,13 +1,10 @@
-import { useGameMatch } from './use-game-match'
-import { useGameComplete } from './use-game-complete'
+import { useGameMatch } from './use-game-match';
+import { useGameComplete } from './use-game-complete';
 
 /**
- * @description custom hook for game.component.js
+ * Entry hook for the game component.
  */
 export function useGameComponent () {
-
-    useGameMatch ()
-
-    useGameComplete ()
-
+  useGameMatch ();
+  useGameComplete ();
 }

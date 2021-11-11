@@ -1,11 +1,11 @@
-import { fetchApi } from './fetch-api'
+import { fetchApi } from './fetch-api';
 
 /**
- * @param {string} world world key
- * @returns {object} api response
+ * Fetch levels from the API
+ *
+ * @param {string} world - The world to fetch levels from
+ * @returns {object} - The levels
  */
 export async function fetchLevels (world) {
-
-    return await fetchApi (`/api/world/${world}/levels`)
-
+  return await fetchApi (`/api/world/${world}/levels`);
 }

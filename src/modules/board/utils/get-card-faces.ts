@@ -1,20 +1,26 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
 export type GetCardFaces = {
-    front: ReactNode|string|null
-    back: ReactNode|string|null
+  front: ReactNode | string | null;
+  back: ReactNode | string | null;
 }
 
-export function getCardFaces (props: ReactNode): GetCardFaces {
+/**
+ * Get the card faces for a card
+ *
+ * @param {ReactNode} card - The card to get the faces for
+ * @returns {GetCardFaces} The card faces
+ */
+export function getCardFaces (card: ReactNode): GetCardFaces {
+  if (typeof card === 'string') {
+    return { 'front': card, 'back': null };
+  }
 
-    if (typeof props === 'string') return { 'front': props, 'back': null }
+  const front = typeof card[0] === 'undefined' ? card : card[0];
+  const back = typeof card[1] === 'undefined' ? null : card[1];
 
-    const front = typeof props[0] === 'undefined' ? props : props[0]
-    const back = typeof props[1] === 'undefined' ? null : props[1]
-
-    return {
-        front,
-        back,
-    }
-
+  return {
+    front,
+    back,
+  };
 }

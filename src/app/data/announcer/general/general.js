@@ -1,3 +1,3 @@
 export const general = {
-    'featureNotAvailable': '/announcer/general/feature-not-available.mp3',
-}
+  featureNotAvailable: '/announcer/general/feature-not-available.mp3',
+};

@@ -1,4 +1,4 @@
-import { files } from '../../files/files'
+import { files } from '../../files/files';
 
 /**
  * @description declare levels into your world
@@ -8,25 +8,25 @@ import { files } from '../../files/files'
  *          - number (automatic imports)
  */
 export const instruments = {
-    '1': [
-        files.instruments.DoubleBass_E1,
-        files.instruments.frenchHorn_E2,
-    ],
-    '2': [
-        4,
-    ],
-    '3': [6],
-    '4': [
-        4,
-        4,
-    ],
-    /**
-     * you can mix the values
-     * caution, it will loop over the same sounds
-     */
-    '5': [
-        files.instruments.DoubleBass_E1,
-        files.instruments.frenchHorn_E2,
-        8,
-    ],
-}
+  '1': [
+    files.instruments.DoubleBass_E1,
+    files.instruments.frenchHorn_E2,
+  ],
+  '2': [
+    4,
+  ],
+  '3': [6],
+  '4': [
+    4,
+    4,
+  ],
+  /**
+   * you can mix the values
+   * caution, it will loop over the same sounds
+   */
+  '5': [
+    files.instruments.DoubleBass_E1,
+    files.instruments.frenchHorn_E2,
+    8,
+  ],
+};

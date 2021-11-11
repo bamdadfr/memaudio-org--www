@@ -1,11 +1,7 @@
-import { BackgroundConstants } from './background.constants'
+import { BackgroundConstants } from './background.constants';
 
 describe ('BackgroundConstants', () => {
-
-    it ('should be defined', () => {
-
-        expect (BackgroundConstants).toBeDefined ()
-    
-    })
-
-})
+  it ('should be defined', () => {
+    expect (BackgroundConstants).toBeDefined ();
+  });
+});

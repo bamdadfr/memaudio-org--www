@@ -1,3 +1,10 @@
+## [1.15.13](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.12...v1.15.13) (2021-11-11)
+
+
+### Performance Improvements
+
+* update dependencies + apply new code style ([c591217](https://github.com/bamdadsabbagh/memaudio-org--www/commit/c59121763ce3c11ac192608af18a4d44fef8047d))
+
 ## [1.15.12](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.11...v1.15.12) (2021-11-08)
 
 

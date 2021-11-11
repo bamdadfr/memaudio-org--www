@@ -1,34 +1,41 @@
-import { useCallback } from 'react'
-import useSound from 'use-sound'
-import { useStore } from '../../../../../store/use-store'
+import { useCallback } from 'react';
+import useSound from 'use-sound';
+import { useStore } from '../../../../../store/use-store';
 
 type UseCardClick = {
-    handleClick: () => void
+  handleClick: () => void;
 }
 
+/**
+ * Hook for handling card click
+ *
+ * @param {function(): void} toggleFlipped - Function to toggle flipped state
+ * @param {string} src - Sound source
+ * @returns {UseCardClick} - Click handler
+ */
 export function useCardClick (toggleFlipped: () => void, src: string): UseCardClick {
+  const gameIsRunning = useStore ((state: any) => state.game.isRunning);
+  const volume = useStore ((state: any) => state.app.volume);
 
-    const gameIsRunning = useStore ((state: any) => state.game.isRunning)
-    const volume = useStore ((state: any) => state.app.volume)
+  const [play] = useSound (
+    src, {
+      volume,
+    },
+  );
 
-    const [play] = useSound (
-        src, {
-            volume,
-        },
-    )
+  const handleClick = useCallback (() => {
+    toggleFlipped ();
 
-    const handleClick = useCallback (() => {
+    if (!gameIsRunning) {
+      return;
+    }
 
-        toggleFlipped ()
+    if (!src) {
+      return;
+    }
 
-        if (!gameIsRunning) return
+    play ();
+  }, [toggleFlipped, gameIsRunning, src, play]);
 
-        if (!src) return
-
-        play ()
-
-    }, [toggleFlipped, gameIsRunning, src, play])
-
-    return { handleClick }
-
+  return { handleClick };
 }

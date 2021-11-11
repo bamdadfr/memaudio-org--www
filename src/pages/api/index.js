@@ -1,12 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from 'next';
 
 /**
- * @description /api
- * @param {NextApiRequest} _req request
- * @param {NextApiResponse} res response
+ * Entry API endpoint
+ * Path: /api
+ *
+ * @param {NextApiRequest} _req - Request object
+ * @param {NextApiResponse} res - Response object
  */
 export default function IndexApi (_req, res) {
-
-    res.json ({ 'success': true })
-
+  res.json ({ success: true });
 }

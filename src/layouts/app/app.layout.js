@@ -1,19 +1,18 @@
-import React from 'react'
-import { BackgroundComponent } from '../../components/background/background.component'
+import React from 'react';
+import { BackgroundComponent } from '../../components/background/background.component';
 
 /**
- * @description exclusive use in pages/_app.js
- * @param {object} props react props
- * @param {React.ReactNode} props.children children
- * @returns {React.ReactElement} react component
+ * Component for the app layout
+ *
+ * @param {object} props - Component props
+ * @param {React.ReactNode} props.children - Component children
+ * @returns {React.ReactElement} - Rendered component
  */
 export function AppLayout ({ children }) {
-
-    return (
-        <>
-            <BackgroundComponent/>
-            {children}
-        </>
-    )
-
+  return (
+    <>
+      <BackgroundComponent />
+      {children}
+    </>
+  );
 }

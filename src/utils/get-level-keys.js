@@ -1,11 +1,11 @@
-import { worlds } from '../app/data/worlds/worlds'
+import { worlds } from '../app/data/worlds/worlds';
 
 /**
- * @param {string} world world
- * @returns {string[]} all level keys for this world
+ * Get the keys of the levels of a world
+ *
+ * @param {string} world - The world
+ * @returns {string[]} - The keys of the levels
  */
 export function getLevelKeys (world) {
-
-    return Object.keys (worlds[world])
-
+  return Object.keys (worlds[world]);
 }

@@ -1,10 +1,10 @@
-import { worlds } from '../app/data/worlds/worlds'
+import { worlds } from '../app/data/worlds/worlds';
 
 /**
- * @returns {string[]} all world keys
+ * Get the keys of the world object
+ *
+ * @returns {string[]} - The keys of the world object
  */
 export function getWorldKeys () {
-
-    return Object.keys (worlds)
-
+  return Object.keys (worlds);
 }

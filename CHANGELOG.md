@@ -1,3 +1,10 @@
+## [1.15.15](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.14...v1.15.15) (2021-11-16)
+
+
+### Bug Fixes
+
+* **next.js:** disable `outputFileTracing` to prevent sentry from crashing server functions ([4d8afac](https://github.com/bamdadsabbagh/memaudio-org--www/commit/4d8aface5bc126d35ed33455105011b0c7f010e6))
+
 ## [1.15.14](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.13...v1.15.14) (2021-11-15)
 
 

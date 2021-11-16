@@ -1,5 +1,6 @@
 module.exports = {
   poweredByHeader: false,
+  outputFileTracing: false,
   webpack (config, options) {
     const { isServer } = options;
 

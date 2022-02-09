@@ -17,7 +17,7 @@ type UseCardComponent = {
   height: number;
   front: GetCardFaces['front'];
   back: GetCardFaces['back'];
-  spring: UseCardSpring['spring'];
+  spring: UseCardSpring;
   boardIsLocked: boolean;
   gameIsRunning: boolean;
   gameColor: string;
@@ -40,7 +40,7 @@ export function useCardComponent({
   const [ref, {width, height}] = useMeasure();
   const {front, back} = getCardFaces(children);
   const {flipped, toggleFlipped} = useCardFlip(id);
-  const {spring} = useCardSpring(flipped);
+  const spring = useCardSpring(flipped);
   const boardIsLocked = useStore((state: any) => state.board.isLocked);
   const gameIsRunning = useStore((state: any) => state.game.isRunning);
   const gameColor = useCardGameColor(id);

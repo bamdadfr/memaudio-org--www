@@ -1,4 +1,4 @@
-import { worlds } from '../app/data/worlds/worlds';
+import {worlds} from '../app/data/worlds/worlds';
 
 /**
  * Check if the world and level are valid
@@ -7,7 +7,7 @@ import { worlds } from '../app/data/worlds/worlds';
  * @param {string} level - The level to check
  * @returns {boolean} - True if the world and level are valid
  */
-export function validateWorldAndLevel (world, level) {
+export function validateWorldAndLevel(world, level) {
   if (typeof worlds[world] === 'undefined') {
     return false;
   }

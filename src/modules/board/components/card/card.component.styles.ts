@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { animated } from '@react-spring/web';
-import { Breakpoints } from '../../../../app/styles/breakpoints';
+import {animated} from '@react-spring/web';
+import {mediaQueries} from '../../../../app/styles/breakpoints';
 
 export const Container = styled.div`
   display: flex;
@@ -19,10 +19,10 @@ type CardProps = {
   height: number;
 }
 
-export const Card = styled (animated.div)<CardProps>`
+export const Card = styled(animated.div)<CardProps>`
   position: fixed;
-  width: ${({ width }) => width}px;
-  height: ${({ height }) => height}px;
+  width: ${({width}) => width}px;
+  height: ${({height}) => height}px;
   will-change: transform, opacity;
 
   display: flex;
@@ -30,15 +30,15 @@ export const Card = styled (animated.div)<CardProps>`
   align-items: center;
   text-align: center;
 
-  color: ${({ theme }) => theme.background};
+  color: ${({theme}) => theme.background};
 
-  background: ${({ $color }) => $color};
+  background: ${({$color}) => $color};
 
   transition: background 250ms ease-in-out;
 
   // activate shadow from desktop and up
-  @media screen and (min-width: ${Breakpoints.desktop}px) {
-    box-shadow: 0 0.05em 0.5em 0.05em ${({ theme }) => theme.shadow};
+  ${mediaQueries.above.desktop} {
+    box-shadow: 0 0.05em 0.5em 0.05em ${({theme}) => theme.shadow};
   }
 
   backface-visibility: hidden;

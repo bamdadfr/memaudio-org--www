@@ -1,9 +1,9 @@
 import React from 'react';
-import { render as defaultRender } from '@testing-library/react';
+import {render as defaultRender} from '@testing-library/react';
 import CompletePage from '../../pages/complete';
 
 const render = () => {
-  const { container } = defaultRender (
+  const {container} = defaultRender(
     <CompletePage />,
   );
 
@@ -12,17 +12,17 @@ const render = () => {
   };
 };
 
-describe ('CompletePage', () => {
-  describe ('container', () => {
-    it ('should be defined and visible', () => {
-      const { container } = render ();
-      expect (container).toBeInTheDocument ();
-      expect (container).toBeVisible ();
+describe('CompletePage', () => {
+  describe('container', () => {
+    it('should be defined and visible', () => {
+      const {container} = render();
+      expect(container).toBeInTheDocument();
+      expect(container).toBeVisible();
     });
 
-    it ('should not be empty', () => {
-      const { container } = render ();
-      expect (container).not.toBeEmptyDOMElement ();
+    it('should not be empty', () => {
+      const {container} = render();
+      expect(container).not.toBeEmptyDOMElement();
     });
   });
 });

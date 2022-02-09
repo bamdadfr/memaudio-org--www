@@ -1,7 +1,7 @@
 import React from 'react';
-import { animated, useSpring } from '@react-spring/web';
-import { Container } from './background.component.styles';
-import { BackgroundConstants } from './background.constants';
+import {animated, useSpring} from '@react-spring/web';
+import {Container} from './background.component.styles';
+import {BackgroundConstants} from './background.constants';
 
 /**
  * Component for the background of the application
@@ -9,8 +9,8 @@ import { BackgroundConstants } from './background.constants';
  *
  * @returns {React.ReactNode} - Rendered component
  */
-function NonMemoBackgroundComponent () {
-  const props = useSpring (BackgroundConstants.config);
+function NonMemoBackgroundComponent() {
+  const props = useSpring(BackgroundConstants.config);
 
   return (
     <>
@@ -27,4 +27,4 @@ function NonMemoBackgroundComponent () {
  *
  * @type {React.NamedExoticComponent<object>}
  */
-export const BackgroundComponent = React.memo (NonMemoBackgroundComponent);
+export const BackgroundComponent = React.memo(NonMemoBackgroundComponent);

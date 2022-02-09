@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackgroundComponent } from '../../components/background/background.component';
+import {BackgroundComponent} from '../../components/background/background.component';
 
 /**
  * Component for the app layout
@@ -8,7 +8,7 @@ import { BackgroundComponent } from '../../components/background/background.comp
  * @param {React.ReactNode} props.children - Component children
  * @returns {React.ReactElement} - Rendered component
  */
-export function AppLayout ({ children }) {
+export function AppLayout({children}) {
   return (
     <>
       <BackgroundComponent />

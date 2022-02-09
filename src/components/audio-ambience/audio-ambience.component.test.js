@@ -1,9 +1,9 @@
 import React from 'react';
-import { render as defaultRender } from '@testing-library/react';
-import { AudioAmbienceComponent } from './audio-ambience.component';
+import {render as defaultRender} from '@testing-library/react';
+import {AudioAmbienceComponent} from './audio-ambience.component';
 
 const render = () => {
-  const { container } = defaultRender (
+  const {container} = defaultRender(
     <AudioAmbienceComponent />,
   );
 
@@ -12,17 +12,17 @@ const render = () => {
   };
 };
 
-describe ('AudioAmbienceComponent', () => {
-  describe ('container', () => {
-    it ('should be defined and visible', () => {
-      const { container } = render ();
-      expect (container).toBeInTheDocument ();
-      expect (container).toBeVisible ();
+describe('AudioAmbienceComponent', () => {
+  describe('container', () => {
+    it('should be defined and visible', () => {
+      const {container} = render();
+      expect(container).toBeInTheDocument();
+      expect(container).toBeVisible();
     });
 
-    it ('should not be empty', () => {
-      const { container } = render ();
-      expect (container).not.toBeEmptyDOMElement ();
+    it('should not be empty', () => {
+      const {container} = render();
+      expect(container).not.toBeEmptyDOMElement();
     });
   });
 });

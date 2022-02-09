@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { useStore } from '../../../store/use-store';
-import { UseHeaderComponent } from './use-header-component';
+import {useCallback, useEffect, useState} from 'react';
+import {useRouter} from 'next/router';
+import {useStore} from '../../../store/use-store';
+import {UseHeaderComponent} from './use-header-component';
 
 type UseHeaderSelect = {
   handleSubmit: UseHeaderComponent['handleSubmit'];
@@ -15,47 +15,47 @@ type UseHeaderSelect = {
  * @param {string} level - The level to select
  * @returns {UseHeaderSelect} - Submit function and submit visibility
  */
-export function useHeaderSelect (world: string, level: string): UseHeaderSelect {
-  const router = useRouter ();
-  const isLeaving = useStore ((state: any) => state.board.isLeaving);
-  const setLeave = useStore ((state: any) => state.board.setLeave);
-  const [submitVisible, setSubmitVisible] = useState (false);
-  const [submitFired, setSubmitFired] = useState (false);
+export function useHeaderSelect(world: string, level: string): UseHeaderSelect {
+  const router = useRouter();
+  const isLeaving = useStore((state: any) => state.board.isLeaving);
+  const setLeave = useStore((state: any) => state.board.setLeave);
+  const [submitVisible, setSubmitVisible] = useState(false);
+  const [submitFired, setSubmitFired] = useState(false);
 
   // post submit
-  useEffect (() => {
+  useEffect(() => {
     if (submitFired && !isLeaving) {
       (async () => {
-        setSubmitFired (false);
+        setSubmitFired(false);
 
-        await router.push (`/${world}/${level}`);
-      }) ();
+        await router.push(`/${world}/${level}`);
+      })();
     }
   }, [isLeaving, level, router, submitFired, world]);
 
   // handle submit visibility
-  useEffect (() => {
+  useEffect(() => {
     if (world !== router.query.world) {
-      return setSubmitVisible (true);
+      return setSubmitVisible(true);
     }
 
     if (level !== router.query.level) {
-      return setSubmitVisible (true);
+      return setSubmitVisible(true);
     }
 
-    setSubmitVisible (false);
+    setSubmitVisible(false);
   }, [world, level, router.query]);
 
-  const handleSubmit = useCallback (() => {
+  const handleSubmit = useCallback(() => {
     if (!submitVisible) {
       return;
     }
 
-    setSubmitVisible (false);
+    setSubmitVisible(false);
 
-    setLeave ();
+    setLeave();
 
-    setSubmitFired (true);
+    setSubmitFired(true);
   }, [setLeave, submitVisible]);
 
   return {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { animated, useSpring } from '@react-spring/web';
+import {animated, useSpring} from '@react-spring/web';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -13,8 +13,8 @@ const propTypes = {
  * @param {React.ReactNode} props.children - Component children
  * @returns {React.ReactNode} - Rendered component
  */
-export function FadeAnimation ({ children }) {
-  const style = useSpring ({
+export function FadeAnimation({children}) {
+  const style = useSpring({
     from: {
       opacity: 0,
     },

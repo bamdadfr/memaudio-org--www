@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { getNextLevelKey } from '../../../../../../utils/get-next-level-key';
-import { isLevel } from '../../../../../../utils/is-level';
-import { isWorld } from '../../../../../../utils/is-world';
+import {NextApiRequest, NextApiResponse} from 'next';
+import {getNextLevelKey} from '../../../../../../utils/get-next-level-key';
+import {isLevel} from '../../../../../../utils/is-level';
+import {isWorld} from '../../../../../../utils/is-world';
 
 /**
  * API endpoint for getting the next level in a world
@@ -10,12 +10,12 @@ import { isWorld } from '../../../../../../utils/is-world';
  * @param {NextApiRequest} req - The request object
  * @param {NextApiResponse} res - The response object
  */
-export default function GetNextLevelEndpoint (req, res) {
-  const { world, level } = req.query;
+export default function GetNextLevelEndpoint(req, res) {
+  const {world, level} = req.query;
 
   // fail if current world is undefined
-  if (!isWorld (world)) {
-    res.json ({
+  if (!isWorld(world)) {
+    res.json({
       success: false,
       error: 'world is undefined',
     });
@@ -23,8 +23,8 @@ export default function GetNextLevelEndpoint (req, res) {
   }
 
   // fail if current level is undefined
-  if (!isLevel (world, level)) {
-    res.json ({
+  if (!isLevel(world, level)) {
+    res.json({
       success: false,
       error: 'level is undefined',
     });
@@ -32,8 +32,8 @@ export default function GetNextLevelEndpoint (req, res) {
   }
 
   // fail if next level is undefined
-  if (!getNextLevelKey (world, level)) {
-    res.json ({
+  if (!getNextLevelKey(world, level)) {
+    res.json({
       success: false,
       error: 'next level is undefined',
     });
@@ -41,9 +41,9 @@ export default function GetNextLevelEndpoint (req, res) {
   }
 
   // return next level key
-  res.json ({
+  res.json({
     success: true,
-    meta: { world, level },
-    data: [getNextLevelKey (world, level)],
+    meta: {world, level},
+    data: [getNextLevelKey(world, level)],
   });
 }

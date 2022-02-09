@@ -1,5 +1,5 @@
-import { shuffleArray } from './shuffle-array';
-import { Theme } from '../app/styles/theme';
+import {shuffleArray} from './shuffle-array';
+import {Theme} from '../app/styles/theme';
 
 export type Card = {
   src: string;
@@ -14,7 +14,7 @@ export type Card = {
  * @param {string[]} baseCards - The base cards to build the deck from
  * @returns {Card[]} - The deck of cards
  */
-export function buildDeck (baseCards: string[]): Card[] {
+export function buildDeck(baseCards: string[]): Card[] {
   let deck = [];
 
   const card = (source) => ({
@@ -24,14 +24,14 @@ export function buildDeck (baseCards: string[]): Card[] {
     matched: false,
   });
 
-  baseCards.forEach ((source) => {
+  baseCards.forEach((source) => {
     deck = [
       ...deck,
-      card (source),
-      card (source),
+      card(source),
+      card(source),
     ];
   });
 
-  deck = shuffleArray (deck);
+  deck = shuffleArray(deck);
   return deck;
 }

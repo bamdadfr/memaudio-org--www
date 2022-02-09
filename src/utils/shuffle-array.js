@@ -4,7 +4,7 @@
  * @param {Array.<*>} array - Array to shuffle
  * @returns {Array.<*>} - Shuffled array
  */
-export function shuffleArray (array) {
+export function shuffleArray(array) {
   let currentIndex = array.length;
   let temporaryValue = null;
   let randomIndex = null;
@@ -12,7 +12,7 @@ export function shuffleArray (array) {
   // While there remain elements to shuffle...
   while (currentIndex !== 0) {
     // Pick a remaining element...
-    randomIndex = Math.floor (Math.random () * currentIndex);
+    randomIndex = Math.floor(Math.random() * currentIndex);
 
     currentIndex -= 1;
 

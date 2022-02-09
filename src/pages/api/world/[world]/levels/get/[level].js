@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { getCardsForDeck } from '../../../../../../utils/get-cards-for-deck';
-import { validateWorldAndLevel } from '../../../../../../utils/validate-world-and-level';
+import {NextApiRequest, NextApiResponse} from 'next';
+import {getCardsForDeck} from '../../../../../../utils/get-cards-for-deck';
+import {validateWorldAndLevel} from '../../../../../../utils/validate-world-and-level';
 
 /**
  * API endpoint for getting a level's cards.
@@ -9,18 +9,18 @@ import { validateWorldAndLevel } from '../../../../../../utils/validate-world-an
  * @param {NextApiRequest} req - Request object
  * @param {NextApiResponse} res - Response object
  */
-export default function GetLevelCardsEndpoint (req, res) {
-  const { world, level } = req.query;
-  const isValid = validateWorldAndLevel (world, level);
+export default function GetLevelCardsEndpoint(req, res) {
+  const {world, level} = req.query;
+  const isValid = validateWorldAndLevel(world, level);
 
   if (!isValid) {
-    res.json ({ success: false });
+    res.json({success: false});
     return;
   }
 
-  res.json ({
+  res.json({
     success: true,
-    meta: { world, level },
-    data: [...getCardsForDeck (world, level)],
+    meta: {world, level},
+    data: [...getCardsForDeck(world, level)],
   });
 }

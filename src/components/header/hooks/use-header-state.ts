@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { UseHeaderComponent } from './use-header-component';
-import { fetchWorlds } from '../../../utils/fetch-worlds';
-import { fetchLevels } from '../../../utils/fetch-levels';
-import { fetchFirstLevel } from '../../../utils/fetch-first-level';
+import {useCallback, useEffect, useState} from 'react';
+import {useRouter} from 'next/router';
+import {UseHeaderComponent} from './use-header-component';
+import {fetchWorlds} from '../../../utils/fetch-worlds';
+import {fetchLevels} from '../../../utils/fetch-levels';
+import {fetchFirstLevel} from '../../../utils/fetch-first-level';
 
 type UseHeaderState = {
   world: UseHeaderComponent['world'];
@@ -18,44 +18,44 @@ type UseHeaderState = {
  *
  * @returns {UseHeaderComponent} - The state of the header component
  */
-export function useHeaderState (): UseHeaderState {
-  const router = useRouter ();
-  const [world, setWorld] = useState<string> (!Array.isArray (router.query.world) && router.query.world);
-  const [level, setLevel] = useState<string> (!Array.isArray (router.query.level) && router.query.level);
-  const [worldKeys, setWorldKeys] = useState<string[]> ();
-  const [levelKeys, setLevelKeys] = useState<string[]> ();
+export function useHeaderState(): UseHeaderState {
+  const router = useRouter();
+  const [world, setWorld] = useState<string>(!Array.isArray(router.query.world) && router.query.world);
+  const [level, setLevel] = useState<string>(!Array.isArray(router.query.level) && router.query.level);
+  const [worldKeys, setWorldKeys] = useState<string[]>();
+  const [levelKeys, setLevelKeys] = useState<string[]>();
 
   // get current world and level
-  useEffect (() => {
-    const { world, level } = router.query;
+  useEffect(() => {
+    const {world, level} = router.query;
 
-    if (!Array.isArray (world)) {
-      setWorld (world);
+    if (!Array.isArray(world)) {
+      setWorld(world);
     }
 
-    if (!Array.isArray (level)) {
-      setLevel (level);
+    if (!Array.isArray(level)) {
+      setLevel(level);
     }
   }, [router.query]);
 
   // get all worlds and levels
-  useEffect (() => {
+  useEffect(() => {
     if (!world) {
       return;
     }
 
     (async () => {
-      const worlds = await fetchWorlds ();
-      const levels = await fetchLevels (world);
+      const worlds = await fetchWorlds();
+      const levels = await fetchLevels(world);
 
-      setWorldKeys (worlds);
+      setWorldKeys(worlds);
 
-      setLevelKeys (levels);
-    }) ();
+      setLevelKeys(levels);
+    })();
   }, [world]);
 
   // if level does not exist, set it to first
-  useEffect (() => {
+  useEffect(() => {
     if (!world) {
       return;
     }
@@ -69,24 +69,24 @@ export function useHeaderState (): UseHeaderState {
     }
 
     // level exist in levelKeys?
-    if (levelKeys.indexOf (level) >= 0 && levelKeys.indexOf (level) <= levelKeys.length) {
+    if (levelKeys.indexOf(level) >= 0 && levelKeys.indexOf(level) <= levelKeys.length) {
       return;
     }
 
     (async () => {
-      const firstLevel = await fetchFirstLevel (world);
+      const firstLevel = await fetchFirstLevel(world);
 
-      setLevel (firstLevel);
-    }) ();
+      setLevel(firstLevel);
+    })();
   }, [world, level, levelKeys]);
 
-  const handleChange: UseHeaderState['handleChange'] = useCallback ((e, type) => {
+  const handleChange: UseHeaderState['handleChange'] = useCallback((e, type) => {
     if (type === 'world') {
-      setWorld (e.target.value);
+      setWorld(e.target.value);
     }
 
     if (type === 'level') {
-      setLevel (e.target.value);
+      setLevel(e.target.value);
     }
   }, []);
 

@@ -1,4 +1,4 @@
-import { worlds } from '../app/data/worlds/worlds';
+import {worlds} from '../app/data/worlds/worlds';
 
 /**
  * Does the given world exist?
@@ -6,6 +6,6 @@ import { worlds } from '../app/data/worlds/worlds';
  * @param {string} world - The world to check
  * @returns {boolean} - Whether the world exists
  */
-export function isWorld (world) {
+export function isWorld(world) {
   return typeof worlds[world] !== 'undefined';
 }

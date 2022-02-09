@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCheck } from 'react-icons/fa';
+import {FaCheck} from 'react-icons/fa';
 import {
   Container,
   Left,
@@ -8,15 +8,15 @@ import {
   Select,
   Submit,
 } from './header.component.styles';
-import { FadeAnimation } from '../../animations/fade/fade.animation';
-import { useHeaderComponent } from './hooks/use-header-component';
+import {FadeAnimation} from '../../animations/fade/fade.animation';
+import {useHeaderComponent} from './hooks/use-header-component';
 
 /**
  * Component for the header of the application
  *
  * @returns {React.ReactElement} - Rendered component
  */
-export function HeaderComponent () {
+export function HeaderComponent() {
   const {
     world,
     level,
@@ -27,7 +27,7 @@ export function HeaderComponent () {
     submitVisible,
     volume,
     handleVolume,
-  } = useHeaderComponent ();
+  } = useHeaderComponent();
 
   return (
     <>
@@ -39,9 +39,9 @@ export function HeaderComponent () {
             <Select
               width={13}
               value={world}
-              onChange={(e) => handleChange (e, 'world')}
+              onChange={(e) => handleChange(e, 'world')}
             >
-              {worldKeys.map ((key) => <option
+              {worldKeys.map((key) => <option
                 key={key}
                 value={key}
               >{key}</option>)}
@@ -50,9 +50,9 @@ export function HeaderComponent () {
             <Select
               width={3}
               value={level}
-              onChange={(e) => handleChange (e, 'level')}
+              onChange={(e) => handleChange(e, 'level')}
             >
-              {levelKeys.map ((key) => <option
+              {levelKeys.map((key) => <option
                 key={key}
                 value={key}
               >{key}</option>)}

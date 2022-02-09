@@ -1,12 +1,12 @@
 import React from 'react';
 import {render as defaultRender} from '@testing-library/react';
-import {AppLayout} from './app.layout';
+import {WithTheme} from './with-theme';
 
 const render = () => {
   const {container} = defaultRender(
-    <AppLayout>
+    <WithTheme>
       <span>children</span>
-    </AppLayout>,
+    </WithTheme>,
   );
 
   return {
@@ -14,7 +14,7 @@ const render = () => {
   };
 };
 
-describe('AppLayout', () => {
+describe('WithStyledComponents', () => {
   describe('container', () => {
     it('should be defined and visible', () => {
       const {container} = render();

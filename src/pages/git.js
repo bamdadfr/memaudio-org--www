@@ -6,7 +6,7 @@ import React from 'react';
  *
  * @returns {React.ReactNode} - Rendered page
  */
-export default function GitPage () {
+export default function GitPage() {
   return <></>;
 }
 
@@ -16,7 +16,7 @@ export default function GitPage () {
  *
  * @returns {object} - Page server side props
  */
-export async function getServerSideProps () {
+export async function getServerSideProps() {
   return {
     'redirect': {
       'destination': 'https://github.com/bamdadsabbagh/memaudio-org--www',

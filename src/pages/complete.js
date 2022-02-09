@@ -1,15 +1,15 @@
 import React from 'react';
-import { FaPlay } from 'react-icons/fa';
-import { useRouter } from 'next/router';
-import { DefaultLayout } from '../layouts/default/default.layout';
-import { BoardModule } from '../modules/board/board.module';
-import { Theme } from '../app/styles/theme';
-import { AudioAmbienceComponent } from '../components/audio-ambience/audio-ambience.component';
-import { AudioAnnouncerComponent } from '../components/audio-announcer/audio-announcer.component';
-import { announcer } from '../app/data/announcer/announcer';
-import { useCompletePage } from '../pages-lib/complete/hooks/use-complete-page';
-import { capitalizeFirstLetter } from '../utils/capitalize-first-letter';
-import { getNextLevelPath } from '../utils/get-next-level-path';
+import {FaPlay} from 'react-icons/fa';
+import {useRouter} from 'next/router';
+import {DefaultLayout} from '../layouts/default/default.layout';
+import {BoardModule} from '../modules/board/board.module';
+import {Theme} from '../app/styles/theme';
+import {AudioAmbienceComponent} from '../components/audio-ambience/audio-ambience.component';
+import {AudioAnnouncerComponent} from '../components/audio-announcer/audio-announcer.component';
+import {announcer} from '../app/data/announcer/announcer';
+import {useCompletePage} from '../pages-lib/complete/hooks/use-complete-page';
+import {capitalizeFirstLetter} from '../utils/capitalize-first-letter';
+import {getNextLevelPath} from '../utils/get-next-level-path';
 
 /**
  * Complete page
@@ -17,9 +17,9 @@ import { getNextLevelPath } from '../utils/get-next-level-path';
  *
  * @returns {React.ReactNode} - Rendered page
  */
-export default function CompletePage () {
-  const router = useRouter ();
-  const { world, level } = useCompletePage ();
+export default function CompletePage() {
+  const router = useRouter();
+  const {world, level} = useCompletePage();
 
   return (
     <>
@@ -31,13 +31,13 @@ export default function CompletePage () {
         <BoardModule
           cards={[
             {
-              front: `${capitalizeFirstLetter (world)} ${level} complete`,
+              front: `${capitalizeFirstLetter(world)} ${level} complete`,
               color: Theme.soap,
             },
             {
               front: <FaPlay />,
               color: Theme.white,
-              callback: async () => await router.push (getNextLevelPath (world, level)),
+              callback: async () => await router.push(getNextLevelPath(world, level)),
               leaveOnCallback: true,
             },
           ]}

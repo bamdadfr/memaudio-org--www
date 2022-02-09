@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGameComponent } from './hooks/use-game-component';
+import {useGameComponent} from './hooks/use-game-component';
 
 /**
  * Component for the game.
@@ -7,8 +7,8 @@ import { useGameComponent } from './hooks/use-game-component';
  *
  * @returns {React.ReactElement} - Rendered component.
  */
-export function GameComponent () {
-  useGameComponent ();
+export function GameComponent() {
+  useGameComponent();
 
   return <></>;
 }

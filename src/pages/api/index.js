@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import {NextApiRequest, NextApiResponse} from 'next';
 
 /**
  * Entry API endpoint
@@ -7,6 +7,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
  * @param {NextApiRequest} _req - Request object
  * @param {NextApiResponse} res - Response object
  */
-export default function IndexApi (_req, res) {
-  res.json ({ success: true });
+export default function IndexApi(_req, res) {
+  res.json({success: true});
 }

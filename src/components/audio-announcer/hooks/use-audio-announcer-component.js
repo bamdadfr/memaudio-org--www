@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import {useCallback, useState} from 'react';
 
 /**
  * Entry hook for the AudioAnnouncer component
@@ -8,15 +8,15 @@ import { useCallback, useState } from 'react';
  * @typedef {function(): number} NextIndex - A function to get the next index
  * @returns {{Index,NextIndex}} - The index and the next index
  */
-export function useAudioAnnouncerComponent (files) {
-  const [index, setIndex] = useState (0);
+export function useAudioAnnouncerComponent(files) {
+  const [index, setIndex] = useState(0);
 
-  const nextIndex = useCallback (() => {
+  const nextIndex = useCallback(() => {
     if (typeof files[index + 1] === 'undefined') {
       return;
     }
 
-    setIndex ((i) => i + 1);
+    setIndex((i) => i + 1);
   }, [index, files]);
 
   return {

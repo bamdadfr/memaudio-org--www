@@ -1,7 +1,7 @@
-import { ChangeEvent } from 'react';
-import { useHeaderState } from './use-header-state';
-import { useHeaderSelect } from './use-header-select';
-import { useHeaderVolume } from './use-header-volume';
+import {ChangeEvent} from 'react';
+import {useHeaderState} from './use-header-state';
+import {useHeaderSelect} from './use-header-select';
+import {useHeaderVolume} from './use-header-volume';
 
 export type UseHeaderComponent = {
   world: string;
@@ -20,17 +20,17 @@ export type UseHeaderComponent = {
  *
  * @returns {UseHeaderComponent} - The hook
  */
-export function useHeaderComponent (): UseHeaderComponent {
+export function useHeaderComponent(): UseHeaderComponent {
   const {
     world,
     level,
     worldKeys,
     levelKeys,
     handleChange,
-  } = useHeaderState ();
+  } = useHeaderState();
 
-  const { handleSubmit, submitVisible } = useHeaderSelect (world, level);
-  const { volume, handleVolume } = useHeaderVolume ();
+  const {handleSubmit, submitVisible} = useHeaderSelect(world, level);
+  const {volume, handleVolume} = useHeaderVolume();
 
   return {
     world,

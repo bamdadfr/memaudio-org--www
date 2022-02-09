@@ -1,9 +1,9 @@
 import React from 'react';
-import { FaPlay } from 'react-icons/fa';
-import { useRouter } from 'next/router';
-import { DefaultLayout } from '../layouts/default/default.layout';
-import { BoardModule } from '../modules/board/board.module';
-import { Theme } from '../app/styles/theme';
+import {FaPlay} from 'react-icons/fa';
+import {useRouter} from 'next/router';
+import {DefaultLayout} from '../layouts/default/default.layout';
+import {BoardModule} from '../modules/board/board.module';
+import {Theme} from '../app/styles/theme';
 
 /**
  * Index page
@@ -11,8 +11,8 @@ import { Theme } from '../app/styles/theme';
  *
  * @returns {React.ReactNode} - Rendered page
  */
-export default function IndexPage () {
-  const router = useRouter ();
+export default function IndexPage() {
+  const router = useRouter();
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function IndexPage () {
             {
               front: <FaPlay />,
               color: Theme.white,
-              callback: async () => await router.push ('/home'),
+              callback: async () => await router.push('/home'),
               leaveOnCallback: true,
             },
           ]}

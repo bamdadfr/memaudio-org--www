@@ -1,9 +1,9 @@
 import React from 'react';
-import { DefaultLayout } from '../layouts/default/default.layout';
-import { BoardModule } from '../modules/board/board.module';
-import { Theme } from '../app/styles/theme';
-import { use404Page } from '../pages-lib/404/hooks/use-404-page';
-import { MetaComponent } from '../components/meta/meta.component';
+import {DefaultLayout} from '../layouts/default/default.layout';
+import {BoardModule} from '../modules/board/board.module';
+import {Theme} from '../app/styles/theme';
+import {use404Page} from '../pages-lib/404/hooks/use-404-page';
+import {MetaComponent} from '../components/meta/meta.component';
 
 /**
  * 404 page
@@ -11,8 +11,8 @@ import { MetaComponent } from '../components/meta/meta.component';
  *
  * @returns {React.ReactNode} - Rendered page
  */
-export default function NotFoundPage () {
-  use404Page ();
+export default function NotFoundPage() {
+  use404Page();
 
   return (
     <>

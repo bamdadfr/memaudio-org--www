@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-use-before-define
 import * as React from 'react';
-import { ReactElement, ReactNode } from 'react';
-import { Container, Card } from './card.component.styles';
-import { useCardComponent } from './hooks/use-card-component';
+import {ReactElement, ReactNode} from 'react';
+import {Container, Card} from './card.component.styles';
+import {useCardComponent} from './hooks/use-card-component';
 
 export type CardComponentProps = {
   children: ReactNode;
@@ -25,7 +25,7 @@ export type CardComponentProps = {
  * @param {boolean} props.leaveOnCallback - Leave on callback
  * @returns {ReactElement} - Rendered component
  */
-export function CardComponent ({
+export function CardComponent({
   children,
   id,
   src,
@@ -44,7 +44,7 @@ export function CardComponent ({
     gameIsRunning,
     gameColor,
     handleClick,
-  } = useCardComponent ({
+  } = useCardComponent({
     children,
     id,
     src,
@@ -67,7 +67,7 @@ export function CardComponent ({
           height={height}
           onClick={!boardIsLocked ? handleClick : undefined}
           style={{
-            'opacity': spring.opacity.to ((o) => 1 - o),
+            'opacity': spring.opacity.to((o) => 1 - o),
             'transform': spring.transform,
           }}
         >

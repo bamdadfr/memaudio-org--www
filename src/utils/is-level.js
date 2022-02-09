@@ -1,4 +1,4 @@
-import { worlds } from '../app/data/worlds/worlds';
+import {worlds} from '../app/data/worlds/worlds';
 
 /**
  * Does the given level exist in the given world?
@@ -7,6 +7,6 @@ import { worlds } from '../app/data/worlds/worlds';
  * @param {string} level - The level to check
  * @returns {boolean} - Whether the level exists in the world
  */
-export function isLevel (world, level) {
+export function isLevel(world, level) {
   return typeof worlds[world][level] !== 'undefined';
 }

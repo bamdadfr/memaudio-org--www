@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { getLevelKeys } from '../../../../../utils/get-level-keys';
-import { isWorld } from '../../../../../utils/is-world';
+import {NextApiRequest, NextApiResponse} from 'next';
+import {getLevelKeys} from '../../../../../utils/get-level-keys';
+import {isWorld} from '../../../../../utils/is-world';
 
 /**
  * API endpoint for getting all levels in a world
@@ -9,11 +9,11 @@ import { isWorld } from '../../../../../utils/is-world';
  * @param {NextApiRequest} req - The request object
  * @param {NextApiResponse} res - The response object
  */
-export default function GetLevelsEndpoint (req, res) {
-  const { world } = req.query;
+export default function GetLevelsEndpoint(req, res) {
+  const {world} = req.query;
 
-  if (!isWorld (world)) {
-    res.json ({
+  if (!isWorld(world)) {
+    res.json({
       success: false,
       error: 'world does not exist',
     });
@@ -21,9 +21,9 @@ export default function GetLevelsEndpoint (req, res) {
     return;
   }
 
-  res.json ({
+  res.json({
     success: true,
-    meta: { world },
-    data: [...getLevelKeys (world)],
+    meta: {world},
+    data: [...getLevelKeys(world)],
   });
 }

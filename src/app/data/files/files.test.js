@@ -1,18 +1,18 @@
 import fs from 'fs';
-import { files } from './files';
+import {files} from './files';
 
-describe ('files', () => {
-  it ('should contain valid entries', () => {
-    const entries = Object.entries (files);
+describe('files', () => {
+  it('should contain valid entries', () => {
+    const entries = Object.entries(files);
     let invalidEntries = [];
 
-    entries.forEach ((entry) => {
+    entries.forEach((entry) => {
       const filesObject = entry[1];
-      const filesEntries = Object.entries (filesObject);
+      const filesEntries = Object.entries(filesObject);
 
-      filesEntries.forEach ((file) => {
+      filesEntries.forEach((file) => {
         const path = `./public${file[1]}`;
-        const doesExist = fs.existsSync (path);
+        const doesExist = fs.existsSync(path);
 
         if (!doesExist) {
           invalidEntries = [...invalidEntries, path];
@@ -21,9 +21,9 @@ describe ('files', () => {
     });
 
     if (invalidEntries.length !== 0) {
-      throw new Error (invalidEntries);
+      throw new Error(invalidEntries);
     }
 
-    expect (invalidEntries.length).toBe (0);
+    expect(invalidEntries.length).toBe(0);
   });
 });

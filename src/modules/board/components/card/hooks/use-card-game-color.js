@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useStore } from '../../../../../store/use-store';
-import { Theme } from '../../../../../app/styles/theme';
+import {useEffect, useState} from 'react';
+import {useStore} from '../../../../../store/use-store';
+import {Theme} from '../../../../../app/styles/theme';
 
 /**
  * Hook to get the card game color
@@ -8,13 +8,13 @@ import { Theme } from '../../../../../app/styles/theme';
  * @param {number} id - The card id
  * @returns {string|undefined} - The card game color
  */
-export function useCardGameColor (id) {
-  const gameIsRunning = useStore ((state) => state.game.isRunning);
-  const [color, setColor] = useState (Theme.white);
-  const isDrawn = useStore ((state) => state.deck.getCard (id)?.drawn);
-  const isMatched = useStore ((state) => state.deck.getCard (id)?.matched);
+export function useCardGameColor(id) {
+  const gameIsRunning = useStore((state) => state.game.isRunning);
+  const [color, setColor] = useState(Theme.white);
+  const isDrawn = useStore((state) => state.deck.getCard(id)?.drawn);
+  const isMatched = useStore((state) => state.deck.getCard(id)?.matched);
 
-  useEffect (() => {
+  useEffect(() => {
     if (!gameIsRunning) {
       return;
     }
@@ -28,15 +28,15 @@ export function useCardGameColor (id) {
     }
 
     if (!isMatched && !isDrawn) {
-      return setColor (Theme.white);
+      return setColor(Theme.white);
     }
 
     if (isMatched) {
-      return setColor (Theme.yellow);
+      return setColor(Theme.yellow);
     }
 
     if (isDrawn) {
-      return setColor (Theme.blue);
+      return setColor(Theme.blue);
     }
   }, [gameIsRunning, isDrawn, isMatched]);
 

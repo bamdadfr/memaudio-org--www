@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import { useStore } from '../../../store/use-store';
-import { UseHeaderComponent } from './use-header-component';
+import {useCallback} from 'react';
+import {useStore} from '../../../store/use-store';
+import {UseHeaderComponent} from './use-header-component';
 
 type UseHeaderVolume = {
   volume: UseHeaderComponent['volume'];
@@ -12,14 +12,14 @@ type UseHeaderVolume = {
  *
  * @returns {UseHeaderComponent} - The volume and handle volume
  */
-export function useHeaderVolume (): UseHeaderVolume {
-  const volume = useStore ((state: any) => state.app.volume);
-  const setVolume = useStore ((state: any) => state.app.setVolume);
+export function useHeaderVolume(): UseHeaderVolume {
+  const volume = useStore((state: any) => state.app.volume);
+  const setVolume = useStore((state: any) => state.app.setVolume);
 
-  const handleVolume = useCallback ((e) => {
-    const newVolume = parseFloat (e.target.value);
+  const handleVolume = useCallback((e) => {
+    const newVolume = parseFloat(e.target.value);
 
-    setVolume (newVolume);
+    setVolume(newVolume);
   }, [setVolume]);
 
   return {

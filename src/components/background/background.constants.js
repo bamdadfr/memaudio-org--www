@@ -1,20 +1,21 @@
-// noinspection InfiniteLoopJS
-
 import { Theme } from '../../app/styles/theme';
 
 export const BackgroundConstants = {
-  'config': {
-    'from': {
-      'left': '0%',
-      'top': '0%',
-      'width': '0%',
-      'height': '0%',
-      'opacity': '0.05',
-      'background': Theme.emerald,
+  config: {
+    from: {
+      left: '0%',
+      top: '0%',
+      width: '0%',
+      height: '0%',
+      opacity: '0.05',
+      background: Theme.emerald,
     },
-    'to': async (next) => {
-      // eslint-disable-next-line no-constant-condition
-      while (true) {
+    to: async (next) => {
+      for (; ;) {
+        if (!next) {
+          break;
+        }
+
         await next ({
           'left': '0%',
           'top': '0%',

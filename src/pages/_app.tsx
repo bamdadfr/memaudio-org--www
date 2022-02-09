@@ -1,13 +1,10 @@
-// eslint-disable-next-line no-use-before-define
-import * as React from 'react';
-import {ReactElement} from 'react';
+import React, {ReactElement} from 'react';
 import 'sass-reset';
 import {AppProps} from 'next/app';
 import {AppLayout} from '../layouts/app/app.layout';
 import {useApp} from '../app/hooks/use-app';
 import {WithTheme} from '../app/components/with-theme/with-theme';
 
-// noinspection JSUnusedGlobalSymbols
 /**
  * Next.js application entry point
  *

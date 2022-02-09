@@ -1,7 +1,5 @@
-// eslint-disable-next-line no-use-before-define
-import * as React from 'react';
-import {ReactElement, ReactNode} from 'react';
-import {Container, Card} from './card.component.styles';
+import React, {ReactElement, ReactNode} from 'react';
+import {Card, Container} from './card.component.styles';
 import {useCardComponent} from './hooks/use-card-component';
 
 export type CardComponentProps = {

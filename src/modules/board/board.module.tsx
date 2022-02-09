@@ -1,6 +1,4 @@
-// eslint-disable-next-line no-use-before-define
-import * as React from 'react';
-import {ReactElement} from 'react';
+import React, {ReactElement} from 'react';
 import {animated} from '@react-spring/web';
 import {Container, Grid} from './board.module.styles';
 import {useBoardModule} from './hooks/use-board-module';

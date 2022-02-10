@@ -1,30 +1,11 @@
 import React from 'react';
-import {render as defaultRender} from '@testing-library/react';
 import {AppLayout} from './app.layout';
+import {testContainer} from '../../../__tests__/components/test-container';
 
-const render = () => {
-  const {container} = defaultRender(
+describe('AppLayout', () => {
+  testContainer(
     <AppLayout>
       <span>children</span>
     </AppLayout>,
   );
-
-  return {
-    container,
-  };
-};
-
-describe('AppLayout', () => {
-  describe('container', () => {
-    it('should be defined and visible', () => {
-      const {container} = render();
-      expect(container).toBeInTheDocument();
-      expect(container).toBeVisible();
-    });
-
-    it('should not be empty', () => {
-      const {container} = render();
-      expect(container).not.toBeEmptyDOMElement();
-    });
-  });
 });

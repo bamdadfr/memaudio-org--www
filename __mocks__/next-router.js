@@ -1,20 +1,21 @@
-const on = jest.fn (({ eventType, listenerFunction }) => ({
+const on = jest.fn(({eventType, listenerFunction}) => ({
   eventType,
   listenerFunction,
 }));
 
-const off = jest.fn (({ eventType, listenerFunction }) => ({
+const off = jest.fn(({eventType, listenerFunction}) => ({
   eventType,
   listenerFunction,
 }));
 
+// noinspection JSUnusedGlobalSymbols
 module.exports = {
   useRouter: () => ({
     route: '/',
     pathname: '/',
     asPath: '/',
     query: {},
-    replace: jest.fn (),
+    replace: jest.fn(),
     events: {
       on,
       off,

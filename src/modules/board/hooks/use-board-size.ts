@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import {useMemo} from 'react';
 
 type UseBoardSize = {
   columns: number;
@@ -7,26 +7,23 @@ type UseBoardSize = {
 
 /**
  * Hook to get the board size
- *
- * @param {number} length - The length of the board children
- * @returns {UseBoardSize} - The board size with columns and rows
  */
-export function useBoardSize (length: number): UseBoardSize {
-  const { columns, rows } = useMemo (() => {
+export function useBoardSize(length: number): UseBoardSize {
+  const {columns, rows} = useMemo(() => {
+    // default board size
+    const obj = {
+      columns: 1,
+      rows: 1,
+    };
+
     if (typeof length === 'undefined') {
-      return {
-        'columns': 1,
-        'rows': 1,
-      };
+      return obj;
     }
 
-    const columns = Math.round (Math.sqrt (length));
-    const rows = Math.ceil (length / columns);
+    obj.columns = Math.round(Math.sqrt(length));
+    obj.rows = Math.ceil(length / obj.columns);
 
-    return {
-      columns,
-      rows,
-    };
+    return obj;
   }, [length]);
 
   return {

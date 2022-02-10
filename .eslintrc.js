@@ -1,6 +1,15 @@
 module.exports = {
   extends: '@bamdadsabbagh/eslint-config',
-  rules: {
-    '@typescript-eslint/no-explicit-any': 'off',
-  },
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      rules: {
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-use-before-define': ['error'],
+        'react/require-default-props': 'off',
+        'jsdoc/require-param': 'off',
+        'jsdoc/require-returns': 'off',
+      },
+    },
+  ],
 };

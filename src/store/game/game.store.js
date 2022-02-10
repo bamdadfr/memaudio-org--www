@@ -6,7 +6,7 @@ export const gameStore = (set) => ({
     isComplete: false,
     world: undefined,
     level: undefined,
-    complete: () => set (produce ((state) => {
+    complete: () => set(produce((state) => {
       state.game.isRunning = false;
       state.game.isComplete = true;
     })),

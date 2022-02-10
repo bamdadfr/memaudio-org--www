@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 import styled from 'styled-components';
-import { Breakpoints } from '../../app/styles/breakpoints';
+import {mediaQueries} from '../../app/styles/breakpoints';
 
-export const Grid = styled.div<{ columns: number; rows: number; children: ReactNode; }>`
+export const Grid = styled.div<{columns: number; rows: number; children: ReactNode;}>`
   display: grid;
-  grid-template-columns: repeat(${({ columns }) => columns.toFixed (0)}, 1fr);
-  grid-template-rows: repeat(${({ rows }) => rows}, 1fr);
+  grid-template-columns: repeat(${({columns}) => columns.toFixed(0)}, 1fr);
+  grid-template-rows: repeat(${({rows}) => rows}, 1fr);
   grid-gap: 0.667em;
 
   height: 100%;
@@ -17,7 +17,7 @@ export const Container = styled.div`
     user-select: none;
   }
 
-  @media screen and (max-width: ${Breakpoints.mobile - 1}px) {
+  ${mediaQueries.below.mobile} {
     width: 18rem;
     height: 18rem;
     font-size: 1em;
@@ -27,7 +27,7 @@ export const Container = styled.div`
     }
   }
 
-  @media screen and (min-width: ${Breakpoints.mobile}px) {
+  ${mediaQueries.above.mobile} {
     width: 26rem;
     height: 26rem;
     font-size: 1.2em;
@@ -37,7 +37,7 @@ export const Container = styled.div`
     }
   }
 
-  @media screen and (min-width: ${Breakpoints.tablet}px) {
+  ${mediaQueries.above.tablet} {
     width: 32rem;
     height: 32rem;
     font-size: 1.4em;
@@ -47,7 +47,7 @@ export const Container = styled.div`
     }
   }
 
-  @media screen and (min-width: ${Breakpoints.desktop}px) {
+  ${mediaQueries.above.desktop} {
     width: 36rem;
     height: 36rem;
     font-size: 1.6em;
@@ -57,7 +57,7 @@ export const Container = styled.div`
     }
   }
 
-  @media screen and (min-width: ${Breakpoints.widescreen}px) {
+  ${mediaQueries.above.widescreen} {
     width: 38rem;
     height: 38rem;
     font-size: 1.8em;
@@ -67,7 +67,7 @@ export const Container = styled.div`
     }
   }
 
-  @media screen and (min-width: ${Breakpoints.fullhd}px) {
+  ${mediaQueries.above.fullhd} {
     width: 40rem;
     height: 40rem;
     font-size: 2em;

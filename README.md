@@ -1,46 +1,26 @@
-<!--suppress HtmlDeprecatedAttribute, HtmlRequiredAltAttribute -->
+![release](https://img.shields.io/github/v/release/bamdadsabbagh/memaudio-org--www)
+![license](https://img.shields.io/github/license/bamdadsabbagh/memaudio-org--www)
+![maintainability](https://img.shields.io/codeclimate/maintainability/bamdadsabbagh/memaudio-org--www)
+![coverage](https://img.shields.io/codeclimate/coverage/bamdadsabbagh/memaudio-org--www)
+![snyk](https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/memaudio-org--www)
 
-# <img width=25 src="https://i.imgur.com/FpnyKo3.png"> Memaudio
+<img alt="logo" width="80px" src="https://i.imgur.com/FpnyKo3.png">
 
-<p align=center>
-    <a href="https://memaudio.org">
-        <img width=150 src="https://i.imgur.com/FpnyKo3.png">
-    </a>
-</p>
+Audio memory game
 
-<p align=center>
-    audio Memory game
-</p>
+## 📖 Context
 
-<p align=center>
-    <a href="https://github.com/bamdadsabbagh/memaudio-org--www">
-        <img src="https://img.shields.io/github/stars/bamdadsabbagh/memaudio-org--www?label=git">
-    </a>
-    <img src="https://img.shields.io/github/license/bamdadsabbagh/memaudio-org--www">
-</p>
+Find out more [here](https://github.com/bamdadsabbagh/memaudio-org--www/blob/master/assets/poster.pdf).
 
-<p align=center>
-    <img src="https://img.shields.io/github/languages/count/bamdadsabbagh/memaudio-org--www">
-    <img src="https://img.shields.io/github/languages/top/bamdadsabbagh/memaudio-org--www">
-</p>
+## 🚀 Use
 
-<p align=center>
-    <img src="https://img.shields.io/github/v/release/bamdadsabbagh/memaudio-org--www">
-    <img src="https://api.codeclimate.com/v1/badges/78d1a314056a36cc6440/maintainability">
-    <img src="https://codecov.io/gh/bamdadsabbagh/memaudio-org--www/branch/master/graph/badge.svg?token=NRWAR4LWXS">
-</p>
+### 🌐 Online version
 
-<p align=center>
-    <img src="https://img.shields.io/david/bamdadsabbagh/memaudio-org--www">
-    <img src="https://img.shields.io/david/dev/bamdadsabbagh/memaudio-org--www">
-    <img src="https://img.shields.io/snyk/vulnerabilities/github/bamdadsabbagh/memaudio-org--www">
-</p>
+Available at [memaudio.org](https://www.memaudio.org/)
 
-<p align=center>
-    <img src="https://img.shields.io/badge/ci-github--actions-yellowgreen">
-</p>
+## 🖊 Contribute
 
-## run locally with node
+### Run locally with node
 
 ```bash
 git clone https://github.com/bamdadsabbagh/memaudio-org--www.git

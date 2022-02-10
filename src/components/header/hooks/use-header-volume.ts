@@ -13,8 +13,8 @@ type UseHeaderVolume = {
  * @returns {UseHeaderComponent} - The volume and handle volume
  */
 export function useHeaderVolume(): UseHeaderVolume {
-  const volume = useStore((state: any) => state.app.volume);
-  const setVolume = useStore((state: any) => state.app.setVolume);
+  const volume = useStore((state) => state.app.volume);
+  const setVolume = useStore((state) => state.app.setVolume);
 
   const handleVolume = useCallback((e) => {
     const newVolume = parseFloat(e.target.value);

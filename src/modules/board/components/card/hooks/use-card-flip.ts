@@ -8,15 +8,12 @@ type UseCardFlip = {
 
 /**
  * Hook to toggle the card's flipped state
- *
- * @param {number} id - The card's id
- * @returns {UseCardFlip} - The card's flipped state and a function to toggle it
  */
 export function useCardFlip(id: number): UseCardFlip {
   // global
-  const gameIsRunning = useStore((state: any) => state.game.isRunning);
-  const setDraw = useStore((state: any) => state.deck.setDraw);
-  const isDrawn = useStore((state: any) => state.deck.getCard(id)?.drawn);
+  const gameIsRunning = useStore((state) => state.game.isRunning);
+  const setDraw = useStore((state) => state.deck.setDraw);
+  const isDrawn = useStore((state) => state.deck.getCard(id)?.drawn);
   // local
   const [flipped, setFlipped] = useState(false);
   const toggleFlipped = useCallback(() => !flipped && setFlipped((f) => !f), [flipped]);

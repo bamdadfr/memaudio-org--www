@@ -4,18 +4,15 @@ import {Container, Grid} from './board.module.styles';
 import {useBoardModule} from './hooks/use-board-module';
 import {CardComponent} from './components/card/card.component';
 import {GameComponent} from './components/game/game.component';
-import {Card} from '../../utils/build-deck';
+import {Card, CardView} from '../../types';
 
 type BoardModuleProps = {
-  cards: Card[];
+  /** Array of card views to display */
+  cards: CardView[];
 }
 
 /**
  * Component for the board module
- *
- * @param {BoardModuleProps} props - Component props
- * @param {Card[]} props.cards - Cards to display
- * @returns {ReactElement} - Rendered component
  */
 export function BoardModule({cards}: BoardModuleProps): ReactElement {
   const {
@@ -31,7 +28,7 @@ export function BoardModule({cards}: BoardModuleProps): ReactElement {
       {gameIsRunning && <GameComponent />}
       <Container ref={ref}>
         <Grid columns={columns} rows={rows}>
-          {transitions((style, card, _, j) => (
+          {transitions((style, card: CardView & Card, _, j) => (
             <animated.div style={style}>
               <CardComponent
                 id={j}

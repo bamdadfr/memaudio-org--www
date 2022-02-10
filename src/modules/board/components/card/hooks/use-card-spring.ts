@@ -7,9 +7,6 @@ export type UseCardSpring = {
 
 /**
  * Hook to trigger the card spring animation
- *
- * @param {boolean} flipped - Whether the card is flipped
- * @returns {UseCardSpring} - The card spring values
  */
 export function useCardSpring(flipped: boolean): UseCardSpring {
   return useSpring({

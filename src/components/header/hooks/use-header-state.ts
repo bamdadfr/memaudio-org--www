@@ -20,47 +20,45 @@ type UseHeaderState = {
  */
 export function useHeaderState(): UseHeaderState {
   const router = useRouter();
-  const [world, setWorld] = useState<string>(!Array.isArray(router.query.world) && router.query.world);
-  const [level, setLevel] = useState<string>(!Array.isArray(router.query.level) && router.query.level);
+  const [currentWorld, setCurrentWorld] = useState<string>(!Array.isArray(router.query.world) && router.query.world);
+  const [currentLevel, setCurrentLevel] = useState<string>(!Array.isArray(router.query.level) && router.query.level);
   const [worldKeys, setWorldKeys] = useState<string[]>();
   const [levelKeys, setLevelKeys] = useState<string[]>();
 
-  // get current world and level
+  // get current currentWorld and currentLevel
   useEffect(() => {
     const {world, level} = router.query;
 
     if (!Array.isArray(world)) {
-      setWorld(world);
+      setCurrentWorld(world);
     }
 
     if (!Array.isArray(level)) {
-      setLevel(level);
+      setCurrentLevel(level);
     }
   }, [router.query]);
 
   // get all worlds and levels
   useEffect(() => {
-    if (!world) {
+    if (!currentWorld) {
       return;
     }
 
     (async () => {
       const worlds = await fetchWorlds();
-      const levels = await fetchLevels(world);
-
+      const levels = await fetchLevels(currentWorld);
       setWorldKeys(worlds);
-
       setLevelKeys(levels);
     })();
-  }, [world]);
+  }, [currentWorld]);
 
-  // if level does not exist, set it to first
+  // if currentLevel does not exist, set it to first
   useEffect(() => {
-    if (!world) {
+    if (!currentWorld) {
       return;
     }
 
-    if (!level) {
+    if (!currentLevel) {
       return;
     }
 
@@ -68,32 +66,31 @@ export function useHeaderState(): UseHeaderState {
       return;
     }
 
-    // level exist in levelKeys?
-    if (levelKeys.indexOf(level) >= 0 && levelKeys.indexOf(level) <= levelKeys.length) {
+    // currentLevel exist in levelKeys?
+    if (levelKeys.indexOf(currentLevel) >= 0 && levelKeys.indexOf(currentLevel) <= levelKeys.length) {
       return;
     }
 
     (async () => {
-      const firstLevel = await fetchFirstLevel(world);
-
-      setLevel(firstLevel);
+      const firstLevel = await fetchFirstLevel(currentWorld);
+      setCurrentLevel(firstLevel);
     })();
-  }, [world, level, levelKeys]);
+  }, [currentWorld, currentLevel, levelKeys]);
 
   const handleChange: UseHeaderState['handleChange'] = useCallback((e, type) => {
     if (type === 'world') {
-      setWorld(e.target.value);
+      setCurrentWorld(e.target.value);
     }
 
     if (type === 'level') {
-      setLevel(e.target.value);
+      setCurrentLevel(e.target.value);
     }
   }, []);
 
   return {
-    world,
+    world: currentWorld,
     worldKeys,
-    level,
+    level: currentLevel,
     levelKeys,
     handleChange,
   };

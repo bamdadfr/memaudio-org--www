@@ -26,9 +26,6 @@ type UseCardComponent = {
 
 /**
  * Entry hook for the card component.
- *
- * @param {UseCardComponentOptions} options - Options for the hook
- * @returns {UseCardComponent} - Hook state
  */
 export function useCardComponent({
   children,
@@ -41,8 +38,8 @@ export function useCardComponent({
   const {front, back} = getCardFaces(children);
   const {flipped, toggleFlipped} = useCardFlip(id);
   const spring = useCardSpring(flipped);
-  const boardIsLocked = useStore((state: any) => state.board.isLocked);
-  const gameIsRunning = useStore((state: any) => state.game.isRunning);
+  const boardIsLocked = useStore((state) => state.board.isLocked);
+  const gameIsRunning = useStore((state) => state.game.isRunning);
   const gameColor = useCardGameColor(id);
   const {handleClick} = useCardClick(toggleFlipped, src);
 

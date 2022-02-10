@@ -10,15 +10,11 @@ type UseHeaderSelect = {
 
 /**
  * Hook to handle the header select
- *
- * @param {string} world - The world to select
- * @param {string} level - The level to select
- * @returns {UseHeaderSelect} - Submit function and submit visibility
  */
 export function useHeaderSelect(world: string, level: string): UseHeaderSelect {
   const router = useRouter();
-  const isLeaving = useStore((state: any) => state.board.isLeaving);
-  const setLeave = useStore((state: any) => state.board.setLeave);
+  const isLeaving = useStore((state) => state.board.isLeaving);
+  const setLeave = useStore((state) => state.board.setLeave);
   const [submitVisible, setSubmitVisible] = useState(false);
   const [submitFired, setSubmitFired] = useState(false);
 

@@ -6,7 +6,7 @@ import {
   useBoardTransitions,
 } from './use-board-transitions';
 import {useStore} from '../../../store/use-store';
-import {Card} from '../../../utils/build-deck';
+import {CardView} from '../../../types';
 
 type UseBoardModule = {
   columns: number;
@@ -18,15 +18,12 @@ type UseBoardModule = {
 
 /**
  * Entry hook for the board module
- *
- * @param {Card[]} cards - The cards to be displayed on the board
- * @returns {UseBoardModule} - The board module state
  */
-export function useBoardModule(cards: Card[]): UseBoardModule {
+export function useBoardModule(cards: CardView[]): UseBoardModule {
   const {columns, rows} = useBoardSize(cards.length);
   const [ref, {width}] = useMeasure();
   const {transitions} = useBoardTransitions(cards, {width});
-  const gameIsRunning = useStore((state: any) => state.game.isRunning);
+  const gameIsRunning = useStore((state) => state.game.isRunning);
 
   return {
     columns,

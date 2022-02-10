@@ -1,28 +1,23 @@
 import {useEffect, useState} from 'react';
 import {TransitionFn, useTransition} from '@react-spring/web';
 import {useStore} from '../../../store/use-store';
-import {Card} from '../../../utils/build-deck';
+import {CardView} from '../../../types';
 
 export type UseBoardTransitions = {
-  transitions: TransitionFn<any, {opacity: number; x: number;}>;
+  transitions: TransitionFn<unknown, {opacity: number; x: number;}>;
 }
 
 /**
  * Hook to handle board transitions
- *
- * @param {Card[]} array - Array of cards to animate
- * @param {*} options - Options for the animation
- * @param {number} options.width - Width of the board in pixels
- * @returns {UseBoardTransitions} - Hook with transitions
  */
 export function useBoardTransitions(
-  array: Card[],
+  array: CardView[],
   {width}: {width: number;},
 ): UseBoardTransitions {
   const [items, setItems] = useState([]);
-  const isLeaving = useStore((state: any) => state.board.isLeaving);
-  const resetLeave = useStore((state: any) => state.board.resetLeave);
-  const waitFor = useStore((state: any) => state.animations.waitFor);
+  const isLeaving = useStore((state) => state.board.isLeaving);
+  const resetLeave = useStore((state) => state.board.resetLeave);
+  const waitFor = useStore((state) => state.animations.waitFor);
 
   const transitions = useTransition(items, {
     from: {opacity: 0, x: width * 2 * -1},

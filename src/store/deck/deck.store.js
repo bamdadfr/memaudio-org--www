@@ -24,9 +24,6 @@ export const deckStore = (set, get) => ({
       state.deck.toMatch = -1;
     })),
     // draw
-    resetDrawn: () => set(produce((state) => {
-      state.deck.drawn = [];
-    })),
     setDraw: (id) => set(produce((state) => {
       state.deck.cards[id].drawn = true;
       state.deck.drawn = [...state.deck.drawn, id];

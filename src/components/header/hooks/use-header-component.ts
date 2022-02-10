@@ -12,13 +12,11 @@ export type UseHeaderComponent = {
   handleSubmit: () => void;
   submitVisible: boolean;
   volume: number;
-  handleVolume: (v: number) => void;
+  handleVolume: (e: ChangeEvent) => void;
 }
 
 /**
  * Entry hook for the header component
- *
- * @returns {UseHeaderComponent} - The hook
  */
 export function useHeaderComponent(): UseHeaderComponent {
   const {

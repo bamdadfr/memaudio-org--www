@@ -6,10 +6,7 @@ export type GetCardFaces = {
 }
 
 /**
- * Get the card faces for a card
- *
- * @param {ReactNode} card - The card to get the faces for
- * @returns {GetCardFaces} The card faces
+ * Get the faces of a card
  */
 export function getCardFaces(card: ReactNode): GetCardFaces {
   if (typeof card === 'string') {

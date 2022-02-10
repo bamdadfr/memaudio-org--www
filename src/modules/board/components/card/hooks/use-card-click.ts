@@ -8,14 +8,10 @@ type UseCardClick = {
 
 /**
  * Hook for handling card click
- *
- * @param {function(): void} toggleFlipped - Function to toggle flipped state
- * @param {string} src - Sound source
- * @returns {UseCardClick} - Click handler
  */
 export function useCardClick(toggleFlipped: () => void, src: string): UseCardClick {
-  const gameIsRunning = useStore((state: any) => state.game.isRunning);
-  const volume = useStore((state: any) => state.app.volume);
+  const gameIsRunning = useStore((state) => state.game.isRunning);
+  const volume = useStore((state) => state.app.volume);
 
   const [play] = useSound(
     src, {

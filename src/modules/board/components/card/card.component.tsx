@@ -2,26 +2,22 @@ import React, {ReactElement, ReactNode} from 'react';
 import {Card, Container} from './card.component.styles';
 import {useCardComponent} from './hooks/use-card-component';
 
-export type CardComponentProps = {
+export interface CardComponentProps {
   children: ReactNode;
+  /** Identifier of the card */
   id: number;
+  /** Audio source of the card */
   src: string;
+  /** Color of the card */
   color: string;
+  /** Callback function of the card */
   callback: () => void;
+  /** Should the card leave when callback is invoked? */
   leaveOnCallback: boolean;
 }
 
 /**
  * Component for the card
- *
- * @param {CardComponentProps} props - Component props
- * @param {ReactNode} props.children - Children of the component
- * @param {number} props.id - Id of the card
- * @param {string} props.src - Source of the card
- * @param {string} props.color - Color of the card
- * @param {() => void} props.callback - Callback function
- * @param {boolean} props.leaveOnCallback - Leave on callback
- * @returns {ReactElement} - Rendered component
  */
 export function CardComponent({
   children,

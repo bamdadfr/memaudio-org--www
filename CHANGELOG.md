@@ -1,3 +1,20 @@
+## [1.15.28](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.27...v1.15.28) (2022-02-10)
+
+
+### Bug Fixes
+
+* **Background:** Add condition to exit the loop ([53b9a34](https://github.com/bamdadsabbagh/memaudio-org--www/commit/53b9a341bdd8b10bf06a856926a4aaa888c52c7f))
+* **Tests:** Remove duplication of components' container testing ([e19961b](https://github.com/bamdadsabbagh/memaudio-org--www/commit/e19961bcd81b79e71badbe72bc7c33057dffb9ca))
+* Use TS + Add types + Clean ([d0c1db3](https://github.com/bamdadsabbagh/memaudio-org--www/commit/d0c1db34c044b3a419838d7b94f312824e0bec58))
+
+
+### Performance Improvements
+
+* **App:** Apply latest eslint configuration + Rename styled HOC to `WithTheme` + Generate media queries directly in breakpoints.js ([6a84eab](https://github.com/bamdadsabbagh/memaudio-org--www/commit/6a84eabc882089be71a6b18986afed5f0eeaaf48))
+* **CardComponent/UseCardSpring:** Return plain spring object instead ([bb6dd8a](https://github.com/bamdadsabbagh/memaudio-org--www/commit/bb6dd8af115dc007a55530789adcf3e3db8131d3))
+* **Dependencies:** Upgrade to latest ([39fcc79](https://github.com/bamdadsabbagh/memaudio-org--www/commit/39fcc791031394338d310dd018fb0d8e1bda9159))
+* **Lint:** Adapt `no-use-before-define` rule to TS + React ([b5a5597](https://github.com/bamdadsabbagh/memaudio-org--www/commit/b5a559754311f0a2dba68589b8b9bba0fc47eac2))
+
 ## [1.15.27](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.26...v1.15.27) (2022-02-07)
 
 

@@ -9,17 +9,38 @@ const r = (Component) => {
   };
 };
 
-export const testContainer = (C: ReactElement): void => {
-  describe('container', () => {
-    it('should be defined and visible', () => {
-      const {container} = r(C);
-      expect(container).toBeInTheDocument();
-      expect(container).toBeVisible();
-    });
+interface Options {
+  testDefinition?: boolean;
+  testNonEmptiness?: boolean;
+  testEmptiness?: boolean;
+}
 
-    it('should not be empty', () => {
-      const {container} = r(C);
-      expect(container).not.toBeEmptyDOMElement();
-    });
+export const testContainer = (C: ReactElement, {
+  testDefinition = true,
+  testNonEmptiness = true,
+  testEmptiness = false,
+}: Options = {}): void => {
+  describe('container', () => {
+    if (testDefinition) {
+      it('should be defined and visible', () => {
+        const {container} = r(C);
+        expect(container).toBeInTheDocument();
+        expect(container).toBeVisible();
+      });
+    }
+
+    if (testNonEmptiness) {
+      it('should not be empty', () => {
+        const {container} = r(C);
+        expect(container).not.toBeEmptyDOMElement();
+      });
+    }
+
+    if (testEmptiness) {
+      it('should be empty', () => {
+        const {container} = r(C);
+        expect(container).toBeEmptyDOMElement();
+      });
+    }
   });
 };

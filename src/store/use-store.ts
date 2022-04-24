@@ -23,7 +23,9 @@ interface StoreInterface {
     setVolume: (v: number) => void;
   };
   deck: {
-    cards: Card[];
+    cards: {
+      [key: number]: Card;
+    };
     getCard: (id: number) => Card;
     drawn: number[];
     toMatch: number;

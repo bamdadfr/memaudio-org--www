@@ -1,9 +1,9 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, {ReactElement} from 'react';
 import {Card, Container} from './card.component.styles';
 import {useCardComponent} from './hooks/use-card-component';
 
 export interface CardComponentProps {
-  children: ReactNode;
+  children: ReactElement[] | ReactElement;
   /** Identifier of the card */
   id: number;
   /** Audio source of the card */

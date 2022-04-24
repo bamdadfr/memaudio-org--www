@@ -1,8 +1,8 @@
-import {ReactNode} from 'react';
+import {ReactElement} from 'react';
 import styled from 'styled-components';
 import {mediaQueries} from '../../app/styles/breakpoints';
 
-export const Grid = styled.div<{columns: number; rows: number; children: ReactNode;}>`
+export const Grid = styled.div<{columns: number; rows: number; children: ReactElement;}>`
   display: grid;
   grid-template-columns: repeat(${({columns}) => columns.toFixed(0)}, 1fr);
   grid-template-rows: repeat(${({rows}) => rows}, 1fr);

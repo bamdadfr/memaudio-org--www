@@ -1,20 +1,20 @@
-import {ReactNode} from 'react';
+import {ReactElement} from 'react';
 
 export type GetCardFaces = {
-  front: ReactNode | string | null;
-  back: ReactNode | string | null;
+  front: ReactElement | string | null;
+  back: ReactElement | string | null;
 }
 
 /**
  * Get the faces of a card
  */
-export function getCardFaces(card: ReactNode): GetCardFaces {
-  if (typeof card === 'string') {
-    return {'front': card, 'back': null};
+export function getCardFaces(cards: ReactElement[] | ReactElement): GetCardFaces {
+  if (typeof cards === 'string') {
+    return {'front': cards, 'back': null};
   }
 
-  const front = typeof card[0] === 'undefined' ? card : card[0];
-  const back = typeof card[1] === 'undefined' ? null : card[1];
+  const front = typeof cards[0] === 'undefined' ? cards : cards[0];
+  const back = typeof cards[1] === 'undefined' ? null : cards[1];
 
   return {
     front,

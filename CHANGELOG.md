@@ -1,3 +1,15 @@
+# [1.16.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.38...v1.16.0) (2022-04-24)
+
+
+### Bug Fixes
+
+* **Store:** Fix interface ([25eace1](https://github.com/bamdadsabbagh/memaudio-org--www/commit/25eace128732551483791806d291b35914c08229))
+
+
+### Features
+
+* Update React and Next.js to latest versions + Type state + Fix React types ([5a3bd17](https://github.com/bamdadsabbagh/memaudio-org--www/commit/5a3bd172789d250f0ba14b9c2131217e393f068d))
+
 ## [1.15.38](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.37...v1.15.38) (2022-04-18)
 
 

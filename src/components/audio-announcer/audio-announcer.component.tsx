@@ -1,9 +1,11 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
+import dynamic from 'next/dynamic';
 import {Container} from './audio-announcer.component.styles';
 import {
   useAudioAnnouncerComponent,
 } from './hooks/use-audio-announcer-component';
+
+const ReactPlayer = dynamic(() => import('react-player/lazy'), {ssr: false});
 
 interface AudioAnnouncerComponentProps {
   /** Array of audio files to play */

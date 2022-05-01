@@ -1,6 +1,8 @@
 import React, {ReactElement} from 'react';
-import ReactPlayer from 'react-player';
+import dynamic from 'next/dynamic';
 import {Container} from './audio-ambience.component.styles';
+
+const ReactPlayer = dynamic(() => import('react-player/lazy'), {ssr: false});
 
 /**
  * Component for the audio ambience

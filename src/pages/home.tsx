@@ -49,6 +49,11 @@ export default function HomePage(): ReactElement {
             {
               front: <FaQuestion />,
               color: theme.blue,
+              callback: async () => {
+                window.open('/assets/poster.pdf');
+                router.push('/home');
+              },
+              leaveOnCallback: true,
             },
             {
               front: <FaPlay />,

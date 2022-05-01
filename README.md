@@ -10,7 +10,7 @@ Audio memory game
 
 ## 📖 Context
 
-Find out more [here](https://github.com/bamdadsabbagh/memaudio-org--www/blob/master/assets/poster.pdf).
+Find out more [here](./public/assets/poster.pdf).
 
 ## 🚀 Use
 

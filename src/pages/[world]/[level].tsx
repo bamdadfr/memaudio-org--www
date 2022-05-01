@@ -1,5 +1,9 @@
 import React, {ReactElement} from 'react';
-import {GetServerSidePropsContext, GetServerSidePropsResult} from 'next';
+import {
+  GetServerSidePropsContext,
+  GetStaticPathsResult,
+  GetStaticPropsResult,
+} from 'next';
 import {DefaultLayout} from '../../layouts/default/default.layout';
 import {BoardModule} from '../../modules/board/board.module';
 import {announcer} from '../../app/data/announcer/announcer';
@@ -12,11 +16,13 @@ import {capitalizeFirstLetter} from '../../utils/capitalize-first-letter';
 import {
   useWorldLevelPage,
 } from '../../pages-lib/[world]/[level]/hooks/use-world-level-page';
+import {getWorldKeys} from '../../utils/get-world-keys';
+import {getLevelKeys} from '../../utils/get-level-keys';
 
-type WorldLevelPageProps = {
+interface WorldLevelPageProps {
   world: string;
   level: string;
-};
+}
 
 export default function WorldLevelPage({
   world,
@@ -38,15 +44,9 @@ export default function WorldLevelPage({
   );
 }
 
-interface ServerProps {
-  world: string;
-  level: string;
-}
-
-// noinspection JSUnusedGlobalSymbols
-export async function getServerSideProps(context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<ServerProps>> {
-  const world = context.query.world as string;
-  const level = context.query.level as string;
+export async function getStaticProps(context: GetServerSidePropsContext): Promise<GetStaticPropsResult<WorldLevelPageProps>> {
+  const world = context.params.world as string;
+  const level = context.params.level as string;
 
   const isValid = validateWorldAndLevel(world, level);
 
@@ -54,10 +54,30 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
     return {redirect: {destination: '/404', permanent: false}};
   }
 
-  const props: ServerProps = {
-    world,
-    level,
+  return {
+    props: {
+      world,
+      level,
+    },
   };
+}
 
-  return {props};
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+  const worlds = getWorldKeys();
+
+  const paths = worlds.map((world) => {
+    const levels = getLevelKeys(world);
+
+    return levels.map((level) => ({
+      params: {
+        world,
+        level,
+      },
+    }));
+  });
+
+  return {
+    paths: paths.flat(),
+    fallback: false,
+  };
 }

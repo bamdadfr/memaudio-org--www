@@ -1,3 +1,16 @@
+# [1.17.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.16.0...v1.17.0) (2022-05-01)
+
+
+### Features
+
+* Add poster + Prevent ReactPlayer rendering on the server ([a8d726f](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a8d726f18a08c4a147c8eacd76c25aecbd3b2cce))
+
+
+### Performance Improvements
+
+* **Levels:** Replace SSR with SSG ([407b748](https://github.com/bamdadsabbagh/memaudio-org--www/commit/407b7488e791c795ebd98d7d038d76f70d687db2))
+* **NPM:** Update dependencies to latest ([65bef94](https://github.com/bamdadsabbagh/memaudio-org--www/commit/65bef94852556e22af28639b7e3b40f18ecbd1ef))
+
 # [1.16.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.15.38...v1.16.0) (2022-04-24)
 
 

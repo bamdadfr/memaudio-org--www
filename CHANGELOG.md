@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.17.0...v1.18.0) (2022-05-07)
+
+
+### Features
+
+* Add sitemap ([a1880bd](https://github.com/bamdadsabbagh/memaudio-org--www/commit/a1880bd3acb6a1ab34c118154c9f7c6529f5e631))
+
 # [1.17.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.16.0...v1.17.0) (2022-05-01)
 
 

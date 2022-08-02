@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.18.0...v1.19.0) (2022-08-02)
+
+
+### Features
+
+* **Deps:** Update to latest ([b614aab](https://github.com/bamdadsabbagh/memaudio-org--www/commit/b614aab70c0343c19a7728c6d9556f371619673a))
+
 # [1.18.0](https://github.com/bamdadsabbagh/memaudio-org--www/compare/v1.17.0...v1.18.0) (2022-05-07)
 
 

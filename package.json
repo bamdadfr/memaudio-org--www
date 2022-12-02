@@ -29,7 +29,7 @@
     "@react-spring/web": "^9.5.2",
     "immer": "^9.0.15",
     "just-shuffle": "^4.0.1",
-    "next": "^12.2.3",
+    "next": "^13.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",

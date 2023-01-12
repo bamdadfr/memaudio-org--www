@@ -3569,10 +3569,10 @@ json5@^2.1.2, json5@^2.2.1:
     array-includes "^3.1.5"
     object.assign "^4.1.2"
 
-just-shuffle@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/just-shuffle/-/just-shuffle-4.0.1.tgz#239006f5abf4774498d46cd27746aa34f7e48ca4"
-  integrity sha512-zi6tkAMmnrMc39Tmxma7uEJ4c/NmzreJYHNqpZZ5CR8DluhfarzSmAZ/Tr3HjCYJrXajX6L+rEmC2Z/Fq3uuyg==
+just-shuffle@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/just-shuffle/-/just-shuffle-4.2.0.tgz#795c09dbac1f9e94e797efd10a7ef537363c8903"
+  integrity sha512-/dDmNseAWLf3XkFY9xf3/BdQoiy27LNUy/7uG4zdSAX526nIHMYPYeJ4pN4lT1/pgNEX8XCXPtUB6gJqTpBEng==
 
 kleur@^3.0.3:
   version "3.0.3"

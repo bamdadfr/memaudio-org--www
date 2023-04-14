@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.5.2",
-    "immer": "^9.0.15",
+    "immer": "^9.0.21",
     "just-shuffle": "^4.0.1",
     "next": "^12.2.3",
     "react": "^18.2.0",
